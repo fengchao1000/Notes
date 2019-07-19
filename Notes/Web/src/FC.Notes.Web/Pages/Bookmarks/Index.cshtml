@@ -1,0 +1,34 @@
+﻿@page
+@inherits FC.Notes.Web.Pages.NotesPage
+@model FC.Notes.Web.Pages.Bookmarks.IndexModel
+@section scripts
+{
+    <abp-script src="/Pages/Bookmarks/index.js" />
+}
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <h2>@L["Bookmarks"]</h2>
+            </abp-column>
+            <abp-column size-md="_6" class="text-right">
+                <abp-button id="NewBookmarkButton"
+                            text="@L["NewBookmark"].Value"
+                            icon="plus"
+                            button-type="Primary" />
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="BookmarksTable">
+            <thead>
+                <tr>
+                    <th>@L["Actions"]</th>
+                    <th>@L["Title"]</th>
+                    <th>@L["Summary"]</th>
+                    <th>@L["LinkUrl"]</th>  
+                </tr>
+            </thead>
+        </abp-table>
+    </abp-card-body>
+</abp-card>
