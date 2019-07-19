@@ -3,6 +3,204 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Notes.App">
     <Application.Resources>
+        <!-- Color -->
+        <!-- 导航栏颜色 -->
+        <Color x:Key="NavigationText">#35414f</Color>
+        <!-- 默认字体颜色 -->
+        <Color x:Key="DefaultTextColor">#000000</Color>
+        <!--描述文本颜色-->
+        <Color x:Key="DescriptionTextColor">#b0b0b0</Color>
+        <!-- 程序主色调 -->
+        <Color x:Key="Primary">#35414f</Color>
+        <!-- 页面默认背景色 -->
+        <Color x:Key="PageDefaultBackgroundColor">#dadada</Color>
+        <!-- 滚动超出部分背景色 -->
+        <Color x:Key="ScrollViewBackgroundColor">#35414f</Color>
+        <!-- 下划线颜色 -->
+        <Color x:Key="DividerColor">#EBE8EB</Color>
+        <!-- 登录输入框占位符字体 -->
+        <Color x:Key="LoginEntryPlaceholderColor">#bababa</Color>
+        <!-- 登录按钮背景色 -->
+        <Color x:Key="LoginButtonBackgroundColor">#e7572d</Color>
+        <!-- TabView选项卡被选中的字体颜色 -->
+        <Color x:Key="TabViewSelectionColor">#e52a2a</Color>
+        <!-- TabView选项卡未被选中的字体颜色 -->
+        <Color x:Key="TabViewTitleFontColor">#000000</Color>
+        <!-- TabView选项卡背景颜色 -->
+        <Color x:Key="TabViewFontIconFontColor">#ffffff</Color>
+        <!-- PullToRefresh刷新按钮颜色 -->
+        <Color x:Key="PullToRefreshColor">#c0c0c0</Color>
+        <!-- 默认背景色 -->
+        <Color x:Key="DefaultBackgroundColor">#ffffff</Color>
+        <!-- CornerRadiusCardView边框颜色 -->
+        <Color x:Key="CornerRadiusCardViewBorderColor">#EBE8EB</Color>
+        <!-- CornerRadiusCardView背景颜色 -->
+        <Color x:Key="CornerRadiusCardViewBackgroundColor">#ffffff</Color>
+        <!-- 下划线颜色 -->
+        <Color x:Key="UnderlineColor">#E4E4E4</Color>
+        <!-- 底部TabBar背景色 -->
+        <Color x:Key="BottomTabBarBackgroundColor">#35414f</Color>
+        <!-- SegmentedView选择颜色 -->
+        <Color x:Key="SegmentedViewSelectedBackgroundColor">#dadada</Color>
+        <!-- SegmentedView未选择颜色 -->
+        <Color x:Key="SegmentedViewUnSelectedBackgroundColor">#35414f</Color>
+        <!-- SegmentedView选择字体颜色 -->
+        <Color x:Key="SegmentedViewSelectedFontColor">#000000</Color>
+        <!-- ebayUser/palpayEmail选中背景颜色 -->
+        <Color x:Key="FilterSelectedBackgroundColor">#e7572d</Color>
+        <!-- ebayUser/palpayEmail选中字体颜色 -->
+        <Color x:Key="FilterSelectedTextColor">#ffffff</Color>
+        <!-- ebayUser/palpayEmail未选中背景颜色 -->
+        <Color x:Key="FilterUnSelectedBackgroundColor">#dadada</Color>
+        <!-- ebayUser/palpayEmail未选中字体颜色 -->
+        <Color x:Key="FilterUnSelectedTextColor">#000000</Color>
+        <!-- 登录下划线颜色 -->
+        <Color x:Key="LoginUnderlineColor">#35414f</Color>
+        <!-- Report DataGridHeaderBackgroundColor -->
+        <Color x:Key="ReportDataGridHeaderBackgroundColor">#f8f9fa</Color>
+        <!-- Report DataGridBorderColor -->
+        <Color x:Key="ReportDataGridBorderColor">#e3e2e2</Color>
+        <!-- Report  图形报表颜色 -->
+        <Color x:Key="ReportChartColor">#dadada</Color>
+        <!-- Report  图形报表颜色，暂时无用，待reportBK一起删除 -->
+        <Color x:Key="ChartColor">#dadada</Color>
+        <!-- PullToRefresh 刷新进度条颜色 -->
+        <Color x:Key="PullToRefreshProgressStrokeColor">#c0c0c0</Color>
 
+
+        <!-- Font -->
+        <!-- 默认字体大小 -->
+        <OnPlatform x:TypeArguments="x:Double" Android="14" iOS="14" x:Key="DefaultFontSize" />
+        <!-- TabView选项卡标题字体大小 -->
+        <OnPlatform x:TypeArguments="x:Double" Android="14" iOS="14" x:Key="TabViewTitleFontSize" />
+        <!-- Chart柱形图标题字体大小 -->
+        <OnPlatform x:TypeArguments="x:Double" Android="14" iOS="14" x:Key="ChartTitleFontSize" />
+        <!-- Chart柱形图x轴底部Label字体大小 -->
+        <OnPlatform x:TypeArguments="x:Double" Android="12" iOS="12" x:Key="ChartAxisLabelStyleFontSize" />
+        <!-- Chart柱形图x轴数值字体大小 -->
+        <OnPlatform x:TypeArguments="x:Double" Android="12" iOS="12" x:Key="DataMarkerLabelStyleFontSize" />
+        <!-- DataGrid头部标题字体大小 -->
+        <OnPlatform x:TypeArguments="x:Double" Android="14" iOS="14" x:Key="DataGridHeaderCellTextSize" />
+        <!-- DataGrid列字体大小 -->
+        <OnPlatform x:TypeArguments="x:Double" Android="14" iOS="14" x:Key="DataGridCellTextSize" />
+        <!-- 登录按钮列字体大小 -->
+        <OnPlatform x:TypeArguments="x:Double" Android="16" iOS="16" x:Key="LoginButtonFontSize" />
+        <!-- 登录输入框字体大小 -->
+        <OnPlatform x:TypeArguments="x:Double" Android="16" iOS="16" x:Key="LoginEntryFontSize" />
+        <!-- DataGrid头部行高度 -->
+        <OnPlatform x:TypeArguments="x:Double" Android="45" iOS="45" x:Key="ReportDataGridHeaderRowHeight" />
+        <!-- DataGrid 数据行高度 -->
+        <OnPlatform x:TypeArguments="x:Double" Android="45" iOS="45" x:Key="ReportDataGridRowHeight" />
+
+
+        <!-- Style -->
+        <!-- 默认文本样式 -->
+        <Style x:Key="DefaultTextLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}" />
+            <Setter Property="TextColor" Value="{StaticResource DefaultTextColor}"/>
+        </Style>
+        <!-- 描述文本样式/浅色 -->
+        <Style x:Key="DescriptionTextLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}" />
+            <Setter Property="TextColor" Value="{StaticResource DescriptionTextColor}"/>
+        </Style>
+        <!-- 登出输入框样式 -->
+        <Style x:Key="LogoutStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="{DynamicResource DefaultFontSize}" />
+            <Setter Property="TextColor" Value="Red"/>
+        </Style>
+        <!-- 登录输入框样式 -->
+        <Style x:Key="LoginEntryStyle" TargetType="Entry">
+            <Setter Property="PlaceholderColor" Value="{StaticResource LoginEntryPlaceholderColor}" />
+            <Setter Property="FontSize" Value="{StaticResource LoginEntryFontSize}" />
+            <Setter Property="TextColor" Value="{StaticResource DescriptionTextColor}"/>
+        </Style>
+        <!-- 登录按钮样式 -->
+        <Style x:Key="LoginButtonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource LoginButtonBackgroundColor}" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="HeightRequest" Value="40" />
+            <Setter Property="BorderRadius" Value="20" />
+            <Setter Property="FontSize" Value="{StaticResource LoginButtonFontSize}" />
+        </Style>
+        <!--默认文本样式-->
+        <Style x:Key="DefaultLabelStyle" TargetType="{x:Type Label}">
+            <Setter Property="TextColor" Value="{StaticResource DefaultTextColor}" />
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+            <Setter Property="VerticalOptions"  Value="CenterAndExpand" />
+            <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}" />
+        </Style>
+        <!--功能按钮文本样式-->
+        <Style x:Key="FunctionLabelStyle" TargetType="{x:Type Label}">
+            <Setter Property="TextColor" Value="#ffffff" />
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+            <Setter Property="VerticalOptions"  Value="StartAndExpand" />
+            <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}" />
+        </Style>
+        <!--EbayUser文本样式-->
+        <Style x:Key="EbayUserLabelStyle" TargetType="{x:Type Label}">
+            <Setter Property="TextColor" Value="{StaticResource DefaultTextColor}" />
+            <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+            <Setter Property="VerticalOptions"   Value="CenterAndExpand" />
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+        <!--EbayUser图标样式-->
+        <Style x:Key="EbayUserImageStyle" TargetType="{x:Type Image}">
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+            <Setter Property="VerticalOptions"   Value="CenterAndExpand" />
+            <Setter Property="HeightRequest" Value="20"/>
+            <Setter Property="HeightRequest" Value="20"/>
+            <Setter Property="Margin" Value="0,0,0,0"/>
+        </Style>
+        <!--EbayUserFilter布局样式-->
+        <Style x:Key="EbayUserFilterStackLayoutStyle" TargetType="{x:Type StackLayout}">
+            <Setter Property="Orientation" Value="Horizontal" />
+            <Setter Property="Padding" Value="10"/>
+        </Style>
+        <!--EbayUser选中图标-->
+        <Style x:Key="EbayUserSelectedImageStyle" TargetType="{x:Type Image}">
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+            <Setter Property="VerticalOptions"   Value="CenterAndExpand" />
+            <Setter Property="HeightRequest" Value="20"/>
+            <Setter Property="HeightRequest" Value="20"/>
+            <Setter Property="Margin" Value="0,0,0,0"/>
+            <Setter Property="Source" Value="visit.png"/>
+        </Style>
+        <!--下划线BoxView样式-->
+        <Style x:Key="UnderlineBoxViewStyle" TargetType="{x:Type BoxView}">
+            <Setter Property="BackgroundColor" Value="{StaticResource UnderlineColor}" />
+            <Setter Property="Margin" Value="0,0,0,0"/>
+            <Setter Property="HeightRequest" Value="1"/>
+        </Style>
+        <!--Message 标题样式-->
+        <Style x:Key="MessageTitleLabelStyle" TargetType="{x:Type Label}">
+            <Setter Property="TextColor" Value="#524f4f" />
+            <Setter Property="FontSize" Value="15"/>
+        </Style>
+        <!--Message 已读标题样式-->
+        <Style x:Key="MessageTitleReadLabelStyle" TargetType="{x:Type Label}">
+            <Setter Property="TextColor" Value="#999595" />
+            <Setter Property="FontSize" Value="15"/>
+        </Style>
+        <!--Message 内容样式-->
+        <Style x:Key="MessageContentLabelStyle" TargetType="{x:Type Label}">
+            <Setter Property="TextColor" Value="#626363" />
+            <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}"/>
+        </Style>
+        <!--Message 已读内容样式-->
+        <Style x:Key="MessageContentReadLabelStyle" TargetType="{x:Type Label}">
+            <Setter Property="TextColor" Value="#999595" />
+            <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}"/>
+        </Style>
+        <!--Message 时间样式-->
+        <Style x:Key="MessageDateLabelStyle" TargetType="{x:Type Label}">
+            <Setter Property="TextColor" Value="#999595" />
+            <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}"/>
+        </Style>
+        <!--About Copyright 样式-->
+        <Style x:Key="AboutCopyrightLabelStyle" TargetType="{x:Type Label}">
+            <Setter Property="TextColor" Value="{StaticResource DescriptionTextColor}" />
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
     </Application.Resources>
 </Application>

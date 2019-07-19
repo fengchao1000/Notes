@@ -1,0 +1,28 @@
+﻿{
+  "?xml": {
+    "@version": "1.0",
+    "@encoding": "utf-8"
+  },
+  "SalesOrder": [
+    {
+      "@xmlns:msxsl": "urn:schemas-microsoft-com:xslt",
+      "Client": "DM",
+      "Origin": "1",
+      "ReturnNumber": "1906130279943",
+      "OrderNumber": "1906112081656",
+      "CustomerPo": "283161668136804196",
+      "ExpressNumber": "3712824782527",
+      "ReturnPhone": "",
+      "ReturnReason": "七天无理由退货",
+      "ReturnName": "孙千惠",
+      "ReturnAddress": "中国 上海 上海市 长宁区 天山路街道上海市长宁区延安西路1882号东华大学",
+      "ReturnRemark": "\"\"",
+      "DetailList": [
+        {
+          "Barcode": "2419310060",
+          "Quantity": "1"
+        }
+      ]
+    }
+  ]
+}

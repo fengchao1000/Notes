@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Syncfusion.ListView.XForms.iOS;
 using UIKit;
+using Xam.Plugin.WebView.iOS;
 
 namespace Notes.iOS
 {
@@ -23,9 +25,21 @@ namespace Notes.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+
+            InitPlugins();
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
+        }
+
+        private void InitPlugins()
+        {
+            //初始化WebView插件
+            FormsWebViewRenderer.Initialize();
+
+            //初始化SfListView
+            SfListViewRenderer.Init();
         }
     }
 }

@@ -1,0 +1,28 @@
+﻿{
+  "?xml": {
+    "@version": "1.0",
+    "@encoding": "utf-8"
+  },
+  "SalesOrder": [
+    {
+      "@xmlns:msxsl": "urn:schemas-microsoft-com:xslt",
+      "Client": "CN06080525",
+      "Origin": "10",
+      "ReturnNumber": "I613147567831170",
+      "OrderNumber": "181225072511617401",
+      "CustomerPo": "",
+      "ExpressNumber": "",
+      "ReturnPhone": "",
+      "ReturnReason": "物品损坏",
+      "ReturnName": "李凯",
+      "ReturnAddress": "测试",
+      "ReturnRemark": "qweqweqweqeqweq",
+      "DetailList": [
+        {
+          "Barcode": "36",
+          "Quantity": "1"
+        }
+      ]
+    }
+  ]
+}

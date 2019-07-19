@@ -1,0 +1,73 @@
+﻿{
+  "@xmlns:msxsl": "urn:schemas-microsoft-com:xslt",
+  "@xmlns:user": "urn:my-scripts",
+  "DataAreaID": "CNDRMAR001",
+  "CreatedBy": "qimen",
+  "Partition": "5000000000",
+  "InventSiteID": "CN",
+  "InventLocationID": "OE",
+  "CustTable": {
+    "Name": "我***",
+    "AccountNum": "我***"
+  },
+  "RetailChannelTable": {
+    "ChannelType": "1",
+    "InventLocationID": "OE",
+    "StoreNumber": "drmartens旗舰店"
+  },
+  "SalesTable": {
+    "SalesType": "2",
+    "BusinessMode": "1",
+    "returnType": "2",
+    "SalesStatus": "1",
+    "ReturnStatus": "0",
+    "SalesID": "1906010264847",
+    "SalesOriginID": "1905301967740",
+    "OMSOriginalRef": "454065891860302084",
+    "OMSReturnRef": "",
+    "CustAccount": "我***",
+    "ShipCarrierID": "",
+    "ReceiptDateRequested": "2019-06-01 08:53:30",
+    "ReceiptDateConfirmed": "2019-06-01 08:53:30",
+    "ReturnReasonCodeID": "7天无理由退换货"
+  },
+  "SalesLineEntities": [
+    {
+      "SalesLine": {
+        "SalesID": "1906010264847",
+        "ItemID": "1351200650",
+        "QtyOrdered": "1",
+        "SalesQty": "1"
+      },
+      "InventItemBarcode": {
+        "ItemID": "1351200650",
+        "ItemBarCode": "1351200650",
+        "BarcodeSetupID": "SKU"
+      },
+      "SalesLineAddress": {
+        "Name": "姜慧欣",
+        "CountryRegionID": "CN",
+        "StateID": "江苏省",
+        "CityID": "南通市",
+        "DistrictID": "启东市",
+        "StreetID": null,
+        "Address": "江苏省  南通市  启东市  汇龙镇 启东市汇龙镇团结新村64号604",
+        "ZipCode": "000000",
+        "Mobile": "18796125192",
+        "Phone": "18796125192"
+      }
+    }
+  ],
+  "SalesTableAddress": {
+    "Name": "姜慧欣",
+    "CountryRegionID": "CN",
+    "StateID": "江苏省",
+    "CityID": "南通市",
+    "DistrictID": "启东市",
+    "StreetID": null,
+    "Address": "江苏省  南通市  启东市  汇龙镇 启东市汇龙镇团结新村64号604",
+    "ZipCode": "000000",
+    "Mobile": "18796125192",
+    "Phone": "18796125192"
+  }
+}

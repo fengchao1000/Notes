@@ -1,0 +1,90 @@
+﻿{
+  "DataAreaID": "CN06080525",
+  "CreatedBy": "UNICEF",
+  "Partition": "5000000000",
+  "InventSiteID": "CN",
+  "InventLocationID": "OE",
+  "CustTable": {
+    "Name": "孙静",
+    "AccountNum": "孙静"
+  },
+  "RetailChannelTable": {
+    "ChannelType": "1",
+    "InventLocationID": "OE",
+    "StoreNumber": "旗舰店"
+  },
+  "SalesTable": {
+    "SalesType": "1",
+    "BusinessMode": "1",
+    "returnType": "0",
+    "returnStatus": "0",
+    "returnReplacementCreated": "0",
+    "CustomerRef": "",
+    "SalesStatus": "1",
+    "SalesID": "190103975366084301",
+    "CustAccount": "",
+    "ShipCarrierID": "YTO",
+    "ReceiptDateRequested": {
+      "date": "2019-01-03 14:38:56.000000",
+      "timezone_type": 3,
+      "timezone": "PRC"
+    },
+    "ReceiptDateConfirmed": {
+      "date": "2019-01-03 14:38:56.000000",
+      "timezone_type": 3,
+      "timezone": "PRC"
+    }
+  },
+  "SalesLineEntities": [
+    {
+      "SalesLine": {
+        "SalesID": 26,
+        "LineNum": 1,
+        "ItemID": 25,
+        "Name": "测试规格123",
+        "SalesPrice": "0.05",
+        "SalesQty": 3,
+        "QtyOrdered": 3
+      },
+      "InventItemBarcode": {
+        "ItemID": 25,
+        "ItemBarCode": 25,
+        "BarcodeSetupID": ""
+      },
+      "SalesTableAddress": {
+        "Name": "孙静测试",
+        "CountryRegionID": "CN",
+        "State": "北京市朝阳区",
+        "City": null,
+        "District": "",
+        "Street": "",
+        "Address": "三里屯路12号",
+        "ZipCode": "",
+        "Mobile": "18646470140",
+        "Phone": "",
+        "Email": "409944811@qq.com"
+      }
+    }
+  ],
+  "SalesTableAddress": {
+    "Name": "孙静测试",
+    "CountryRegionID": "CN",
+    "State": "北京市朝阳区",
+    "City": null,
+    "District": "",
+    "Street": "",
+    "Address": "三里屯路12号",
+    "ZipCode": "",
+    "Mobile": "18646470140",
+    "Phone": "",
+    "Email": "409944811@qq.com"
+  },
+  "DocuRefs": [
+    {
+      "TypeID": "text",
+      "Name": "remark",
+      "Notes": "",
+      "RefTable": "SalesTable"
+    }
+  ]
+}

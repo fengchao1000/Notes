@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:listView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:controls="clr-namespace:Notes.Controls;assembly=Notes"
+             x:Class="Notes.Views.Article.ArticlesPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="{StaticResource PageDefaultBackgroundColor}">
+            <!--<StackLayout Grid.Row="0" HeightRequest="70" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  >
+                        <controls:CustomSegmentedView
+                                    x:Name="SegmentedView"
+                                    PrimaryColor="{StaticResource SegmentedViewUnSelectedBackgroundColor}"
+                                    SecondaryColor="{StaticResource SegmentedViewSelectedBackgroundColor}"
+                                    SelectedTabIndex="0"
+                                    TitleFontSize ="{StaticResource TabViewTitleFontSize}"
+                                    TitleFontColor ="{StaticResource SegmentedViewSelectedFontColor}"
+                                    HorizontalOptions="FillAndExpand" 
+                                    VerticalOptions="FillAndExpand">
+                            <controls:CustomSegmentedView.TabButtonsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>全部消息</x:String>
+                                    <x:String>未读消息</x:String>
+                                </x:Array>
+                            </controls:CustomSegmentedView.TabButtonsSource>
+                        </controls:CustomSegmentedView>
+                    </StackLayout>-->
+            <StackLayout HeightRequest="5" BackgroundColor="{StaticResource PageDefaultBackgroundColor}"></StackLayout>
+            <listView:SfListView 
+                         x:Name="listView" 
+                         ItemSize="101"
+                         LoadMoreOption="Auto"
+                         LoadMoreCommandParameter="{Binding Source={x:Reference listView}}"
+                         LoadMoreCommand="{Binding LoadMoreCommand}"
+                         ItemsSource="{Binding MessageCollection}"
+                         IsBusy="{Binding IsBusy}"  
+                         ItemTapped="OnListViewItemTapped" 
+                         SwipeEnded="ListViewSwipeEnded"
+                         SwipeStarted="ListViewSwipeStarted"
+                         AllowSwiping="True" 
+                         BackgroundColor="{StaticResource PageDefaultBackgroundColor}">
+                <listView:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout BackgroundColor="{StaticResource PageDefaultBackgroundColor}">
+                            <controls:CustomCornerRadiusCardView Margin="5,0,5,5" BackgroundColor="White" Padding="10,10,10,10" >
+                                <Grid RowSpacing="0" ColumnSpacing="0" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="1" />
+                                        <RowDefinition Height="45" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="35" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="80" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0" >
+                                        <Image Source="{Binding NotificationImage}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="30" WidthRequest="30"/>
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="1" >
+                                        <controls:CustomItemLabel 
+                            LineSpacing="1.3"
+                            MaxLines="1" 
+                            Text="{Binding Title}"
+                            Style="{Binding MessageTitleLabelStyle}" />
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="2"  >
+                                        <Label Text="{Binding Date}" Style="{StaticResource MessageDateLabelStyle}"></Label>
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions="FillAndExpand" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+                                        <BoxView Style="{StaticResource UnderlineBoxViewStyle}"  />
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" >
+                                        <controls:CustomItemLabel LineSpacing="1.3"
+                           MaxLines="2" 
+                           Text="{Binding Summary}"
+                           Style="{Binding MessageContentLabelStyle}" />
+                                    </StackLayout>
+                                </Grid>
+                            </controls:CustomCornerRadiusCardView>
+                        </StackLayout>
+                    </DataTemplate>
+                </listView:SfListView.ItemTemplate>
+                <listView:SfListView.RightSwipeTemplate>
+                    <DataTemplate x:Name="RightSwipeTemplate">
+                        <StackLayout BackgroundColor="{StaticResource PageDefaultBackgroundColor}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <controls:CustomCornerRadiusCardView Margin="5,0,5,5" BackgroundColor="#DC595F" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Grid BackgroundColor="#DC595F" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Path=BindingContext.DeleteCommand, Source={x:Reference listView}}" />
+                                    </Grid.GestureRecognizers>
+                                    <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                                        <Image 
+                                                    Grid.Column="0"
+                                                    Grid.Row="0"
+                                                    HeightRequest="28"
+                                                    WidthRequest="28"
+                                                    BackgroundColor="Transparent"
+                                                    Source="delete.png">
+                                        </Image>
+                                    </Grid>
+                                </Grid>
+                            </controls:CustomCornerRadiusCardView>
+                        </StackLayout>
+                    </DataTemplate>
+                </listView:SfListView.RightSwipeTemplate>
+                <listView:SfListView.LoadMoreTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Label 
+                                        Text="加载更多..." 
+                                        TextColor="Black" 
+                                        HorizontalTextAlignment="Center" 
+                                        VerticalTextAlignment="Center" 
+                                        IsVisible="{Binding IsBusy, Source={x:Reference Name=listView}}" />
+                        </Grid>
+                    </DataTemplate>
+                </listView:SfListView.LoadMoreTemplate>
+            </listView:SfListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

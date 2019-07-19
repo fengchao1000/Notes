@@ -1,0 +1,38 @@
+﻿{
+  "?xml": {
+    "@version": "1.0",
+    "@encoding": "utf-8"
+  },
+  "SalesOrder": [
+    {
+      "@xmlns:msxsl": "urn:schemas-microsoft-com:xslt",
+      "Client": "CN06080525",
+      "Origin": "",
+      "OrderType": "BToC",
+      "OrderNumber": "190103975366084301",
+      "CustomerPo": "",
+      "BuyName": "孙静",
+      "ReceiverName": "孙静测试",
+      "ReceiverCountry": "",
+      "ReceiverProvince": "北京市朝阳区",
+      "ProvinceID": "",
+      "ReceiverCity": "",
+      "ReceiverDistrict": "",
+      "ReceiverAddress": "三里屯路12号",
+      "ReceiverZipCode": "",
+      "ReceiverMobile": "18646470140",
+      "ReceiverPhone": "",
+      "SellerRemark": "",
+      "BuyerRemark": "\"\"",
+      "RecordTime": "2019-01-03 14:38:56.0000003PRC",
+      "ExpressCode": "YTO",
+      "DetailList": [
+        {
+          "Barcode": "25",
+          "Quantity": "3",
+          "Price": "0.05"
+        }
+      ]
+    }
+  ]
+}
