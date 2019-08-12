@@ -82,6 +82,8 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\LoggerAndroidHelper.cs" />
+    <Compile Include="Helpers\SimpleLoggerBase.cs" />
     <Compile Include="Helpers\SQLiteAndroidHelper.cs" />
     <Compile Include="Helpers\ToasterAndroidHelper.cs" />
     <Compile Include="MainActivity.cs" />
