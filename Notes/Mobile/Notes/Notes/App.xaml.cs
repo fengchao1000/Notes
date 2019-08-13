@@ -2,6 +2,8 @@
 using Notes.Helpers;
 using Notes.Services;
 using Notes.Views.Article;
+using Plugin.SimpleLogger;
+using Plugin.SimpleLogger.Abstractions;
 using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -23,7 +25,12 @@ namespace Notes
             //创建或者更新Sqlite数据库表
             Task.Run(() => SqliteHelper.Current.CreateOrUpdateAllTablesAsync());
 
+            CrossSimpleLogger.Current.Configure("mylog", 3, 100, LogLevel.Warning);
+
+            CrossSimpleLogger.Current.Info("Application Started...");
+
             MainPage = new CustomNavigationPage(new ArticlesPage());
+
         }
 
         protected override void OnStart()

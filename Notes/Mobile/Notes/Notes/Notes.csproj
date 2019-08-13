@@ -13,6 +13,7 @@
   <ItemGroup>
     <PackageReference Include="IdentityModel" Version="3.10.10" />
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="2.0.0" />
+    <PackageReference Include="Plugin.SimpleLogger" Version="1.1.0" />
     <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
     <PackageReference Include="SQLitePCLRaw.core" Version="1.1.13" />
     <PackageReference Include="Syncfusion.Licensing" Version="17.1.0.49" />

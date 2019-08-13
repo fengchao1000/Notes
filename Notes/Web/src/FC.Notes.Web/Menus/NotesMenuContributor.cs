@@ -32,7 +32,7 @@ namespace FC.Notes.Web.Menus
 
             context.Menu.AddItem(
                 new ApplicationMenuItem("Notes", l["Menu:Bookmark"])
-                    .AddItem(new ApplicationMenuItem("Notes.Bookmarks", l["Menu:Bookmarks"], url: "/Bookmarks"))
+                    .AddItem(new ApplicationMenuItem("Notes.Bookmarks", l["Menu:Bookmark"], url: "/Bookmarks"))
             );
         }
     }
