@@ -25,7 +25,7 @@ namespace Notes.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
             LoggerAndroidHelper logger = new LoggerAndroidHelper();
-            logger.Configure("mylog", 3, 100, LogLevel.Warning);
+            logger.Configure("mylog", 3, 100, LogLevel.Debug);
             logger.Info("notesLog");
 
             LoadApplication(new App());

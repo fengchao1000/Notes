@@ -137,7 +137,7 @@ namespace Notes.Services.Articles
                       ""id"": 1,
                       ""title"": ""DDD理论学习系列（1）-- 通用语言"",
                       ""summary"": ""在开始之前，我想我们有必要先了解以下DDD的主要参与者。因为毕竟语言是人说的吗，就像我们面向对象编程一样，那通用语言面向的是"",
-                      ""url"": ""https://www.jianshu.com/p/ec729b949a1c"",
+                      ""url"": ""https://www.ebay.com/itm/254300922947"",
                       ""description"": ""在开始之前，我想我们有必要先了解以下DDD的主要参与者。因为毕竟语言是人说的吗，就像我们面向对象编程一样，那通用语言面向的是"",
                       ""category"": 1,
                       ""body"": ""1"",
