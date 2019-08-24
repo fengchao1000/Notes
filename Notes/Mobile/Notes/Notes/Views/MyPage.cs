@@ -32,8 +32,11 @@ namespace Notes.Views
 
             var isVi = false;
             button.Clicked += (s, e) => {
-                var culture = !isVi ? viCulture : defaultCulture;
 
+                var viCultureENUS = new CultureInfo("en-us");
+
+                var culture = !isVi ? viCulture : viCultureENUS;
+                  
                 localizer.SetLocale(culture);
 
                 isVi = !isVi;

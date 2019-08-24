@@ -28,15 +28,16 @@ namespace Notes
             //注册服务
             ServicesManager.Initialize();
 
+            LoggerHelper.Current.Debug("Initialize OK");
+
             //创建或者更新Sqlite数据库表
             Task.Run(() => SqliteHelper.Current.CreateOrUpdateAllTablesAsync());
 
-            CrossSimpleLogger.Current.Configure("mylog", 3, 100, LogLevel.Warning);
-
-            CrossSimpleLogger.Current.Info("Application Started...");
-
+            LoggerHelper.Current.Debug("SqliteHelper.Current.CreateOrUpdateAllTablesAsync OK");
+             
             MainPage = new CustomNavigationPage(new MyPage());
 
+            LoggerHelper.Current.Debug("CustomNavigationPage OK");
         }
 
         public static ResourceManager ResManager

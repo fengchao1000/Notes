@@ -30,7 +30,9 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            
+
+            <Button x:Name="LoginButton" AutomationId="LoginButton" Clicked="OnButtonClicked"  Text="登    录"    VerticalOptions="Start" />
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -19,7 +19,7 @@ namespace Notes.Views
         {
             InitializeComponent();
 
-            
+
 
             var items = new List<DateTime>();
 
@@ -30,6 +30,23 @@ namespace Notes.Views
 
             lstDates.ItemsSource = items;
 
+        }
+
+
+        async void OnButtonClicked(object sender, System.EventArgs e)
+        {
+            var getter = DependencyService.Get<IDependencyGetter>();
+            var localizer = getter.Get<ILocalizer>();
+
+            var viCultureENUS = new CultureInfo("en-us");
+
+            var culture = viCultureENUS;
+
+            var data = localizer.GetCurrentCultureInfo();
+             
+            localizer.SetLocale(culture);
+
+            base.OnAppearing();
         }
     }
 }
