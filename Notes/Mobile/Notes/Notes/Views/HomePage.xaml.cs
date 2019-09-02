@@ -47,6 +47,9 @@ namespace Notes.Views
             localizer.SetLocale(culture);
 
             base.OnAppearing();
+
+            Navigation.PushAsync(new TestPage()); 
+
         }
     }
 }

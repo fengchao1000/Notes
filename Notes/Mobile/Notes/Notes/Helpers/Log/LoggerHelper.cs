@@ -40,8 +40,8 @@ namespace Notes.Helpers
                 case LoggerType.Syslog:
                     var genOptions = new SyslogOptions
                     {
-                        HostNameOrIp = "193.112.158.254",
-                        Port = 518,
+                        HostNameOrIp = "106.52.218.254",
+                        Port = 514,
                         AppNameOrTag = "Notes"
                     };
                     iLogger = new SyslogLogger(genOptions);

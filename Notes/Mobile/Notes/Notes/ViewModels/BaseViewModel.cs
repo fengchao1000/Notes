@@ -9,6 +9,16 @@ namespace Notes.ViewModels
     public abstract class BaseViewModel : BindableObject
     {
 
+        public ResourcesHelper Resources => ResourcesHelper.Current;
+
+        public void LoadLocale(string localeType)
+        {
+            ResourcesHelper.Current.SetLocale(localeType);
+
+            OnPropertyChanged(nameof(Resources)); 
+        } 
+
+
         LoadMoreStatus loadStatus;
         public LoadMoreStatus LoadStatus
         {  
