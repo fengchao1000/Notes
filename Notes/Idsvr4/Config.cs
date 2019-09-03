@@ -45,11 +45,11 @@ namespace Idsvr4
                     AccessTokenType = AccessTokenType.Jwt,
                     RedirectUris =
                     {
-                        "https://localhost:5003/signin-callback.html",
-                        "https://localhost:5003/silent-callback.html"
+                        "http://localhost:5003/callback.html",
+                        "http://localhost:5003/silent.html"
                     },
-                    PostLogoutRedirectUris = { "https://localhost:5003" },
-                    AllowedCorsOrigins = { "https://localhost:5003" },
+                    PostLogoutRedirectUris = { "http://localhost:5003" },
+                    AllowedCorsOrigins = { "http://localhost:5003" },
                     RequireConsent = false,
                     AllowedScopes =
                     {

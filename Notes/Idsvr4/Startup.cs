@@ -15,7 +15,9 @@ namespace Idsvr4
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
-        {  
+        {
+            services.AddMvc();
+
             services.AddIdentityServer()
                    //配置证书
                    .AddDeveloperSigningCredential()
@@ -46,9 +48,22 @@ namespace Idsvr4
 
             app.UseIdentityServer();//IdentityServer4中间件
               
-            app.Run(async (context) =>
+            //app.Run(async (context) =>
+            //{
+            //    await context.Response.WriteAsync("IdentityServer4");
+            //});
+
+            app.UseStaticFiles();
+
+            //app.UseMvcWithDefaultRoute();
+
+            app.UseMvc(routes =>
             {
-                await context.Response.WriteAsync("IdentityServer4");
+                routes.MapRoute(
+                    name: "Default",
+                    template: "{controller}/{action}/{id?}",
+                    defaults: new { controller = "Account", action = "Login" }
+                );
             });
         }
     }

@@ -1,0 +1,77 @@
+﻿@using IdentityServer4.Extensions  
+@{
+    string name = null;
+    if (!true.Equals(ViewData["signed-out"]))
+    {
+
+    }
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>认证中心</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/images/favicon.ico" />
+    <link href="~/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/common.css" rel="stylesheet" />
+    <link href="~/css/login.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class="page-sidebar-wrapper">
+        <div class="page-sidebar navbar-collapse collapse">
+            <div class="center">
+                <div class="stretchContent">
+                    <div class="header">
+                        <div class="topbar1">
+                            <div class="topleft1">
+                                <div class="logo1">
+                                    <a href="/"><img src=""  class="logo-default" /></a>
+                                    <b>认证中心</b>
+                                </div>
+                            </div>
+                            <div class="topright1" id="">
+                                
+                            </div>
+                            @if (!string.IsNullOrWhiteSpace(name))
+                            {
+                                <ul class="nav navbar-nav">
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">@name <b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a asp-action="Logout" asp-controller="Account">Logout</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            }
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                    <div class="page-container">
+                        <div class="container body-content">
+                            @RenderBody()
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <div class="footerlink"></div>
+                        <div class="footercr">
+                             
+                            <p> 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+<script src="~/js/jquery.cookie.js"></script>
+<script src="~/js/login.js"></script>
