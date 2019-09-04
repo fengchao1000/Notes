@@ -24,6 +24,8 @@ namespace Idsvr4.IdentityServerExtensions
 
         public Task ValidateAsync(ResourceOwnerPasswordValidationContext context)
         {
+            string verificationCode = context.Request.Raw.Get("VerificationCode");
+
             //根据context.UserName和context.Password与数据库的数据做校验，判断是否合法
             if (context.UserName == "test" && context.Password == "test")
             {

@@ -27,8 +27,12 @@ namespace Idsvr4
                    .AddInMemoryIdentityResources(Config.GetIdentityResources())
                    //预置Client
                    .AddInMemoryClients(Config.GetClients())
+                   //自定义登录返回信息
                    .AddProfileService<ProfileService>()
-                   .AddResourceOwnerValidator<ResourceOwnerPasswordValidator>();
+                   //添加Password模式下用于自定义登录验证 
+                   .AddResourceOwnerValidator<ResourceOwnerPasswordValidator>()
+                   //添加自定义授权模式
+                  .AddExtensionGrantValidator<SMSGrantValidator>();
 
             services.AddAuthentication()
             .AddCookie(options =>

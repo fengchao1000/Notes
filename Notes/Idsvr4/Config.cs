@@ -1,6 +1,7 @@
 ﻿using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Models;
+using Idsvr4.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,6 +67,24 @@ namespace Idsvr4
                     ClientSecrets = { new Secret("123456".Sha256()) },
                     AccessTokenLifetime = 60*60,//单位s
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
+                    SlidingRefreshTokenLifetime =  2592000,
+                    AllowOfflineAccess = true,
+                    AllowedScopes = new List<string>
+                    {
+                        "FrameworkAPI",//对应webapi里面的scope配置
+                        StandardScopes.OfflineAccess,
+                        StandardScopes.OpenId,
+                        StandardScopes.Profile
+                    }
+                },
+                //自定义短信验证模式
+                new Client
+                {
+                    ClientId = "sms",
+                    ClientName = "sms",
+                    ClientSecrets = { new Secret("123456".Sha256()) },
+                    AccessTokenLifetime = 60*60,//单位s
+                    AllowedGrantTypes = new[] {ExtensionGrantTypes.SMSGrantType}, //一个 Client 可以配置多个 GrantType
                     SlidingRefreshTokenLifetime =  2592000,
                     AllowOfflineAccess = true,
                     AllowedScopes = new List<string>
