@@ -11,14 +11,14 @@ namespace FrameworkAPI.Controllers
     //[PermitFilter]
     //[Authorize]
     public class TestController : BaseController
-    {  
+    {
         public IHttpActionResult Get()
         {
 
             string userIDTest = UserID;
 
             var user = User as ClaimsPrincipal;
-
+            
             var claims = from c in user.Claims
                          select new
                          {

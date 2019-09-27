@@ -26,6 +26,6 @@ namespace FC.Notes
 
             return new List<TagDto>(
                 ObjectMapper.Map<List<Tag>, List<TagDto>>(postTags));
-        }
+        }  
     }
 }

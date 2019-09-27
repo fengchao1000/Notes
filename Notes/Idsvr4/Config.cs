@@ -26,7 +26,8 @@ namespace Idsvr4
         {
             return new List<ApiResource>
             {
-                new ApiResource("FrameworkAPI",new List<string>(){JwtClaimTypes.Subject})
+                new ApiResource("FrameworkAPI",new List<string>(){JwtClaimTypes.Subject}),
+                new ApiResource("NetCoreAPI",new List<string>(){JwtClaimTypes.Subject})
             };
         }
 
@@ -59,19 +60,22 @@ namespace Idsvr4
                         "FrameworkAPI"//对应webapi里面的scope配置
                     }
                 },
-                //ResourceOwnerPassword模式Client配置，适用于App、webform
+                //ResourceOwnerPassword模式Client配置，适用于App、Winform
                 new Client
                 {
-                    ClientId = "App",
+                    ClientId = "Wpf",
                     ClientName = "App",
                     ClientSecrets = { new Secret("123456".Sha256()) },
                     AccessTokenLifetime = 60*60,//单位s
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
-                    SlidingRefreshTokenLifetime =  2592000,
+                    AbsoluteRefreshTokenLifetime = 2592000,//RefreshToken的最长生命周期,默认30天
+                    RefreshTokenExpiration = TokenExpiration.Sliding,//刷新令牌时，将刷新RefreshToken的生命周期。RefreshToken的总生命周期不会超过AbsoluteRefreshTokenLifetime。
+                    SlidingRefreshTokenLifetime = 3600*24,//以秒为单位滑动刷新令牌的生命周期。 
                     AllowOfflineAccess = true,
                     AllowedScopes = new List<string>
                     {
                         "FrameworkAPI",//对应webapi里面的scope配置
+                        "NetCoreAPI",//对应webapi里面的scope配置
                         StandardScopes.OfflineAccess,
                         StandardScopes.OpenId,
                         StandardScopes.Profile
@@ -85,11 +89,34 @@ namespace Idsvr4
                     ClientSecrets = { new Secret("123456".Sha256()) },
                     AccessTokenLifetime = 60*60,//单位s
                     AllowedGrantTypes = new[] {ExtensionGrantTypes.SMSGrantType}, //一个 Client 可以配置多个 GrantType
-                    SlidingRefreshTokenLifetime =  2592000,
+                    AbsoluteRefreshTokenLifetime = 2592000,//RefreshToken的最长生命周期,默认30天
+                    RefreshTokenExpiration = TokenExpiration.Sliding,//刷新令牌时，将刷新RefreshToken的生命周期。RefreshToken的总生命周期不会超过AbsoluteRefreshTokenLifetime。
+                    SlidingRefreshTokenLifetime = 3600*24,//以秒为单位滑动刷新令牌的生命周期。
                     AllowOfflineAccess = true,
                     AllowedScopes = new List<string>
                     {
                         "FrameworkAPI",//对应webapi里面的scope配置
+                        "NetCoreAPI",//对应webapi里面的scope配置
+                        StandardScopes.OfflineAccess,
+                        StandardScopes.OpenId,
+                        StandardScopes.Profile
+                    }
+                },
+                new Client
+                {
+                    ClientId = "SwaggerClientId",
+                    ClientName = "Swagger UI",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowAccessTokensViaBrowser = true,
+                    RequireConsent = false,
+                    RedirectUris =
+                    {
+                        "http://localhost:5001/swagger/oauth2-redirect.html"//swagger回调地址
+                    },
+                    AllowedScopes = new List<string>
+                    {
+                        "FrameworkAPI",//对应webapi里面的scope配置
+                        "NetCoreAPI",//对应webapi里面的scope配置
                         StandardScopes.OfflineAccess,
                         StandardScopes.OpenId,
                         StandardScopes.Profile
