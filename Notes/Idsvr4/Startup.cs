@@ -3,15 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Idsvr4.IdentityServerExtensions;
+using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Idsvr4
 {
     public class Startup
     {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
@@ -31,8 +41,20 @@ namespace Idsvr4
                    .AddProfileService<ProfileService>()
                    //添加Password模式下用于自定义登录验证 
                    .AddResourceOwnerValidator<ResourceOwnerPasswordValidator>()
-                   //添加自定义授权模式
-                  .AddExtensionGrantValidator<SMSGrantValidator>();
+                  //添加自定义授权模式
+                  .AddExtensionGrantValidator<SMSGrantValidator>()
+                  //添加操作数据存储
+                  .AddOperationalStore(options =>
+                  {
+                      options.RedisConnectionString = Configuration.GetConnectionString("Redis");
+                      options.Db = 1;
+                  })
+                  //IdentityServer配置缓存，缓存Client、CorsPolicy、Resource等信息，CachingClientStore，CachingCorsPolicyService，CachingResourceStore，https://github.com/AliBazzi/IdentityServer4.Contrib.RedisStore
+                  .AddRedisCaching(options =>
+                  {
+                      options.RedisConnectionString = Configuration.GetConnectionString("Redis");
+                      options.Db = 1;
+                  });
 
             services.AddAuthentication()
             .AddCookie(options =>
@@ -40,6 +62,8 @@ namespace Idsvr4
                 options.ExpireTimeSpan = System.TimeSpan.FromMinutes(30);
                 options.SlidingExpiration = true;
             });
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

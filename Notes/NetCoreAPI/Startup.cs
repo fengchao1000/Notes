@@ -29,6 +29,17 @@ namespace NetCoreAPI
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("damco", builder =>
+                {
+                    builder.WithOrigins("")
+                    .WithHeaders("Content-Type")
+                    .WithMethods("Get")
+                    .AllowCredentials();
+                });
+            });
+
             //Swagger
             //services.AddSwaggerGen(c =>
             //{

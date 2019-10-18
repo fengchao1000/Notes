@@ -20,7 +20,7 @@ using System.Threading.Tasks;
 
 namespace Idsvr4.Controllers.Account
 {
-    [SecurityHeaders]
+    //[SecurityHeaders]
     public class AccountController : Controller
     { 
         private readonly IIdentityServerInteractionService interaction;
