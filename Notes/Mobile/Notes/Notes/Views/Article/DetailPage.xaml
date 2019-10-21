@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Notes.Views.Article.DetailPage">
+    <ContentPage.Content>
+        <StackLayout Spacing="0" Padding="10,0,10,0" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+            <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="0" HeightRequest="30">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center" >
+                    <Label Text="发件人：" Style="{StaticResource EbayMsgMenuLabelStyle}" />
+                    <Label Text="BuyerID" Style="{StaticResource EbayMsgMenuLabelStyle}" />
+                </StackLayout>
+                <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="Center">
+                    <Label Text="YYYY-MM-DD " Style="{StaticResource EbayMsgMenuLabelStyle}" />
+                </StackLayout>
+            </StackLayout>
+            <StackLayout HeightRequest="1" Padding="0,0,0,0" HorizontalOptions="FillAndExpand" Grid.Row="1" >
+                <BoxView Style="{StaticResource UnderlineBoxViewStyle}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center" >
+                <StackLayout HorizontalOptions="Start" WidthRequest="100" >
+                    <Label Text="主题：" WidthRequest="100" Style="{StaticResource EbayMsgMenuLabelStyle}" />
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="211211222222222222222222221111111111111111111111111111111" Style="{StaticResource EbayMsgMenuLabelStyle}" />
+                </StackLayout>
+            </StackLayout>
+            <StackLayout HeightRequest="1" Padding="0,0,0,0" HorizontalOptions="FillAndExpand" Grid.Row="1" >
+                <BoxView Style="{StaticResource UnderlineBoxViewStyle}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="0" HeightRequest="30">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center" >
+                    <Label Text="发件人：" Style="{StaticResource EbayMsgMenuLabelStyle}" />
+                    <Label Text="BuyerID" Style="{StaticResource EbayMsgMenuLabelStyle}" />
+                </StackLayout>
+                <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="Center">
+                    <Label Text="YYYY-MM-DD " Style="{StaticResource EbayMsgMenuLabelStyle}" />
+                </StackLayout>
+            </StackLayout>
+            <StackLayout HeightRequest="1" Padding="0,0,0,0" HorizontalOptions="FillAndExpand" Grid.Row="1" >
+                <BoxView Style="{StaticResource UnderlineBoxViewStyle}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
