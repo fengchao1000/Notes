@@ -67,7 +67,7 @@ namespace FC.Notes
 
                 if (oldTagNameInNewTags == null)
                 {
-                    bookmark.RemoveTag(oldTag.TagId);
+                    //bookmark.RemoveTag(oldTag.TagId);
 
                     tag.DecreaseUsageCount();
 
