@@ -19,7 +19,7 @@ namespace FC.Notes.EntityFrameworkCore
      * used modules (as explained above). See NotesMigrationsDbContext for migrations.
      */
     [ConnectionStringName("Default")]
-    public class NotesDbContext : AbpDbContext<NotesDbContext>
+    public class NotesDbContext : AbpDbContext<NotesDbContext>, INotesDbContext
     {
         public DbSet<AppUser> Users { get; set; } 
         public DbSet<Bookmark> Bookmarks { get; set; } 
