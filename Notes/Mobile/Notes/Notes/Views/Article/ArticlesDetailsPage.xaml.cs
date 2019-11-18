@@ -23,6 +23,13 @@ namespace Notes.Views.Article
             BindingContext = viewModel = new ArticlesDetailViewModel(message);
              
         }
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            Navigation.InsertPageBefore(new ArticlesMenuPage(), this);
+        }
+        
           
     }
 }

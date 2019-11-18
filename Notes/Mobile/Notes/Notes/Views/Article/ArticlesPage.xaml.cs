@@ -25,6 +25,8 @@ namespace Notes.Views.Article
             BindingContext = viewModel = new ArticlesViewModel();
 
             viewModel.LoadMessagePageList();
+
+            
         }
 
         /// <summary>
