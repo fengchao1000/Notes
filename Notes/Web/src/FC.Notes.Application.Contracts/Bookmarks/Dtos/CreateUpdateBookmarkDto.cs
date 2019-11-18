@@ -15,8 +15,9 @@ namespace FC.Notes.Bookmarks.Dtos
         [Required]
         [StringLength(BookmarkConsts.MaxUrlLength)]
         public string LinkUrl { get; set; } 
-        [StringLength(BookmarkConsts.MaxContentLength)]
+        
         public LinkSourceType LinkSourceType { get; set; }
+        [StringLength(BookmarkConsts.MaxContentLength)]
         public string Content { get; set; }
         public string Tags { get; set; }
         
