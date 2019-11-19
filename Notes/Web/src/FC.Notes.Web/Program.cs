@@ -23,13 +23,13 @@ namespace FC.Notes.Web
                 .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
                 .Enrich.WithProperty("Application", "Notes")
                 .Enrich.FromLogContext()
-                .WriteTo.File("Logs/logs.txt")
+               //.WriteTo.File("Logs/logs.txt")
                 .WriteTo.Elasticsearch(
                    new ElasticsearchSinkOptions(new Uri("http://117.48.227.241:9200/"))
                    {
                        AutoRegisterTemplate = true,
                        AutoRegisterTemplateVersion = AutoRegisterTemplateVersion.ESv6,
-                       IndexFormat = "Notes-log-{0:yyyy.MM}"
+                       IndexFormat = "msdemo-log-{0:yyyy.MM}"
                    })
                 .CreateLogger();
             
