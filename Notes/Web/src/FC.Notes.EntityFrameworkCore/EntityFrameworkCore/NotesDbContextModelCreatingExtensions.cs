@@ -1,4 +1,5 @@
 ﻿using FC.Notes.Bookmarks;
+using FC.Notes.Categorys;
 using FC.Notes.Posts;
 using FC.Notes.Tagging;
 using Microsoft.EntityFrameworkCore;
@@ -62,6 +63,18 @@ namespace FC.Notes.EntityFrameworkCore
                 b.Property(x => x.UsageCount).HasColumnName(nameof(Tag.UsageCount));
 
                 b.HasMany<BookmarkTag>().WithOne().HasForeignKey(qt => qt.TagId);
+            });
+
+            builder.Entity<Category>(b =>
+            {
+                b.ToTable(NotesConsts.DbTablePrefix + "Categorys", NotesConsts.DbSchema);
+
+                b.ConfigureFullAuditedAggregateRoot();
+
+                b.Property(x => x.Name).IsRequired().HasMaxLength(TagConsts.MaxNameLength).HasColumnName(nameof(Category.Name));
+                b.Property(x => x.Description).HasMaxLength(TagConsts.MaxDescriptionLength).HasColumnName(nameof(Category.Description));
+                b.Property(x => x.UsageCount).HasColumnName(nameof(Category.UsageCount));
+                
             });
         }
 

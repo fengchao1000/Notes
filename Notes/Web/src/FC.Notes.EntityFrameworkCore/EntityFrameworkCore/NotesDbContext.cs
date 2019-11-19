@@ -6,6 +6,7 @@ using Volo.Abp.EntityFrameworkCore.Modeling;
 using Volo.Abp.Users.EntityFrameworkCore;
 using FC.Notes.Bookmarks;
 using FC.Notes.Tagging;
+using FC.Notes.Categorys;
 
 namespace FC.Notes.EntityFrameworkCore
 {
@@ -24,7 +25,8 @@ namespace FC.Notes.EntityFrameworkCore
         public DbSet<AppUser> Users { get; set; } 
         public DbSet<Bookmark> Bookmarks { get; set; } 
         public DbSet<BookmarkTag> BookmarkTags { get; set; } 
-        public DbSet<Tag> Tags { get; set; }
+        public DbSet<Tag> Tags { get; set; } 
+        public DbSet<Category> Categorys { get; set; }
 
         /* Add DbSet properties for your Aggregate Roots / Entities here.
          * Also map them inside NotesDbContextModelCreatingExtensions.ConfigureNotes

@@ -1,4 +1,5 @@
 ﻿using FC.Notes.Bookmarks;
+using FC.Notes.Categorys;
 using FC.Notes.Tagging;
 using FC.Notes.Users;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +18,6 @@ namespace FC.Notes.EntityFrameworkCore
           DbSet<Bookmark> Bookmarks { get; set; }
           DbSet<BookmarkTag> BookmarkTags { get; set; }
           DbSet<Tag> Tags { get; set; }
-         
+          DbSet<Category> Categorys { get; set; }
     }
 }

@@ -105,6 +105,58 @@ namespace FC.Notes.Migrations
                     b.ToTable("BMBookmarkTags");
                 });
 
+            modelBuilder.Entity("FC.Notes.Categorys.Category", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<Guid?>("DeleterId")
+                        .HasColumnName("DeleterId");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnName("DeletionTime");
+
+                    b.Property<string>("Description")
+                        .HasColumnName("Description")
+                        .HasMaxLength(512);
+
+                    b.Property<string>("ExtraProperties")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("IsDeleted")
+                        .HasDefaultValue(false);
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnName("Name")
+                        .HasMaxLength(64);
+
+                    b.Property<int>("UsageCount")
+                        .HasColumnName("UsageCount");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BMCategorys");
+                });
+
             modelBuilder.Entity("FC.Notes.Tagging.Tag", b =>
                 {
                     b.Property<Guid>("Id")

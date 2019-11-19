@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.InProcess;
 using Serilog;
 using Serilog.Events;
+using Serilog.Sinks.Elasticsearch;
 
 namespace FC.Notes.Web
 {
@@ -20,9 +21,18 @@ namespace FC.Notes.Web
                 .MinimumLevel.Information()
 #endif
                 .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+                .Enrich.WithProperty("Application", "Notes")
                 .Enrich.FromLogContext()
                 .WriteTo.File("Logs/logs.txt")
+                .WriteTo.Elasticsearch(
+                   new ElasticsearchSinkOptions(new Uri("http://117.48.227.241:9200/"))
+                   {
+                       AutoRegisterTemplate = true,
+                       AutoRegisterTemplateVersion = AutoRegisterTemplateVersion.ESv6,
+                       IndexFormat = "Notes-log-{0:yyyy.MM}"
+                   })
                 .CreateLogger();
+            
 
             try
             {
