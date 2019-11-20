@@ -20,6 +20,7 @@
     <PackageReference Include="SQLitePCLRaw.core" Version="1.1.13" />
     <PackageReference Include="Syncfusion.Licensing" Version="17.1.0.49" />
     <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="17.1.0.49" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPullToRefresh" Version="17.1.0.49" />
     <PackageReference Include="Xam.Plugin.WebView" Version="2.1.3" />
     <PackageReference Include="Xamarin.Forms" Version="3.6.0.264807" />
     <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
@@ -42,6 +43,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Article\DetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Bookmarks\BookmarkPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Categorys\CategoryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\HomePage.xaml">

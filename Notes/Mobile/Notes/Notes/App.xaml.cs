@@ -4,6 +4,7 @@ using Notes.Resources;
 using Notes.Services;
 using Notes.Views;
 using Notes.Views.Article;
+using Notes.Views.Categorys;
 using Plugin.SimpleLogger;
 using Plugin.SimpleLogger.Abstractions;
 using System;
@@ -35,7 +36,7 @@ namespace Notes
 
             LoggerHelper.Current.Debug("SqliteHelper.Current.CreateOrUpdateAllTablesAsync OK");
              
-            MainPage = new CustomNavigationPage(new ArticlesPage());
+            MainPage = new CustomNavigationPage(new CategoryPage());
 
             LoggerHelper.Current.Debug("CustomNavigationPage OK");
         }

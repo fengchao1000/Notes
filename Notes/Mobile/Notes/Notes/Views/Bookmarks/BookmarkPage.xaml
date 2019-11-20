@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:Notes.Controls;assembly=Notes"
+             xmlns:listView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:pullToRefresh="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms" 
+             mc:Ignorable="d"
+             x:Class="Notes.Views.Bookmarks.BookmarkPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- StackLayout样式 -->
+            <Style x:Key="AccountFunctionStackLayoutStyle" TargetType="StackLayout">
+                <Setter Property="Padding" >
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="iOS" Value="8" />
+                        <On Platform="Android" Value="5,8,5,5" />
+                    </OnPlatform>
+                </Setter>
+                <Setter Property="Orientation" Value="Horizontal"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+            </Style>
+
+            <Style x:Key="EbayMsgEbayBuyerIDLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" >
+                    <OnPlatform x:TypeArguments="x:Double" Android="14" iOS="14"/>
+                </Setter>
+                <Setter Property="TextColor" Value="{StaticResource DefaultTextColor}"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            </Style>
+
+            <Style x:Key="EbayMsgSubjectLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" >
+                    <OnPlatform x:TypeArguments="x:Double" Android="12" iOS="12"/>
+                </Setter>
+                <Setter Property="TextColor" Value="#828289"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            </Style>
+
+            <Style x:Key="EbayMsgMenuCountLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" >
+                    <OnPlatform x:TypeArguments="x:Double" Android="12" iOS="12"/>
+                </Setter>
+                <Setter Property="TextColor" Value="{StaticResource DefaultTextColor}"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            </Style>
+
+            <Style x:Key="EbayMsgMenuCountFrameStyle" TargetType="{x:Type Frame}">
+                <Setter Property="Padding" Value="5,0,5,0" />
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="HeightRequest"  Value="28" />
+                <Setter Property="HorizontalOptions"  Value="Center" />
+                <Setter Property="VerticalOptions"  Value="Center" />
+                <Setter Property="BackgroundColor"  Value="#767676" />
+                <Setter Property="CornerRadius" Value="20" />
+            </Style>
+
+            <Style x:Key="ColorFrameStyle" TargetType="{x:Type Frame}">
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="WidthRequest"  Value="8" />
+                <Setter Property="HeightRequest"  Value="8" />
+                <Setter Property="HorizontalOptions"  Value="Center" />
+                <Setter Property="BackgroundColor"  Value="#5199ff" />
+                <Setter Property="CornerRadius" Value="0" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources> 
+    <ContentPage.Content>
+        <pullToRefresh:SfPullToRefresh 
+            x:Name="pullToRefresh" 
+            Refreshing ="PullToRefreshRefreshing"
+            RefreshContentHeight="50"
+			PullingThreshold="150"
+            RefreshContentWidth="50"
+            TransitionMode="SlideOnTop"
+            ProgressStrokeWidth="5"
+            ProgressStrokeColor = "#c0c0c0" 
+            IsRefreshing="{Binding IsBusy}">
+            <pullToRefresh:SfPullToRefresh.PullableContent>
+                <listView:SfListView 
+                    x:Name="listView" 
+                    Margin="0"
+                    ItemSize="82"
+                    ItemsSource="{Binding Bookmarks}"
+                    IsBusy="{Binding IsBusy}" 
+                    HeaderSize="51"
+                    FooterSize="{Binding FooterSize}"
+                    BackgroundColor="White"
+                    SelectionBackgroundColor="#e7f1fb"
+                    ItemTapped="OnListViewItemTapped"  
+                    AllowSwiping="True"
+                    LoadMoreOption="Auto" 
+                    LoadMoreCommand="{Binding LoadMoreItemsCommand}"
+                    LoadMoreCommandParameter="{Binding Source={x:Reference Name=listView}}">
+                    <!--<listView:SfListView.HeaderTemplate>
+                        <DataTemplate>
+                            <StackLayout BackgroundColor="#E4E4E4" Padding="8,8,8,8">
+                                <controls:CustomSearchBar  
+                                    Text="{Binding SearchText, Mode=TwoWay}" 
+                                    Placeholder="搜索" 
+                                    SearchCommand="{Binding SearchCommand}"
+                                    HeightRequest="35"
+                                    FontSize="Small" >
+                                    <SearchBar.PlaceholderColor>
+                                        <OnPlatform x:TypeArguments="Color" Android="{StaticResource DescriptionTextColor}"/>
+                                    </SearchBar.PlaceholderColor>
+                                    <SearchBar.BackgroundColor>
+                                        <OnPlatform x:TypeArguments="Color" Android="White"/>
+                                    </SearchBar.BackgroundColor>
+                                    <SearchBar.TextColor>
+                                        <OnPlatform x:TypeArguments="Color" Android="Black"/>
+                                    </SearchBar.TextColor>
+                                    <SearchBar.CancelButtonColor>
+                                        <OnPlatform x:TypeArguments="Color" Android="{StaticResource DescriptionTextColor}"/>
+                                    </SearchBar.CancelButtonColor>
+                                </controls:CustomSearchBar>
+                            </StackLayout>
+                        </DataTemplate>
+                    </listView:SfListView.HeaderTemplate>-->
+                    <listView:SfListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="0" HeightRequest="82" Margin="20,8,15,0">
+                                <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Spacing="0" HeightRequest="25" Padding="0,0,5,0" >
+                                    <StackLayout HorizontalOptions="Start" VerticalOptions="Center" Padding="0,0,10,0" IsVisible="{Binding IsRead}" >
+                                        <Image 
+                                            VerticalOptions="CenterAndExpand"
+                                            HeightRequest="8" 
+                                            WidthRequest="8" 
+                                            IsVisible="{Binding IsRead}" 
+                                            Source="ic_ebaymsg_unread.png"/>
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" >
+                                        <Label Text="{Binding Title}" Style="{StaticResource EbayMsgEbayBuyerIDLabelStyle}" IsVisible="{Binding IsShowEbayBuyerID}" />
+                                        <Image HeightRequest="25" WidthRequest="76" Source="ic_ebaymsg_ebayicon.png" IsVisible="{Binding IsShowEbayIcon}"></Image>
+                                    </StackLayout>
+                                    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="End" Padding="5,0,5,0" IsVisible="{Binding EbayFlagged}">
+                                        <Image 
+                                            HorizontalOptions="CenterAndExpand" 
+                                            VerticalOptions="CenterAndExpand"
+                                            HeightRequest="10" 
+                                            WidthRequest="10" 
+                                            IsVisible="{Binding EbayFlagged}"
+                                            Source="ic_ebaymsg_flag.png"/>
+                                    </StackLayout>
+                                    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="End" Padding="5,0,5,0" IsVisible="{Binding IsShowFlagColor}">
+                                        <Frame 
+                                            Style="{StaticResource ColorFrameStyle}" 
+                                            BackgroundColor="{Binding PAFlagColor}" 
+                                            IsVisible="{Binding IsShowFlagColor}"/>
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions="End" VerticalOptions="CenterAndExpand" Padding="5,0,5,0">
+                                        <Label Text="{Binding CreationDateDateFormat}" Style="{StaticResource MessageContentLabelStyle}" />
+                                    </StackLayout>
+                                </StackLayout>
+                                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Orientation="Horizontal" HeightRequest="40" Spacing="0" Margin="0,0,0,12" >
+                                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" >
+                                        <controls:CustomItemLabel 
+                                                LineSpacing="1.35"
+                                                MaxLines="2" 
+                                                Text="{Binding Summary}"
+                                                Style="{StaticResource EbayMsgSubjectLabelStyle}" 
+                                                HorizontalOptions="StartAndExpand"/>
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions="End" VerticalOptions="Center">
+                                        <Image HeightRequest="22" WidthRequest="22" Source="ic_global_arrowforward.png"></Image>
+                                    </StackLayout>
+                                </StackLayout>
+                                <StackLayout HeightRequest="1" Padding="0,0,0,0" HorizontalOptions="FillAndExpand" Grid.Row="1" >
+                                    <BoxView Style="{StaticResource UnderlineBoxViewStyle}" />
+                                </StackLayout>
+                            </StackLayout>  
+                        </DataTemplate>
+                    </listView:SfListView.ItemTemplate>
+                    <!--<listView:SfListView.RightSwipeTemplate>
+                        <DataTemplate x:Name="RightSwipeTemplate">
+                            <Grid ColumnSpacing="0">
+                                <Grid BackgroundColor="#ff3b30" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Column="0">
+                                    <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                                        <Grid.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Path=BindingContext.DeleteCommand, Source={x:Reference listView}}" CommandParameter="{Binding .}"/>
+                                        </Grid.GestureRecognizers>
+                                        <Image Grid.Column="0"
+                                           Grid.Row="0"
+                                           BackgroundColor="Transparent"
+                                           HeightRequest="35"
+                                           WidthRequest="35" 
+                                           Source="delete.png" />
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </listView:SfListView.RightSwipeTemplate>
+                    <listView:SfListView.LoadMoreTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="8,8,8,8" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                <Label 
+                                    Text="{Binding LocalResources[Loading]}" 
+                                    TextColor="Black" 
+                                    HorizontalTextAlignment="Center" 
+                                    VerticalTextAlignment="Center" 
+                                    IsVisible="{Binding IsBusy, Source={x:Reference Name=listView}}" />
+                            </StackLayout>
+                        </DataTemplate>
+                    </listView:SfListView.LoadMoreTemplate>
+                    <listView:SfListView.FooterTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="8,8,8,8" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                <Label Text="{Binding FooterText}" FontSize="12"></Label>
+                            </StackLayout>
+                        </DataTemplate>
+                    </listView:SfListView.FooterTemplate>-->
+                </listView:SfListView>
+            </pullToRefresh:SfPullToRefresh.PullableContent>
+        </pullToRefresh:SfPullToRefresh>
+    </ContentPage.Content>
+</ContentPage>

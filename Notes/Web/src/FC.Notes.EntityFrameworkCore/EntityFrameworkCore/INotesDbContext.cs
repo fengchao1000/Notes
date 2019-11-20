@@ -14,10 +14,11 @@ namespace FC.Notes.EntityFrameworkCore
     [ConnectionStringName("Default")]
     public interface INotesDbContext : IEfCoreDbContext
     {
-          DbSet<AppUser> Users { get; set; }
-          DbSet<Bookmark> Bookmarks { get; set; }
-          DbSet<BookmarkTag> BookmarkTags { get; set; }
-          DbSet<Tag> Tags { get; set; }
-          DbSet<Category> Categorys { get; set; }
+        DbSet<AppUser> Users { get; set; }
+        DbSet<Bookmark> Bookmarks { get; set; }
+        DbSet<BookmarkTag> BookmarkTags { get; set; }
+        DbSet<BookmarkCategory> BookmarkCategorys { get; set; }
+        DbSet<Tag> Tags { get; set; }
+        DbSet<Category> Categorys { get; set; }
     }
 }

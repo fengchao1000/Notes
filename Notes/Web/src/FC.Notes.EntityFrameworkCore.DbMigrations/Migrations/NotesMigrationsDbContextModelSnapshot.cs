@@ -14,7 +14,7 @@ namespace FC.Notes.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
+                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("FC.Notes.Bookmarks.Bookmark", b =>
@@ -84,6 +84,23 @@ namespace FC.Notes.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("BMBookmarks");
+                });
+
+            modelBuilder.Entity("FC.Notes.Bookmarks.BookmarkCategory", b =>
+                {
+                    b.Property<Guid>("BookmarkId")
+                        .HasColumnName("BookmarkId");
+
+                    b.Property<Guid>("CategoryId")
+                        .HasColumnName("CategoryId");
+
+                    b.Property<DateTime>("CreationTime");
+
+                    b.Property<Guid?>("CreatorId");
+
+                    b.HasKey("BookmarkId", "CategoryId");
+
+                    b.ToTable("BMBookmarkCategorys");
                 });
 
             modelBuilder.Entity("FC.Notes.Bookmarks.BookmarkTag", b =>
@@ -1368,6 +1385,14 @@ namespace FC.Notes.Migrations
                     b.HasKey("TenantId", "Name");
 
                     b.ToTable("AbpTenantConnectionStrings");
+                });
+
+            modelBuilder.Entity("FC.Notes.Bookmarks.BookmarkCategory", b =>
+                {
+                    b.HasOne("FC.Notes.Bookmarks.Bookmark")
+                        .WithMany("Categorys")
+                        .HasForeignKey("BookmarkId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("FC.Notes.Bookmarks.BookmarkTag", b =>

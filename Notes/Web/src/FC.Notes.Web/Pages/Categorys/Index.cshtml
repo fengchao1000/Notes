@@ -1,0 +1,33 @@
+﻿@page
+@inherits FC.Notes.Web.Pages.NotesPage
+@model FC.Notes.Web.Pages.Categorys.IndexModel
+@section scripts
+{
+    <abp-script src="/Pages/Categorys/index.js" />
+}
+<abp-card>
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <h2>@L["Categorys"]</h2>
+            </abp-column>
+            <abp-column size-md="_6" class="text-right">
+                <abp-button id="NewCategoryButton"
+                            text="@L["NewCategory"].Value"
+                            icon="plus"
+                            button-type="Primary" />
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="CategorysTable">
+            <thead>
+                <tr>
+                    <th>@L["Actions"]</th>
+                    <th>@L["Name"]</th>
+                    <th>@L["Description"]</th> 
+                </tr>
+            </thead>
+        </abp-table>
+    </abp-card-body>
+</abp-card>

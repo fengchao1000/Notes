@@ -1,4 +1,5 @@
-﻿using JetBrains.Annotations;
+﻿using FC.Notes.Categorys;
+using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -29,7 +30,7 @@ namespace FC.Notes.Bookmarks
         /// </summary>
         public bool IsCrawl { get; set; }
         public virtual Collection<BookmarkTag> Tags { get; protected set; }
-
+        public virtual Collection<BookmarkCategory> Categorys { get; protected set; }
 
         protected Bookmark()
         {

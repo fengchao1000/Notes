@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using FC.Notes.Bookmarks;
 using FC.Notes.Bookmarks.Dtos;
+using FC.Notes.Categorys;
+using FC.Notes.Categorys.Dtos;
 using FC.Notes.Tagging;
 using FC.Notes.Tagging.Dtos;
 using Volo.Abp.AutoMapper;
@@ -20,6 +22,10 @@ namespace FC.Notes
             CreateMap<TagDto, Tag>();
             CreateMap<Tag, TagDto>();
             CreateMap<CreateUpdateBookmarkDto, Bookmark>();
+
+            CreateMap<Category, CategoryDto>();
+            CreateMap<CategoryDto, Category>();
+            CreateMap<CreateUpdateCategoryDto, Category>(); 
         }
     }
 }

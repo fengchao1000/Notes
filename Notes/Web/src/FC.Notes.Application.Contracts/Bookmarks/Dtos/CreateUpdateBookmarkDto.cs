@@ -20,6 +20,6 @@ namespace FC.Notes.Bookmarks.Dtos
         [StringLength(BookmarkConsts.MaxContentLength)]
         public string Content { get; set; }
         public string Tags { get; set; }
-        
+        public string Categorys { get; set; }
     }
 }

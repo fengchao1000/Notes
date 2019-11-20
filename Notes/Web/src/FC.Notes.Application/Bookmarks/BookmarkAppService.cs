@@ -23,7 +23,19 @@ namespace FC.Notes
             _bookmarkRepository = bookmarkRepository;
             _tagRepository = tagRepository;
         }
-         
+
+        public async Task<PagedResultDto<BookmarkDto>> GetListAsync(PagedAndSortedResultRequestDto input)
+        {
+            var bookmarks = await _bookmarkRepository.GetListAsync();
+
+            var totalCount = await _bookmarkRepository.GetCountAsync();
+
+            IReadOnlyList<BookmarkDto> list = new List<BookmarkDto>(
+                            ObjectMapper.Map<List<Bookmark>, List<BookmarkDto>>(bookmarks));
+
+            return new PagedResultDto<BookmarkDto>(totalCount, list);
+        }
+
         public async Task<BookmarkDto> CreateAsync(CreateUpdateBookmarkDto input)
         {  
             var bookmark = new Bookmark(
@@ -108,18 +120,6 @@ namespace FC.Notes
             var bookmark = await _bookmarkRepository.GetAsync(id);
 
             return ObjectMapper.Map<Bookmark, BookmarkDto>(bookmark);
-        }
-
-        public async Task<PagedResultDto<BookmarkDto>> GetListAsync(PagedAndSortedResultRequestDto input)
-        {
-            var bookmarks = await _bookmarkRepository.GetListAsync();
-
-            var totalCount = await _bookmarkRepository.GetCountAsync();
-
-            IReadOnlyList<BookmarkDto> list = new List<BookmarkDto>(
-                            ObjectMapper.Map<List<Bookmark>, List<BookmarkDto>>(bookmarks));
-
-            return new PagedResultDto<BookmarkDto>(totalCount, list); 
         }
 
         public async Task<BookmarkDto> UpdateAsync(Guid id, CreateUpdateBookmarkDto input)

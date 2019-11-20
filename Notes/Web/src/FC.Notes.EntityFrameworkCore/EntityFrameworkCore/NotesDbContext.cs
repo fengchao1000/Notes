@@ -27,6 +27,7 @@ namespace FC.Notes.EntityFrameworkCore
         public DbSet<BookmarkTag> BookmarkTags { get; set; } 
         public DbSet<Tag> Tags { get; set; } 
         public DbSet<Category> Categorys { get; set; }
+        public DbSet<BookmarkCategory> BookmarkCategorys { get; set; }
 
         /* Add DbSet properties for your Aggregate Roots / Entities here.
          * Also map them inside NotesDbContextModelCreatingExtensions.ConfigureNotes

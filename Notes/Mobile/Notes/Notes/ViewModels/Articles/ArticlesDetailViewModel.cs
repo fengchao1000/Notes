@@ -65,7 +65,9 @@ namespace Notes.ViewModels
                     Articles = baseMessageEntity;  
                     return baseMessageEntity;
                 }
+
                 return null;
+
                 //MobileMessageGetParam messageGetParam = new MobileMessageGetParam();
                 //messageGetParam.PushType = Message.PushType;
                 //messageGetParam.MessageKey = UserInfoSetting.Current.UserKey;

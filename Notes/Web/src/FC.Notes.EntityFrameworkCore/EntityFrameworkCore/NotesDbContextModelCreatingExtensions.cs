@@ -35,6 +35,16 @@ namespace FC.Notes.EntityFrameworkCore
                 b.HasKey(x => new { x.BookmarkId, x.TagId });
             });
 
+            builder.Entity<BookmarkCategory>(b =>
+            {
+                b.ToTable(NotesConsts.DbTablePrefix + "BookmarkCategorys", NotesConsts.DbSchema);
+
+                b.Property(x => x.BookmarkId).HasColumnName(nameof(BookmarkCategory.BookmarkId));
+                b.Property(x => x.CategoryId).HasColumnName(nameof(BookmarkCategory.CategoryId));
+
+                b.HasKey(x => new { x.BookmarkId, x.CategoryId });
+            });
+
             builder.Entity<Bookmark>(b =>
             {
                 b.ToTable(NotesConsts.DbTablePrefix + "Bookmarks", NotesConsts.DbSchema);
@@ -49,6 +59,8 @@ namespace FC.Notes.EntityFrameworkCore
                 b.Property(x => x.IsCrawl).HasColumnName(nameof(Bookmark.IsCrawl)).HasDefaultValue(false);
 
                 b.HasMany(p => p.Tags).WithOne().HasForeignKey(qt => qt.BookmarkId);
+
+                b.HasMany(p => p.Categorys).WithOne().HasForeignKey(qt => qt.BookmarkId);
 
             });
 
@@ -71,8 +83,8 @@ namespace FC.Notes.EntityFrameworkCore
 
                 b.ConfigureFullAuditedAggregateRoot();
 
-                b.Property(x => x.Name).IsRequired().HasMaxLength(TagConsts.MaxNameLength).HasColumnName(nameof(Category.Name));
-                b.Property(x => x.Description).HasMaxLength(TagConsts.MaxDescriptionLength).HasColumnName(nameof(Category.Description));
+                b.Property(x => x.Name).IsRequired().HasMaxLength(CategoryConsts.MaxNameLength).HasColumnName(nameof(Category.Name));
+                b.Property(x => x.Description).HasMaxLength(CategoryConsts.MaxDescriptionLength).HasColumnName(nameof(Category.Description));
                 b.Property(x => x.UsageCount).HasColumnName(nameof(Category.UsageCount));
                 
             });

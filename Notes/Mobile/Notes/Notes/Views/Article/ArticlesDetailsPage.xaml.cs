@@ -27,7 +27,7 @@ namespace Notes.Views.Article
         {
             base.OnAppearing();
 
-            Navigation.InsertPageBefore(new ArticlesMenuPage(), this);
+            //Navigation.InsertPageBefore(new ArticlesMenuPage(), this);
         }
         
           

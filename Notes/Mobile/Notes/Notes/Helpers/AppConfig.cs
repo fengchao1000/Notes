@@ -26,17 +26,13 @@
 
         /// <summary>
         /// PA主系统API地址
-        /// </summary>
-        //public const string PAAPIEndpoint = "https://api.pushauction.com";//production
-        //public const string PAAPIEndpoint = "https://betaapi.pushauction.com";//beta
-        public const string PAAPIEndpoint = "http://219.134.95.26:8001";//local
+        /// </summary> 
+        public const string PAAPIEndpoint = "http://106.52.218.254:8081";
 
         /// <summary>
         /// PA系统登录地址，即IS4地址
-        /// </summary>
-        //public const string BaseIdentityEndpoint = "https://login.pushauction.com";//production 
-        //public const string BaseIdentityEndpoint = "https://betalogin.pushauction.com";//beta
-        public const string BaseIdentityEndpoint = "http://219.134.95.30:8001";//local
+        /// </summary> 
+        public const string BaseIdentityEndpoint = "";
 
         /// <summary>
         /// 认证地址
@@ -56,46 +52,16 @@
         /// <summary>
         /// PA Sqlite数据库名称
         /// </summary>
-        public const string SqliteFilename = "pushauction.db3";
+        public const string SqliteFilename = "notes.db3";
 
         #endregion
 
         #region api config
 
-        public static string SearchEbayListingSummaryListingHourlyReportTotalEndpoint = $"{PAAPIEndpoint}/EbayListingSummary/ListingHourly/ReportTotal/Search";
+        public static string BookmarkUrl = $"{PAAPIEndpoint}/api/app/bookmark";
 
-        public static string GetEbayUserShortNameListEndpoint = $"{PAAPIEndpoint}/Cross/EbayUser/ShortName/Get";
-
-        public static string SearchMobileOverViewListEndpoint = $"{PAAPIEndpoint}/Mobile/MobileOverView/Search";
-
-        public static string SearchMobileFeedbackReportListEndpoint = $"{PAAPIEndpoint}/Mobile/MobileFeedbackReport/Search";
-
-        public static string SearchMobileListingReportListEndpoint = $"{PAAPIEndpoint}/Mobile/MobileListingReport/Search";
-
-        public static string SearchMobileDispatchReportListEndpoint = $"{PAAPIEndpoint}/Mobile/MobileShippedReport/Search";
-
-        public static string SearchMobilePayPalReportListEndpoint = $"{PAAPIEndpoint}/Mobile/MobilePayPalReport/Search";
-
-        public static string SearchMobileSalesReportListEndpoint = $"{PAAPIEndpoint}/Mobile/MobileSalesReport/Search";
-
-        public static string SearchMobileVisitReportListEndpoint = $"{PAAPIEndpoint}/Mobile/MobileVisitReport/Search";
-
-        public static string SearchMobileMessageEndpoint = $"{PAAPIEndpoint}/Mobile/MobileMessage/Search";
-
-        public static string GetMobileMessageEndpoint = $"{PAAPIEndpoint}/Mobile/MobileMessage/Get";
-
-        public static string AddUserDeviceEndpoint = $"{PAAPIEndpoint}/Mobile/MobileUserDevice/Add";
-
-        public static string DeleteUserDeviceEndpoint = $"{PAAPIEndpoint}/Mobile/MobileUserDevice/Delete";
-
-        public static string UpdateMessageIsNotDisplayEndpoint = $"{PAAPIEndpoint}/Mobile/MobileReadMessage/UpdateMessageIsNotDisplay";
-
-        public static string AddReadMessageEndpoint = $"{PAAPIEndpoint}/Mobile/MobileReadMessage/Add";
-
-        public static string GetUserDetailInfoEndpoint = $"{PAAPIEndpoint}/Data/User/CurrentUser/Get";
-
-        public static string SearchPayPalEmailAddressEndpoint = $"{PAAPIEndpoint}/Mobile/PayPalEmailAddress/Search";
-
+        public static string CategoryUrl = $"{PAAPIEndpoint}/api/app/category";
+         
         #endregion
     }
 }

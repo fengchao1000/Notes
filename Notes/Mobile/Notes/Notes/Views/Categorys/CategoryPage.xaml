@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:Notes.Controls;assembly=Notes"
+             xmlns:listView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:pullToRefresh="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms" 
+             mc:Ignorable="d"
+             x:Class="Notes.Views.Categorys.CategoryPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- StackLayout样式 -->
+            <Style x:Key="AccountFunctionStackLayoutStyle" TargetType="StackLayout">
+                <Setter Property="Padding" >
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="iOS" Value="8" />
+                        <On Platform="Android" Value="5,8,5,5" />
+                    </OnPlatform>
+                </Setter>
+                <Setter Property="Orientation" Value="Horizontal"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+            </Style>
+
+            <Style x:Key="EbayMsgMenuLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" >
+                    <OnPlatform x:TypeArguments="x:Double" Android="14" iOS="14"/>
+                </Setter>
+                <Setter Property="TextColor" Value="{StaticResource DefaultTextColor}"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            </Style>
+
+            <Style x:Key="EbayMsgMenuCountLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" >
+                    <OnPlatform x:TypeArguments="x:Double" Android="12" iOS="12"/>
+                </Setter>
+                <Setter Property="TextColor" Value="{StaticResource DefaultTextColor}"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            </Style>
+
+            <Style x:Key="EbayMsgMenuCountFrameStyle" TargetType="{x:Type Frame}">
+                <Setter Property="Padding" Value="5,0,5,0" />
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="HeightRequest"  Value="28" />
+                <Setter Property="HorizontalOptions"  Value="Center" />
+                <Setter Property="VerticalOptions"  Value="Center" />
+                <Setter Property="BackgroundColor"  Value="#767676" />
+                <Setter Property="CornerRadius" Value="50" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources> 
+    <ContentPage.Content>
+        <pullToRefresh:SfPullToRefresh 
+            x:Name="pullToRefresh" 
+            Refreshing ="PullToRefreshRefreshing"
+            RefreshContentHeight="50"
+			PullingThreshold="150"
+            RefreshContentWidth="50"
+            TransitionMode="SlideOnTop"
+            ProgressStrokeWidth="5"
+            ProgressStrokeColor = "#c0c0c0" 
+            IsRefreshing="{Binding IsBusy}">
+            <pullToRefresh:SfPullToRefresh.PullableContent>
+                <ScrollView>
+                    <StackLayout Spacing="0" VerticalOptions="Start">
+                        <listView:SfListView 
+                            Margin="0"
+                            ItemSize="45"
+                            ItemsSource="{Binding Categorys}"
+                            IsBusy="{Binding IsBusy}" 
+                            FooterSize="0"
+                            ItemTapped="OnListViewItemTapped" 
+                            BackgroundColor="White"
+                            SelectionBackgroundColor="#e7f1fb"
+                            AllowSwiping="True" >
+                            <listView:SfListView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout VerticalOptions="CenterAndExpand" Spacing="0">
+                                        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HeightRequest="45" Spacing="0" >
+                                            <StackLayout HorizontalOptions="Start" Spacing="0" VerticalOptions="CenterAndExpand" WidthRequest="50" Padding="5,0,0,0">
+                                                <Image HeightRequest="24" WidthRequest="24" Source="ic_message_read.png"></Image>
+                                            </StackLayout>
+                                            <StackLayout HorizontalOptions="FillAndExpand" Spacing="0" VerticalOptions="CenterAndExpand" Padding="0,0,0,0" >
+                                                <Label  Text="{Binding Name}" Style="{StaticResource EbayMsgMenuLabelStyle}" />
+                                            </StackLayout>
+                                            <StackLayout HorizontalOptions="End" Spacing="0" VerticalOptions="CenterAndExpand" Padding="0,0,20,0" WidthRequest="60">
+                                                <Frame  Style="{StaticResource EbayMsgMenuCountFrameStyle}" BackgroundColor="#767676" HorizontalOptions="CenterAndExpand" >
+                                                    <Label  Text="{Binding UsageCount}" Style="{StaticResource EbayMsgMenuLabelStyle}" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                                                </Frame>
+                                            </StackLayout>
+                                            <StackLayout HorizontalOptions="End" VerticalOptions="CenterAndExpand" Padding="0,0,10,0">
+                                                <Image HeightRequest="22" WidthRequest="22" Source="ic_global_arrowforward.png"></Image>
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout HeightRequest="1" Padding="50,0,0,0" HorizontalOptions="FillAndExpand" Grid.Row="1" >
+                                            <BoxView Style="{StaticResource UnderlineBoxViewStyle}" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </listView:SfListView.ItemTemplate>
+                        </listView:SfListView>
+                    </StackLayout>
+                </ScrollView>
+            </pullToRefresh:SfPullToRefresh.PullableContent>
+        </pullToRefresh:SfPullToRefresh>
+    </ContentPage.Content>
+</ContentPage>
