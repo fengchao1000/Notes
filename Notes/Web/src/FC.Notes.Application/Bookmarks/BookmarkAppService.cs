@@ -1,5 +1,6 @@
 ﻿using FC.Notes.Bookmarks;
 using FC.Notes.Bookmarks.Dtos;
+using FC.Notes.Categorys;
 using FC.Notes.Tagging;
 using FC.Notes.Tagging.Dtos;
 using System;
@@ -12,16 +13,18 @@ using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Repositories;
 
 namespace FC.Notes
-{ 
-    public class BookmarkAppService : NotesAppService,IBookmarkAppService
+{
+    public class BookmarkAppService : NotesAppService, IBookmarkAppService
     {
         private readonly IBookmarkRepository _bookmarkRepository;
         private readonly ITagRepository _tagRepository;
+        private readonly ICategoryRepository _categoryRepository;
 
-        public BookmarkAppService(IRepository<Bookmark, Guid> repository, IBookmarkRepository bookmarkRepository,ITagRepository tagRepository)
+        public BookmarkAppService(IRepository<Bookmark, Guid> repository, IBookmarkRepository bookmarkRepository, ITagRepository tagRepository, ICategoryRepository categoryRepository)
         {
             _bookmarkRepository = bookmarkRepository;
             _tagRepository = tagRepository;
+            _categoryRepository = categoryRepository;
         }
 
         public async Task<PagedResultDto<BookmarkDto>> GetListAsync(PagedAndSortedResultRequestDto input)
@@ -37,21 +40,77 @@ namespace FC.Notes
         }
 
         public async Task<BookmarkDto> CreateAsync(CreateUpdateBookmarkDto input)
-        {  
+        {
             var bookmark = new Bookmark(
-                id: GuidGenerator.Create(), 
+                id: GuidGenerator.Create(),
                 title: input.Title,
                 linkUrl: input.LinkUrl
             )
-            { Content = input.Content ,Summary = input.Summary};
+            { Content = input.Content, Summary = input.Summary };
 
             await _bookmarkRepository.InsertAsync(bookmark);
 
             var tagList = SplitTags(input.Tags);
             await SaveTags(tagList, bookmark);
 
+            var categoryList = SplitCategory(input.Categorys);
+            await SaveCategory(categoryList, bookmark);
+
             return ObjectMapper.Map<Bookmark, BookmarkDto>(bookmark);
         }
+
+        private List<Guid> SplitCategory(string catetorys)
+        {
+            if (catetorys.IsNullOrWhiteSpace())
+            {
+                return new List<Guid>();
+            }
+            List<Guid> catetoryIDs = new List<Guid>();
+            foreach (string item in catetorys.Split(",").Select(t => t.Trim()))
+            {
+                catetoryIDs.Add(new Guid(item));
+            }
+            return catetoryIDs;
+        }
+
+        private async Task SaveCategory(List<Guid> newCategoryIDs, Bookmark bookmark)
+        {
+            //删除旧的未选择的分类
+            foreach (var oldCategory in bookmark.Categorys)
+            {
+                var category = await _categoryRepository.GetAsync(oldCategory.CategoryId);
+
+                //旧的分类在新分类中是否存在
+                var oldCategoryNameInNewCategorys = newCategoryIDs.FirstOrDefault(t => t == category.Id);
+
+                if (oldCategoryNameInNewCategorys == null)
+                {
+                    bookmark.RemoveCategory(oldCategory.CategoryId);
+
+                    category.DecreaseUsageCount();
+
+                    await _categoryRepository.UpdateAsync(category);
+                }
+                else
+                {
+                    newCategoryIDs.Remove(oldCategoryNameInNewCategorys);
+                     
+                }
+            }
+            
+            //添加新选中的分类
+            foreach (var newCategoryID in newCategoryIDs)
+            {
+                var category = await _categoryRepository.GetAsync(newCategoryID);
+
+                bookmark.AddCategory(newCategoryID);
+
+                category.IncreaseUsageCount();
+
+                await _categoryRepository.UpdateAsync(category);
+            }
+        }
+
 
         private List<string> SplitTags(string tags)
         {
@@ -68,6 +127,7 @@ namespace FC.Notes
 
             await AddNewTags(newTags, bookmark);
         }
+
 
         private async Task RemoveOldTags(List<string> newTags, Bookmark bookmark)
         {
@@ -144,15 +204,15 @@ namespace FC.Notes
 
         public async Task DeleteAsync(Guid id)
         {
-            var post = await _bookmarkRepository.GetAsync(id); 
+            var post = await _bookmarkRepository.GetAsync(id);
 
             var tags = await GetTagsOfPost(id);
 
-            if (tags != null ) 
+            if (tags != null)
             {
                 _tagRepository.DecreaseUsageCountOfTags(tags.Select(t => t.Id).ToList());
-            } 
-            
+            }
+
             await _bookmarkRepository.DeleteAsync(id);
         }
 
@@ -160,7 +220,7 @@ namespace FC.Notes
         {
             var tagIds = (await _bookmarkRepository.GetAsync(id)).Tags;
 
-            if (tagIds == null) 
+            if (tagIds == null)
             {
                 return null;
             }

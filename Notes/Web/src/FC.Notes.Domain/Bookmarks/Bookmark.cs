@@ -43,11 +43,22 @@ namespace FC.Notes.Bookmarks
             Title = Check.NotNullOrWhiteSpace(title, nameof(title));
             LinkUrl = Check.NotNullOrWhiteSpace(linkUrl, nameof(linkUrl));  
             Tags = new Collection<BookmarkTag>();
+            Categorys = new Collection<BookmarkCategory>();
         }
 
         public virtual void RemoveTag(Guid tagId)
         {
             Tags.RemoveAll(t => t.TagId == tagId);
+        }
+
+        public virtual void RemoveCategory(Guid categoryId)
+        {
+            Categorys.RemoveAll(t => t.CategoryId == categoryId);
+        }
+
+        public virtual void AddCategory(Guid categoryId)
+        {
+            Categorys.Add(new BookmarkCategory(Id, categoryId));
         }
 
         public virtual void AddTag(Guid tagId)
