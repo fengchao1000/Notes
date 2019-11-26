@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Notes.Services.Categorys
 {
-    public class CategoryService : ICategoryService
+    public class CategoryService : BaseService<Category>, ICategoryService
     {
         public async Task<ResultData<PagedResultDto<Category>>> GetCategory(string skipCount, string maxResultCount, int sorting)
         {

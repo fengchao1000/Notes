@@ -64,7 +64,7 @@
             IsRefreshing="{Binding IsBusy}">
             <pullToRefresh:SfPullToRefresh.PullableContent>
                 <ScrollView>
-                    <StackLayout Spacing="0" VerticalOptions="Start">
+                    <StackLayout x:Name="CategoryStackLayout" Spacing="0" VerticalOptions="Start">
 
 
                         <!--<ListView x:Name="ItemsListView" 
@@ -105,8 +105,7 @@
                         </ListView>-->
 
 
-
-                        <listView:SfListView 
+                        <!--<listView:SfListView 
                             Margin="0"
                             ItemSize="45"
                             ItemsSource="{Binding Categorys}"
@@ -141,7 +140,9 @@
                                     </StackLayout>
                                 </DataTemplate>
                             </listView:SfListView.ItemTemplate>
-                        </listView:SfListView>
+                        </listView:SfListView>-->
+                    
+                    
                     </StackLayout>
                 </ScrollView>
             </pullToRefresh:SfPullToRefresh.PullableContent>

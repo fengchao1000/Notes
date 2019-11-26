@@ -7,6 +7,8 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using System.Threading.Tasks;
 using Notes.Models.Articles;
+using Notes.Models.Categorys;
+using Notes.Models.Bookmarks;
 
 namespace Notes.Helpers
 {
@@ -33,7 +35,7 @@ namespace Notes.Helpers
         { 
             try
             { 
-                await db.CreateTablesAsync<ArticlesDto,KeyValueTable>(); 
+                await db.CreateTablesAsync<ArticlesDto,KeyValueTable,Category,Bookmark>(); 
             }
             catch (Exception ex)
             {

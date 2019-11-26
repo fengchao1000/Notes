@@ -5,6 +5,7 @@ using Notes.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -46,65 +47,60 @@ namespace Notes.ViewModels.Categorys
         /// <summary>
         /// 初始化ViewModel
         /// </summary>
-        public async void Initialize()
+        public async Task Initialize()
         {
-            await RefreshDataFromAPIAsync();
-
-            //string refreshKey = nameof(EbayMsgMenuViewModel) + AppPreferences.CurrentSelectedEbayUser.EbayUserKey;
-            //if (DateTime.UtcNow >= RefreshTimeHelper.GetRefreshTime(refreshKey))
-            //{
-            //    await RefreshDataFromAPIAsync();
-            //}
-            //else
-            //{
-            //    await GetDataFromSqliteAsync();
-            //}
+            string refreshKey = nameof(CategoryViewModel);
+            if (DateTime.UtcNow >= RefreshTimeHelper.GetRefreshTime(refreshKey))
+            {
+                await RefreshDataFromAPIAsync();
+            }
+            else
+            {
+                await GetDataFromSqliteAsync();
+            }
         }
 
         /// <summary>
         /// 从Sqlite中获取数据
         /// </summary>
-        //public async Task GetDataFromSqliteAsync()
-        //{
-        //    try
-        //    {
-        //        IsBusy = true;
+        public async Task GetDataFromSqliteAsync()
+        {
+            try
+            {
+                IsBusy = true; 
+                Stopwatch sw = new Stopwatch();
+                 
+                IList<Category> categoryList = await ServicesManager.CategoryService.GetAllFromSqliteAsync();
 
-        //        Stopwatch sw = new Stopwatch();
+                if (categoryList != null)
+                {
+                    Categorys.Clear();
 
-        //        EbayMsgMenuCountGetParam ebayMsgMenuCountGetParam = new EbayMsgMenuCountGetParam();
-        //        ebayMsgMenuCountGetParam.EbayUserKey = AppPreferences.CurrentSelectedEbayUser.EbayUserKey;
-        //        IList<Category> CategoryList = await ServicesManager.CommentService.GetFromSqliteKeyValueTable<Category>(ebayMsgMenuCountGetParam);
+                    ObservableCollection<Category> newCategoryCollection = new ObservableCollection<Category>();
 
-        //        if (CategoryList != null)
-        //        {
-        //            EbayMsgMenuCollection.Clear();
+                    foreach (Category item in categoryList)
+                    {
+                        newCategoryCollection.Add(item);
+                    }
 
-        //            ObservableCollection<Category> newEbayMsgMenuCollection = new ObservableCollection<Category>();
+                    sw.Start();
 
-        //            foreach (Category item in CategoryList)
-        //            {
-        //                newEbayMsgMenuCollection.Add(item);
-        //            }
+                    Categorys = newCategoryCollection;
+                }
 
-        //            sw.Start();
-
-        //            EbayMsgMenuCollection = newEbayMsgMenuCollection;
-        //        }
-
-        //        sw.Stop();
-        //        LoggerHelper.Current.Debug("EbayMsgMenuViewModel GetDataFromSqliteAsync ElapsedMilliseconds:" + sw.ElapsedMilliseconds);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        LoggerHelper.Current.Error(ex.ToString());
-        //    }
-        //    finally
-        //    {
-        //        await Task.Delay(ConstanceHelper.RefreshDelay);
-        //        IsBusy = false;
-        //    }
-        //}
+                sw.Stop();
+                LoggerHelper.Current.Debug("EbayMsgMenuViewModel GetDataFromSqliteAsync ElapsedMilliseconds:" + sw.ElapsedMilliseconds);
+            }
+            catch (Exception ex)
+            {
+                LoggerHelper.Current.Error(ex.ToString());
+            }
+            finally
+            {
+                await Task.Delay(ConstanceHelper.RefreshDelay);
+                IsBusy = false;
+            }
+        }
 
         async Task RefreshDataFromAPIAsync()
         {
@@ -129,13 +125,14 @@ namespace Notes.ViewModels.Categorys
                     return;
                 }
 
+                Categorys.Clear();
+
                 foreach (Category item in result.Data.Items)
                 {
                     Categorys.Add(item);
                 }
 
-                //保存在sqlite
-                //await ServicesManager.EbayMsgService.UpdateToSqliteKeyValueTable(EbayMsgMenuCollection, ebayMsgMenuCountGetParam);
+                await ServicesManager.CategoryService.BatchUpdateToSqlite(Categorys); //保存在sqlite
 
                 LoadStatus = LoadMoreStatus.StausDefault;
                 CanLoadMore = true;
@@ -147,9 +144,9 @@ namespace Notes.ViewModels.Categorys
             }
             finally
             {
-                //string refreshKey = nameof(EbayMsgMenuViewModel) + AppPreferences.CurrentSelectedEbayUser.EbayUserKey;
-                //RefreshTimeHelper.SetRefreshTime(refreshKey, DateTime.UtcNow.AddMinutes(ConstanceHelper.NextRefreshInterval));//记录刷新时间 
-                await Task.Delay(500);
+                string refreshKey = nameof(CategoryViewModel);
+                RefreshTimeHelper.SetRefreshTime(refreshKey, DateTime.UtcNow.AddMinutes(ConstanceHelper.NextRefreshInterval));//记录刷新时间 
+                await Task.Delay(ConstanceHelper.RefreshDelay);
                 IsBusy = false;
             }
         }

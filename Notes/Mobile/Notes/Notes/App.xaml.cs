@@ -22,7 +22,7 @@ namespace Notes
 
         public App()
         {
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NzEzNDVAMzEzNjJlMzQyZTMwSUlPcU1RaktJK1BNd3NvQzRBYnByYW9mbVdtcG5qUGQ2aHFZMHAyViswUT0=");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTY3OTYyQDMxMzcyZTMzMmUzMFVpTzJDK0VMM2Q1V2c1UXdRZ3dDazJPL0lsYzZFMHQ5N3kyZzE0NmQ1UlU9");//NzEzNDVAMzEzNjJlMzQyZTMwSUlPcU1RaktJK1BNd3NvQzRBYnByYW9mbVdtcG5qUGQ2aHFZMHAyViswUT0=
 
             InitializeComponent();
 
@@ -36,7 +36,7 @@ namespace Notes
 
             LoggerHelper.Current.Debug("SqliteHelper.Current.CreateOrUpdateAllTablesAsync OK");
              
-            MainPage = new CustomNavigationPage(new CategoryPage());
+            MainPage = new CustomNavigationPage(new Views.Home.HomePage());
 
             LoggerHelper.Current.Debug("CustomNavigationPage OK");
         }

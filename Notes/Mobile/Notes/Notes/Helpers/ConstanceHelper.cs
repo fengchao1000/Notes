@@ -15,7 +15,10 @@ namespace Notes.Helpers
         /// //数据刷新时间间隔，30分钟
         /// </summary>
         public const int NextRefreshInterval = 30;
-
+        /// <summary>
+        /// 数据加载状态条延迟时间，50ms
+        /// </summary>
+        public const int RefreshDelay = 50;
         /// <summary>
         /// 列表金额标题名称
         /// </summary>

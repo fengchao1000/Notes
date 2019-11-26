@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Notes.Services.Bookmarks
 {
-    public class BookmarkService : IBookmarkService
+    public class BookmarkService : BaseService<Bookmark>, IBookmarkService
     {
         public async Task<ResultData<PagedResultDto<Bookmark>>> GetBookmarks(string skipCount, string maxResultCount, int sorting)
         {

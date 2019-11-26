@@ -2,6 +2,7 @@
 using Notes.Models.Bookmarks;
 using Notes.ViewModels.Bookmarks;
 using Notes.Views.Article;
+using Notes.Views.Categorys;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,6 +41,12 @@ namespace Notes.Views.Bookmarks
                 viewModel.Initialize();
 
                 hasInitialize = true;
+
+                var prevPage = Navigation.NavigationStack.FirstOrDefault(p => p is CategoryTestPage);
+                if (prevPage == null)
+                {
+                    Navigation.InsertPageBefore(new CategoryTestPage(), this);
+                }
             }
         }
 

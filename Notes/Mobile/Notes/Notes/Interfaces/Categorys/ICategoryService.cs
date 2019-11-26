@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Notes.Interfaces.Categorys
 {
-    public interface ICategoryService
+    public interface ICategoryService : IBaseService<Category>
     {
         /// <summary>
         /// 

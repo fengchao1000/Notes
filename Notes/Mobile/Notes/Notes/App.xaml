@@ -13,9 +13,9 @@
         <!-- 程序主色调 -->
         <Color x:Key="Primary">#35414f</Color>
         <!-- 页面默认背景色 -->
-        <Color x:Key="PageDefaultBackgroundColor">#dadada</Color>
+        <Color x:Key="PageDefaultBackgroundColor">#f0f0f0</Color>
         <!-- 滚动超出部分背景色 -->
-        <Color x:Key="ScrollViewBackgroundColor">#35414f</Color>
+        <Color x:Key="ScrollViewBackgroundColor">#f0f0f0</Color>
         <!-- 下划线颜色 -->
         <Color x:Key="DividerColor">#EBE8EB</Color>
         <!-- 登录输入框占位符字体 -->

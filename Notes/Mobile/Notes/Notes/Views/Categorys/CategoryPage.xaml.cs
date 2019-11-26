@@ -1,12 +1,10 @@
-﻿using Notes.Helpers;
+﻿using Notes.Controls;
+using Notes.Helpers;
+using Notes.Models.Categorys;
 using Notes.ViewModels.Categorys;
 using Notes.Views.Bookmarks;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using System; 
+using System.Threading.Tasks; 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -24,22 +22,27 @@ namespace Notes.Views.Categorys
             InitializeComponent();
 
             BindingContext = viewModel = new CategoryViewModel();
-
         }
 
         /// <summary>
         /// 界面出现时执行
         /// </summary>
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
 
             if (!hasInitialize)
             {
-                viewModel.Initialize();
+                await viewModel.Initialize();
+
+                foreach (Category item in viewModel.Categorys)
+                {
+                    CategoryContentView categoryContentView = new CategoryContentView(item);
+                    this.CategoryStackLayout.Children.Add(categoryContentView);
+                }
 
                 hasInitialize = true;
-            } 
+            }
         }
 
         /// <summary>

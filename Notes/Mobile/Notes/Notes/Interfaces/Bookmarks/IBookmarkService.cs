@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Notes.Interfaces.Bookmarks
 { 
-    public interface IBookmarkService
+    public interface IBookmarkService : IBaseService<Bookmark>
     {
         /// <summary>
         /// 

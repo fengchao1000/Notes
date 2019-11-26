@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:Notes.Controls;assembly=Notes"
+             mc:Ignorable="d"
+             x:Class="Notes.Views.Home.HomePage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--今天、昨天、前天描述文本样式-->
+            <Style x:Key="DescriptionLabelStyle"   TargetType="{x:Type Label}">
+                <Setter Property="TextColor" Value="{StaticResource DescriptionTextColor}" />
+                <Setter Property="HorizontalOptions"    Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}"/>
+            </Style>
+            <!--其他数据文本样式-->
+            <Style x:Key="OtherDataLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="TextColor" Value="{StaticResource DefaultTextColor}" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions"   Value="CenterAndExpand" />
+                <Setter Property="FontSize" Value="12" />
+                <!--<Setter Property="FontSize" Value="{Binding Source={StaticResource DataFontSize},Path=px[15]}" />-->
+            </Style>
+            <!--今天数据文本样式-->
+            <Style x:Key="TodayDataLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="TextColor"  Value="#b90101" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions"   Value="CenterAndExpand" />
+                <Setter Property="FontSize" Value="12" />
+                <!--<Setter Property="FontSize" Value="{Binding Source={StaticResource DataFontSize},Path=px[15]}" />-->
+            </Style>
+            <!--功能文本样式-->
+            <Style x:Key="FunctionLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="TextColor" Value="{StaticResource DefaultTextColor}" />
+                <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+                <Setter Property="VerticalOptions"   Value="CenterAndExpand" />
+                <Setter Property="FontSize" Value="12"/>
+            </Style>
+            <!--功能图标样式-->
+            <Style x:Key="FunctionImageStyle" TargetType="{x:Type Image}">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions"   Value="CenterAndExpand" />
+                <Setter Property="HeightRequest" Value="20"/>
+                <Setter Property="WidthRequest" Value="20"/>
+                <Setter Property="Margin" Value="0,0,0,0"/>
+            </Style>
+            <!--功能布局样式-->
+            <Style x:Key="FunctionStackLayoutStyle" TargetType="{x:Type StackLayout}">
+                <Setter Property="Orientation" Value="Horizontal" />
+                <Setter Property="Padding" Value="10,10,10,0"/>
+            </Style>
+            <!--查看更多详情图标-->
+            <Style x:Key="MoreDetailsImageStyle" TargetType="{x:Type Image}">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions"   Value="CenterAndExpand" />
+                <Setter Property="HeightRequest" Value="15"/>
+                <Setter Property="HeightRequest" Value="15"/>
+                <Setter Property="Margin" Value="0,0,0,0"/>
+                <Setter Property="Source" Value=""/>
+            </Style>
+            <!--MsCCode样式-->
+            <Style x:Key="MsCCodeLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="TextColor" Value="{StaticResource DefaultTextColor}" />
+                <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+                <Setter Property="VerticalOptions"   Value="CenterAndExpand" />
+                <Setter Property="FontSize" Value="10"/>
+                <Setter Property="Margin" Value="0,0,0,0"/>
+            </Style>
+            <!--功能菜单按钮文本样式-->
+            <Style x:Key="FunctionMenuLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="TextColor" Value="#000000" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions"  Value="StartAndExpand" />
+                <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}" />
+            </Style>
+            <!--功能菜单Frame样式-->
+            <Style x:Key="FunctionMenuFrameStyle" TargetType="{x:Type Frame}">
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="WidthRequest"  Value="40" />
+                <Setter Property="HeightRequest"  Value="40" />
+                <Setter Property="HorizontalOptions"  Value="Center" />
+                <Setter Property="BackgroundColor"  Value="#5199ff" />
+                <Setter Property="CornerRadius" Value="20" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView Margin="0" BackgroundColor="{StaticResource ScrollViewBackgroundColor}">
+            <StackLayout Spacing="0">
+                <StackLayout BackgroundColor="{StaticResource PageDefaultBackgroundColor}" Padding="5,5,5,0" Spacing="0">
+                    <controls:CustomCornerRadiusCardView Padding="0" >
+                        <Grid Padding="0,5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"></RowDefinition>
+                                <RowDefinition Height="20"></RowDefinition>
+                                <RowDefinition Height="40"></RowDefinition>
+                                <RowDefinition Height="20"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <!-- 第一行 -->
+                            <Frame Grid.Row="0" Grid.Column="0" Style="{StaticResource FunctionMenuFrameStyle}" BackgroundColor="#2bb9a3">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnBookmarkClicked"/>
+                                </Frame.GestureRecognizers>
+                                <Image Source="ic_function_bookmark.png" WidthRequest="35" HeightRequest="35" HorizontalOptions="Center"></Image>
+                            </Frame>
+                            <Label Text="书签" Grid.Row="1" Grid.Column="0" Style="{StaticResource FunctionMenuLabelStyle}" >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnBookmarkClicked"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Frame Grid.Row="0" Grid.Column="1" Style="{StaticResource FunctionMenuFrameStyle}" BackgroundColor="#fc7466" >
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnTestClicked"/>
+                                </Frame.GestureRecognizers>
+                                <Image Source="ic_function_listing.png" WidthRequest="30" HeightRequest="30" HorizontalOptions="Center"/>
+                            </Frame>
+                            <Label Text="测试" Grid.Row="1" Grid.Column="1" Style="{StaticResource FunctionMenuLabelStyle}">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnTestClicked"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Frame Grid.Row="0" Grid.Column="2" Style="{StaticResource FunctionMenuFrameStyle}" BackgroundColor="#ff655c">
+                               
+                                <Image Source="ic_function_sales.png" WidthRequest="35" HeightRequest="35" HorizontalOptions="Center"/>
+                            </Frame>
+                            <Label Text="{Binding LocalResources[Sale]}" Grid.Row="1" Grid.Column="2" Style="{StaticResource FunctionMenuLabelStyle}" >
+                             
+                            </Label>
+                            <Frame Grid.Row="0" Grid.Column="3" Style="{StaticResource FunctionMenuFrameStyle}" BackgroundColor="#649cff" >
+                             
+                                <Image Source="ic_overview_message.png" WidthRequest="35" HeightRequest="35" HorizontalOptions="Center"/>
+                            </Frame>
+                            <Label Text="{Binding LocalResources[Message]}" Grid.Row="1" Grid.Column="3" Style="{StaticResource FunctionMenuLabelStyle}" >
+                               
+                            </Label>
+                            <!-- 第二行 -->
+                            <Frame Grid.Row="2" Grid.Column="0" Style="{StaticResource FunctionMenuFrameStyle}" BackgroundColor="#7781cd">
+                              
+                                <Image Source="ic_function_dispatch.png" WidthRequest="35" HeightRequest="35" HorizontalOptions="Center"/>
+                            </Frame>
+                            <Label Text="{Binding LocalResources[Shipped]}" Grid.Row="3" Grid.Column="0" Style="{StaticResource FunctionMenuLabelStyle}">
+                              
+                            </Label>
+                            <Frame Grid.Row="2" Grid.Column="1" Style="{StaticResource FunctionMenuFrameStyle}" BackgroundColor="#649cff">
+                              
+                                <Image Source="ic_function_feedback.png" WidthRequest="32" HeightRequest="32" HorizontalOptions="Center"></Image>
+                            </Frame>
+                            <Label Text="{Binding LocalResources[Feedback]}" Grid.Row="3" Grid.Column="1" Style="{StaticResource FunctionMenuLabelStyle}">
+                                
+                            </Label>
+                            <Frame Grid.Row="2" Grid.Column="2" Style="{StaticResource FunctionMenuFrameStyle}" BackgroundColor="#fe880c">
+                                <Image Source="ic_function_paypal.png" WidthRequest="35" HeightRequest="35" HorizontalOptions="Center"></Image>
+                            </Frame>
+                            <Label Text="PayPal" Grid.Row="3" Grid.Column="2" Style="{StaticResource FunctionMenuLabelStyle}">
+                            </Label>
+                        </Grid>
+                    </controls:CustomCornerRadiusCardView>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

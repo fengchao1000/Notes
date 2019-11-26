@@ -4,6 +4,7 @@ using Notes.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -47,63 +48,57 @@ namespace Notes.ViewModels.Bookmarks
         /// </summary>
         public async void Initialize()
         {
-            await RefreshDataFromAPIAsync();
-
-            //string refreshKey = nameof(EbayMsgMenuViewModel) + AppPreferences.CurrentSelectedEbayUser.EbayUserKey;
-            //if (DateTime.UtcNow >= RefreshTimeHelper.GetRefreshTime(refreshKey))
-            //{
-            //    await RefreshDataFromAPIAsync();
-            //}
-            //else
-            //{
-            //    await GetDataFromSqliteAsync();
-            //}
+            string refreshKey = nameof(BookmarkViewModel);
+            if (DateTime.UtcNow >= RefreshTimeHelper.GetRefreshTime(refreshKey))
+            {
+                await RefreshDataFromAPIAsync();
+            }
+            else
+            {
+                await GetDataFromSqliteAsync();
+            }
         }
 
         /// <summary>
         /// 从Sqlite中获取数据
         /// </summary>
-        //public async Task GetDataFromSqliteAsync()
-        //{
-        //    try
-        //    {
-        //        IsBusy = true;
+        public async Task GetDataFromSqliteAsync()
+        {
+            try
+            {
+                IsBusy = true;
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
 
-        //        Stopwatch sw = new Stopwatch();
+                IList<Bookmark> bookmarkList = await ServicesManager.BookmarkService.GetAllFromSqliteAsync();
 
-        //        EbayMsgMenuCountGetParam ebayMsgMenuCountGetParam = new EbayMsgMenuCountGetParam();
-        //        ebayMsgMenuCountGetParam.EbayUserKey = AppPreferences.CurrentSelectedEbayUser.EbayUserKey;
-        //        IList<Category> CategoryList = await ServicesManager.CommentService.GetFromSqliteKeyValueTable<Category>(ebayMsgMenuCountGetParam);
+                if (bookmarkList != null)
+                {
+                    Bookmarks.Clear();
 
-        //        if (CategoryList != null)
-        //        {
-        //            EbayMsgMenuCollection.Clear();
+                    ObservableCollection<Bookmark> newBookmarkCollection = new ObservableCollection<Bookmark>();
 
-        //            ObservableCollection<Category> newEbayMsgMenuCollection = new ObservableCollection<Category>();
+                    foreach (Bookmark item in bookmarkList)
+                    {
+                        newBookmarkCollection.Add(item);
+                    }
 
-        //            foreach (Category item in CategoryList)
-        //            {
-        //                newEbayMsgMenuCollection.Add(item);
-        //            }
+                    Bookmarks = newBookmarkCollection;
+                }
 
-        //            sw.Start();
-
-        //            EbayMsgMenuCollection = newEbayMsgMenuCollection;
-        //        }
-
-        //        sw.Stop();
-        //        LoggerHelper.Current.Debug("EbayMsgMenuViewModel GetDataFromSqliteAsync ElapsedMilliseconds:" + sw.ElapsedMilliseconds);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        LoggerHelper.Current.Error(ex.ToString());
-        //    }
-        //    finally
-        //    {
-        //        await Task.Delay(ConstanceHelper.RefreshDelay);
-        //        IsBusy = false;
-        //    }
-        //}
+                sw.Stop();
+                LoggerHelper.Current.Debug("EbayMsgMenuViewModel GetDataFromSqliteAsync ElapsedMilliseconds:" + sw.ElapsedMilliseconds);
+            }
+            catch (Exception ex)
+            {
+                LoggerHelper.Current.Error(ex.ToString());
+            }
+            finally
+            {
+                await Task.Delay(ConstanceHelper.RefreshDelay);
+                IsBusy = false;
+            }
+        }
 
         async Task RefreshDataFromAPIAsync()
         {
@@ -128,13 +123,14 @@ namespace Notes.ViewModels.Bookmarks
                     return;
                 }
 
+                Bookmarks.Clear();
+
                 foreach (Bookmark item in result.Data.Items)
                 {
                     Bookmarks.Add(item);
                 }
 
-                //保存在sqlite
-                //await ServicesManager.EbayMsgService.UpdateToSqliteKeyValueTable(EbayMsgMenuCollection, ebayMsgMenuCountGetParam);
+                await ServicesManager.BookmarkService.BatchUpdateToSqlite(Bookmarks); //保存在sqlite
 
                 LoadStatus = LoadMoreStatus.StausDefault;
                 CanLoadMore = true;
@@ -146,8 +142,8 @@ namespace Notes.ViewModels.Bookmarks
             }
             finally
             {
-                //string refreshKey = nameof(EbayMsgMenuViewModel) + AppPreferences.CurrentSelectedEbayUser.EbayUserKey;
-                //RefreshTimeHelper.SetRefreshTime(refreshKey, DateTime.UtcNow.AddMinutes(ConstanceHelper.NextRefreshInterval));//记录刷新时间 
+                string refreshKey = nameof(BookmarkViewModel);
+                RefreshTimeHelper.SetRefreshTime(refreshKey, DateTime.UtcNow.AddMinutes(ConstanceHelper.NextRefreshInterval));//记录刷新时间 
                 await Task.Delay(500);
                 IsBusy = false;
             }
