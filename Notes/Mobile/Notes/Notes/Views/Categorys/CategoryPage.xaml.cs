@@ -33,7 +33,7 @@ namespace Notes.Views.Categorys
 
             if (!hasInitialize)
             {
-                await viewModel.Initialize();
+                 viewModel.Initialize();
 
                 foreach (Category item in viewModel.Categorys)
                 {

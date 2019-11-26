@@ -47,7 +47,7 @@ namespace Notes.ViewModels.Categorys
         /// <summary>
         /// 初始化ViewModel
         /// </summary>
-        public async Task Initialize()
+        public async void Initialize()
         {
             string refreshKey = nameof(CategoryViewModel);
             if (DateTime.UtcNow >= RefreshTimeHelper.GetRefreshTime(refreshKey))

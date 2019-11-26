@@ -27,13 +27,13 @@ namespace Notes.Views.Categorys
         /// <summary>
         /// 界面出现时执行
         /// </summary>
-        protected async override void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
 
             if (!hasInitialize)
             {
-                await viewModel.Initialize();
+                viewModel.Initialize();
 
                 hasInitialize = true;
             }

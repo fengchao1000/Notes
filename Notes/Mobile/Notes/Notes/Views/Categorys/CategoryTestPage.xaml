@@ -131,7 +131,7 @@
                                                 </Frame>
                                             </StackLayout>
                                             <StackLayout HorizontalOptions="End" VerticalOptions="CenterAndExpand" Padding="0,0,10,0">
-                                                <Image HeightRequest="22" WidthRequest="22" Source="ic_global_arrowforward.png"></Image>
+                                                
                                             </StackLayout>
                                         </StackLayout>
                                         <StackLayout HeightRequest="1" Padding="50,0,0,0" HorizontalOptions="FillAndExpand" Grid.Row="1" >
