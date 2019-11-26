@@ -1,8 +1,10 @@
-﻿using FC.Notes.EntityFrameworkCore;
+﻿using FC.Notes.Categorys;
+using FC.Notes.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Dynamic.Core;
 using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp.Domain.Entities;
@@ -17,6 +19,11 @@ namespace FC.Notes.Bookmarks
             : base(dbContextProvider)
         {
 
+        }
+
+        public IQueryable<Bookmark> GetAll()
+        {
+             return GetQueryable().IncludeDetails(); 
         }
 
         public override IQueryable<Bookmark> WithDetails()

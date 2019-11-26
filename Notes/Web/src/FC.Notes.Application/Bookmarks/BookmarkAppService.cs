@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
+using Volo.Abp.AutoMapper;
 using Volo.Abp.Domain.Repositories;
 
 namespace FC.Notes
@@ -25,6 +26,30 @@ namespace FC.Notes
             _bookmarkRepository = bookmarkRepository;
             _tagRepository = tagRepository;
             _categoryRepository = categoryRepository;
+        }
+         
+        public async Task<PagedResultDto<BookmarkDto>> GetPagedAsync(GetPagedBookmarkInputDto input)
+        {
+            //初步过滤
+            var query = _bookmarkRepository.GetAll()
+                .WhereIf(!input.Keyword.IsNullOrEmpty(), t => t.Content.Contains(input.Keyword))
+                .WhereIf(!input.CategoryId.HasValue, t => t.Categorys.Any(c=> c.CategoryId == input.CategoryId)).OrderByDescending(t => t.CreationTime); 
+            
+            //排序
+            //query = !string.IsNullOrEmpty(input.Sorting) ? query.OrderBy(input.Sorting) : query.OrderByDescending(t => t.CreationTime);
+
+            //获取总数
+            var totalCount = query.Count();
+            //默认的分页方式
+            //var taskList = query.Skip(input.SkipCount).Take(input.MaxResultCount).ToList();
+
+            //ABP提供了扩展方法PageBy分页方式
+            var bookmarks = query.PageBy(input).ToList();
+
+            IReadOnlyList<BookmarkDto> list = new List<BookmarkDto>(
+                            ObjectMapper.Map<List<Bookmark>, List<BookmarkDto>>(bookmarks));
+              
+            return new PagedResultDto<BookmarkDto>(totalCount, list);
         }
 
         public async Task<PagedResultDto<BookmarkDto>> GetListAsync(PagedAndSortedResultRequestDto input)
