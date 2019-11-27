@@ -27,7 +27,7 @@ namespace Notes.Views.Home
         /// <param name="e"></param>
         async void OnBookmarkClicked(object sender, System.EventArgs e)
         {
-            await NavigationHelper.PushAsync(Navigation, new CategoryTestPage(), false);
+            await NavigationHelper.PushAsync(Navigation, new CategoryPage(), false);
         }
 
         /// <summary>

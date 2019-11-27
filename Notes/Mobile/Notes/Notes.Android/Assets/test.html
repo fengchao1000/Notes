@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no" />
+    <title>消息 - PushAuction</title>
+    <link rel="stylesheet" type="text/css" href="css/default.css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script> 
+</head>
+<body>
+    <div>
+        <div id="modelTitle" class="title"></div>
+        <div class="Description">
+            <div class="Description-content">
+                <span class="Description-Date" id="modelDate"></span>&nbsp;
+                <!--<span class="Description-MessageType" id="modelMessageTypeName">123123</span>--> 
+            </div>
+        </div>
+        <div class="content" id="modelContent"></div>
+    </div>
+</body>
+</html>
+
+<script>
+ 
+    function updateModel(model) {  
+        $("#modelTitle").text(model.Title); 
+        $("#modelContent").append(model.Content); 
+        $("#modelDate").text(model.CreationTime);
+        //$("#modelMessageTypeName").text(model.MessageTypeName);
+    }
+
+    function updateLoadStatus(loadStatus) {
+            
+        }
+    
+
+</script>
+ 

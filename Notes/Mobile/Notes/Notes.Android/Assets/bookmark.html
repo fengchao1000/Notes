@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no" />
+    <title>博文 - 博客园</title>
+    <link rel="stylesheet" type="text/css" href="css/default.css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/vue.min.js"></script>
+</head>
+<body>
+    <div id="app" v-cloak v-show="hasContent">
+        <h2 class="title">{{ model.Title }}</h2>
+        <div class="authorinfo">
+            <span class="avatar-wrapper">
+                <img class="avatar" width="45" height="45" v-bind:src="model.Avatar=='https:'?'./images/avatar_placeholder.png':model.Avatar">
+            </span>
+            <div class="authorInfo-content">
+                <div class="authorInfo-name" v-html="model.Author"></div>
+                <span class="authorInfo-time">发布于 · {{ model.CreationTime }} </span>
+            </div>
+        </div>
+        <div class="content" v-html="model.Content"></div> 
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                hasContent: false,
+                model: {},
+                loadStatus: 0,
+                comments: []
+            },
+            methods: {
+                reload: function () {
+                    this.loadStatus = 1;
+                    reload();
+                }
+            }
+        });
+        $(window).scroll(function () {
+            loadReload();
+        });
+        function scrollToComments() {
+            if(app.hasContent){
+                $("html,body").animate({scrollTop:$(".comments").offset().top},1000);
+            }
+        }
+        function loadReload() {
+            if ($(document).scrollTop() + window.screen.height + 70 >= $(document).height()) {
+                if (app.loadStatus == 0 || app.loadStatus == 2)
+                    reload();
+            }
+        }
+        function updateModel(model) {
+            if (!app.hasContent) {
+                app.hasContent = true;
+
+                loadReload();
+            }
+            app.model = model;
+            
+        }
+        function updateLoadStatus(loadStatus) {
+            app.loadStatus = loadStatus;
+        }
+        function updateComments(list) {
+            app.comments = app.comments.concat(list)
+        }
+        function updateComment(item) {
+            var b = true;
+            if (item.Id > 0) {
+                for (var i = 0; i < app.comments.length; i++) {
+                    var element = app.comments[i];
+                    if (element.Id == item.Id) {
+                        b = false;
+                        element = item;
+                    }
+                }
+            }
+            if (b) {
+                app.comments = app.comments.concat(item);
+            }
+        }
+    </script>
+</body>
+</html>

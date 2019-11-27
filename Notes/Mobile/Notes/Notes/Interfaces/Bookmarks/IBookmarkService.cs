@@ -17,5 +17,7 @@ namespace Notes.Interfaces.Bookmarks
         /// <param name="sorting"></param>
         /// <returns></returns>
         Task<ResultData<PagedResultDto<Bookmark>>> GetBookmarks(string skipCount, string maxResultCount, int sorting);
+
+        Task<ResultData<PagedResultDto<Bookmark>>> GetBookmarkPaged(string keyword, Guid? categoryId, int skipCount = 0, int maxResultCount = 0, string sorting = null);
     }
 }

@@ -7,7 +7,8 @@
              xmlns:listView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
              xmlns:pullToRefresh="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms" 
              mc:Ignorable="d"
-             x:Class="Notes.Views.Categorys.CategoryPage">
+             x:Class="Notes.Views.Categorys.CategoryPage"
+             Title="分类">
     <ContentPage.Resources>
         <ResourceDictionary>
             <!-- StackLayout样式 -->
@@ -50,7 +51,7 @@
             </Style>
 
         </ResourceDictionary>
-    </ContentPage.Resources> 
+    </ContentPage.Resources>
     <ContentPage.Content>
         <pullToRefresh:SfPullToRefresh 
             x:Name="pullToRefresh" 
@@ -105,7 +106,7 @@
                         </ListView>-->
 
 
-                        <!--<listView:SfListView 
+                        <listView:SfListView 
                             Margin="0"
                             ItemSize="45"
                             ItemsSource="{Binding Categorys}"
@@ -131,7 +132,7 @@
                                                 </Frame>
                                             </StackLayout>
                                             <StackLayout HorizontalOptions="End" VerticalOptions="CenterAndExpand" Padding="0,0,10,0">
-                                                <Image HeightRequest="22" WidthRequest="22" Source="ic_global_arrowforward.png"></Image>
+                                                
                                             </StackLayout>
                                         </StackLayout>
                                         <StackLayout HeightRequest="1" Padding="50,0,0,0" HorizontalOptions="FillAndExpand" Grid.Row="1" >
@@ -140,9 +141,9 @@
                                     </StackLayout>
                                 </DataTemplate>
                             </listView:SfListView.ItemTemplate>
-                        </listView:SfListView>-->
-                    
-                    
+                        </listView:SfListView>
+
+
                     </StackLayout>
                 </ScrollView>
             </pullToRefresh:SfPullToRefresh.PullableContent>

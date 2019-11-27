@@ -1,10 +1,8 @@
 ﻿
-using Microsoft.AppCenter.Crashes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Serialization;
-using Notes.Models;
-using Notes.Services;
+using Newtonsoft.Json.Serialization; 
+using Notes.Models; 
 using System;
 using System.Net;
 using System.Net.Http;
@@ -21,7 +19,7 @@ namespace Notes.Helpers
         {
             serializerSettings = new JsonSerializerSettings
             {
-                ContractResolver = new CamelCasePropertyNamesContractResolver(),
+                ContractResolver = new CamelCasePropertyNamesContractResolver(),//CamelCase 风格
                 DateTimeZoneHandling = DateTimeZoneHandling.Utc,
                 NullValueHandling = NullValueHandling.Ignore
             };
@@ -40,19 +38,19 @@ namespace Notes.Helpers
         /// <typeparam name="TResult">返回实体类型</typeparam>
         /// <param name="uri">请求地址</param>
         /// <returns></returns>
-        public async Task<ResultData<TResult>> GetAsync<TResult>(string uri)
+        public async Task<ResultData<TResult>> GetAsync<TResult>(string uri, bool needAuthorization = false)
         {
             ResultData<TResult> result = new ResultData<TResult>();
             try
             {
-                HttpClient httpClient = CreateHttpClient();
+                HttpClient httpClient = await CreateHttpClient(needAuthorization);
                 HttpResponseMessage response = await httpClient.GetAsync(uri);
-                result = await GetResultData<TResult>(response);
+                result = await GetResultData<TResult>(response,uri);
             }
             catch (Exception ex)
             {
                 result = new ResultData<TResult>() { IsSuccess = false, Message = ex.Message };
-                Crashes.TrackError(ex);
+                LoggerHelper.Current.Error(ex.ToString());
             }
             return result;
         }
@@ -64,18 +62,18 @@ namespace Notes.Helpers
         /// <param name="uri">请求地址</param>
         /// <param name="content">HttpContent</param>
         /// <returns></returns>
-        public async Task<ResultData<TResult>> PostAsync<TResult>(string uri, HttpContent content)
+        public async Task<ResultData<TResult>> PostAsync<TResult>(string uri, HttpContent content, bool needAuthorization = true)
         {
-            ResultData<TResult> result = new ResultData<TResult>();
+            ResultData<TResult> result = new ResultData<TResult>(); 
             try
             {
-                HttpClient httpClient = CreateHttpClient();
-                HttpResponseMessage response = await httpClient.PostAsync(uri, content);
-                result = await GetResultData<TResult>(response);
+                HttpClient httpClient = await CreateHttpClient(needAuthorization); 
+                HttpResponseMessage response = await httpClient.PostAsync(uri, content);//.ConfigureAwait(false);
+                result = await GetResultData<TResult>(response,uri);
             }
             catch (Exception ex)
             {
-                Crashes.TrackError(ex);
+                LoggerHelper.Current.Error(ex.ToString());
                 result = new ResultData<TResult>() { IsSuccess = false, Message = ex.Message };
             }
             return result;
@@ -89,28 +87,28 @@ namespace Notes.Helpers
         /// <param name="data">请求数据</param>
         /// <param name="header">请求头</param>
         /// <returns></returns>
-        public async Task<ResultData<TResult>> PostAsync<TResult>(string uri, Object data, string header = "")
+        public async Task<ResultData<TResult>> PostAsync<TResult>(string uri, Object data, string header = "", bool needAuthorization = true)
         {
             ResultData<TResult> result = new ResultData<TResult>();
             try
             {
-                HttpClient httpClient = CreateHttpClient();
+                HttpClient httpClient = await CreateHttpClient(needAuthorization);
 
                 if (!string.IsNullOrEmpty(header))
                 {
                     AddHeaderParameter(httpClient, header);
                 }
 
-                string contentString = JsonConvert.SerializeObject(data);//debug
+                string contentString = JsonConvert.SerializeObject(data, serializerSettings);//debug
 
-                var content = new StringContent(JsonConvert.SerializeObject(data));
+                var content = new StringContent(JsonConvert.SerializeObject(data, serializerSettings));
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                 HttpResponseMessage response = await httpClient.PostAsync(uri, content);
-                result = await GetResultData<TResult>(response);
+                result = await GetResultData<TResult>(response,uri,data);
             }
             catch (Exception ex)
             {
-                Crashes.TrackError(ex);
+                LoggerHelper.Current.Error(ex.ToString());
                 result = new ResultData<TResult>() { IsSuccess = false, Message = ex.Message };
             }
             return result;
@@ -122,19 +120,19 @@ namespace Notes.Helpers
         /// <typeparam name="TResult">返回实体类型</typeparam>
         /// <param name="uri">请求地址</param>
         /// <returns></returns>
-        public async Task<ResultData<TResult>> PostAsync<TResult>(string uri)
+        public async Task<ResultData<TResult>> PostAsync<TResult>(string uri, bool needAuthorization = true)
         {
             ResultData<TResult> result = new ResultData<TResult>();
             try
             {
-                HttpClient httpClient = CreateHttpClient();
+                HttpClient httpClient = await CreateHttpClient(needAuthorization);
                 var content = new StringContent("");
                 HttpResponseMessage response = await httpClient.PostAsync(uri, content);
-                result = await GetResultData<TResult>(response);
+                result = await GetResultData<TResult>(response,uri);
             }
             catch (Exception ex)
             {
-                Crashes.TrackError(ex);
+                LoggerHelper.Current.Error(ex.ToString());
                 result = new ResultData<TResult>() { IsSuccess = false, Message = ex.Message };
             }
             return result;
@@ -148,21 +146,21 @@ namespace Notes.Helpers
         /// <param name="uri">请求地址</param>
         /// <param name="data">请求数据</param>
         /// <returns></returns>
-        public async Task<ResultData<TResult>> PostAsync<TResult, TFilter>(string uri, TFilter data)
+        public async Task<ResultData<TResult>> PostAsync<TResult, TFilter>(string uri, TFilter data, bool needAuthorization = true)
         {
             ResultData<TResult> result = new ResultData<TResult>();
             try
             {
-                HttpClient httpClient = CreateHttpClient();
+                HttpClient httpClient = await CreateHttpClient(needAuthorization);
 
-                var content = new StringContent(JsonConvert.SerializeObject(data));
+                var content = new StringContent(JsonConvert.SerializeObject(data, serializerSettings));
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                 HttpResponseMessage response = await httpClient.PostAsync(uri, content);
-                result = await GetResultData<TResult>(response);
+                result = await GetResultData<TResult>(response,uri,data);
             }
             catch (Exception ex)
             {
-                Crashes.TrackError(ex);
+                LoggerHelper.Current.Error(ex.ToString());
                 result = new ResultData<TResult>() { IsSuccess = false, Message = ex.Message };
             }
             return result;
@@ -176,22 +174,52 @@ namespace Notes.Helpers
         /// <param name="uri">请求地址</param>
         /// <param name="data">请求数据</param>
         /// <returns></returns>
-        public async Task<ResultData<TResult>> PostAsync<TResult>(string uri, string data)
+        public async Task<ResultData<TResult>> PostAsync<TResult>(string uri, string data, bool needAuthorization = true)
         {
             ResultData<TResult> result = new ResultData<TResult>();
             try
             {
-                HttpClient httpClient = CreateHttpClient();
+                HttpClient httpClient = await CreateHttpClient(needAuthorization);
 
                 var content = new StringContent(data);
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/x-www-form-urlencoded");
                 HttpResponseMessage response = await httpClient.PostAsync(uri, content);
-                result = await GetResultData<TResult>(response);
+                result = await GetResultData<TResult>(response,uri,data);
             }
             catch (Exception ex)
             {
                 result = new ResultData<TResult>() { IsSuccess = false, Message = ex.Message };
-                Crashes.TrackError(ex);
+                LoggerHelper.Current.Error(ex.ToString());
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 发送Post请求
+        /// </summary>
+        /// <typeparam name="TResult">返回实体类型</typeparam>
+        /// <param name="uri">请求地址</param>
+        /// <param name="content">HttpContent</param>
+        /// <returns></returns>
+        public async Task<ResultData<TResult>> PostAsync<TResult>(string uri, HttpContent content, string clientId, string clientSecret, bool needAuthorization = true)
+        {
+            ResultData<TResult> result = new ResultData<TResult>();
+            try
+            {
+                HttpClient httpClient = await CreateHttpClient(needAuthorization);
+
+                if (!string.IsNullOrWhiteSpace(clientId) && !string.IsNullOrWhiteSpace(clientSecret))
+                {
+                    AddBasicAuthenticationHeader(httpClient, clientId, clientSecret);
+                }
+
+                HttpResponseMessage response = await httpClient.PostAsync(uri, content);//.ConfigureAwait(false);
+                result = await GetResultData<TResult>(response, uri);
+            }
+            catch (Exception ex)
+            {
+                LoggerHelper.Current.Error(ex.ToString());
+                result = new ResultData<TResult>() { IsSuccess = false, Message = ex.Message };
             }
             return result;
         }
@@ -205,12 +233,12 @@ namespace Notes.Helpers
         /// <param name="clientId">clientId</param>
         /// <param name="clientSecret">clientSecret</param>
         /// <returns></returns>
-        public async Task<ResultData<TResult>> PostAsync<TResult>(string uri, string data, string clientId, string clientSecret)
+        public async Task<ResultData<TResult>> PostAsync<TResult>(string uri, string data, string clientId, string clientSecret, bool needAuthorization = true)
         {
             ResultData<TResult> result = new ResultData<TResult>();
             try
             {
-                HttpClient httpClient = CreateHttpClient();
+                HttpClient httpClient = await CreateHttpClient(needAuthorization);
 
                 if (!string.IsNullOrWhiteSpace(clientId) && !string.IsNullOrWhiteSpace(clientSecret))
                 {
@@ -220,12 +248,12 @@ namespace Notes.Helpers
                 var content = new StringContent(data);
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/x-www-form-urlencoded");
                 HttpResponseMessage response = await httpClient.PostAsync(uri, content);
-                result = await GetResultData<TResult>(response);
+                result = await GetResultData<TResult>(response,uri,data);
             }
             catch (Exception ex)
             {
                 result = new ResultData<TResult>() { IsSuccess = false, Message = ex.Message };
-                Crashes.TrackError(ex);
+                LoggerHelper.Current.Error(ex.ToString());
             }
             return result;
         }
@@ -238,27 +266,27 @@ namespace Notes.Helpers
         /// <param name="data">请求数据</param>
         /// <param name="header">请求头</param>
         /// <returns></returns>
-        public async Task<ResultData<TResult>> PutAsync<TResult>(string uri, TResult data, string header = "")
+        public async Task<ResultData<TResult>> PutAsync<TResult>(string uri, Object data, string header = "", bool needAuthorization = true)
         {
             ResultData<TResult> result = new ResultData<TResult>();
             try
             {
-                HttpClient httpClient = CreateHttpClient();
+                HttpClient httpClient = await CreateHttpClient(needAuthorization);
 
                 if (!string.IsNullOrEmpty(header))
                 {
                     AddHeaderParameter(httpClient, header);
                 }
 
-                var content = new StringContent(JsonConvert.SerializeObject(data));
+                var content = new StringContent(JsonConvert.SerializeObject(data, serializerSettings));
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                 HttpResponseMessage response = await httpClient.PutAsync(uri, content);
-                result = await GetResultData<TResult>(response);
+                result = await GetResultData<TResult>(response,uri,data);
             }
             catch (Exception ex)
             {
                 result = new ResultData<TResult>() { IsSuccess = false, Message = ex.Message };
-                Crashes.TrackError(ex);
+                LoggerHelper.Current.Error(ex.ToString());
             }
             return result;
         }
@@ -268,9 +296,9 @@ namespace Notes.Helpers
         /// </summary>
         /// <param name="uri">请求地址</param>
         /// <returns></returns>
-        public async Task DeleteAsync(string uri)
+        public async Task DeleteAsync(string uri, bool needAuthorization = true)
         {
-            HttpClient httpClient = CreateHttpClient();
+            HttpClient httpClient = await CreateHttpClient(needAuthorization);
             await httpClient.DeleteAsync(uri);
         }
 
@@ -278,18 +306,40 @@ namespace Notes.Helpers
         /// 创建HttpClient
         /// </summary>
         /// <returns></returns>
-        private HttpClient CreateHttpClient()
+        private async Task<HttpClient> CreateHttpClient(bool needAuthorization)
         {
-            var httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            //if (!string.IsNullOrEmpty(UserTokenSetting.Current.AccessToken))
+            var httpClient = new HttpClient();
+            httpClient.Timeout = TimeSpan.FromSeconds(30);
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            if (!needAuthorization)
+            {
+                return httpClient;
+            }
+
+            Token token = await TokenHelper.AcquireTokenAsync().ConfigureAwait(false);
+            if (token == null)
+            {
+                return httpClient;
+            }
+            if (string.IsNullOrEmpty(token.AccessToken))
+            {
+                return httpClient;
+            }
+
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(token.TokenType, token.AccessToken);
+
+            //if (AppConfig.CurrentEnvironment == AppEnvironment.Development)
             //{
-            //    //todo
-            //    //string testToken = "eyJhbGciOiJSUzI1NiIsImtpZCI6IjZFMEUwM0E2NjM1Q0VGRUE4NzYzNjk4RTE4Q0QxMEFFOEQyMzE3REMiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJiZzREcG1OYzctcUhZMm1PR00wUXJvMGpGOXcifQ.eyJuYmYiOjE1NTg1OTkzMjksImV4cCI6MTU1OTIwNDEyOSwiaXNzIjoiaHR0cDovLzE5Mi4xNjguMS41MiIsImF1ZCI6WyJodHRwOi8vMTkyLjE2OC4xLjUyL3Jlc291cmNlcyIsImFwaSJdLCJjbGllbnRfaWQiOiJBcHAiLCJzdWIiOiI2YmI2MDAyOS04NTUzLTRmMTktYmVlMy01YzQzM2FmZjg3ZWUiLCJhdXRoX3RpbWUiOjE1NTg1OTkzMjksImlkcCI6ImxvY2FsIiwiQWRtaW5Vc2VyS2V5IjoiNmJiNjAwMjktODU1My00ZjE5LWJlZTMtNWM0MzNhZmY4N2VlIiwiVXNlcklEIjoiU2Vhbl90ZXN0IiwiVXNlck5hbWUiOiJYRyIsIlVzZXJLZXkiOiI1NTRmNDY1NS0yNjY1LTQ4NGMtYjAwNy1hMjhmNjJjZDQyNTciLCJzY29wZSI6WyJvcGVuaWQiLCJwcm9maWxlIiwiYXBpIiwib2ZmbGluZV9hY2Nlc3MiXSwiYW1yIjpbInB3ZCJdfQ.ZgmByyreeLer7gkUZZONNc6JwPe31Xn4g7thP3O22dD7dn52L-SXeB7YetevnOjjUnmXZnnsB4XYuiUVRzDx5JgqD7NVkcAgTVY9YCFhBAEqikPrmivhhwSuOK2_b8awSGBvPPaBSl0U1OfZa2ExVh4WQ1EEyHFR8vW5AXvOQL5ICXWxUq5SuJFBXkc2i6F5ZCqgMiYFiL-nfOUBuKpOMq4Z6EQx7GyJPddujHZIPKXlGOeXi6eZBinitkeX7v4psagWzUyLJt2UiJpQ2_awHDztFecQQMEg1A-1UUihGOChNJlC8ZYmS951IoDquTRH2LJhm-Td6QByaxx339Vxxg";
-            //    //httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(UserTokenSetting.Current.TokenType, testToken);
-            //    //httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(UserTokenSetting.Current.TokenType, UserTokenSetting.Current.AccessToken);
+            //    //    string testToken = "eyJhbGciOiJSUzI1NiIsImtpZCI6IjZFMEUwM0E2NjM1Q0VGRUE4NzYzNjk4RTE4Q0QxMEFFOEQyMzE3REMiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJiZzREcG1OYzctcUhZMm1PR00wUXJvMGpGOXcifQ.eyJuYmYiOjE1NzE5NzY2MDgsImV4cCI6MTU3MTk4MDIwOCwiaXNzIjoiaHR0cDovLzE5Mi4xNjguMS41MiIsImF1ZCI6InBhYXBpbW9iaWxlIiwiY2xpZW50X2lkIjoiQXBwIiwic3ViIjoiNmJiNjAwMjktODU1My00ZjE5LWJlZTMtNWM0MzNhZmY4N2VlIiwiYXV0aF90aW1lIjoxNTcxOTc2NjA4LCJpZHAiOiJsb2NhbCIsIkFkbWluVXNlcktleSI6IjZiYjYwMDI5LTg1NTMtNGYxOS1iZWUzLTVjNDMzYWZmODdlZSIsIlVzZXJJRCI6Im1heHRyYWRlIiwiVXNlck5hbWUiOiJNYXggVHJhZGUiLCJVc2VyS2V5IjoiNmJiNjAwMjktODU1My00ZjE5LWJlZTMtNWM0MzNhZmY4N2VlIiwic2NvcGUiOlsib3BlbmlkIiwicHJvZmlsZSIsInBhYXBpbW9iaWxlIiwib2ZmbGluZV9hY2Nlc3MiXSwiYW1yIjpbInB3ZCJdfQ.U8rjvYS4uGk0YMrWiC6XE-YbPD6i0XjjWcgncNJCRJk1HVXjl42THUHI6AN5sbTcKeVY_JXao_JEP1KgxsW7meV1fIlmjJw4NabaSYmjxVMnOE0NUDyER7aQOk7XUb-AI9FmF5r6yVGK1hkkpATRHtHQ0ZnmGqxgFXWigMIj9TVujGqAolTsnccY-vm2nTOZRjjvCO2BDfOikY1TjZ77p4A7A20pomsnxBqWih2ahWFc428qSuztb9tWEXaT03w9frKh5WzGbv3PiDcjmSKafoHPNqlf5npkAHaB0tuhyCVDwBZ6KhpmtYcPvog_jvq45VpxDAq-f7dTf1QkF1YzcQ";
+            //    //    httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(token.TokenType, testToken);
+            //    httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(token.TokenType, token.AccessToken);
             //}
+            //else
+            //{
+            //    httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(token.TokenType, token.AccessToken);
+            //} 
+
             return httpClient;
         }
 
@@ -330,33 +380,59 @@ namespace Notes.Helpers
         /// 获取返回结果，解析成ResultData<TResult>
         /// </summary>
         /// <typeparam name="TResult">返回数据类型</typeparam>
-        /// <param name="response">HttpResponseMessage</param>
+        /// <param name="response">HttpResponseMessage</param> 
+        /// <param name="uri">用于记录日志</param>
+        /// <param name="data">用于记录日志</param>
         /// <returns></returns>
-        private async Task<ResultData<TResult>> GetResultData<TResult>(HttpResponseMessage response)
+        private async Task<ResultData<TResult>> GetResultData<TResult>(HttpResponseMessage response, string uri,Object data = null)
         {
             var code = response.StatusCode;
+            string responseContent = await response.Content.ReadAsStringAsync();
+            //全局日志，用于调试，设置logger的level可以关闭Debug日志
+            if (code == HttpStatusCode.OK)
+            {
+                //LoggerHelper.Current.Debug($"====APILog===ResponseCode:{code}===RquestURI:{uri}===RquestBody:{JsonConvert.SerializeObject(data)}===ResponseContent{responseContent}");
+            }
+            else
+            {
+                //LoggerHelper.Current.Error($"====APILog===ResponseCode:{code}===RquestURI:{uri}===RquestBody:{JsonConvert.SerializeObject(data)}===ResponseContent{responseContent}");
+            }
+
             switch (code)
             {
                 case HttpStatusCode.OK:
-                    string serialized = await response.Content.ReadAsStringAsync();
-                    if (string.IsNullOrEmpty(serialized))
+                    
+                    if (string.IsNullOrEmpty(responseContent))
                     {
                         return new ResultData<TResult>() { IsSuccess = true, Message = "" };
                     }
                     else
                     {
-                        TResult result = await Task.Run(() => JsonConvert.DeserializeObject<TResult>(serialized, serializerSettings));
-                        return new ResultData<TResult>() { IsSuccess = true, Data = result, Message = "" }; 
+                        TResult result = await Task.Run(() => JsonConvert.DeserializeObject<TResult>(responseContent, serializerSettings));
+                        return new ResultData<TResult>() { IsSuccess = true, Data = result, Message = "" };
+                    }
+                case HttpStatusCode.BadRequest:
+                    if (string.IsNullOrEmpty(responseContent))
+                    {
+                        return new ResultData<TResult>() { IsSuccess = false, Message = "" };
+                    } else if (responseContent.Contains("invalid_grant"))
+                    {
+                        return new ResultData<TResult>() { IsSuccess = false, Message = "invalid_grant" };
+                    }
+                    else
+                    { 
+                        return new ResultData<TResult>() { IsSuccess = false, Message = responseContent };
                     } 
                 case HttpStatusCode.Created:
-                    return new ResultData<TResult>() { IsSuccess = true, Message = await response.Content.ReadAsStringAsync() };
+                    return new ResultData<TResult>() { IsSuccess = true, Message = responseContent };
+                case HttpStatusCode.RequestTimeout:
+                    ToastHelper.Current.SendToast("请求超时，请稍后重试!");
+                    return new ResultData<TResult>() { IsSuccess = false, Message = responseContent };
                 case HttpStatusCode.Unauthorized:
-                    //401可能出现的原因token过期，则需要刷新token
-                    //await ServicesManager.IdentityService.RefreshToken(UserTokenSetting.Current.RefreshToken);
-                    return new ResultData<TResult>() { IsSuccess = false, Message = "" };
-                default:
-                    var message = await response.Content.ReadAsStringAsync();
-                    return new ResultData<TResult>() { IsSuccess = false, Message = message };
+                    todo://退出登录
+                    return new ResultData<TResult>() { IsSuccess = false, Message = "" }; 
+                default: 
+                    return new ResultData<TResult>() { IsSuccess = false, Message = responseContent };
             }
         }
 

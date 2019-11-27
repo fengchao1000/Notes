@@ -18,11 +18,10 @@ namespace Notes
 {
     public partial class App : Application
     {
-        const string ResourceId = "Notes.Resources.LocalizationResources.en-us";
 
         public App()
         {
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTY3OTYyQDMxMzcyZTMzMmUzMFVpTzJDK0VMM2Q1V2c1UXdRZ3dDazJPL0lsYzZFMHQ5N3kyZzE0NmQ1UlU9");//NzEzNDVAMzEzNjJlMzQyZTMwSUlPcU1RaktJK1BNd3NvQzRBYnByYW9mbVdtcG5qUGQ2aHFZMHAyViswUT0=
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("");
 
             InitializeComponent();
 

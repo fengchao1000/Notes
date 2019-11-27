@@ -10,6 +10,13 @@ namespace Notes.Interfaces.Articles
     public interface IArticlesService
     {
         /// <summary>
+        /// 获取文章body
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<ResultData<string>> GetArticleBodyAsync(int id);
+
+        /// <summary>
         /// 查询消息分页数据
         /// </summary>
         /// <param name="mobileMessageSearchParam"></param>

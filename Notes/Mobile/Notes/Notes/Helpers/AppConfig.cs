@@ -3,34 +3,39 @@
     public class AppConfig
     {
         #region base config
-        
+
+        /// <summary>
+        /// cnblogs ClientId
+        /// </summary>
+        public const string ClientId = "cda7b086-4cdf-4aaf-bde5-2aefabefa828";
+
+        /// <summary>
+        /// cnblogs ClientSercret
+        /// </summary>
+        public const string ClientSercret = "E9xR1T6fMb8WJ8fqr3AXMuSrAHUfD4Tgo6MxlArBF5o_XxVK9IWmC498PyM03aAZILhhYHTwgszFFmAk";
+
         /// <summary>
         /// Syncfusion报表插件的密钥
         /// </summary>
-        public const string SyncfusionLicense = "NzEzNDVAMzEzNjJlMzQyZTMwSUlPcU1RaktJK1BNd3NvQzRBYnByYW9mbVdtcG5qUGQ2aHFZMHAyViswUT0=";
+        public const string SyncfusionLicense = "";
 
         /// <summary>
         /// 是否使用模拟服务
         /// </summary>
         public static bool IsUseTheMockService = false;
-
+         
         /// <summary>
-        /// 客户端id，必须和IS4的Config保持一致
-        /// </summary>
-        public const string ClientId = "App";
-
-        /// <summary>
-        /// 客户端密钥，必须和IS4的Config保持一致
-        /// </summary>
-        public const string ClientSecret = "secret";
-
-        /// <summary>
-        /// PA主系统API地址
+        /// Notes API地址
         /// </summary> 
-        public const string PAAPIEndpoint = "http://106.52.218.254:8081";
+        public const string NotesAPIEndpoint = "http://106.52.218.254:8081";
 
         /// <summary>
-        /// PA系统登录地址，即IS4地址
+        /// cnblogs API地址
+        /// </summary> 
+        public const string CnblogsAPIEndpoint = "https://api.cnblogs.com";
+
+        /// <summary>
+        /// 登录地址
         /// </summary> 
         public const string BaseIdentityEndpoint = "";
 
@@ -50,7 +55,7 @@
         public static string TokenEndpoint = $"{BaseIdentityEndpoint}/connect/token";
 
         /// <summary>
-        /// PA Sqlite数据库名称
+        /// Notes Sqlite数据库名称
         /// </summary>
         public const string SqliteFilename = "notes.db3";
 
@@ -58,10 +63,17 @@
 
         #region api config
 
-        public static string BookmarkUrl = $"{PAAPIEndpoint}/api/app/bookmark";
+        public static string BookmarkUrl = $"{NotesAPIEndpoint}/api/app/bookmark";
+        public static string BookmarkPagedUrl = $"{NotesAPIEndpoint}/api/app/bookmark/paged";
+        public static string CategoryUrl = $"{NotesAPIEndpoint}/api/app/category";
 
-        public static string CategoryUrl = $"{PAAPIEndpoint}/api/app/category";
-         
+        public const string Token = "https://oauth.cnblogs.com/connect/token";
+        public const string ArticleBody = CnblogsAPIEndpoint + "/api/blogposts/{0}/body";
+        public const string ArticleHome = CnblogsAPIEndpoint + "/api/blogposts/@sitehome?pageIndex={0}&pageSize={1}";
+        public const string ArticleHot = CnblogsAPIEndpoint + "/api/blogposts/@picked?pageIndex={0}&pageSize={1}";
+        public const string ArticleComment = CnblogsAPIEndpoint + "/api/blogs/{0}/posts/{1}/comments?pageIndex={2}&pageSize={3}";
+        public const string ArticleCommentAdd = CnblogsAPIEndpoint + "/api/blogs/{0}/posts/{1}/comments";
+
         #endregion
     }
 }

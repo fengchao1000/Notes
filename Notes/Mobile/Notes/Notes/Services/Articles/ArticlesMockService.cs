@@ -12,8 +12,14 @@ using System.Threading.Tasks;
 namespace Notes.Services.Articles
 {
     public class ArticlesMockService : IArticlesService
-    { 
+    {
         #region  API Method
+
+        public async Task<ResultData<string>> GetArticleBodyAsync(int id)
+        {
+            var url = string.Format(AppConfig.ArticleBody, id);
+            return await RequestProvider.Current.GetAsync<string>(url, true);
+        }
 
         /// <summary>
         /// 

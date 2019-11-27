@@ -32,8 +32,8 @@ namespace FC.Notes
         {
             //初步过滤
             var query = _bookmarkRepository.GetAll()
-                .WhereIf(!input.Keyword.IsNullOrEmpty(), t => t.Content.Contains(input.Keyword))
-                .WhereIf(!input.CategoryId.HasValue, t => t.Categorys.Any(c=> c.CategoryId == input.CategoryId)).OrderByDescending(t => t.CreationTime); 
+                .WhereIf(!input.Keyword.IsNullOrEmpty(), t => t.Content.Contains(input.Keyword) || t.Summary.Contains(input.Keyword) || t.Title.Contains(input.Keyword))
+                .WhereIf(input.CategoryId.HasValue, t => t.Categorys.Any(c=> c.CategoryId == input.CategoryId)).OrderByDescending(t => t.CreationTime); 
             
             //排序
             //query = !string.IsNullOrEmpty(input.Sorting) ? query.OrderBy(input.Sorting) : query.OrderByDescending(t => t.CreationTime);
@@ -41,7 +41,7 @@ namespace FC.Notes
             //获取总数
             var totalCount = query.Count();
             //默认的分页方式
-            //var taskList = query.Skip(input.SkipCount).Take(input.MaxResultCount).ToList();
+            //var bookmarks = query.Skip(input.SkipCount).Take(input.MaxResultCount).ToList();
 
             //ABP提供了扩展方法PageBy分页方式
             var bookmarks = query.PageBy(input).ToList();

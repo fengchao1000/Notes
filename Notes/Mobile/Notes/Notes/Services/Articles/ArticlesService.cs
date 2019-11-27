@@ -1,4 +1,5 @@
-﻿using Notes.Interfaces.Articles;
+﻿using Notes.Helpers;
+using Notes.Interfaces.Articles;
 using Notes.Models;
 using Notes.Models.Articles;
 using System;
@@ -10,6 +11,12 @@ namespace Notes.Services.Articles
 {
     public class ArticlesService : IArticlesService
     {
+        public async Task<ResultData<string>> GetArticleBodyAsync(int id)
+        {
+            var url = string.Format(AppConfig.ArticleBody, id);  
+            return await RequestProvider.Current.GetAsync<string>(url,true);
+        }
+
         public Task<int> DeleteArticlesFromSqlite(int messageKey)
         {
             throw new NotImplementedException();

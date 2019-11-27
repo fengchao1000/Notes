@@ -7,7 +7,8 @@
              xmlns:listView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
              xmlns:pullToRefresh="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms" 
              mc:Ignorable="d"
-             x:Class="Notes.Views.Bookmarks.BookmarkPage">
+             x:Class="Notes.Views.Bookmarks.BookmarkPage"
+             Title="书签">
     <ContentPage.Resources>
         <ResourceDictionary>
             <!-- StackLayout样式 -->
@@ -91,8 +92,10 @@
                     BackgroundColor="White"
                     SelectionBackgroundColor="#e7f1fb"
                     ItemTapped="OnListViewItemTapped"  
-                    >
-                    <!--<listView:SfListView.HeaderTemplate>
+                    LoadMoreOption="Auto" 
+                    LoadMoreCommand="{Binding LoadMoreItemsCommand}"
+                    LoadMoreCommandParameter="{Binding Source={x:Reference Name=listView}}">
+                    <listView:SfListView.HeaderTemplate>
                         <DataTemplate>
                             <StackLayout BackgroundColor="#E4E4E4" Padding="8,8,8,8">
                                 <controls:CustomSearchBar  
@@ -116,7 +119,7 @@
                                 </controls:CustomSearchBar>
                             </StackLayout>
                         </DataTemplate>
-                    </listView:SfListView.HeaderTemplate>-->
+                    </listView:SfListView.HeaderTemplate>
                     <listView:SfListView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="0" HeightRequest="82" Margin="20,8,15,0">
@@ -136,7 +139,7 @@
                                 <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Orientation="Horizontal" HeightRequest="40" Spacing="0" Margin="0,0,0,12" >
                                     <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" >
                                         <controls:CustomItemLabel 
-                                                LineSpacing="1.35"
+                                                LineSpacing="1.2"
                                                 MaxLines="2" 
                                                 Text="{Binding Summary}"
                                                 Style="{StaticResource EbayMsgSubjectLabelStyle}" 

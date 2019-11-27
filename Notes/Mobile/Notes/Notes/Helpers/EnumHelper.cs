@@ -4,6 +4,17 @@ using System.Text;
 
 namespace Notes.Helpers
 {
+    /// <summary>
+    /// 连接来源
+    /// </summary>
+    public enum LinkSourceType
+    {
+        Cnblogs,
+        Jianshu,
+        CSDN,
+        Other
+    }
+
     public enum LoadMoreStatus
     {
         StausDefault = 0,

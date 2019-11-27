@@ -1,5 +1,6 @@
 ﻿using Notes.Helpers;
 using Notes.Models.Bookmarks;
+using Notes.Models.Categorys;
 using Notes.ViewModels.Bookmarks;
 using Notes.Views.Article;
 using Notes.Views.Categorys;
@@ -21,12 +22,18 @@ namespace Notes.Views.Bookmarks
 
         private bool hasInitialize = false;
 
+        public BookmarkPage(Category category)
+        {
+            InitializeComponent();
+
+            BindingContext = viewModel = new BookmarkViewModel(category); 
+        }
+
         public BookmarkPage()
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new BookmarkViewModel();
-
+            BindingContext = viewModel = new BookmarkViewModel(new Category());
         }
 
         /// <summary>
@@ -42,10 +49,10 @@ namespace Notes.Views.Bookmarks
 
                 hasInitialize = true;
 
-                var prevPage = Navigation.NavigationStack.FirstOrDefault(p => p is CategoryTestPage);
+                var prevPage = Navigation.NavigationStack.FirstOrDefault(p => p is CategoryPage);
                 if (prevPage == null)
                 {
-                    Navigation.InsertPageBefore(new CategoryTestPage(), this);
+                    Navigation.InsertPageBefore(new CategoryPage(), this);
                 }
             }
         }
@@ -57,9 +64,12 @@ namespace Notes.Views.Bookmarks
         /// <param name="e"></param>
         private async void OnListViewItemTapped(object sender, Syncfusion.ListView.XForms.ItemTappedEventArgs e)
         {
-            Bookmark bookmark = e.ItemData as Bookmark; 
-            var articlesDetailsPage = new ArticlesDetailsPage(new Models.Articles.ArticlesDto { Url = bookmark.LinkUrl,Title= bookmark.Title});
-            await NavigationHelper.PushAsync(Navigation, articlesDetailsPage, false);
+            Bookmark bookmark = e.ItemData as Bookmark;
+            //var articlesDetailsPage = new ArticlesDetailsPage(new Models.Articles.ArticlesDto { Url = bookmark.LinkUrl,Title= bookmark.Title});
+            //await NavigationHelper.PushAsync(Navigation, articlesDetailsPage, false);
+
+            var bookmarkDetailPage = new BookmarkDetailPage(bookmark);
+            await NavigationHelper.PushAsync(Navigation, bookmarkDetailPage, false); 
         }
 
         /// <summary>

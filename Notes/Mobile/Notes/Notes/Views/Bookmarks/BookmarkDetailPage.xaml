@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:Notes.Controls;assembly=Notes"
+             mc:Ignorable="d"
+             x:Class="Notes.Views.Bookmarks.BookmarkDetailPage">
+    <ContentPage.Content>
+        <StackLayout Spacing="0">
+            <AbsoluteLayout
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand">
+                <controls:CustomMessageDetailWebView 
+                    x:Name="formsWebView"
+                    LoadStatus="{Binding LoadStatus}" 
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    AbsoluteLayout.LayoutFlags="All"/>
+                <StackLayout IsVisible="{Binding IsBusy}" 
+                    HorizontalOptions="FillAndExpand" 
+                    VerticalOptions="FillAndExpand" 
+                    BackgroundColor="White"
+                    AbsoluteLayout.LayoutBounds="0.5,0.5,1,1"
+                    AbsoluteLayout.LayoutFlags="All">
+                    <ActivityIndicator 
+                        IsRunning="{Binding IsBusy}"
+                        Color="#c0c0c0"
+                        HeightRequest="50"
+                        WidthRequest="50"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+                <StackLayout IsVisible="{Binding HasError}" 
+                    HorizontalOptions="FillAndExpand" 
+                    VerticalOptions="FillAndExpand" 
+                    BackgroundColor="White"
+                    AbsoluteLayout.LayoutBounds="0.5,0.5,1,1"
+                    AbsoluteLayout.LayoutFlags="All">
+                    <StackLayout
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand">
+                        <Label
+                             Text="重新加载" 
+                             HorizontalOptions="CenterAndExpand">
+                        </Label>
+                    </StackLayout> 
+                </StackLayout>
+            </AbsoluteLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

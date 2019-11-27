@@ -88,6 +88,8 @@
     <Compile Include="Helpers\SQLiteAndroidHelper.cs" />
     <Compile Include="Helpers\ToasterAndroidHelper.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Renderers\CustomItemLabelRenderer.cs" />
+    <Compile Include="Renderers\CustomSearchBarRenderer.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -114,7 +116,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icon.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Notes\Notes.csproj">
       <Project>{35B9FDD0-5874-406B-9294-780F1537CE2B}</Project>
@@ -141,6 +145,63 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_function_bookmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\color_cursor.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\css\default.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\images\avatar_placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\images\ic_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\images\ic_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\images\ic_gold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\images\ic_reply.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\images\ic_tab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\images\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\images\lucky-star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\js\jquery.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\js\vue.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\bookmark.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\test.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

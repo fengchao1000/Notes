@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:controls="clr-namespace:Notes.Controls;assembly=Notes"
              mc:Ignorable="d"
-             x:Class="Notes.Views.Home.HomePage">
+             x:Class="Notes.Views.Home.HomePage"
+             Title="首页">
     <ContentPage.Resources>
         <ResourceDictionary>
             <!--今天、昨天、前天描述文本样式-->
@@ -160,8 +161,7 @@
                             <Frame Grid.Row="2" Grid.Column="2" Style="{StaticResource FunctionMenuFrameStyle}" BackgroundColor="#fe880c">
                                 <Image Source="ic_function_paypal.png" WidthRequest="35" HeightRequest="35" HorizontalOptions="Center"></Image>
                             </Frame>
-                            <Label Text="PayPal" Grid.Row="3" Grid.Column="2" Style="{StaticResource FunctionMenuLabelStyle}">
-                            </Label>
+                           
                         </Grid>
                     </controls:CustomCornerRadiusCardView>
                 </StackLayout>

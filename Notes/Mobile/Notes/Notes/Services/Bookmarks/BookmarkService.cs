@@ -15,5 +15,10 @@ namespace Notes.Services.Bookmarks
         {
             return await RequestProvider.Current.GetAsync<PagedResultDto<Bookmark>>($"{AppConfig.BookmarkUrl}");
         }
+
+        public async Task<ResultData<PagedResultDto<Bookmark>>> GetBookmarkPaged(string keyword,Guid? categoryId, int skipCount = 0, int maxResultCount = 10, string sorting = null)
+        {
+            return await RequestProvider.Current.GetAsync<PagedResultDto<Bookmark>>($"{AppConfig.BookmarkPagedUrl}?keyword={keyword}&categoryId={categoryId}&skipCount={skipCount}&maxResultCount={maxResultCount}&sorting={sorting}");
+        }
     }
 }
