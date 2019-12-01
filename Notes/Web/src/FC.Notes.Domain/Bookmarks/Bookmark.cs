@@ -6,13 +6,14 @@ using System.Collections.ObjectModel;
 using System.Text;
 using Volo.Abp;
 using Volo.Abp.Domain.Entities.Auditing;
+using Volo.Abp.MultiTenancy;
 
 namespace FC.Notes.Bookmarks
 {
     /// <summary>
     /// 书签
     /// </summary>
-    public class Bookmark : FullAuditedAggregateRoot<Guid>
+    public class Bookmark : FullAuditedAggregateRoot<Guid>,IMultiTenant
     {
         [NotNull]
         public string Title { get; set; }
@@ -31,6 +32,8 @@ namespace FC.Notes.Bookmarks
         public bool IsCrawl { get; set; }
         public virtual Collection<BookmarkTag> Tags { get; protected set; }
         public virtual Collection<BookmarkCategory> Categorys { get; protected set; }
+
+        public Guid? TenantId { get; set; }
 
         protected Bookmark()
         {

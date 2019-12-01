@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Text;
 using Volo.Abp;
 using Volo.Abp.Domain.Entities.Auditing;
+using Volo.Abp.MultiTenancy;
 
 namespace FC.Notes.Tagging
 {
-    public class Tag : FullAuditedAggregateRoot<Guid>
+    public class Tag : FullAuditedAggregateRoot<Guid>, IMultiTenant
     {
         public virtual Guid BookmarkId { get; protected set; }
 
@@ -16,7 +17,7 @@ namespace FC.Notes.Tagging
         public virtual string Description { get; protected set; }
 
         public virtual int UsageCount { get; protected internal set; }
-
+        public Guid? TenantId { get; set; }
         protected Tag()
         {
 

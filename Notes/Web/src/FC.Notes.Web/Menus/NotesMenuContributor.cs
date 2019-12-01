@@ -38,8 +38,10 @@ namespace FC.Notes.Web.Menus
             context.Menu.AddItem(
                new ApplicationMenuItem("Notes", l["Menu:Category"])
                    .AddItem(new ApplicationMenuItem("Notes.Categorys", l["Menu:Category"], url: "/Categorys"))
-
            );
+
+             
+
         }
     }
 }

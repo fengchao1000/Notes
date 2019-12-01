@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.Text;
 using Volo.Abp;
 using Volo.Abp.Domain.Entities.Auditing;
+using Volo.Abp.MultiTenancy;
 
 namespace FC.Notes.Categorys
 {
 
-    public class Category : FullAuditedAggregateRoot<Guid>
+    public class Category : FullAuditedAggregateRoot<Guid>, IMultiTenant
     {
 
         public virtual string Name { get; protected set; }
@@ -16,7 +17,7 @@ namespace FC.Notes.Categorys
         public virtual string Description { get; protected set; }
 
         public virtual int UsageCount { get; protected internal set; }
-
+        public Guid? TenantId { get; set; }
         protected Category()
         {
 
