@@ -111,7 +111,9 @@ namespace Notes.ViewModels.Bookmarks
         /// <returns></returns>
         public async Task BookmarkReadAsync()
         {
-            ResultData<Bookmark> result = await ServicesManager.BookmarkService.UpdateRead(bookmark.Id, true);
+            //TODO: 文章已读未读设置后，列表更新，发布订阅的方式，进度表
+
+            ResultData<Bookmark> result = await ServicesManager.BookmarkService.UpdateRead(bookmark.Id, !bookmark.IsRead);
             if (result.IsSuccess)
             { 
                 bookmark.IsRead = true; 

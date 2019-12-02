@@ -18,7 +18,7 @@ namespace Notes.Models.Bookmarks
         public string Content { get; set; }
         public bool IsRead { get; set; }
         public DateTime CreationTime { get; set; }
-
+        
 
         [Ignore]
         public string CreationTimeFormat

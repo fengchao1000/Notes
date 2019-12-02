@@ -120,7 +120,7 @@ namespace Notes.Helpers
         /// <typeparam name="TResult">返回实体类型</typeparam>
         /// <param name="uri">请求地址</param>
         /// <returns></returns>
-        public async Task<ResultData<TResult>> PostAsync<TResult>(string uri, bool needAuthorization = true)
+        public async Task<ResultData<TResult>> PostAsync<TResult>(string uri, bool needAuthorization = false)
         {
             ResultData<TResult> result = new ResultData<TResult>();
             try
@@ -146,7 +146,7 @@ namespace Notes.Helpers
         /// <param name="uri">请求地址</param>
         /// <param name="data">请求数据</param>
         /// <returns></returns>
-        public async Task<ResultData<TResult>> PostAsync<TResult, TFilter>(string uri, TFilter data, bool needAuthorization = true)
+        public async Task<ResultData<TResult>> PostAsync<TResult, TFilter>(string uri, TFilter data, bool needAuthorization = false)
         {
             ResultData<TResult> result = new ResultData<TResult>();
             try
@@ -174,7 +174,7 @@ namespace Notes.Helpers
         /// <param name="uri">请求地址</param>
         /// <param name="data">请求数据</param>
         /// <returns></returns>
-        public async Task<ResultData<TResult>> PostAsync<TResult>(string uri, string data, bool needAuthorization = true)
+        public async Task<ResultData<TResult>> PostAsync<TResult>(string uri, string data, bool needAuthorization = false)
         {
             ResultData<TResult> result = new ResultData<TResult>();
             try
@@ -266,7 +266,7 @@ namespace Notes.Helpers
         /// <param name="data">请求数据</param>
         /// <param name="header">请求头</param>
         /// <returns></returns>
-        public async Task<ResultData<TResult>> PutAsync<TResult>(string uri, Object data, string header = "", bool needAuthorization = true)
+        public async Task<ResultData<TResult>> PutAsync<TResult>(string uri, Object data, string header = "", bool needAuthorization = false)
         {
             ResultData<TResult> result = new ResultData<TResult>();
             try
@@ -282,6 +282,38 @@ namespace Notes.Helpers
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                 HttpResponseMessage response = await httpClient.PutAsync(uri, content);
                 result = await GetResultData<TResult>(response,uri,data);
+            }
+            catch (Exception ex)
+            {
+                result = new ResultData<TResult>() { IsSuccess = false, Message = ex.Message };
+                LoggerHelper.Current.Error(ex.ToString());
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 发送Put请求
+        /// </summary>
+        /// <typeparam name="TResult">返回实体类型</typeparam>
+        /// <param name="uri">请求地址</param>
+        /// <param name="header">请求头</param>
+        /// <returns></returns>
+        public async Task<ResultData<TResult>> PutAsync<TResult>(string uri,string header = "", bool needAuthorization = false)
+        {
+            ResultData<TResult> result = new ResultData<TResult>();
+            try
+            {
+                HttpClient httpClient = await CreateHttpClient(needAuthorization);
+
+                if (!string.IsNullOrEmpty(header))
+                {
+                    AddHeaderParameter(httpClient, header);
+                }
+
+                var content = new StringContent("");
+                content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                HttpResponseMessage response = await httpClient.PutAsync(uri, content);
+                result = await GetResultData<TResult>(response, uri, "");
             }
             catch (Exception ex)
             {

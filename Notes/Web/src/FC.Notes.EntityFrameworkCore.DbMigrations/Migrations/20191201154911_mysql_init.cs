@@ -7,25 +7,7 @@ namespace FC.Notes.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<Guid>(
-                name: "TenantId",
-                table: "BMTags",
-                nullable: true);
-
-            migrationBuilder.AddColumn<Guid>(
-                name: "TenantId",
-                table: "BMCategorys",
-                nullable: true);
-
-            migrationBuilder.AddColumn<Guid>(
-                name: "TenantId",
-                table: "BMBookmarkTags",
-                nullable: true);
-
-            migrationBuilder.AddColumn<Guid>(
-                name: "TenantId",
-                table: "BMBookmarks",
-                nullable: true);
+           
 
             migrationBuilder.AddColumn<Guid>(
                 name: "TenantId",

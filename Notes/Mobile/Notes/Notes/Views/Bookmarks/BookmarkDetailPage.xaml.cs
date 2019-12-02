@@ -25,6 +25,15 @@ namespace Notes.Views.Bookmarks
 
             BindingContext = viewModel = new BookmarkDetailViewModel(bookmark);
 
+            if (bookmark.IsRead)
+            {
+                toolbarItemRead.Text = "设为未读";
+            }
+            else
+            {
+                toolbarItemRead.Text = "设为已读";
+            }
+
             oldBookmark = bookmark;
 
             //根据Bookmark来源以不同的形式展示，如果是cnblogs文章则获取body显示

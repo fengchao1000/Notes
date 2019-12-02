@@ -110,6 +110,8 @@ namespace Notes.ViewModels.Bookmarks
                 sw.Start();
 
                 IList<Bookmark> bookmarkList = await ServicesManager.BookmarkService.GetAllFromSqliteAsync();
+                //TODO:增加分类查询，参考Tag的处理方式
+                //await ServicesManager.BookmarkService.TableQueryFromSqliteAsync().Where(q=>q.ca)
 
                 if (bookmarkList != null)
                 {

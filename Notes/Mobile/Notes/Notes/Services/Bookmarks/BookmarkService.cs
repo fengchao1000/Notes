@@ -23,7 +23,7 @@ namespace Notes.Services.Bookmarks
 
         public async Task<ResultData<Bookmark>> UpdateRead(Guid id, bool isRead)
         {
-            return await RequestProvider.Current.PutAsync<Bookmark>(string.Format(AppConfig.UpdateBookmarkReadUrl,id,isRead),"") ;
+            return await RequestProvider.Current.PutAsync<Bookmark>(string.Format(AppConfig.UpdateBookmarkReadUrl,id,isRead)) ;
         }
     }
 }
