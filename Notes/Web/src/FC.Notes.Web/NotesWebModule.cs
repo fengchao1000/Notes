@@ -29,10 +29,12 @@ using Volo.Abp.Ui.Navigation.Urls;
 using Volo.Abp.UI;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.VirtualFileSystem;
+using Volo.Abp.MultiTenancy;
 
 namespace FC.Notes.Web
 {
     [DependsOn(
+        typeof(AbpMultiTenancyModule),
         typeof(NotesHttpApiModule),
         typeof(NotesApplicationModule),
         typeof(NotesEntityFrameworkCoreDbMigrationsModule),
@@ -73,6 +75,8 @@ namespace FC.Notes.Web
             ConfigureNavigationServices();
             ConfigureAutoApiControllers();
             ConfigureSwaggerServices(context.Services);
+
+           
         }
 
         private void ConfigureUrls(IConfigurationRoot configuration)

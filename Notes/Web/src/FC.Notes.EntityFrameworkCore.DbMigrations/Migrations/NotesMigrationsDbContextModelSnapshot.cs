@@ -14,7 +14,7 @@ namespace FC.Notes.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
+                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("FC.Notes.Bookmarks.Bookmark", b =>
@@ -76,6 +76,8 @@ namespace FC.Notes.Migrations
                     b.Property<string>("Summary")
                         .HasColumnName("Summary");
 
+                    b.Property<Guid?>("TenantId");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnName("Title")
@@ -98,6 +100,8 @@ namespace FC.Notes.Migrations
 
                     b.Property<Guid?>("CreatorId");
 
+                    b.Property<Guid?>("TenantId");
+
                     b.HasKey("BookmarkId", "CategoryId");
 
                     b.ToTable("BMBookmarkCategorys");
@@ -114,6 +118,8 @@ namespace FC.Notes.Migrations
                     b.Property<DateTime>("CreationTime");
 
                     b.Property<Guid?>("CreatorId");
+
+                    b.Property<Guid?>("TenantId");
 
                     b.HasKey("BookmarkId", "TagId");
 
@@ -165,6 +171,8 @@ namespace FC.Notes.Migrations
                         .IsRequired()
                         .HasColumnName("Name")
                         .HasMaxLength(64);
+
+                    b.Property<Guid?>("TenantId");
 
                     b.Property<int>("UsageCount")
                         .HasColumnName("UsageCount");
@@ -219,6 +227,8 @@ namespace FC.Notes.Migrations
                         .IsRequired()
                         .HasColumnName("Name")
                         .HasMaxLength(64);
+
+                    b.Property<Guid?>("TenantId");
 
                     b.Property<int>("UsageCount")
                         .HasColumnName("UsageCount");
