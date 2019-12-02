@@ -13,7 +13,7 @@ namespace Notes.Services.Categorys
     {
         public async Task<ResultData<PagedResultDto<Category>>> GetCategory(string skipCount, string maxResultCount, int sorting)
         {
-            return await RequestProvider.Current.GetAsync<PagedResultDto<Category>>($"{AppConfig.CategoryUrl}");
+            return await RequestProvider.Current.GetAsync<PagedResultDto<Category>>($"{AppConfig.GetCategoryUrl}");
         }
     }
 }

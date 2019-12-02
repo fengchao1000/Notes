@@ -1,17 +1,15 @@
-﻿using FC.Notes.Bookmarks;
-using FC.Notes.Bookmarks.Dtos;
-using FC.Notes.Categorys;
+﻿using FC.Notes.Categorys;
 using FC.Notes.Categorys.Dtos;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+using FC.Notes.Permissions;
+using Microsoft.AspNetCore.Authorization;
+using System; 
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Repositories;
 
 namespace FC.Notes
-{  
+{
+    //[Authorize(NotesPermissions.Notes.Default)]
     public class CategoryAppService :
     AsyncCrudAppService<Category, CategoryDto, Guid, PagedAndSortedResultRequestDto,
         CreateUpdateCategoryDto, CreateUpdateCategoryDto>,

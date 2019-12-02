@@ -13,12 +13,17 @@ namespace Notes.Services.Bookmarks
     {
         public async Task<ResultData<PagedResultDto<Bookmark>>> GetBookmarks(string skipCount, string maxResultCount, int sorting)
         {
-            return await RequestProvider.Current.GetAsync<PagedResultDto<Bookmark>>($"{AppConfig.BookmarkUrl}");
+            return await RequestProvider.Current.GetAsync<PagedResultDto<Bookmark>>($"{AppConfig.GetBookmarkUrl}");
         }
 
         public async Task<ResultData<PagedResultDto<Bookmark>>> GetBookmarkPaged(string keyword,Guid? categoryId, int skipCount = 0, int maxResultCount = 10, string sorting = null)
         {
-            return await RequestProvider.Current.GetAsync<PagedResultDto<Bookmark>>($"{AppConfig.BookmarkPagedUrl}?keyword={keyword}&categoryId={categoryId}&skipCount={skipCount}&maxResultCount={maxResultCount}&sorting={sorting}");
+            return await RequestProvider.Current.GetAsync<PagedResultDto<Bookmark>>($"{AppConfig.GetBookmarkPagedUrl}?keyword={keyword}&categoryId={categoryId}&skipCount={skipCount}&maxResultCount={maxResultCount}&sorting={sorting}");
+        }
+
+        public async Task<ResultData<Bookmark>> UpdateRead(Guid id, bool isRead)
+        {
+            return await RequestProvider.Current.PutAsync<Bookmark>(string.Format(AppConfig.UpdateBookmarkReadUrl,id,isRead),"") ;
         }
     }
 }

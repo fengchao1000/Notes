@@ -63,10 +63,11 @@
 
         #region api config
 
-        public static string BookmarkUrl = $"{NotesAPIEndpoint}/api/app/bookmark";
-        public static string BookmarkPagedUrl = $"{NotesAPIEndpoint}/api/app/bookmark/paged";
-        public static string CategoryUrl = $"{NotesAPIEndpoint}/api/app/category";
-
+        public static string GetBookmarkUrl = $"{NotesAPIEndpoint}/api/app/bookmark";
+        public static string GetBookmarkPagedUrl = $"{NotesAPIEndpoint}/api/app/bookmark/paged";
+        public static string UpdateBookmarkReadUrl = NotesAPIEndpoint+"/api/app/bookmark/{0}/read?isRead={1}";
+        public static string GetCategoryUrl = $"{NotesAPIEndpoint}/api/app/category";
+         
         public const string Token = "https://oauth.cnblogs.com/connect/token";
         public const string ArticleBody = CnblogsAPIEndpoint + "/api/blogposts/{0}/body";
         public const string ArticleHome = CnblogsAPIEndpoint + "/api/blogposts/@sitehome?pageIndex={0}&pageSize={1}";

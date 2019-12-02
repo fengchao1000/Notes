@@ -5,7 +5,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:controls="clr-namespace:Notes.Controls;assembly=Notes"
              mc:Ignorable="d"
-             x:Class="Notes.Views.Bookmarks.BookmarkDetailPage">
+             x:Class="Notes.Views.Bookmarks.BookmarkDetailPage"
+             Title="博文">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="已读过"  Order="Default" Command="{Binding BookmarkReadCommand}"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Spacing="0">
             <AbsoluteLayout

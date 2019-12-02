@@ -1,10 +1,13 @@
 ﻿using Notes.Helpers;
+using Notes.Models;
 using Notes.Models.Bookmarks;
 using Notes.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace Notes.ViewModels.Bookmarks
 { 
@@ -87,6 +90,8 @@ namespace Notes.ViewModels.Bookmarks
 
                 bookmark.Content = result.Data;
 
+                await ServicesManager.BookmarkService.UpdateToSqliteAsync(bookmark);
+
                 return bookmark;
             }
             catch (Exception ex)
@@ -100,7 +105,32 @@ namespace Notes.ViewModels.Bookmarks
             }
         }
 
+        /// <summary>
+        /// 已读
+        /// </summary>
+        /// <returns></returns>
+        public async Task BookmarkReadAsync()
+        {
+            ResultData<Bookmark> result = await ServicesManager.BookmarkService.UpdateRead(bookmark.Id, true);
+            if (result.IsSuccess)
+            { 
+                bookmark.IsRead = true; 
 
+                await ServicesManager.BookmarkService.UpdateToSqliteAsync(bookmark);
+                 
+                ToastHelper.Current.SendToast("成功!");
+            }
+            else
+            {
+                ToastHelper.Current.SendToast("失败!");
+            }
+        }
+
+        #endregion
+
+            #region 命令 
+
+        public ICommand BookmarkReadCommand => new Command(async () => await BookmarkReadAsync());
 
         #endregion
     }

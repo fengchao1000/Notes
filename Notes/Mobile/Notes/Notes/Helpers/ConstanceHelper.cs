@@ -15,23 +15,31 @@ namespace Notes.Helpers
         /// //数据刷新时间间隔，30分钟
         /// </summary>
         public const int NextRefreshInterval = 30;
+        
         /// <summary>
         /// 数据加载状态条延迟时间，50ms
         /// </summary>
         public const int RefreshDelay = 50;
+        
         /// <summary>
         /// 列表金额标题名称
         /// </summary>
         public const string AmountHeaderText = "金额";
-       /// <summary>
+       
+        /// <summary>
        /// 列表时间段标题名称
        /// </summary>
         public const string PeriodOfTimeHeaderText = "时间段";
+       
         /// <summary>
         /// 列表数量标题名称
         /// </summary>
         public const string NumberHeaderText = "数量";
         
+        /// <summary>
+        /// 默认timeFormat
+        /// </summary>
+        public const string DefaultTimeFormat = "yyyy/MM/dd HH:mm";
     } 
 
     public class ErrorMessages

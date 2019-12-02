@@ -1,20 +1,18 @@
 ﻿using FC.Notes.Bookmarks;
 using FC.Notes.Bookmarks.Dtos;
-using FC.Notes.Categorys;
+using FC.Notes.Categorys; 
 using FC.Notes.Tagging;
-using FC.Notes.Tagging.Dtos;
+using FC.Notes.Tagging.Dtos; 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Linq; 
 using System.Threading.Tasks;
-using Volo.Abp.Application.Dtos;
-using Volo.Abp.Application.Services;
-using Volo.Abp.AutoMapper;
+using Volo.Abp.Application.Dtos; 
 using Volo.Abp.Domain.Repositories;
 
 namespace FC.Notes
 {
+    //[Authorize(NotesPermissions.Notes.Default)]
     public class BookmarkAppService : NotesAppService, IBookmarkAppService
     {
         private readonly IBookmarkRepository _bookmarkRepository;
@@ -223,6 +221,17 @@ namespace FC.Notes
             var tagList = SplitTags(input.Tags);
 
             await SaveTags(tagList, bookmark);
+
+            return ObjectMapper.Map<Bookmark, BookmarkDto>(bookmark);
+        }
+
+        public async Task<BookmarkDto> UpdateReadAsync(Guid id, bool isRead)
+        {
+            var bookmark = await _bookmarkRepository.GetAsync(id);
+
+            bookmark.IsRead = isRead;
+
+            bookmark = await _bookmarkRepository.UpdateAsync(bookmark);
 
             return ObjectMapper.Map<Bookmark, BookmarkDto>(bookmark);
         }

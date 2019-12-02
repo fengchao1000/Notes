@@ -124,16 +124,20 @@
                         <DataTemplate>
                             <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="0" HeightRequest="82" Margin="20,8,15,0">
                                 <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Spacing="0" HeightRequest="25" Padding="0,0,5,0" >
-                                    <StackLayout HorizontalOptions="Start" VerticalOptions="Center" Padding="0,0,10,0" IsVisible="{Binding IsRead}" >
+                                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" > 
+                                        <controls:CustomItemLabel 
+                                                LineSpacing="1"
+                                                MaxLines="1" 
+                                                Text="{Binding Title}"
+                                                Style="{StaticResource EbayMsgEbayBuyerIDLabelStyle}" 
+                                                HorizontalOptions="StartAndExpand"/>
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions="End" VerticalOptions="CenterAndExpand" Padding="5,0,5,0">
                                         <Image 
                                             VerticalOptions="CenterAndExpand"
-                                            HeightRequest="8" 
-                                            WidthRequest="8" 
-                                            IsVisible="{Binding IsRead}" 
-                                            Source="ic_message_read.png"/>
-                                    </StackLayout>
-                                    <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center" >
-                                        <Label Text="{Binding Title}" Style="{StaticResource EbayMsgEbayBuyerIDLabelStyle}" />
+                                            HeightRequest="12" 
+                                            WidthRequest="12"   
+                                            Source="{Binding ReadImage}"/>
                                     </StackLayout>
                                 </StackLayout>
                                 <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Orientation="Horizontal" HeightRequest="40" Spacing="0" Margin="0,0,0,12" >
