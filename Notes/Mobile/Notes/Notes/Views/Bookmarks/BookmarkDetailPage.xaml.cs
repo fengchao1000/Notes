@@ -17,11 +17,15 @@ namespace Notes.Views.Bookmarks
     {
         BookmarkDetailViewModel viewModel;
 
+        Bookmark oldBookmark;
+
         public BookmarkDetailPage(Bookmark bookmark)
         {
             InitializeComponent();
 
             BindingContext = viewModel = new BookmarkDetailViewModel(bookmark);
+
+            oldBookmark = bookmark;
 
             //根据Bookmark来源以不同的形式展示，如果是cnblogs文章则获取body显示
             switch (bookmark.LinkSourceType)
@@ -73,17 +77,20 @@ namespace Notes.Views.Bookmarks
 
         private void ShowJianshuBookmark(Bookmark bookmark)
         {
-
+            formsWebView.ContentType = WebViewContentType.Internet;
+            formsWebView.Source = oldBookmark.LinkUrl;
         }
 
         private void ShowCSDNBookmark(Bookmark bookmark)
         {
-
+            formsWebView.ContentType = WebViewContentType.Internet;
+            formsWebView.Source = oldBookmark.LinkUrl;
         }
 
         private void ShowOtherBookmark(Bookmark bookmark)
         {
-
+            formsWebView.ContentType = WebViewContentType.Internet;
+            formsWebView.Source = oldBookmark.LinkUrl;
         }
 
     }
