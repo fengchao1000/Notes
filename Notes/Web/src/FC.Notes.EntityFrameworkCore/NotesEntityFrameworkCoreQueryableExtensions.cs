@@ -17,7 +17,8 @@ namespace FC.Notes
             }
 
             return queryable
-                .Include(x => x.Tags);
+                .Include(x => x.Tags)
+                .Include(x => x.Categorys);
         }
     }
 }

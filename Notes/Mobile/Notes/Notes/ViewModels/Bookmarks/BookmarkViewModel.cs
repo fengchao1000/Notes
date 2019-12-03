@@ -73,6 +73,7 @@ namespace Notes.ViewModels.Bookmarks
         /// </summary>
         public long recordCount = 0;
 
+
         #endregion
 
         #region 方法
@@ -81,13 +82,14 @@ namespace Notes.ViewModels.Bookmarks
         {
             currentCategory = category;
         }
-        
+
         /// <summary>
         /// 初始化ViewModel
         /// </summary>
         public async void Initialize()
         {
             string refreshKey = nameof(BookmarkViewModel);
+
             if (DateTime.UtcNow >= RefreshTimeHelper.GetRefreshTime(refreshKey))
             {
                 await RefreshDataFromAPIAsync();
@@ -106,29 +108,25 @@ namespace Notes.ViewModels.Bookmarks
             try
             {
                 IsBusy = true;
-                Stopwatch sw = new Stopwatch();
-                sw.Start();
 
-                IList<Bookmark> bookmarkList = await ServicesManager.BookmarkService.GetAllFromSqliteAsync();
-                //TODO:增加分类查询，参考Tag的处理方式
-                //await ServicesManager.BookmarkService.TableQueryFromSqliteAsync().Where(q=>q.ca)
+                var result = await ServicesManager.BookmarkService.SearchBookmarkFromSqlite(SearchText, currentCategory.Id, 0, pageSize);
 
-                if (bookmarkList != null)
+                if (result.Items == null)
                 {
-                    Bookmarks.Clear();
-
-                    ObservableCollection<Bookmark> newBookmarkCollection = new ObservableCollection<Bookmark>();
-
-                    foreach (Bookmark item in bookmarkList)
-                    {
-                        newBookmarkCollection.Add(item);
-                    }
-
-                    Bookmarks = newBookmarkCollection;
+                    return;
                 }
 
-                sw.Stop();
-                LoggerHelper.Current.Debug("EbayMsgMenuViewModel GetDataFromSqliteAsync ElapsedMilliseconds:" + sw.ElapsedMilliseconds);
+                if (result.Items.Count <= 0)
+                {
+                    return;
+                }
+
+                Bookmarks.Clear();
+
+                foreach (Bookmark item in result.Items)
+                {
+                    Bookmarks.Add(item);
+                }
             }
             catch (Exception ex)
             {
@@ -141,7 +139,7 @@ namespace Notes.ViewModels.Bookmarks
             }
         }
 
-        async Task RefreshDataFromAPIAsync()
+        public async Task RefreshDataFromAPIAsync()
         {
             try
             {
@@ -149,7 +147,7 @@ namespace Notes.ViewModels.Bookmarks
                 currentPage = 1;
 
                 //查询目录对应数量  
-                var result = await ServicesManager.BookmarkService.GetBookmarkPaged(SearchText, currentCategory.Id, 0,pageSize);
+                var result = await ServicesManager.BookmarkService.GetBookmarkPaged(SearchText, currentCategory.Id, 0, pageSize);
 
                 Bookmarks.Clear();
 
@@ -166,11 +164,12 @@ namespace Notes.ViewModels.Bookmarks
                 if (result.Data.Items.Count <= 0)
                 {
                     return;
-                } 
+                }
 
                 foreach (Bookmark item in result.Data.Items)
                 {
-                    Bookmarks.Add(item);
+                    item.CategoryIds = GetCategoryIds(item.Categorys);
+                    Bookmarks.Add(item); 
                 }
 
                 await ServicesManager.BookmarkService.BatchUpdateToSqlite(Bookmarks); //保存在sqlite
@@ -204,7 +203,7 @@ namespace Notes.ViewModels.Bookmarks
             {
                 IsBusy = true;
 
-                var result = await ServicesManager.BookmarkService.GetBookmarkPaged(SearchText, currentCategory.Id, (currentPage-1) * pageSize ,pageSize);
+                var result = await ServicesManager.BookmarkService.GetBookmarkPaged(SearchText, currentCategory.Id, (currentPage - 1) * pageSize, pageSize);
 
                 if (!result.IsSuccess)
                 {
@@ -228,7 +227,8 @@ namespace Notes.ViewModels.Bookmarks
 
                 foreach (Bookmark item in result.Data.Items)
                 {
-                    Bookmarks.Add(item);
+                    item.CategoryIds = GetCategoryIds(item.Categorys);
+                    Bookmarks.Add(item); 
                 }
 
                 recordCount = result.Data.TotalCount;
@@ -241,7 +241,7 @@ namespace Notes.ViewModels.Bookmarks
                 {
                     LoadStatus = LoadMoreStatus.StausDefault;
                 }
-                 
+
                 await ServicesManager.BookmarkService.BatchUpdateToSqlite(Bookmarks); //保存在sqlite
 
                 currentPage++;
@@ -266,6 +266,26 @@ namespace Notes.ViewModels.Bookmarks
         private bool CanLoadMoreItems()
         {
             return (Bookmarks.Count < recordCount);
+        }
+
+        /// <summary>
+        /// 获取CategoryIds字符串
+        /// </summary>
+        /// <param name="ebayMsgTagList"></param>
+        /// <returns></returns>
+        private string GetCategoryIds(List<BookmarkCategory> bookmarkCategoryList)
+        {
+            StringBuilder categoryIds = new StringBuilder();
+            foreach (BookmarkCategory item in bookmarkCategoryList)
+            {
+                categoryIds.Append(item.CategoryId + "&");
+            }
+            string categoryIdsString = categoryIds.ToString();
+            if (categoryIdsString.EndsWith("&"))
+            {
+                categoryIdsString = categoryIdsString.Substring(0, categoryIdsString.Length - 1);
+            }
+            return categoryIdsString;
         }
 
         #endregion

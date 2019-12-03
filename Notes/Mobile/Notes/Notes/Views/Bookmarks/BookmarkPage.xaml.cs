@@ -1,4 +1,5 @@
-﻿using Notes.Helpers;
+﻿using FormsToolkit;
+using Notes.Helpers;
 using Notes.Models.Bookmarks;
 using Notes.Models.Categorys;
 using Notes.ViewModels.Bookmarks;
@@ -26,7 +27,9 @@ namespace Notes.Views.Bookmarks
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new BookmarkViewModel(category); 
+            BindingContext = viewModel = new BookmarkViewModel(category);
+
+            this.Title = category.Name+" ("+ category.Progress+ ")";
         }
 
         public BookmarkPage()
@@ -34,6 +37,7 @@ namespace Notes.Views.Bookmarks
             InitializeComponent();
 
             BindingContext = viewModel = new BookmarkViewModel(new Category());
+
         }
 
         /// <summary>
@@ -54,8 +58,44 @@ namespace Notes.Views.Bookmarks
                 {
                     Navigation.InsertPageBefore(new CategoryPage(), this);
                 }
+
+                UnSubscribeBookmarkRead();
+
+                SubscribeBookmarkRead();
             }
         }
+
+        /// <summary>
+        /// 解除订阅
+        /// </summary>
+        private void UnSubscribeBookmarkRead()
+        {
+            MessagingService.Current.Unsubscribe<Bookmark>(MessageKeys.BookmarkReadKey);
+        }
+
+        /// <summary>
+        /// 订阅Bookmark已读未读状态改变
+        /// </summary>
+        private void SubscribeBookmarkRead()
+        {
+            MessagingService.Current.Subscribe<Bookmark>(MessageKeys.BookmarkReadKey, (m, bookmark) =>
+            { 
+                if (bookmark != null)
+                {
+                    int index = viewModel.Bookmarks.IndexOf(bookmark);
+
+                    if (index < 0) 
+                    {
+                        return;
+                    } 
+
+                    viewModel.Bookmarks.RemoveAt(index);
+
+                    viewModel.Bookmarks.Insert(index,bookmark);
+                }
+            });
+        }
+         
 
         /// <summary>
         /// 点击

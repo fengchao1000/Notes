@@ -65,47 +65,7 @@
             IsRefreshing="{Binding IsBusy}">
             <pullToRefresh:SfPullToRefresh.PullableContent>
                 <ScrollView>
-                    <StackLayout x:Name="CategoryStackLayout" Spacing="0" VerticalOptions="Start">
-
-
-                        <!--<ListView x:Name="ItemsListView" 
-                            VerticalOptions="FillAndExpand"  
-                            ItemsSource="{Binding EbayMsgMenuCollection}" 
-                            ItemSelected="OnListViewItemSelected" 
-                            BackgroundColor="White"
-                            SeparatorColor="#e7f1fb"
-                            SeparatorVisibility="None"
-                            IsPullToRefreshEnabled="False">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <ViewCell>
-                                        <StackLayout VerticalOptions="CenterAndExpand" Spacing="0">
-                                            <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HeightRequest="45" Spacing="0" >
-                                                <StackLayout HorizontalOptions="Start" Spacing="0" VerticalOptions="CenterAndExpand" WidthRequest="50" Padding="5,0,0,0">
-                                                    <Image HeightRequest="24" WidthRequest="24" Source="{Binding MenuIcon}"></Image>
-                                                </StackLayout>
-                                                <StackLayout HorizontalOptions="FillAndExpand" Spacing="0" VerticalOptions="CenterAndExpand" Padding="0,0,0,0" >
-                                                    <Label  Text="{Binding MenuName}" Style="{StaticResource EbayMsgMenuLabelStyle}" />
-                                                </StackLayout>
-                                                <StackLayout HorizontalOptions="End" Spacing="0" VerticalOptions="CenterAndExpand" Padding="0,0,20,0" WidthRequest="60">
-                                                    <Frame  Style="{StaticResource EbayMsgMenuCountFrameStyle}" BackgroundColor="#767676" HorizontalOptions="CenterAndExpand" >
-                                                        <Label  Text="{Binding RecordCountFormat}" Style="{StaticResource EbayMsgMenuLabelStyle}" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
-                                                    </Frame>
-                                                </StackLayout>
-                                                <StackLayout HorizontalOptions="End" VerticalOptions="CenterAndExpand" Padding="0,0,10,0">
-                                                    <Image HeightRequest="22" WidthRequest="22" Source="ic_global_arrowforward.png"></Image>
-                                                </StackLayout>
-                                            </StackLayout>
-                                            <StackLayout HeightRequest="1" Padding="50,0,0,0" HorizontalOptions="FillAndExpand" Grid.Row="1" >
-                                                <BoxView Style="{StaticResource UnderlineBoxViewStyle}" />
-                                            </StackLayout>
-                                        </StackLayout>
-                                    </ViewCell>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>-->
-
-
+                    <StackLayout x:Name="CategoryStackLayout" Spacing="0" VerticalOptions="Start"> 
                         <listView:SfListView 
                             Margin="0"
                             ItemSize="45"
@@ -128,7 +88,7 @@
                                             </StackLayout>
                                             <StackLayout HorizontalOptions="End" Spacing="0" VerticalOptions="CenterAndExpand" Padding="0,0,20,0" WidthRequest="60">
                                                 <Frame  Style="{StaticResource EbayMsgMenuCountFrameStyle}" BackgroundColor="#767676" HorizontalOptions="CenterAndExpand" >
-                                                    <Label  Text="{Binding UsageCount}" Style="{StaticResource EbayMsgMenuLabelStyle}" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                                                    <Label  Text="{Binding Progress}" Style="{StaticResource EbayMsgMenuLabelStyle}" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
                                                 </Frame>
                                             </StackLayout>
                                             <StackLayout HorizontalOptions="End" VerticalOptions="CenterAndExpand" Padding="0,0,10,0">

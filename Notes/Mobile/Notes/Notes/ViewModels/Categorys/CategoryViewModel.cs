@@ -74,18 +74,14 @@ namespace Notes.ViewModels.Categorys
 
                 if (categoryList != null)
                 {
-                    Categorys.Clear();
-
-                    ObservableCollection<Category> newCategoryCollection = new ObservableCollection<Category>();
+                    Categorys.Clear(); 
 
                     foreach (Category item in categoryList)
                     {
-                        newCategoryCollection.Add(item);
+                        Categorys.Add(item);
                     }
 
-                    sw.Start();
-
-                    Categorys = newCategoryCollection;
+                    sw.Start(); 
                 }
 
                 sw.Stop();
@@ -110,6 +106,7 @@ namespace Notes.ViewModels.Categorys
 
                 //查询目录对应数量 
                 var result = await ServicesManager.CategoryService.GetCategory("", "", 1);
+
                 if (!result.IsSuccess)
                 {
                     return;

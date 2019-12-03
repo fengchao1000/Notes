@@ -8,7 +8,7 @@
              x:Class="Notes.Views.Bookmarks.BookmarkDetailPage"
              Title="博文">
     <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="toolbarItemRead" Text="已读过" Order="Default" Command="{Binding BookmarkReadCommand}"/>
+        <ToolbarItem x:Name="toolbarItemRead" Text="{Binding ToolbarItemReadText}" Order="Default" Command="{Binding BookmarkReadCommand}"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Spacing="0">

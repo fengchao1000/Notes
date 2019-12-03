@@ -18,7 +18,9 @@ namespace FC.Notes
              * into multiple profile classes for a better organization. */
 
             CreateMap<Bookmark, BookmarkDto>().Ignore(x => x.Tags);
-            CreateMap< BookmarkDto, Bookmark> ().Ignore(x => x.Tags); 
+            CreateMap< BookmarkDto, Bookmark> ().Ignore(x => x.Tags);
+            CreateMap<BookmarkCategoryDto, BookmarkCategory>();
+            CreateMap<BookmarkCategory, BookmarkCategoryDto>();
             CreateMap<TagDto, Tag>();
             CreateMap<Tag, TagDto>();
             CreateMap<CreateUpdateBookmarkDto, Bookmark>();

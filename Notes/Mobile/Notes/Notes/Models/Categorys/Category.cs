@@ -13,6 +13,17 @@ namespace Notes.Models.Categorys
 
         public virtual string Description { get; set; }
 
+        public virtual int ReadCount { get; set; }
         public virtual int UsageCount { get; set; }
+          
+
+        [Ignore]
+        public string Progress
+        {
+            get
+            {
+                return ReadCount+"/" + UsageCount;
+            }
+        }
     }
 }

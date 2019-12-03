@@ -8,7 +8,7 @@
              xmlns:pullToRefresh="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms" 
              mc:Ignorable="d"
              x:Class="Notes.Views.Bookmarks.BookmarkPage"
-             Title="书签">
+             Title="书签分类">
     <ContentPage.Resources>
         <ResourceDictionary>
             <!-- StackLayout样式 -->

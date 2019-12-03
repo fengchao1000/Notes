@@ -9,14 +9,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FC.Notes.Migrations
 {
     [DbContext(typeof(NotesMigrationsDbContext))]
-    [Migration("20191201154911_mysql_init")]
+    [Migration("20191203063250_mysql_init")]
     partial class mysql_init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
+                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("FC.Notes.Bookmarks.Bookmark", b =>
@@ -173,6 +173,8 @@ namespace FC.Notes.Migrations
                         .IsRequired()
                         .HasColumnName("Name")
                         .HasMaxLength(64);
+
+                    b.Property<int>("ReadCount");
 
                     b.Property<Guid?>("TenantId");
 

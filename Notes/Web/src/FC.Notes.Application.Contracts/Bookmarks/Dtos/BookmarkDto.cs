@@ -14,6 +14,8 @@ namespace FC.Notes.Bookmarks.Dtos
         public LinkSourceType LinkSourceType { get; set; }
         public string Content { get; set; }
         public bool IsRead { get; set; } 
-        public List<TagDto> Tags { get; set; }
+        public List<TagDto> Tags { get; set; } 
+
+        public virtual List<BookmarkCategoryDto> Categorys { get; protected set; }
     }
 }

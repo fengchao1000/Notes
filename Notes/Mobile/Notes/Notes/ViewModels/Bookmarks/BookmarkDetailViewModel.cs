@@ -1,4 +1,5 @@
-﻿using Notes.Helpers;
+﻿using FormsToolkit;
+using Notes.Helpers;
 using Notes.Models;
 using Notes.Models.Bookmarks;
 using Notes.Services;
@@ -27,6 +28,17 @@ namespace Notes.ViewModels.Bookmarks
             }
         }
 
+        string toolbarItemReadText;
+        public string ToolbarItemReadText
+        {
+            get => toolbarItemReadText;
+            set
+            {
+                toolbarItemReadText = value;
+                RaisePropertyChanged(() => ToolbarItemReadText);
+            }
+        }
+
         Bookmark bookmark;
 
         #endregion
@@ -36,6 +48,15 @@ namespace Notes.ViewModels.Bookmarks
         public BookmarkDetailViewModel(Bookmark bookmark)
         {
             this.bookmark = bookmark;
+
+            if (bookmark.IsRead)
+            {
+                ToolbarItemReadText = "设为未读";
+            }
+            else
+            {
+                ToolbarItemReadText = "设为已读";
+            }
         }
 
         /// <summary>
@@ -116,10 +137,21 @@ namespace Notes.ViewModels.Bookmarks
             ResultData<Bookmark> result = await ServicesManager.BookmarkService.UpdateRead(bookmark.Id, !bookmark.IsRead);
             if (result.IsSuccess)
             { 
-                bookmark.IsRead = true; 
+                bookmark.IsRead = !bookmark.IsRead;
+
+                if (bookmark.IsRead)
+                {
+                    ToolbarItemReadText = "设为未读";
+                }
+                else
+                {
+                    ToolbarItemReadText = "设为已读";
+                }
 
                 await ServicesManager.BookmarkService.UpdateToSqliteAsync(bookmark);
-                 
+
+                MessagingService.Current.SendMessage(MessageKeys.BookmarkReadKey, bookmark);
+
                 ToastHelper.Current.SendToast("成功!");
             }
             else
@@ -130,7 +162,7 @@ namespace Notes.ViewModels.Bookmarks
 
         #endregion
 
-            #region 命令 
+        #region 命令 
 
         public ICommand BookmarkReadCommand => new Command(async () => await BookmarkReadAsync());
 

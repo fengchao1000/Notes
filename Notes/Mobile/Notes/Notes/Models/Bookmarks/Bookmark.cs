@@ -18,7 +18,11 @@ namespace Notes.Models.Bookmarks
         public string Content { get; set; }
         public bool IsRead { get; set; }
         public DateTime CreationTime { get; set; }
-        
+        public string CategoryIds { get; set; }
+
+
+        [Ignore]
+        public List<BookmarkCategory> Categorys { get; set; }
 
         [Ignore]
         public string CreationTimeFormat

@@ -38,6 +38,7 @@ namespace FC.Notes
 
             //获取总数
             var totalCount = query.Count();
+            
             //默认的分页方式
             //var bookmarks = query.Skip(input.SkipCount).Take(input.MaxResultCount).ToList();
 
@@ -134,7 +135,6 @@ namespace FC.Notes
             }
         }
 
-
         private List<string> SplitTags(string tags)
         {
             if (tags.IsNullOrWhiteSpace())
@@ -150,7 +150,6 @@ namespace FC.Notes
 
             await AddNewTags(newTags, bookmark);
         }
-
 
         private async Task RemoveOldTags(List<string> newTags, Bookmark bookmark)
         {
@@ -229,12 +228,38 @@ namespace FC.Notes
         {
             var bookmark = await _bookmarkRepository.GetAsync(id);
 
+            if (bookmark.IsRead == isRead ) 
+            {
+                return ObjectMapper.Map<Bookmark, BookmarkDto>(bookmark);
+            }
+
             bookmark.IsRead = isRead;
 
             bookmark = await _bookmarkRepository.UpdateAsync(bookmark);
 
+            await ChangeCategoryReadCount(bookmark);
+
             return ObjectMapper.Map<Bookmark, BookmarkDto>(bookmark);
         }
+
+        private async Task ChangeCategoryReadCount(Bookmark bookmark)
+        { 
+            foreach (var oldCategory in bookmark.Categorys)
+            {
+                var category = await _categoryRepository.GetAsync(oldCategory.CategoryId);
+
+                if (bookmark.IsRead) 
+                {
+                    category.IncreaseReadCount();
+                }
+                else 
+                {
+                    category.DecreaseReadCount();
+                } 
+
+                await _categoryRepository.UpdateAsync(category);
+            } 
+        } 
 
         public async Task DeleteAsync(Guid id)
         {

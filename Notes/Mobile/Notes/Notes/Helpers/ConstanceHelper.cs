@@ -53,20 +53,7 @@ namespace Notes.Helpers
 
     public class MessageKeys
     { 
-        public const string PayPalEmailChange = "PayPalEmailChange";
-        public const string OverViewPayPalEmailChange = "OverViewPayPalEmailChange";
-        public const string VisitOSDataTypeChange = "VisitOSDataTypeChange";
-        public const string VisitTypeChange = "VisitTypeChange";
-        public const string VisitCountryDataTypeChange = "VisitCountryDataTypeChange";
-        public const string NavigateNotification = "NavigateNotification";
-
-        public const string EbayUserChange = "EbayUserChange";
-        public const string DispatchEbayUserChange = "DispatchEbayUserChange";
-        public const string FeedbackEbayUserChange = "FeedbackEbayUserChange";
-        public const string ListingEbayUserChange = "ListingEbayUserChange";
-        public const string SalesEbayUserChange = "SalesEbayUserChange";
-        public const string VisitEbayUserChange = "VisitEbayUserChange";
-        public const string OverViewEbayUserChange = "OverViewEbayUserChange";
+        public const string BookmarkReadKey = "BookmarkReadKey"; 
     }
 
     public class RefreshTimeKeys
@@ -76,21 +63,7 @@ namespace Notes.Helpers
         public const string EbayUserRefreshTimeKey = "EbayUserRefreshTime";
         public const string PayPalEmailAddressRefreshTimeKey = "PayPalEmailAddressRefreshTime"; 
     }
-
-    /// <summary>
-    /// 日期类型图片
-    /// </summary>
-    public class DateTypeImageSource
-    { 
-        public const string Day = "ic_report_day.png"; 
-        public const string DayDisable = "ic_report_daydisable.png";
-
-        public const string Week = "ic_report_week.png";
-        public const string WeekDisable = "ic_report_weekdisable.png";
-
-        public const string Month = "ic_report_month.png";
-        public const string MonthDisable = "ic_report_monthdisable.png"; 
-    }
+     
 
     
 }

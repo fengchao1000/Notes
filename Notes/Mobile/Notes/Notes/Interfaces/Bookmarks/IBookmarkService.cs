@@ -37,5 +37,15 @@ namespace Notes.Interfaces.Bookmarks
         /// <returns></returns>
         Task<ResultData<Bookmark>> UpdateRead(Guid id, bool isRead);
 
+        /// <summary>
+        /// SearchBookmarkFromSqlite
+        /// </summary>
+        /// <param name="keyword"></param>
+        /// <param name="categoryId"></param>
+        /// <param name="skipCount"></param>
+        /// <param name="maxResultCount"></param>
+        /// <param name="sorting"></param>
+        /// <returns></returns>
+        Task<PagedResultDto<Bookmark>> SearchBookmarkFromSqlite(string keyword, Guid? categoryId, int skipCount = 0, int maxResultCount = 0, string sorting = null);
     }
 }
