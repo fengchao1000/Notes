@@ -75,8 +75,16 @@ namespace FC.Notes.Web
             ConfigureNavigationServices();
             ConfigureAutoApiControllers();
             ConfigureSwaggerServices(context.Services);
+            ConfigureCache(context, configuration);
+        }
 
-           
+        private void ConfigureCache(ServiceConfigurationContext context, IConfigurationRoot configuration)
+        {
+            context.Services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = configuration.GetConnectionString("Redis");
+                options.InstanceName = "SampleInstance";
+            });
         }
 
         private void ConfigureUrls(IConfigurationRoot configuration)

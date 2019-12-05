@@ -1,13 +1,16 @@
 ﻿using FC.Notes.Bookmarks;
 using FC.Notes.Bookmarks.Dtos;
-using FC.Notes.Categorys; 
+using FC.Notes.Categorys;
 using FC.Notes.Tagging;
-using FC.Notes.Tagging.Dtos; 
+using FC.Notes.Tagging.Dtos;
+using Microsoft.Extensions.Caching.Distributed;
 using System;
 using System.Collections.Generic;
-using System.Linq; 
+using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
-using Volo.Abp.Application.Dtos; 
+using Volo.Abp.Application.Dtos;
+using Volo.Abp.Caching;
 using Volo.Abp.Domain.Repositories;
 
 namespace FC.Notes
@@ -18,27 +21,34 @@ namespace FC.Notes
         private readonly IBookmarkRepository _bookmarkRepository;
         private readonly ITagRepository _tagRepository;
         private readonly ICategoryRepository _categoryRepository;
+        protected IDistributedCache<BookmarkDto> BookmarkCache { get; }
 
-        public BookmarkAppService(IRepository<Bookmark, Guid> repository, IBookmarkRepository bookmarkRepository, ITagRepository tagRepository, ICategoryRepository categoryRepository)
+        public BookmarkAppService(
+            IRepository<Bookmark, Guid> repository,
+            IBookmarkRepository bookmarkRepository,
+            ITagRepository tagRepository,
+            ICategoryRepository categoryRepository,
+            IDistributedCache<BookmarkDto> bookmarkCache)
         {
             _bookmarkRepository = bookmarkRepository;
             _tagRepository = tagRepository;
             _categoryRepository = categoryRepository;
+            BookmarkCache = bookmarkCache;
         }
-         
+
         public async Task<PagedResultDto<BookmarkDto>> GetPagedAsync(GetPagedBookmarkInputDto input)
         {
             //初步过滤
             var query = _bookmarkRepository.GetAll()
                 .WhereIf(!input.Keyword.IsNullOrEmpty(), t => t.Content.Contains(input.Keyword) || t.Summary.Contains(input.Keyword) || t.Title.Contains(input.Keyword))
-                .WhereIf(input.CategoryId.HasValue, t => t.Categorys.Any(c=> c.CategoryId == input.CategoryId)).OrderByDescending(t => t.CreationTime); 
-            
+                .WhereIf(input.CategoryId.HasValue, t => t.Categorys.Any(c => c.CategoryId == input.CategoryId)).OrderByDescending(t => t.CreationTime);
+
             //排序
             //query = !string.IsNullOrEmpty(input.Sorting) ? query.OrderBy(input.Sorting) : query.OrderByDescending(t => t.CreationTime);
 
             //获取总数
             var totalCount = query.Count();
-            
+
             //默认的分页方式
             //var bookmarks = query.Skip(input.SkipCount).Take(input.MaxResultCount).ToList();
 
@@ -47,7 +57,7 @@ namespace FC.Notes
 
             IReadOnlyList<BookmarkDto> list = new List<BookmarkDto>(
                             ObjectMapper.Map<List<Bookmark>, List<BookmarkDto>>(bookmarks));
-              
+
             return new PagedResultDto<BookmarkDto>(totalCount, list);
         }
 
@@ -118,10 +128,10 @@ namespace FC.Notes
                 else
                 {
                     newCategoryIDs.Remove(oldCategoryNameInNewCategorys);
-                     
+
                 }
             }
-            
+
             //添加新选中的分类
             foreach (var newCategoryID in newCategoryIDs)
             {
@@ -198,10 +208,32 @@ namespace FC.Notes
         }
 
         public async Task<BookmarkDto> GetAsync(Guid id)
-        {
-            var bookmark = await _bookmarkRepository.GetAsync(id);
+        {  
+            var cacheKey = $"Bookmark@{id}";
 
-            return ObjectMapper.Map<Bookmark, BookmarkDto>(bookmark);
+            async Task<BookmarkDto> GetBookmarkAsync()
+            {
+                var bookmark = await _bookmarkRepository.GetAsync(id);
+
+                return ObjectMapper.Map<Bookmark, BookmarkDto>(bookmark);
+            }
+
+            //if (Debugger.IsAttached)
+            //{
+            //    return await GetBookmarkAsync();
+            //}
+
+            return await BookmarkCache.GetOrAddAsync(
+                cacheKey,
+                GetBookmarkAsync,
+                () => new DistributedCacheEntryOptions
+                {
+                    //TODO: Configurable?
+                    AbsoluteExpirationRelativeToNow = TimeSpan.FromHours(6),
+                    SlidingExpiration = TimeSpan.FromMinutes(30)
+                }
+            );
+
         }
 
         public async Task<BookmarkDto> UpdateAsync(Guid id, CreateUpdateBookmarkDto input)
@@ -228,7 +260,7 @@ namespace FC.Notes
         {
             var bookmark = await _bookmarkRepository.GetAsync(id);
 
-            if (bookmark.IsRead == isRead ) 
+            if (bookmark.IsRead == isRead)
             {
                 return ObjectMapper.Map<Bookmark, BookmarkDto>(bookmark);
             }
@@ -243,23 +275,23 @@ namespace FC.Notes
         }
 
         private async Task ChangeCategoryReadCount(Bookmark bookmark)
-        { 
+        {
             foreach (var oldCategory in bookmark.Categorys)
             {
                 var category = await _categoryRepository.GetAsync(oldCategory.CategoryId);
 
-                if (bookmark.IsRead) 
+                if (bookmark.IsRead)
                 {
                     category.IncreaseReadCount();
                 }
-                else 
+                else
                 {
                     category.DecreaseReadCount();
-                } 
+                }
 
                 await _categoryRepository.UpdateAsync(category);
-            } 
-        } 
+            }
+        }
 
         public async Task DeleteAsync(Guid id)
         {

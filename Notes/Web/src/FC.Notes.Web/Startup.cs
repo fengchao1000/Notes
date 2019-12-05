@@ -13,7 +13,7 @@ namespace FC.Notes.Web
             services.AddApplication<NotesWebModule>(options =>
             {
                 options.UseAutofac();
-            });
+            }); 
 
             return services.BuildServiceProviderFromFactory();
         }
