@@ -92,6 +92,8 @@ namespace Notes.Views.Bookmarks
                     viewModel.Bookmarks.RemoveAt(index);
 
                     viewModel.Bookmarks.Insert(index,bookmark);
+
+                    viewModel.Bookmarks = viewModel.Bookmarks;
                 }
             });
         }

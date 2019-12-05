@@ -148,9 +148,7 @@ namespace Notes.ViewModels.Bookmarks
 
                 //查询目录对应数量  
                 var result = await ServicesManager.BookmarkService.GetBookmarkPaged(SearchText, currentCategory.Id, 0, pageSize);
-
-                Bookmarks.Clear();
-
+                
                 if (!result.IsSuccess)
                 {
                     return;
@@ -165,6 +163,8 @@ namespace Notes.ViewModels.Bookmarks
                 {
                     return;
                 }
+
+                Bookmarks.Clear();
 
                 foreach (Bookmark item in result.Data.Items)
                 {

@@ -60,6 +60,42 @@ namespace Notes.ViewModels.Bookmarks
         }
 
         /// <summary>
+        /// GetDataFromSqliteAsync
+        /// </summary>
+        /// <returns></returns>
+        public async Task<Bookmark> GetDataFromSqliteAsync()
+        {
+            try
+            {
+                IsBusy = true;
+                HasError = false;
+                LoadStatus = LoadMoreStatus.StausLoading;
+                 
+                var result = await ServicesManager.BookmarkService.GetFromSqliteAsync(bookmark.Id);
+
+                if (result == null)
+                {
+                    HasError = true;
+                    LoadStatus = LoadMoreStatus.StausError;
+                    return null;
+                } 
+
+                LoadStatus = LoadMoreStatus.StausDefault;
+                  
+                return bookmark;
+            }
+            catch (Exception ex)
+            {
+                HasError = true;
+                return bookmark;
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        /// <summary>
         /// 从api刷新数据
         /// </summary>
         /// <returns></returns>
@@ -74,7 +110,7 @@ namespace Notes.ViewModels.Bookmarks
                 if (string.IsNullOrEmpty(bookmark.LinkUrl))
                 {
                     return bookmark;
-                }
+                } 
 
                 string linkUrl = bookmark.LinkUrl.Substring(0, bookmark.LinkUrl.LastIndexOf('.'));
                 linkUrl = linkUrl.Substring(linkUrl.LastIndexOf('/')+1);
@@ -95,9 +131,7 @@ namespace Notes.ViewModels.Bookmarks
                  
                 if (!result.IsSuccess)
                 {
-                    HasError = true;
-                    LoadStatus = LoadMoreStatus.StausError;
-                    return null;
+                    return await GetDataFromSqliteAsync(); 
                 }
 
                 if (result.Data == null)
