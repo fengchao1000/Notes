@@ -1,4 +1,6 @@
 ﻿using System;
+using FC.Notes.Web.IdentityServerExtensions;
+using IdentityServer4.Validation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -13,7 +15,9 @@ namespace FC.Notes.Web
             services.AddApplication<NotesWebModule>(options =>
             {
                 options.UseAutofac();
-            }); 
+            });
+
+            services.AddTransient<IExtensionGrantValidator, SMSGrantValidator>();
 
             return services.BuildServiceProviderFromFactory();
         }

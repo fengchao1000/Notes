@@ -20,7 +20,7 @@ namespace FC.Notes.Web
 #else
                 .MinimumLevel.Information()
 #endif
-                .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Debug)
                 .Enrich.WithProperty("Application", "Notes")
                 .Enrich.FromLogContext()
                 .WriteTo.File("Logs/logs.txt")
