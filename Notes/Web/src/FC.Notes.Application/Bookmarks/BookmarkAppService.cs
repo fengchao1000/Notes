@@ -63,7 +63,9 @@ namespace FC.Notes
 
         public async Task<PagedResultDto<BookmarkDto>> GetListAsync(PagedAndSortedResultRequestDto input)
         {
-            var bookmarks = await _bookmarkRepository.GetListAsync();
+            var query = _bookmarkRepository.GetAll();
+
+            var bookmarks = query.PageBy(input).ToList();
 
             var totalCount = await _bookmarkRepository.GetCountAsync();
 

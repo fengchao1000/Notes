@@ -10,33 +10,34 @@ using FC.Notes.Categorys;
 
 namespace FC.Notes.EntityFrameworkCore
 {
-    /* This is your actual DbContext used on runtime.
-     * It includes only your entities.
-     * It does not include entities of the used modules, because each module has already
-     * its own DbContext class. If you want to share some database tables with the used modules,
-     * just create a structure like done for AppUser.
-     *
-     * Don't use this DbContext for database migrations since it does not contain tables of the
-     * used modules (as explained above). See NotesMigrationsDbContext for migrations.
-     */
-    [ConnectionStringName("Default")]
-    public class NotesDbContext : AbpDbContext<NotesDbContext>, INotesDbContext
-    {
-        public DbSet<AppUser> Users { get; set; } 
-        public DbSet<Bookmark> Bookmarks { get; set; } 
-        public DbSet<BookmarkTag> BookmarkTags { get; set; } 
-        public DbSet<Tag> Tags { get; set; } 
-        public DbSet<Category> Categorys { get; set; }
-        public DbSet<BookmarkCategory> BookmarkCategorys { get; set; }
+      //*这是运行时使用的实际DbContext 
+      //*它只包含您的实体。 
+      //*它不包括使用的模块的实体，因为每个模块都已经有了 
+      //*它自己的DbContext类。如果您想与使用的模块共享一些数据库表， 
+      //创建一个像AppUser那样的结构。 
+      //* 
+      //*不要将此DbContext用于数据库迁移，因为它不包含 
+      //*使用模块(如上所述)。有关迁移，请参阅NotesMigrationsDbContext。 
+      //* 
 
-        /* Add DbSet properties for your Aggregate Roots / Entities here.
-         * Also map them inside NotesDbContextModelCreatingExtensions.ConfigureNotes
-         */
+      [ConnectionStringName("Default")]
+      public class NotesDbContext : AbpDbContext<NotesDbContext>, INotesDbContext
+      {
+          public DbSet<AppUser> Users { get; set; } 
+          public DbSet<Bookmark> Bookmarks { get; set; } 
+          public DbSet<BookmarkTag> BookmarkTags { get; set; } 
+          public DbSet<Tag> Tags { get; set; } 
+          public DbSet<Category> Categorys { get; set; }
+          public DbSet<BookmarkCategory> BookmarkCategorys { get; set; }
 
-        public NotesDbContext(DbContextOptions<NotesDbContext> options)
+          /* 在这里添加聚合根/实体的DbSet属性。
+           * 还可以将它们映射到NotesDbContextModelCreatingExtensions.ConfigureNotes中
+           */
+
+    public NotesDbContext(DbContextOptions<NotesDbContext> options)
             : base(options)
         {
-
+             
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
