@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -49,6 +50,8 @@ namespace Notes.ViewModels.Categorys
         /// </summary>
         public async void Initialize()
         {
+            LoggerHelper.Current.Debug(" Initialize CurrentThread:" + Thread.CurrentThread.ManagedThreadId);
+
             string refreshKey = nameof(CategoryViewModel);
             if (DateTime.UtcNow >= RefreshTimeHelper.GetRefreshTime(refreshKey))
             {
@@ -100,6 +103,8 @@ namespace Notes.ViewModels.Categorys
 
         async Task RefreshDataFromAPIAsync()
         {
+            LoggerHelper.Current.Debug(" RefreshDataFromAPIAsync CurrentThread:" + Thread.CurrentThread.ManagedThreadId);
+
             try
             {
                 IsBusy = true;

@@ -1,4 +1,4 @@
-2019-12-17 10:16:44.716 +08:00 [INF] Starting web host.
+﻿2019-12-17 10:16:44.716 +08:00 [INF] Starting web host.
 2019-12-17 10:16:50.776 +08:00 [DBG] Hosting starting
 2019-12-17 10:16:50.833 +08:00 [INF] User profile is available. Using 'C:\Users\Andy\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
 2019-12-17 10:16:50.840 +08:00 [DBG] Reading data from file 'C:\Users\Andy\AppData\Local\ASP.NET\DataProtection-Keys\key-0f7e385e-64ca-42e5-8c8e-1b5e11b6cd60.xml'.

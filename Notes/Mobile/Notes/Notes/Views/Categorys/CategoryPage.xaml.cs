@@ -4,6 +4,7 @@ using Notes.Models.Categorys;
 using Notes.ViewModels.Categorys;
 using Notes.Views.Bookmarks;
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -22,6 +23,8 @@ namespace Notes.Views.Categorys
             InitializeComponent();
 
             BindingContext = viewModel = new CategoryViewModel();
+
+            LoggerHelper.Current.Debug(" CategoryPage CurrentThread:" + Thread.CurrentThread.ManagedThreadId);
         }
 
         /// <summary>
@@ -30,6 +33,8 @@ namespace Notes.Views.Categorys
         protected override void OnAppearing()
         {
             base.OnAppearing();
+
+            LoggerHelper.Current.Debug(" OnAppearing CurrentThread:" + Thread.CurrentThread.ManagedThreadId);
 
             if (!hasInitialize)
             {

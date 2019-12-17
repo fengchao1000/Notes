@@ -16,7 +16,7 @@ namespace FC.Notes.Web
             {
                 options.UseAutofac();
             });
-
+             
             services.AddTransient<IExtensionGrantValidator, SMSGrantValidator>();
 
             return services.BuildServiceProviderFromFactory();
