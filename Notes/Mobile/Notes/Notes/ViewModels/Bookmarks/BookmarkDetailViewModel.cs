@@ -79,7 +79,6 @@ namespace Notes.ViewModels.Bookmarks
                     LoadStatus = LoadMoreStatus.StausError;
                     return null;
                 } 
-
                 LoadStatus = LoadMoreStatus.StausDefault;
                   
                 return bookmark;
