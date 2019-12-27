@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FC.Notes.Migrations
 {
     [DbContext(typeof(NotesMigrationsDbContext))]
-    [Migration("20191203063250_mysql_init")]
+    [Migration("20191225135402_mysql_init")]
     partial class mysql_init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
