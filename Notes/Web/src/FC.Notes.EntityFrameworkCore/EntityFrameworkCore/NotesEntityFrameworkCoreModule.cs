@@ -1,4 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using FC.Notes.EFLog;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using MySqlConnector.Logging;
+using System.Collections.Generic;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
@@ -27,6 +31,16 @@ namespace FC.Notes.EntityFrameworkCore
         )]
     public class NotesEntityFrameworkCoreModule : AbpModule
     {
+        //public static readonly LoggerFactory MyLoggerFactory
+        //= new LoggerFactory(  new List<ILoggerProvider> { new EFLoggerProvider() });
+
+        //    public static readonly LoggerFactory MyLoggerFactory
+        //= new LoggerFactory(new[] { new Microsoft.Extensions.Logging.Console.ConsoleLoggerProvider((_, __) => true, true) });
+
+        
+       public static readonly LoggerFactory MyLoggerFactory
+       = new LoggerFactory(new[] { new Microsoft.Extensions.Logging.Debug.DebugLoggerProvider((_, __) => true) });
+
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
             context.Services.AddAbpDbContext<NotesDbContext>(options =>
@@ -40,7 +54,19 @@ namespace FC.Notes.EntityFrameworkCore
             {
                 /* The main point to change your DBMS.
                  * See also NotesMigrationsDbContextFactory for EF Core tooling. */
+                  
+
+                options.Configure(context =>
+                {
+                    context.DbContextOptions.UseLoggerFactory(MyLoggerFactory);
+                    context.DbContextOptions.EnableDetailedErrors();
+                    context.DbContextOptions.EnableSensitiveDataLogging();
+
+                    //...
+                });
+
                 options.UseMySQL();
+
             });
         }
     }

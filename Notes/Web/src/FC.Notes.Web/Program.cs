@@ -60,5 +60,6 @@ namespace FC.Notes.Web
                 .UseStartup<Startup>()
                 .UseSerilog()
                 .Build();
+
     }
 }

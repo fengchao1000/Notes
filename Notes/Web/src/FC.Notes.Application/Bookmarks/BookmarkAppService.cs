@@ -4,6 +4,7 @@ using FC.Notes.Categorys;
 using FC.Notes.Tagging;
 using FC.Notes.Tagging.Dtos;
 using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Caching;
 using Volo.Abp.Domain.Repositories;
+using Volo.Abp.MultiTenancy;
 
 namespace FC.Notes
 {
@@ -21,6 +23,7 @@ namespace FC.Notes
         private readonly IBookmarkRepository _bookmarkRepository;
         private readonly ITagRepository _tagRepository;
         private readonly ICategoryRepository _categoryRepository;
+        private readonly ILogger _logger;
         protected IDistributedCache<BookmarkDto> BookmarkCache { get; }
 
         public BookmarkAppService(
@@ -28,16 +31,20 @@ namespace FC.Notes
             IBookmarkRepository bookmarkRepository,
             ITagRepository tagRepository,
             ICategoryRepository categoryRepository,
-            IDistributedCache<BookmarkDto> bookmarkCache)
+            IDistributedCache<BookmarkDto> bookmarkCache,
+            ILogger<BookmarkAppService> logger)
         {
             _bookmarkRepository = bookmarkRepository;
             _tagRepository = tagRepository;
             _categoryRepository = categoryRepository;
             BookmarkCache = bookmarkCache;
+            _logger = logger;
         }
 
         public async Task<PagedResultDto<BookmarkDto>> GetPagedAsync(GetPagedBookmarkInputDto input)
         {
+            _logger.LogInformation("=============================试测试测试测试测试测试测试测试测试测试测试");
+
             //初步过滤
             var query = _bookmarkRepository.GetAll()
                 .WhereIf(!input.Keyword.IsNullOrEmpty(), t => t.Content.Contains(input.Keyword) || t.Summary.Contains(input.Keyword) || t.Title.Contains(input.Keyword))
@@ -63,6 +70,8 @@ namespace FC.Notes
 
         public async Task<PagedResultDto<BookmarkDto>> GetListAsync(PagedAndSortedResultRequestDto input)
         {
+            _logger.LogInformation("==============GetListAsync===============试测试测试测试测试测试测试测试测试测试测试");
+
             var query = _bookmarkRepository.GetAll();
 
             var bookmarks = query.PageBy(input).ToList();
@@ -84,7 +93,10 @@ namespace FC.Notes
             )
             { Content = input.Content, Summary = input.Summary };
 
-            await _bookmarkRepository.InsertAsync(bookmark);
+            bookmark.TenantId = CurrentTenant.Id;
+            //todo:CurrentUser.Id;
+
+           await _bookmarkRepository.InsertAsync(bookmark);
 
             var tagList = SplitTags(input.Tags);
             await SaveTags(tagList, bookmark);
@@ -93,7 +105,7 @@ namespace FC.Notes
             await SaveCategory(categoryList, bookmark);
 
             return ObjectMapper.Map<Bookmark, BookmarkDto>(bookmark);
-        }
+        } 
 
         private List<Guid> SplitCategory(string catetorys)
         {
@@ -210,7 +222,7 @@ namespace FC.Notes
         }
 
         public async Task<BookmarkDto> GetAsync(Guid id)
-        {  
+        {
             var cacheKey = $"Bookmark@{id}";
 
             async Task<BookmarkDto> GetBookmarkAsync()
