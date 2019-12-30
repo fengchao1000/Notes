@@ -121,6 +121,12 @@ namespace FC.Notes.Web
 
         private void ConfigureVirtualFileSystem(IHostingEnvironment hostingEnvironment)
         {
+            // 添加WebModule的文件到VFS
+            Configure<VirtualFileSystemOptions>(options =>
+            {
+                options.FileSets.AddEmbedded<NotesWebModule>(typeof(NotesWebModule).Namespace);
+            });
+
             if (hostingEnvironment.IsDevelopment())
             {
                 Configure<VirtualFileSystemOptions>(options =>
