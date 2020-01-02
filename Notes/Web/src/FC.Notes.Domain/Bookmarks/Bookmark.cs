@@ -34,6 +34,7 @@ namespace FC.Notes.Bookmarks
         public virtual Collection<BookmarkCategory> Categorys { get; protected set; }
 
         public Guid? TenantId { get; set; }
+        public Guid? UserId { get; set; }
 
         protected Bookmark()
         {

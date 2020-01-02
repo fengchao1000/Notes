@@ -94,9 +94,10 @@ namespace FC.Notes
             { Content = input.Content, Summary = input.Summary };
 
             bookmark.TenantId = CurrentTenant.Id;
+            bookmark.UserId = CurrentUser.Id;
             //todo:CurrentUser.Id;
 
-           await _bookmarkRepository.InsertAsync(bookmark);
+            await _bookmarkRepository.InsertAsync(bookmark);
 
             var tagList = SplitTags(input.Tags);
             await SaveTags(tagList, bookmark);
