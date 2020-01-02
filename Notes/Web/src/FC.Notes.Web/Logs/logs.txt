@@ -4496,3 +4496,985 @@ System.Security.Authentication.AuthenticationException: Authentication failed, s
 2019-12-29 12:22:12.182 +08:00 [DBG] Connection id "0HLSC2QA2DR1F" sending FIN because: "The Socket transport's send loop completed gracefully."
 2019-12-29 12:22:12.184 +08:00 [DBG] Connection id "0HLSC2QA2DR1F" stopped.
 2019-12-29 12:23:47.482 +08:00 [INF] Starting web host.
+2020-01-02 14:47:02.675 +08:00 [INF] Starting web host.
+2020-01-02 14:47:12.217 +08:00 [DBG] Hosting starting
+2020-01-02 14:47:12.306 +08:00 [INF] User profile is available. Using 'C:\Users\Andy\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-01-02 14:47:12.314 +08:00 [DBG] Reading data from file 'C:\Users\Andy\AppData\Local\ASP.NET\DataProtection-Keys\key-0f7e385e-64ca-42e5-8c8e-1b5e11b6cd60.xml'.
+2020-01-02 14:47:12.363 +08:00 [DBG] Reading data from file 'C:\Users\Andy\AppData\Local\ASP.NET\DataProtection-Keys\key-79565f58-b19b-405d-ab19-a89074848ba1.xml'.
+2020-01-02 14:47:12.370 +08:00 [DBG] Reading data from file 'C:\Users\Andy\AppData\Local\ASP.NET\DataProtection-Keys\key-db6b4169-a718-4a1f-b458-abebba2e8959.xml'.
+2020-01-02 14:47:12.383 +08:00 [DBG] Found key {0f7e385e-64ca-42e5-8c8e-1b5e11b6cd60}.
+2020-01-02 14:47:12.389 +08:00 [DBG] Found key {79565f58-b19b-405d-ab19-a89074848ba1}.
+2020-01-02 14:47:12.389 +08:00 [DBG] Found key {db6b4169-a718-4a1f-b458-abebba2e8959}.
+2020-01-02 14:47:12.396 +08:00 [DBG] Considering key {0f7e385e-64ca-42e5-8c8e-1b5e11b6cd60} with expiration date 2020-03-15 01:46:19Z as default key.
+2020-01-02 14:47:12.404 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2020-01-02 14:47:12.404 +08:00 [DBG] Decrypting secret element using Windows DPAPI.
+2020-01-02 14:47:12.405 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2020-01-02 14:47:12.406 +08:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2020-01-02 14:47:12.409 +08:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2020-01-02 14:47:12.412 +08:00 [DBG] Using key {0f7e385e-64ca-42e5-8c8e-1b5e11b6cd60} as the default key.
+2020-01-02 14:47:12.412 +08:00 [DBG] Key ring with default key {0f7e385e-64ca-42e5-8c8e-1b5e11b6cd60} was loaded during application startup.
+2020-01-02 14:47:12.426 +08:00 [INF] Loaded ABP modules:
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.Uow.AbpUnitOfWorkModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.Data.AbpDataModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.Security.AbpSecurityModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.BackgroundJobs.BackgroundJobsDomainSharedModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.Settings.AbpSettingsModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.Users.AbpUsersDomainSharedModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.IdentityServer.AbpIdentityServerDomainSharedModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.TenantManagement.AbpTenantManagementDomainSharedModule
+2020-01-02 14:47:12.426 +08:00 [INF] - FC.Notes.NotesDomainSharedModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.Timing.AbpTimingModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.Json.AbpJsonModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.Threading.AbpThreadingModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.Auditing.AbpAuditingModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.EventBus.AbpEventBusModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.Guids.AbpGuidsModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.Domain.AbpDddDomainModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.Validation.AbpValidationModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.Authorization.AbpAuthorizationModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.Http.AbpHttpAbstractionsModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.Features.AbpFeaturesModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationContractsModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.Users.AbpUsersAbstractionModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.TenantManagement.AbpTenantManagementApplicationContractsModule
+2020-01-02 14:47:12.426 +08:00 [INF] - FC.Notes.NotesApplicationContractsModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.Http.AbpHttpModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.UI.AbpUiModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityHttpApiModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.PermissionManagement.HttpApi.AbpPermissionManagementHttpApiModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.TenantManagement.AbpTenantManagementHttpApiModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.FeatureManagement.AbpFeatureManagementHttpApiModule
+2020-01-02 14:47:12.426 +08:00 [INF] - FC.Notes.NotesHttpApiModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2020-01-02 14:47:12.426 +08:00 [INF] - Volo.Abp.BackgroundJobs.AbpBackgroundJobsModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.BackgroundJobs.BackgroundJobsDomainModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.Serialization.AbpSerializationModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.Caching.AbpCachingModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.Users.AbpUsersDomainModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityDomainModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.PermissionManagement.Identity.AbpPermissionManagementDomainIdentityModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.IdentityServer.AbpIdentityServerDomainModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.PermissionManagement.IdentityServer.AbpPermissionManagementDomainIdentityServerModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.TenantManagement.AbpTenantManagementDomainModule
+2020-01-02 14:47:12.427 +08:00 [INF] - FC.Notes.NotesDomainModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityApplicationModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.TenantManagement.AbpTenantManagementApplicationModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationModule
+2020-01-02 14:47:12.427 +08:00 [INF] - FC.Notes.NotesApplicationModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.IdentityServer.EntityFrameworkCore.AbpIdentityServerEntityFrameworkCoreModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.MySQL.AbpEntityFrameworkCoreMySQLModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.BackgroundJobs.EntityFrameworkCore.BackgroundJobsEntityFrameworkCoreModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.TenantManagement.EntityFrameworkCore.AbpTenantManagementEntityFrameworkCoreModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2020-01-02 14:47:12.427 +08:00 [INF] - FC.Notes.EntityFrameworkCore.NotesEntityFrameworkCoreModule
+2020-01-02 14:47:12.427 +08:00 [INF] - FC.Notes.EntityFrameworkCore.NotesEntityFrameworkCoreDbMigrationsModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.Castle.AbpCastleCoreModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.Autofac.AbpAutofacModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.AbpAspNetCoreMvcUiModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.AbpAspNetCoreMvcUiBootstrapModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.PermissionManagement.Web.AbpPermissionManagementWebModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Packages.AbpAspNetCoreMvcUiPackagesModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.AbpAspNetCoreMvcUiThemeSharedModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.Identity.Web.AbpIdentityWebModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.Identity.AspNetCore.AbpIdentityAspNetCoreModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.Account.Web.AbpAccountWebModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.Account.Web.AbpAccountWebIdentityServerModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy.AbpAspNetCoreMvcUiMultiTenancyModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.AbpAspNetCoreMvcUiBasicThemeModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.AspNetCore.Authentication.JwtBearer.AbpAspNetCoreAuthenticationJwtBearerModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.FeatureManagement.AbpFeatureManagementWebModule
+2020-01-02 14:47:12.427 +08:00 [INF] - Volo.Abp.TenantManagement.Web.AbpTenantManagementWebModule
+2020-01-02 14:47:12.427 +08:00 [INF] - FC.Notes.Web.NotesWebModule
+2020-01-02 14:47:12.478 +08:00 [DBG] No class found with auto mapping attributes.
+2020-01-02 14:47:13.045 +08:00 [DBG] Started background worker: Volo.Abp.BackgroundJobs.BackgroundJobWorker
+2020-01-02 14:47:13.656 +08:00 [DBG] Using Identity.Application as default scheme for authentication
+2020-01-02 14:47:13.656 +08:00 [DBG] Using Identity.External as default scheme for sign-in
+2020-01-02 14:47:13.656 +08:00 [DBG] Using Identity.External as default scheme for sign-out
+2020-01-02 14:47:13.656 +08:00 [DBG] Using Identity.Application as default scheme for challenge
+2020-01-02 14:47:13.656 +08:00 [DBG] Using Identity.Application as default scheme for forbid
+2020-01-02 14:48:07.732 +08:00 [INF] Starting web host.
+2020-01-02 14:48:14.073 +08:00 [DBG] Hosting starting
+2020-01-02 14:48:14.128 +08:00 [INF] User profile is available. Using 'C:\Users\Andy\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-01-02 14:48:14.137 +08:00 [DBG] Reading data from file 'C:\Users\Andy\AppData\Local\ASP.NET\DataProtection-Keys\key-0f7e385e-64ca-42e5-8c8e-1b5e11b6cd60.xml'.
+2020-01-02 14:48:14.150 +08:00 [DBG] Reading data from file 'C:\Users\Andy\AppData\Local\ASP.NET\DataProtection-Keys\key-79565f58-b19b-405d-ab19-a89074848ba1.xml'.
+2020-01-02 14:48:14.150 +08:00 [DBG] Reading data from file 'C:\Users\Andy\AppData\Local\ASP.NET\DataProtection-Keys\key-db6b4169-a718-4a1f-b458-abebba2e8959.xml'.
+2020-01-02 14:48:14.153 +08:00 [DBG] Found key {0f7e385e-64ca-42e5-8c8e-1b5e11b6cd60}.
+2020-01-02 14:48:14.155 +08:00 [DBG] Found key {79565f58-b19b-405d-ab19-a89074848ba1}.
+2020-01-02 14:48:14.156 +08:00 [DBG] Found key {db6b4169-a718-4a1f-b458-abebba2e8959}.
+2020-01-02 14:48:14.162 +08:00 [DBG] Considering key {0f7e385e-64ca-42e5-8c8e-1b5e11b6cd60} with expiration date 2020-03-15 01:46:19Z as default key.
+2020-01-02 14:48:14.169 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2020-01-02 14:48:14.169 +08:00 [DBG] Decrypting secret element using Windows DPAPI.
+2020-01-02 14:48:14.171 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2020-01-02 14:48:14.172 +08:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2020-01-02 14:48:14.176 +08:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2020-01-02 14:48:14.178 +08:00 [DBG] Using key {0f7e385e-64ca-42e5-8c8e-1b5e11b6cd60} as the default key.
+2020-01-02 14:48:14.178 +08:00 [DBG] Key ring with default key {0f7e385e-64ca-42e5-8c8e-1b5e11b6cd60} was loaded during application startup.
+2020-01-02 14:48:14.191 +08:00 [INF] Loaded ABP modules:
+2020-01-02 14:48:14.191 +08:00 [INF] - Volo.Abp.Uow.AbpUnitOfWorkModule
+2020-01-02 14:48:14.191 +08:00 [INF] - Volo.Abp.Data.AbpDataModule
+2020-01-02 14:48:14.191 +08:00 [INF] - Volo.Abp.Security.AbpSecurityModule
+2020-01-02 14:48:14.191 +08:00 [INF] - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2020-01-02 14:48:14.191 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2020-01-02 14:48:14.191 +08:00 [INF] - Volo.Abp.BackgroundJobs.BackgroundJobsDomainSharedModule
+2020-01-02 14:48:14.191 +08:00 [INF] - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2020-01-02 14:48:14.191 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2020-01-02 14:48:14.191 +08:00 [INF] - Volo.Abp.Settings.AbpSettingsModule
+2020-01-02 14:48:14.191 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationModule
+2020-01-02 14:48:14.191 +08:00 [INF] - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2020-01-02 14:48:14.191 +08:00 [INF] - Volo.Abp.Users.AbpUsersDomainSharedModule
+2020-01-02 14:48:14.191 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2020-01-02 14:48:14.191 +08:00 [INF] - Volo.Abp.IdentityServer.AbpIdentityServerDomainSharedModule
+2020-01-02 14:48:14.191 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2020-01-02 14:48:14.191 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2020-01-02 14:48:14.191 +08:00 [INF] - Volo.Abp.TenantManagement.AbpTenantManagementDomainSharedModule
+2020-01-02 14:48:14.191 +08:00 [INF] - FC.Notes.NotesDomainSharedModule
+2020-01-02 14:48:14.191 +08:00 [INF] - Volo.Abp.Timing.AbpTimingModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Json.AbpJsonModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Threading.AbpThreadingModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Auditing.AbpAuditingModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.EventBus.AbpEventBusModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Guids.AbpGuidsModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Domain.AbpDddDomainModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Validation.AbpValidationModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Authorization.AbpAuthorizationModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Http.AbpHttpAbstractionsModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Features.AbpFeaturesModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationContractsModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Users.AbpUsersAbstractionModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.TenantManagement.AbpTenantManagementApplicationContractsModule
+2020-01-02 14:48:14.192 +08:00 [INF] - FC.Notes.NotesApplicationContractsModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Http.AbpHttpModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.UI.AbpUiModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityHttpApiModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.PermissionManagement.HttpApi.AbpPermissionManagementHttpApiModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.TenantManagement.AbpTenantManagementHttpApiModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.FeatureManagement.AbpFeatureManagementHttpApiModule
+2020-01-02 14:48:14.192 +08:00 [INF] - FC.Notes.NotesHttpApiModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.BackgroundJobs.AbpBackgroundJobsModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.BackgroundJobs.BackgroundJobsDomainModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Serialization.AbpSerializationModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Caching.AbpCachingModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Users.AbpUsersDomainModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityDomainModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.PermissionManagement.Identity.AbpPermissionManagementDomainIdentityModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.IdentityServer.AbpIdentityServerDomainModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.PermissionManagement.IdentityServer.AbpPermissionManagementDomainIdentityServerModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.TenantManagement.AbpTenantManagementDomainModule
+2020-01-02 14:48:14.192 +08:00 [INF] - FC.Notes.NotesDomainModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityApplicationModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.TenantManagement.AbpTenantManagementApplicationModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationModule
+2020-01-02 14:48:14.192 +08:00 [INF] - FC.Notes.NotesApplicationModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.IdentityServer.EntityFrameworkCore.AbpIdentityServerEntityFrameworkCoreModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.MySQL.AbpEntityFrameworkCoreMySQLModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.BackgroundJobs.EntityFrameworkCore.BackgroundJobsEntityFrameworkCoreModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.TenantManagement.EntityFrameworkCore.AbpTenantManagementEntityFrameworkCoreModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2020-01-02 14:48:14.192 +08:00 [INF] - FC.Notes.EntityFrameworkCore.NotesEntityFrameworkCoreModule
+2020-01-02 14:48:14.192 +08:00 [INF] - FC.Notes.EntityFrameworkCore.NotesEntityFrameworkCoreDbMigrationsModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Castle.AbpCastleCoreModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Autofac.AbpAutofacModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.AbpAspNetCoreMvcUiModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.AbpAspNetCoreMvcUiBootstrapModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.PermissionManagement.Web.AbpPermissionManagementWebModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Packages.AbpAspNetCoreMvcUiPackagesModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.AbpAspNetCoreMvcUiThemeSharedModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Identity.Web.AbpIdentityWebModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Identity.AspNetCore.AbpIdentityAspNetCoreModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Account.Web.AbpAccountWebModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.Account.Web.AbpAccountWebIdentityServerModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy.AbpAspNetCoreMvcUiMultiTenancyModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.AbpAspNetCoreMvcUiBasicThemeModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.AspNetCore.Authentication.JwtBearer.AbpAspNetCoreAuthenticationJwtBearerModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.FeatureManagement.AbpFeatureManagementWebModule
+2020-01-02 14:48:14.192 +08:00 [INF] - Volo.Abp.TenantManagement.Web.AbpTenantManagementWebModule
+2020-01-02 14:48:14.192 +08:00 [INF] - FC.Notes.Web.NotesWebModule
+2020-01-02 14:48:14.244 +08:00 [DBG] No class found with auto mapping attributes.
+2020-01-02 14:48:14.720 +08:00 [DBG] Started background worker: Volo.Abp.BackgroundJobs.BackgroundJobWorker
+2020-01-02 14:48:15.448 +08:00 [DBG] Using Identity.Application as default scheme for authentication
+2020-01-02 14:48:15.448 +08:00 [DBG] Using Identity.External as default scheme for sign-in
+2020-01-02 14:48:15.448 +08:00 [DBG] Using Identity.External as default scheme for sign-out
+2020-01-02 14:48:15.448 +08:00 [DBG] Using Identity.Application as default scheme for challenge
+2020-01-02 14:48:15.448 +08:00 [DBG] Using Identity.Application as default scheme for forbid
+2020-01-02 14:48:17.662 +08:00 [DBG] Compatibility switch AllowInputFormatterExceptionMessages in type MvcJsonOptions is using default value false
+2020-01-02 14:48:17.669 +08:00 [DBG] Compatibility switch AllowDataAnnotationsLocalizationForEnumDisplayAttributes in type MvcDataAnnotationsLocalizationOptions is using default value false
+2020-01-02 14:48:17.696 +08:00 [DBG] Compatibility switch AllowCombiningAuthorizeFilters in type MvcOptions is using default value false
+2020-01-02 14:48:17.696 +08:00 [DBG] Compatibility switch AllowBindingHeaderValuesToNonStringModelTypes in type MvcOptions is using default value false
+2020-01-02 14:48:17.696 +08:00 [DBG] Compatibility switch AllowValidatingTopLevelNodes in type MvcOptions is using default value false
+2020-01-02 14:48:17.696 +08:00 [DBG] Compatibility switch InputFormatterExceptionPolicy in type MvcOptions is using default value "AllExceptions"
+2020-01-02 14:48:17.697 +08:00 [DBG] Compatibility switch SuppressBindingUndefinedValueToEnumType in type MvcOptions is using default value false
+2020-01-02 14:48:17.697 +08:00 [DBG] Compatibility switch EnableEndpointRouting in type MvcOptions is using default value false
+2020-01-02 14:48:17.697 +08:00 [DBG] Compatibility switch MaxValidationDepth in type MvcOptions is using default value null
+2020-01-02 14:48:17.697 +08:00 [DBG] Compatibility switch AllowShortCircuitingValidationWhenNoValidatorsArePresent in type MvcOptions is using default value false
+2020-01-02 14:48:17.708 +08:00 [DBG] Compatibility switch SuppressMapClientErrors in type ApiBehaviorOptions is using compatibility value true for version "Version_2_0"
+2020-01-02 14:48:17.708 +08:00 [DBG] Compatibility switch SuppressUseValidationProblemDetailsForInvalidModelStateResponses in type ApiBehaviorOptions is using compatibility value true for version "Version_2_0"
+2020-01-02 14:48:17.708 +08:00 [DBG] Compatibility switch AllowInferringBindingSourceForCollectionTypesAsFromQuery in type ApiBehaviorOptions is using compatibility value true for version "Version_2_0"
+2020-01-02 14:48:17.727 +08:00 [DBG] Compatibility switch AllowAreas in type RazorPagesOptions is using default value false
+2020-01-02 14:48:17.727 +08:00 [DBG] Compatibility switch AllowMappingHeadRequestsToGetHandler in type RazorPagesOptions is using default value false
+2020-01-02 14:48:17.727 +08:00 [DBG] Compatibility switch AllowDefaultHandlingForOptionsRequests in type RazorPagesOptions is using default value false
+2020-01-02 14:48:17.731 +08:00 [DBG] Compatibility switch AllowRecompilingViewsOnFileChange in type RazorViewEngineOptions is using explicitly configured value true
+2020-01-02 14:48:17.762 +08:00 [DBG] Compatibility switch SuppressTempDataAttributePrefix in type MvcViewOptions is using default value false
+2020-01-02 14:48:17.762 +08:00 [DBG] Compatibility switch AllowRenderingMaxLengthAttribute in type MvcViewOptions is using default value false
+2020-01-02 14:48:17.794 +08:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2020-01-02 14:48:17.832 +08:00 [INF] Initialized all ABP modules.
+2020-01-02 14:48:17.900 +08:00 [DBG] Hosting started
+2020-01-02 14:48:17.900 +08:00 [DBG] Loaded hosting startup assembly FC.Notes.Web
+2020-01-02 14:48:17.900 +08:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Server.IISIntegration
+2020-01-02 14:48:17.923 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/  
+2020-01-02 14:48:17.953 +08:00 [DBG] The request path / does not match a supported file type
+2020-01-02 14:48:17.979 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:17.993 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-01-02 14:48:18.177 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:18.189 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:18.216 +08:00 [DBG] The request path  does not match the path filter
+2020-01-02 14:48:18.558 +08:00 [DBG] Request successfully matched the route with name 'null' and template ''
+2020-01-02 14:48:18.565 +08:00 [DBG] Initializing Razor view compiler with compiled view: '/Pages/Account/Login.cshtml'.
+2020-01-02 14:48:18.566 +08:00 [DBG] Initializing Razor view compiler with compiled view: '/Pages/Bookmarks/CreateModal.cshtml'.
+2020-01-02 14:48:18.566 +08:00 [DBG] Initializing Razor view compiler with compiled view: '/Pages/Bookmarks/EditModal.cshtml'.
+2020-01-02 14:48:18.566 +08:00 [DBG] Initializing Razor view compiler with compiled view: '/Pages/Bookmarks/Index.cshtml'.
+2020-01-02 14:48:18.566 +08:00 [DBG] Initializing Razor view compiler with compiled view: '/Pages/Categorys/CreateModal.cshtml'.
+2020-01-02 14:48:18.566 +08:00 [DBG] Initializing Razor view compiler with compiled view: '/Pages/Categorys/EditModal.cshtml'.
+2020-01-02 14:48:18.566 +08:00 [DBG] Initializing Razor view compiler with compiled view: '/Pages/Categorys/Index.cshtml'.
+2020-01-02 14:48:18.566 +08:00 [DBG] Initializing Razor view compiler with compiled view: '/Pages/Index.cshtml'.
+2020-01-02 14:48:18.566 +08:00 [DBG] Initializing Razor view compiler with compiled view: '/Pages/_ViewImports.cshtml'.
+2020-01-02 14:48:18.566 +08:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/_ViewImports.cshtml'.
+2020-01-02 14:48:19.530 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Pages/_ViewStart.cshtml' started.
+2020-01-02 14:48:20.602 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Pages/_ViewStart.cshtml' completed in 1069.4013ms.
+2020-01-02 14:48:20.608 +08:00 [INF] Route matched with {page = "/Index", action = "", controller = "", area = ""}. Executing page /Index
+2020-01-02 14:48:20.608 +08:00 [DBG] Execution plan of authorization filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.AutoValidateAntiforgeryTokenAuthorizationFilter"]
+2020-01-02 14:48:20.608 +08:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-01-02 14:48:20.608 +08:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Volo.Abp.AspNetCore.Mvc.Auditing.AbpAuditActionFilter","Volo.Abp.AspNetCore.Mvc.Features.AbpFeatureActionFilter","Volo.Abp.AspNetCore.Mvc.Validation.AbpValidationActionFilter","Volo.Abp.AspNetCore.Mvc.Uow.AbpUowActionFilter"]
+2020-01-02 14:48:20.608 +08:00 [DBG] Execution plan of exception filters (in the following order): ["Volo.Abp.AspNetCore.Mvc.ExceptionHandling.AbpExceptionFilter"]
+2020-01-02 14:48:20.608 +08:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-01-02 14:48:20.643 +08:00 [INF] Executing handler method FC.Notes.Web.Pages.IndexModel.OnGet - ModelState is "Valid"
+2020-01-02 14:48:20.643 +08:00 [INF] Executed handler method OnGet, returned result .
+2020-01-02 14:48:20.644 +08:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2020-01-02 14:48:20.645 +08:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2020-01-02 14:48:20.925 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Layouts/Application.cshtml' started.
+2020-01-02 14:48:21.189 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Layouts/Application.cshtml' completed in 264.05830000000003ms.
+2020-01-02 14:48:21.190 +08:00 [DBG] Using precompiled view for '~/Themes/Basic/Layouts/Application.cshtml'.
+2020-01-02 14:48:21.208 +08:00 [DBG] A new antiforgery cookie token was created.
+2020-01-02 14:48:21.309 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent with arguments (["Header.First","Application"]).
+2020-01-02 14:48:21.313 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent in 0.71820000000000006ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:21.447 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Volo/Abp/AspNetCore/Mvc/UI/Components/LayoutHook/Default.cshtml' started.
+2020-01-02 14:48:21.556 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Volo/Abp/AspNetCore/Mvc/UI/Components/LayoutHook/Default.cshtml' completed in 108.44850000000001ms.
+2020-01-02 14:48:21.557 +08:00 [DBG] Using precompiled view for '~/Volo/Abp/AspNetCore/Mvc/UI/Components/LayoutHook/Default.cshtml'.
+2020-01-02 14:48:21.617 +08:00 [DBG] Added bundle 'Basic.Global' to the page in 11.15 ms.
+2020-01-02 14:48:21.630 +08:00 [DBG] Added bundle '91A143E5BBA37D801A02555A7407C133' to the page in 2.53 ms.
+2020-01-02 14:48:21.630 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent with arguments (["Header.Last","Application"]).
+2020-01-02 14:48:21.630 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent in 0.0199ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:21.639 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent with arguments (["Body.First","Application"]).
+2020-01-02 14:48:21.639 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent in 0.0054ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:21.640 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.MainNavbar.MainNavbarViewComponent with arguments ([]).
+2020-01-02 14:48:21.640 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.MainNavbar.MainNavbarViewComponent in 0.22840000000000002ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:21.769 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/MainNavbar/Default.cshtml' started.
+2020-01-02 14:48:21.845 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/MainNavbar/Default.cshtml' completed in 76.3489ms.
+2020-01-02 14:48:21.846 +08:00 [DBG] Using precompiled view for '~/Themes/Basic/Components/MainNavbar/Default.cshtml'.
+2020-01-02 14:48:21.850 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Brand.MainNavbarBrandViewComponent with arguments ([]).
+2020-01-02 14:48:21.850 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Brand.MainNavbarBrandViewComponent in 0.0947ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:21.976 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/Brand/Default.cshtml' started.
+2020-01-02 14:48:22.055 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/Brand/Default.cshtml' completed in 78.9367ms.
+2020-01-02 14:48:22.056 +08:00 [DBG] Using precompiled view for '~/Themes/Basic/Components/Brand/Default.cshtml'.
+2020-01-02 14:48:22.072 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Menu.MainNavbarMenuViewComponent with arguments ([]).
+2020-01-02 14:48:22.280 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:22.280 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:22.284 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:22.294 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Menu.MainNavbarMenuViewComponent in 222.7517ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:22.428 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/Menu/Default.cshtml' started.
+2020-01-02 14:48:22.530 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/Menu/Default.cshtml' completed in 101.2732ms.
+2020-01-02 14:48:22.530 +08:00 [DBG] Using precompiled view for '~/Themes/Basic/Components/Menu/Default.cshtml'.
+2020-01-02 14:48:22.681 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/Menu/_MenuItem.cshtml' started.
+2020-01-02 14:48:22.783 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/Menu/_MenuItem.cshtml' completed in 101.65310000000001ms.
+2020-01-02 14:48:22.784 +08:00 [DBG] Using precompiled view for '~/Themes/Basic/Components/Menu/_MenuItem.cshtml'.
+2020-01-02 14:48:22.799 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Toolbar.MainNavbarToolbarViewComponent with arguments ([]).
+2020-01-02 14:48:22.806 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Toolbar.MainNavbarToolbarViewComponent in 6.2522ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:22.938 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/Toolbar/Default.cshtml' started.
+2020-01-02 14:48:23.043 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/Toolbar/Default.cshtml' completed in 104.5523ms.
+2020-01-02 14:48:23.043 +08:00 [DBG] Using precompiled view for '~/Themes/Basic/Components/Toolbar/Default.cshtml'.
+2020-01-02 14:48:23.050 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Toolbar.LanguageSwitch.LanguageSwitchViewComponent with arguments ([]).
+2020-01-02 14:48:23.056 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Toolbar.LanguageSwitch.LanguageSwitchViewComponent in 5.7024ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:23.183 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/Toolbar/LanguageSwitch/Default.cshtml' started.
+2020-01-02 14:48:23.261 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/Toolbar/LanguageSwitch/Default.cshtml' completed in 77.9017ms.
+2020-01-02 14:48:23.261 +08:00 [DBG] Using precompiled view for '~/Themes/Basic/Components/Toolbar/LanguageSwitch/Default.cshtml'.
+2020-01-02 14:48:23.267 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.PageAlerts.PageAlertsViewComponent with arguments ([""]).
+2020-01-02 14:48:23.268 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.PageAlerts.PageAlertsViewComponent in 0.45830000000000004ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:23.397 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/PageAlerts/Default.cshtml' started.
+2020-01-02 14:48:23.481 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/PageAlerts/Default.cshtml' completed in 84.6038ms.
+2020-01-02 14:48:23.482 +08:00 [DBG] Using precompiled view for '~/Themes/Basic/Components/PageAlerts/Default.cshtml'.
+2020-01-02 14:48:23.496 +08:00 [DBG] Added bundle 'Basic.Global' to the page in 4.86 ms.
+2020-01-02 14:48:23.501 +08:00 [DBG] Added bundle 'A4B2578EBCCAF48D15D84F95F6B828FB' to the page in 0.61 ms.
+2020-01-02 14:48:23.501 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent with arguments (["Body.Last","Application"]).
+2020-01-02 14:48:23.502 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent in 0.0058000000000000005ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:23.520 +08:00 [INF] Executed page /Index in 2911.0394ms
+2020-01-02 14:48:23.524 +08:00 [INF] Request finished in 5602.756ms 200 text/html; charset=utf-8
+2020-01-02 14:48:23.566 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/abp/core/abp.css?_v=636985878835379192  
+2020-01-02 14:48:23.566 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/select2/css/select2.min.css?_v=636985878840534491  
+2020-01-02 14:48:23.567 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/abp/aspnetcore-mvc-ui-theme-shared/datatables/datatables-styles.css?_v=636971167960000000  
+2020-01-02 14:48:23.570 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/abp/core/abp.js?_v=636985878835535393  
+2020-01-02 14:48:23.570 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/jquery/jquery.js?_v=636985878838972082  
+2020-01-02 14:48:23.577 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/abp/jquery/abp.jquery.js?_v=636985878835535393  
+2020-01-02 14:48:23.577 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/Pages/Index.css?_v=636985878834910814  
+2020-01-02 14:48:23.620 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/bootstrap/js/bootstrap.bundle.js?_v=636985878835691875  
+2020-01-02 14:48:23.629 +08:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/datatables/datatables-styles.css'. Physical path: '/wwwroot/libs/abp/aspnetcore_mvc_ui_theme_shared/datatables/datatables-styles.css'
+2020-01-02 14:48:23.629 +08:00 [INF] Request finished in 61.6429ms 200 text/css
+2020-01-02 14:48:23.629 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/lodash/lodash.min.js?_v=636985878839440728  
+2020-01-02 14:48:23.650 +08:00 [INF] Sending file. Request path: '/libs/abp/core/abp.css'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\abp\core\abp.css'
+2020-01-02 14:48:23.650 +08:00 [INF] Sending file. Request path: '/Pages/Index.css'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\Pages\Index.css'
+2020-01-02 14:48:23.650 +08:00 [INF] Sending file. Request path: '/libs/abp/jquery/abp.jquery.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\abp\jquery\abp.jquery.js'
+2020-01-02 14:48:23.650 +08:00 [INF] Sending file. Request path: '/libs/select2/css/select2.min.css'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\select2\css\select2.min.css'
+2020-01-02 14:48:23.650 +08:00 [INF] Sending file. Request path: '/libs/abp/core/abp.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\abp\core\abp.js'
+2020-01-02 14:48:23.651 +08:00 [INF] Request finished in 81.5574ms 200 text/css
+2020-01-02 14:48:23.651 +08:00 [INF] Request finished in 85.2806ms 200 text/css
+2020-01-02 14:48:23.651 +08:00 [INF] Request finished in 74.4156ms 200 application/javascript
+2020-01-02 14:48:23.651 +08:00 [INF] Request finished in 85.2712ms 200 text/css
+2020-01-02 14:48:23.651 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js?_v=636985878837253752  
+2020-01-02 14:48:23.651 +08:00 [INF] Request finished in 81.6151ms 200 application/javascript
+2020-01-02 14:48:23.651 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/datatables.net/js/jquery.dataTables.js?_v=636985878836316474  
+2020-01-02 14:48:23.651 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/jquery-form/jquery.form.min.js?_v=636985878837097632  
+2020-01-02 14:48:23.651 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/select2/js/select2.min.js?_v=636985878842408780  
+2020-01-02 14:48:23.651 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/jquery-validation/jquery.validate.js?_v=636985878837409975  
+2020-01-02 14:48:23.673 +08:00 [INF] Sending file. Request path: '/libs/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js'
+2020-01-02 14:48:23.674 +08:00 [INF] Request finished in 22.0759ms 200 application/javascript
+2020-01-02 14:48:23.674 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css?_v=636985878840221782  
+2020-01-02 14:48:23.682 +08:00 [INF] Sending file. Request path: '/libs/jquery-validation/jquery.validate.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\jquery-validation\jquery.validate.js'
+2020-01-02 14:48:23.682 +08:00 [INF] Sending file. Request path: '/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\malihu-custom-scrollbar-plugin\jquery.mCustomScrollbar.css'
+2020-01-02 14:48:23.682 +08:00 [INF] Request finished in 31.1366ms 200 application/javascript
+2020-01-02 14:48:23.682 +08:00 [INF] Request finished in 7.9208ms 200 text/css
+2020-01-02 14:48:23.683 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/sweetalert/sweetalert.min.js?_v=636985878842721499  
+2020-01-02 14:48:23.683 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/toastr/toastr.min.js?_v=636985878844595760  
+2020-01-02 14:48:23.709 +08:00 [INF] Sending file. Request path: '/libs/toastr/toastr.min.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\toastr\toastr.min.js'
+2020-01-02 14:48:23.709 +08:00 [INF] Request finished in 26.3301ms 200 application/javascript
+2020-01-02 14:48:23.709 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/timeago/jquery.timeago.js?_v=636985878842877720  
+2020-01-02 14:48:23.709 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/datatables.net-bs4/js/dataTables.bootstrap4.js?_v=636985878836160518  
+2020-01-02 14:48:23.710 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js?_v=636985878839909632  
+2020-01-02 14:48:23.711 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/abp/aspnetcore-mvc-ui-theme-shared/jquery/jquery-extensions.js?_v=636971167960000000  
+2020-01-02 14:48:23.712 +08:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/jquery/jquery-extensions.js'. Physical path: '/wwwroot/libs/abp/aspnetcore_mvc_ui_theme_shared/jquery/jquery-extensions.js'
+2020-01-02 14:48:23.712 +08:00 [INF] Request finished in 1.129ms 200 application/javascript
+2020-01-02 14:48:23.712 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/abp/aspnetcore-mvc-ui-theme-shared/jquery-form/jquery-form-extensions.js?_v=636971167960000000  
+2020-01-02 14:48:23.712 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/themes/basic/layout.css?_v=636971168100000000  
+2020-01-02 14:48:23.712 +08:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/jquery-form/jquery-form-extensions.js'. Physical path: '/wwwroot/libs/abp/aspnetcore_mvc_ui_theme_shared/jquery_form/jquery-form-extensions.js'
+2020-01-02 14:48:23.712 +08:00 [INF] Request finished in 0.7153ms 200 application/javascript
+2020-01-02 14:48:23.713 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/abp/aspnetcore-mvc-ui-theme-shared/bootstrap/modal-manager.js?_v=636971167960000000  
+2020-01-02 14:48:23.713 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/abp/aspnetcore-mvc-ui-theme-shared/bootstrap/dom-event-handlers.js?_v=636971167960000000  
+2020-01-02 14:48:23.713 +08:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/bootstrap/dom-event-handlers.js'. Physical path: '/wwwroot/libs/abp/aspnetcore_mvc_ui_theme_shared/bootstrap/dom-event-handlers.js'
+2020-01-02 14:48:23.713 +08:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/bootstrap/modal-manager.js'. Physical path: '/wwwroot/libs/abp/aspnetcore_mvc_ui_theme_shared/bootstrap/modal-manager.js'
+2020-01-02 14:48:23.713 +08:00 [INF] Request finished in 0.3825ms 200 application/javascript
+2020-01-02 14:48:23.714 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/abp/aspnetcore-mvc-ui-theme-shared/datatables/datatables-extensions.js?_v=636971167960000000  
+2020-01-02 14:48:23.714 +08:00 [INF] Sending file. Request path: '/themes/basic/layout.css'. Physical path: '/wwwroot/themes/basic/layout.css'
+2020-01-02 14:48:23.714 +08:00 [INF] Request finished in 1.7349ms 200 text/css
+2020-01-02 14:48:23.713 +08:00 [INF] Request finished in 0.5676ms 200 application/javascript
+2020-01-02 14:48:23.714 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/bootstrap/css/bootstrap.css?_v=636985878835691875  
+2020-01-02 14:48:23.714 +08:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/datatables/datatables-extensions.js'. Physical path: '/wwwroot/libs/abp/aspnetcore_mvc_ui_theme_shared/datatables/datatables-extensions.js'
+2020-01-02 14:48:23.714 +08:00 [INF] Request finished in 0.5749ms 200 application/javascript
+2020-01-02 14:48:23.714 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/Pages/Abp/MultiTenancy/tenant-switch.js?_v=636971167960000000  
+2020-01-02 14:48:23.714 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/abp/aspnetcore-mvc-ui-theme-shared/sweetalert/abp-sweetalert.js?_v=636971167960000000  
+2020-01-02 14:48:23.715 +08:00 [INF] Sending file. Request path: '/Pages/Abp/MultiTenancy/tenant-switch.js'. Physical path: '/Pages/Abp/MultiTenancy/tenant-switch.js'
+2020-01-02 14:48:23.715 +08:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/sweetalert/abp-sweetalert.js'. Physical path: '/wwwroot/libs/abp/aspnetcore_mvc_ui_theme_shared/sweetalert/abp-sweetalert.js'
+2020-01-02 14:48:23.715 +08:00 [INF] Request finished in 0.4474ms 200 application/javascript
+2020-01-02 14:48:23.715 +08:00 [INF] Request finished in 0.4691ms 200 application/javascript
+2020-01-02 14:48:23.715 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/Pages/Identity/Shared/personal-settings-modal.js?_v=636971172140000000  
+2020-01-02 14:48:23.715 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/themes/basic/layout.js?_v=636971168100000000  
+2020-01-02 14:48:23.715 +08:00 [INF] Sending file. Request path: '/Pages/Identity/Shared/personal-settings-modal.js'. Physical path: '/Pages/Identity/Shared/personal-settings-modal.js'
+2020-01-02 14:48:23.715 +08:00 [INF] Request finished in 0.3844ms 200 application/javascript
+2020-01-02 14:48:23.716 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/abp/aspnetcore-mvc-ui-theme-shared/toastr/abp-toastr.js?_v=636971167960000000  
+2020-01-02 14:48:23.716 +08:00 [INF] Sending file. Request path: '/themes/basic/layout.js'. Physical path: '/wwwroot/themes/basic/layout.js'
+2020-01-02 14:48:23.716 +08:00 [INF] Request finished in 0.6427ms 200 application/javascript
+2020-01-02 14:48:23.716 +08:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/toastr/abp-toastr.js'. Physical path: '/wwwroot/libs/abp/aspnetcore_mvc_ui_theme_shared/toastr/abp-toastr.js'
+2020-01-02 14:48:23.716 +08:00 [INF] Request finished in 0.5167ms 200 application/javascript
+2020-01-02 14:48:23.716 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/Abp/ApplicationConfigurationScript  
+2020-01-02 14:48:23.716 +08:00 [DBG] The request path /Abp/ApplicationConfigurationScript does not match a supported file type
+2020-01-02 14:48:23.717 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:23.717 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-01-02 14:48:23.718 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:23.718 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:23.718 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/Pages/Identity/Shared/change-password-modal.js?_v=636971172140000000  
+2020-01-02 14:48:23.719 +08:00 [DBG] The request path  does not match the path filter
+2020-01-02 14:48:23.721 +08:00 [DBG] Request successfully matched the route with name 'null' and template 'Abp/ApplicationConfigurationScript'
+2020-01-02 14:48:23.725 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/Pages/Index.js?_v=636985878834910814  
+2020-01-02 14:48:23.725 +08:00 [INF] Sending file. Request path: '/libs/datatables.net-bs4/js/dataTables.bootstrap4.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\datatables.net-bs4\js\dataTables.bootstrap4.js'
+2020-01-02 14:48:23.725 +08:00 [INF] Request finished in 15.836ms 200 application/javascript
+2020-01-02 14:48:23.725 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/Abp/ServiceProxyScript  
+2020-01-02 14:48:23.725 +08:00 [DBG] The request path /Abp/ServiceProxyScript does not match a supported file type
+2020-01-02 14:48:23.726 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:23.726 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-01-02 14:48:23.726 +08:00 [INF] Sending file. Request path: '/Pages/Identity/Shared/change-password-modal.js'. Physical path: '/Pages/Identity/Shared/change-password-modal.js'
+2020-01-02 14:48:23.726 +08:00 [INF] Request finished in 10.118ms 200 application/javascript
+2020-01-02 14:48:23.727 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:23.727 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:23.727 +08:00 [DBG] The request path  does not match the path filter
+2020-01-02 14:48:23.726 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/jquery-validation/localization/messages_zh.js?_v=636985878838815873  
+2020-01-02 14:48:23.728 +08:00 [DBG] Request successfully matched the route with name 'null' and template 'Abp/ServiceProxyScript'
+2020-01-02 14:48:23.729 +08:00 [INF] Sending file. Request path: '/libs/sweetalert/sweetalert.min.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\sweetalert\sweetalert.min.js'
+2020-01-02 14:48:23.729 +08:00 [INF] Request finished in 45.9504ms 200 application/javascript
+2020-01-02 14:48:23.729 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/font-awesome/css/font-awesome.css?_v=636985878836628893  
+2020-01-02 14:48:23.735 +08:00 [INF] Sending file. Request path: '/Pages/Index.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\Pages\Index.js'
+2020-01-02 14:48:23.735 +08:00 [INF] Request finished in 9.8775ms 200 application/javascript
+2020-01-02 14:48:23.735 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/toastr/toastr.min.css?_v=636985878844595760  
+2020-01-02 14:48:23.740 +08:00 [INF] Route matched with {area = "Abp", action = "Get", controller = "AbpApplicationConfigurationScript", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[System.String] Get() on controller Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController (Volo.Abp.AspNetCore.Mvc).
+2020-01-02 14:48:23.740 +08:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-01-02 14:48:23.740 +08:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-01-02 14:48:23.741 +08:00 [INF] Sending file. Request path: '/libs/timeago/jquery.timeago.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\timeago\jquery.timeago.js'
+2020-01-02 14:48:23.741 +08:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Volo.Abp.AspNetCore.Mvc.Auditing.AbpAuditActionFilter","Volo.Abp.AspNetCore.Mvc.Features.AbpFeatureActionFilter","Volo.Abp.AspNetCore.Mvc.Validation.AbpValidationActionFilter","Volo.Abp.AspNetCore.Mvc.Uow.AbpUowActionFilter"]
+2020-01-02 14:48:23.741 +08:00 [DBG] Execution plan of exception filters (in the following order): ["Volo.Abp.AspNetCore.Mvc.ExceptionHandling.AbpExceptionFilter"]
+2020-01-02 14:48:23.741 +08:00 [INF] Request finished in 31.1145ms 200 application/javascript
+2020-01-02 14:48:23.741 +08:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter","Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-01-02 14:48:23.741 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/datatables.net-bs4/css/dataTables.bootstrap4.css?_v=636985878836160518  
+2020-01-02 14:48:23.742 +08:00 [INF] Sending file. Request path: '/libs/jquery-validation/localization/messages_zh.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\jquery-validation\localization\messages_zh.js'
+2020-01-02 14:48:23.742 +08:00 [INF] Request finished in 15.5565ms 200 application/javascript
+2020-01-02 14:48:23.745 +08:00 [INF] Sending file. Request path: '/libs/jquery-form/jquery.form.min.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\jquery-form\jquery.form.min.js'
+2020-01-02 14:48:23.745 +08:00 [INF] Request finished in 93.7662ms 200 application/javascript
+2020-01-02 14:48:23.749 +08:00 [INF] Sending file. Request path: '/libs/toastr/toastr.min.css'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\toastr\toastr.min.css'
+2020-01-02 14:48:23.749 +08:00 [INF] Request finished in 13.9051ms 200 text/css
+2020-01-02 14:48:23.753 +08:00 [INF] Sending file. Request path: '/libs/datatables.net-bs4/css/dataTables.bootstrap4.css'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\datatables.net-bs4\css\dataTables.bootstrap4.css'
+2020-01-02 14:48:23.753 +08:00 [INF] Request finished in 12.3641ms 200 text/css
+2020-01-02 14:48:23.753 +08:00 [INF] Sending file. Request path: '/libs/font-awesome/css/font-awesome.css'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\font-awesome\css\font-awesome.css'
+2020-01-02 14:48:23.753 +08:00 [INF] Request finished in 24.6397ms 200 text/css
+2020-01-02 14:48:23.757 +08:00 [INF] Sending file. Request path: '/libs/select2/js/select2.min.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\select2\js\select2.min.js'
+2020-01-02 14:48:23.757 +08:00 [INF] Sending file. Request path: '/libs/bootstrap/js/bootstrap.bundle.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\bootstrap\js\bootstrap.bundle.js'
+2020-01-02 14:48:23.757 +08:00 [INF] Request finished in 105.5474ms 200 application/javascript
+2020-01-02 14:48:23.757 +08:00 [INF] Request finished in 137.2765ms 200 application/javascript
+2020-01-02 14:48:23.758 +08:00 [INF] Sending file. Request path: '/libs/jquery/jquery.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\jquery\jquery.js'
+2020-01-02 14:48:23.758 +08:00 [INF] Request finished in 188.3149ms 200 application/javascript
+2020-01-02 14:48:23.758 +08:00 [INF] Sending file. Request path: '/libs/datatables.net/js/jquery.dataTables.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\datatables.net\js\jquery.dataTables.js'
+2020-01-02 14:48:23.758 +08:00 [INF] Request finished in 106.904ms 200 application/javascript
+2020-01-02 14:48:23.758 +08:00 [INF] Sending file. Request path: '/libs/bootstrap/css/bootstrap.css'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\bootstrap\css\bootstrap.css'
+2020-01-02 14:48:23.758 +08:00 [INF] Sending file. Request path: '/libs/lodash/lodash.min.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\lodash\lodash.min.js'
+2020-01-02 14:48:23.758 +08:00 [INF] Request finished in 44.5181ms 200 text/css
+2020-01-02 14:48:23.759 +08:00 [INF] Request finished in 129.4686ms 200 application/javascript
+2020-01-02 14:48:23.759 +08:00 [INF] Route matched with {area = "Abp", action = "GetAll", controller = "AbpServiceProxyScript", page = ""}. Executing controller action with signature System.String GetAll(Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel) on controller Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController (Volo.Abp.AspNetCore.Mvc).
+2020-01-02 14:48:23.759 +08:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-01-02 14:48:23.759 +08:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-01-02 14:48:23.759 +08:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Volo.Abp.AspNetCore.Mvc.Auditing.AbpAuditActionFilter","Volo.Abp.AspNetCore.Mvc.Features.AbpFeatureActionFilter","Volo.Abp.AspNetCore.Mvc.Validation.AbpValidationActionFilter","Volo.Abp.AspNetCore.Mvc.Uow.AbpUowActionFilter"]
+2020-01-02 14:48:23.759 +08:00 [DBG] Execution plan of exception filters (in the following order): ["Volo.Abp.AspNetCore.Mvc.ExceptionHandling.AbpExceptionFilter"]
+2020-01-02 14:48:23.759 +08:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter","Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-01-02 14:48:23.765 +08:00 [INF] Sending file. Request path: '/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\malihu-custom-scrollbar-plugin\jquery.mCustomScrollbar.concat.min.js'
+2020-01-02 14:48:23.766 +08:00 [INF] Request finished in 55.5005ms 200 application/javascript
+2020-01-02 14:48:23.823 +08:00 [DBG] Attempting to bind parameter 'model' of type 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel' ...
+2020-01-02 14:48:23.825 +08:00 [DBG] Attempting to bind model of type 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel' using the name '' in request data ...
+2020-01-02 14:48:23.828 +08:00 [DBG] Could not find a value in the request with name 'Type' for binding property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Type' of type 'System.String'.
+2020-01-02 14:48:23.828 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Type' of type 'System.String'.
+2020-01-02 14:48:23.829 +08:00 [DBG] Could not find a value in the request with name 'UseCache' for binding property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.UseCache' of type 'System.Boolean'.
+2020-01-02 14:48:23.829 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.UseCache' of type 'System.Boolean'.
+2020-01-02 14:48:23.829 +08:00 [DBG] Could not find a value in the request with name 'Modules' for binding property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Modules' of type 'System.String'.
+2020-01-02 14:48:23.829 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Modules' of type 'System.String'.
+2020-01-02 14:48:23.829 +08:00 [DBG] Could not find a value in the request with name 'Controllers' for binding property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Controllers' of type 'System.String'.
+2020-01-02 14:48:23.829 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Controllers' of type 'System.String'.
+2020-01-02 14:48:23.829 +08:00 [DBG] Could not find a value in the request with name 'Actions' for binding property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Actions' of type 'System.String'.
+2020-01-02 14:48:23.829 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Actions' of type 'System.String'.
+2020-01-02 14:48:23.830 +08:00 [DBG] Done attempting to bind model of type 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel' using the name ''.
+2020-01-02 14:48:23.830 +08:00 [DBG] Done attempting to bind parameter 'model' of type 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel'.
+2020-01-02 14:48:23.947 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0  
+2020-01-02 14:48:23.948 +08:00 [INF] Executing action method Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc) - Validation state: "Valid"
+2020-01-02 14:48:23.948 +08:00 [INF] Executing action method Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc) - Validation state: "Valid"
+2020-01-02 14:48:23.959 +08:00 [INF] Sending file. Request path: '/libs/font-awesome/fonts/fontawesome-webfont.woff2'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\font-awesome\fonts\fontawesome-webfont.woff2'
+2020-01-02 14:48:23.959 +08:00 [INF] Request finished in 11.8248ms 200 font/woff2
+2020-01-02 14:48:23.985 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:23.985 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:23.985 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:23.985 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:23.985 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:23.985 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:23.985 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:23.985 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:23.985 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:23.985 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:23.986 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:23.987 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:23.987 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:23.987 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:23.987 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:23.987 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:23.987 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:23.987 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:23.987 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:23.987 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:23.987 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:23.987 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:23.988 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:24.026 +08:00 [DBG] ActionApiDescriptionModel.Create: Test.GetAsync
+2020-01-02 14:48:24.032 +08:00 [DBG] ActionApiDescriptionModel.Create: AbpServiceProxyScript.GetAllByModel
+2020-01-02 14:48:24.034 +08:00 [DBG] ActionApiDescriptionModel.Create: AbpLanguages.SwitchByCultureAndUiCultureAndReturnUrl
+2020-01-02 14:48:24.034 +08:00 [DBG] ActionApiDescriptionModel.Create: AbpApplicationConfigurationScript.Get
+2020-01-02 14:48:24.034 +08:00 [DBG] ActionApiDescriptionModel.Create: Account.LoginByLogin
+2020-01-02 14:48:24.034 +08:00 [DBG] ActionApiDescriptionModel.Create: Account.CheckPasswordByLogin
+2020-01-02 14:48:24.035 +08:00 [DBG] ActionApiDescriptionModel.Create: AbpApplicationConfiguration.GetAsync
+2020-01-02 14:48:24.035 +08:00 [DBG] ActionApiDescriptionModel.Create: AbpApiDefinition.Get
+2020-01-02 14:48:24.035 +08:00 [DBG] ActionApiDescriptionModel.Create: Features.GetAsyncByProviderNameAndProviderKey
+2020-01-02 14:48:24.035 +08:00 [DBG] ActionApiDescriptionModel.Create: Features.UpdateAsyncByProviderNameAndProviderKeyAndInput
+2020-01-02 14:48:24.035 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityRole.GetAsyncById
+2020-01-02 14:48:24.035 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityRole.GetListAsyncByInput
+2020-01-02 14:48:24.035 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityRole.CreateAsyncByInput
+2020-01-02 14:48:24.036 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityRole.UpdateAsyncByIdAndInput
+2020-01-02 14:48:24.036 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityRole.DeleteAsyncById
+2020-01-02 14:48:24.036 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityRole.GetAllListAsync
+2020-01-02 14:48:24.036 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.GetAsyncById
+2020-01-02 14:48:24.036 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.GetListAsyncByInput
+2020-01-02 14:48:24.036 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.CreateAsyncByInput
+2020-01-02 14:48:24.036 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.UpdateAsyncByIdAndInput
+2020-01-02 14:48:24.036 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.DeleteAsyncById
+2020-01-02 14:48:24.037 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.GetRolesAsyncById
+2020-01-02 14:48:24.037 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.UpdateRolesAsyncByIdAndInput
+2020-01-02 14:48:24.037 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.FindByUsernameAsyncByUsername
+2020-01-02 14:48:24.037 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.FindByEmailAsyncByEmail
+2020-01-02 14:48:24.037 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityUserLookup.FindByIdAsyncById
+2020-01-02 14:48:24.037 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityUserLookup.FindByUserNameAsyncByUserName
+2020-01-02 14:48:24.037 +08:00 [DBG] ActionApiDescriptionModel.Create: Profile.GetAsync
+2020-01-02 14:48:24.038 +08:00 [DBG] ActionApiDescriptionModel.Create: Profile.UpdateAsyncByInput
+2020-01-02 14:48:24.038 +08:00 [DBG] ActionApiDescriptionModel.Create: Profile.ChangePasswordAsyncByCurrentPasswordAndNewPassword
+2020-01-02 14:48:24.038 +08:00 [DBG] ActionApiDescriptionModel.Create: Permissions.GetAsyncByProviderNameAndProviderKey
+2020-01-02 14:48:24.038 +08:00 [DBG] ActionApiDescriptionModel.Create: Permissions.UpdateAsyncByProviderNameAndProviderKeyAndInput
+2020-01-02 14:48:24.038 +08:00 [DBG] ActionApiDescriptionModel.Create: Tenant.GetAsyncById
+2020-01-02 14:48:24.038 +08:00 [DBG] ActionApiDescriptionModel.Create: Tenant.GetListAsyncByInput
+2020-01-02 14:48:24.038 +08:00 [DBG] ActionApiDescriptionModel.Create: Tenant.CreateAsyncByInput
+2020-01-02 14:48:24.038 +08:00 [DBG] ActionApiDescriptionModel.Create: Tenant.UpdateAsyncByIdAndInput
+2020-01-02 14:48:24.039 +08:00 [DBG] ActionApiDescriptionModel.Create: Tenant.DeleteAsyncById
+2020-01-02 14:48:24.039 +08:00 [DBG] ActionApiDescriptionModel.Create: Tenant.GetDefaultConnectionStringAsyncById
+2020-01-02 14:48:24.039 +08:00 [DBG] ActionApiDescriptionModel.Create: Tenant.UpdateDefaultConnectionStringAsyncByIdAndDefaultConnectionString
+2020-01-02 14:48:24.039 +08:00 [DBG] ActionApiDescriptionModel.Create: Tenant.DeleteDefaultConnectionStringAsyncById
+2020-01-02 14:48:24.039 +08:00 [DBG] ActionApiDescriptionModel.Create: Bookmark.GetPagedAsyncByInput
+2020-01-02 14:48:24.039 +08:00 [DBG] ActionApiDescriptionModel.Create: Bookmark.GetListAsyncByInput
+2020-01-02 14:48:24.039 +08:00 [DBG] ActionApiDescriptionModel.Create: Bookmark.CreateAsyncByInput
+2020-01-02 14:48:24.039 +08:00 [DBG] ActionApiDescriptionModel.Create: Bookmark.GetAsyncById
+2020-01-02 14:48:24.039 +08:00 [DBG] ActionApiDescriptionModel.Create: Bookmark.UpdateAsyncByIdAndInput
+2020-01-02 14:48:24.039 +08:00 [DBG] ActionApiDescriptionModel.Create: Bookmark.UpdateReadAsyncByIdAndIsRead
+2020-01-02 14:48:24.039 +08:00 [DBG] ActionApiDescriptionModel.Create: Bookmark.DeleteAsyncById
+2020-01-02 14:48:24.039 +08:00 [DBG] ActionApiDescriptionModel.Create: Category.GetAsyncById
+2020-01-02 14:48:24.039 +08:00 [DBG] ActionApiDescriptionModel.Create: Category.GetListAsyncByInput
+2020-01-02 14:48:24.039 +08:00 [DBG] ActionApiDescriptionModel.Create: Category.CreateAsyncByInput
+2020-01-02 14:48:24.039 +08:00 [DBG] ActionApiDescriptionModel.Create: Category.UpdateAsyncByIdAndInput
+2020-01-02 14:48:24.040 +08:00 [DBG] ActionApiDescriptionModel.Create: Category.DeleteAsyncById
+2020-01-02 14:48:24.040 +08:00 [DBG] ActionApiDescriptionModel.Create: Tag.GetPopularTagsByBlogIdAndInput
+2020-01-02 14:48:24.059 +08:00 [INF] Executed action method Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 109.44930000000001ms.
+2020-01-02 14:48:24.063 +08:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"]
+2020-01-02 14:48:24.066 +08:00 [DBG] No information found on request to perform content negotiation.
+2020-01-02 14:48:24.067 +08:00 [DBG] Attempting to select the first output formatter in the output formatters list which supports a content type from the explicitly specified content types '["text/javascript","text/plain"]'.
+2020-01-02 14:48:24.067 +08:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2020-01-02 14:48:24.067 +08:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2020-01-02 14:48:24.069 +08:00 [INF] Executed action Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc) in 309.7077ms
+2020-01-02 14:48:24.069 +08:00 [INF] Request finished in 343.9287ms 200 text/plain; charset=utf-8
+2020-01-02 14:48:24.086 +08:00 [INF] Executed action method Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 137.8016ms.
+2020-01-02 14:48:24.093 +08:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"]
+2020-01-02 14:48:24.093 +08:00 [DBG] No information found on request to perform content negotiation.
+2020-01-02 14:48:24.094 +08:00 [DBG] Attempting to select the first output formatter in the output formatters list which supports a content type from the explicitly specified content types '["text/javascript","text/plain"]'.
+2020-01-02 14:48:24.094 +08:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2020-01-02 14:48:24.094 +08:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2020-01-02 14:48:24.097 +08:00 [INF] Executed action Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc) in 355.9667ms
+2020-01-02 14:48:24.108 +08:00 [INF] Request finished in 391.2261ms 200 text/plain; charset=utf-8
+2020-01-02 14:48:24.169 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/favicon.ico  
+2020-01-02 14:48:24.169 +08:00 [DBG] The request path /favicon.ico does not match an existing file
+2020-01-02 14:48:24.170 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:24.170 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-01-02 14:48:24.171 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:24.171 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:24.171 +08:00 [DBG] The request path  does not match the path filter
+2020-01-02 14:48:24.173 +08:00 [DBG] Request successfully matched the route with name 'defaultWithArea' and template '{area}/{controller=Home}/{action=Index}/{id?}'
+2020-01-02 14:48:24.176 +08:00 [DBG] No actions matched the current request. Route values: ["area=favicon.ico","controller=Home","action=Index"]
+2020-01-02 14:48:24.176 +08:00 [DBG] No actions matched the current request. Route values: ["area=favicon.ico","controller=Home","action=Index"]
+2020-01-02 14:48:24.176 +08:00 [DBG] Request successfully matched the route with name 'default' and template '{controller=Home}/{action=Index}/{id?}'
+2020-01-02 14:48:24.176 +08:00 [DBG] No actions matched the current request. Route values: ["controller=favicon.ico","action=Index"]
+2020-01-02 14:48:24.176 +08:00 [DBG] No actions matched the current request. Route values: ["controller=favicon.ico","action=Index"]
+2020-01-02 14:48:24.177 +08:00 [DBG] Request did not match any routes
+2020-01-02 14:48:24.178 +08:00 [INF] Request finished in 9.155ms 404 
+2020-01-02 14:48:33.043 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/Bookmarks  
+2020-01-02 14:48:33.043 +08:00 [DBG] The request path /Bookmarks does not match a supported file type
+2020-01-02 14:48:33.043 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:33.043 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-01-02 14:48:33.044 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:33.044 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:33.044 +08:00 [DBG] The request path  does not match the path filter
+2020-01-02 14:48:33.045 +08:00 [DBG] Request successfully matched the route with name 'null' and template 'Bookmarks'
+2020-01-02 14:48:33.051 +08:00 [INF] Route matched with {page = "/Bookmarks/Index", action = "", controller = "", area = ""}. Executing page /Bookmarks/Index
+2020-01-02 14:48:33.051 +08:00 [DBG] Execution plan of authorization filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.AutoValidateAntiforgeryTokenAuthorizationFilter"]
+2020-01-02 14:48:33.051 +08:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-01-02 14:48:33.051 +08:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Volo.Abp.AspNetCore.Mvc.Auditing.AbpAuditActionFilter","Volo.Abp.AspNetCore.Mvc.Features.AbpFeatureActionFilter","Volo.Abp.AspNetCore.Mvc.Validation.AbpValidationActionFilter","Volo.Abp.AspNetCore.Mvc.Uow.AbpUowActionFilter"]
+2020-01-02 14:48:33.051 +08:00 [DBG] Execution plan of exception filters (in the following order): ["Volo.Abp.AspNetCore.Mvc.ExceptionHandling.AbpExceptionFilter"]
+2020-01-02 14:48:33.051 +08:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-01-02 14:48:33.051 +08:00 [INF] Executing handler method FC.Notes.Web.Pages.Bookmarks.IndexModel.OnGet - ModelState is "Valid"
+2020-01-02 14:48:33.051 +08:00 [INF] Executed handler method OnGet, returned result .
+2020-01-02 14:48:33.051 +08:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2020-01-02 14:48:33.051 +08:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2020-01-02 14:48:33.099 +08:00 [DBG] An antiforgery cookie token was reused.
+2020-01-02 14:48:33.099 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent with arguments (["Header.First","Application"]).
+2020-01-02 14:48:33.099 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent in 0.0045000000000000005ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:33.100 +08:00 [DBG] Added bundle 'Basic.Global' to the page in 0.45 ms.
+2020-01-02 14:48:33.100 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent with arguments (["Header.Last","Application"]).
+2020-01-02 14:48:33.100 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent in 0.0029000000000000002ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:33.100 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent with arguments (["Body.First","Application"]).
+2020-01-02 14:48:33.100 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent in 0.0027ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:33.100 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.MainNavbar.MainNavbarViewComponent with arguments ([]).
+2020-01-02 14:48:33.100 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.MainNavbar.MainNavbarViewComponent in 0.0034000000000000002ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:33.100 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Brand.MainNavbarBrandViewComponent with arguments ([]).
+2020-01-02 14:48:33.100 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Brand.MainNavbarBrandViewComponent in 0.0024000000000000002ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:33.100 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Menu.MainNavbarMenuViewComponent with arguments ([]).
+2020-01-02 14:48:33.101 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:33.101 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:33.101 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:33.106 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Menu.MainNavbarMenuViewComponent in 5.862ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:33.107 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Toolbar.MainNavbarToolbarViewComponent with arguments ([]).
+2020-01-02 14:48:33.107 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Toolbar.MainNavbarToolbarViewComponent in 0.233ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:33.107 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Toolbar.LanguageSwitch.LanguageSwitchViewComponent with arguments ([]).
+2020-01-02 14:48:33.107 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Toolbar.LanguageSwitch.LanguageSwitchViewComponent in 0.013800000000000002ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:33.107 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.PageAlerts.PageAlertsViewComponent with arguments ([""]).
+2020-01-02 14:48:33.107 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.PageAlerts.PageAlertsViewComponent in 0.0181ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:33.108 +08:00 [DBG] Added bundle 'Basic.Global' to the page in 1.17 ms.
+2020-01-02 14:48:33.111 +08:00 [DBG] Added bundle 'Pages.Bookmarks.index' to the page in 0.10 ms.
+2020-01-02 14:48:33.111 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent with arguments (["Body.Last","Application"]).
+2020-01-02 14:48:33.111 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent in 0.0044ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:33.111 +08:00 [INF] Executed page /Bookmarks/Index in 60.4382ms
+2020-01-02 14:48:33.111 +08:00 [INF] Request finished in 68.5587ms 200 text/html; charset=utf-8
+2020-01-02 14:48:33.131 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/Abp/ApplicationConfigurationScript  
+2020-01-02 14:48:33.131 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/Abp/ServiceProxyScript  
+2020-01-02 14:48:33.131 +08:00 [DBG] The request path /Abp/ApplicationConfigurationScript does not match a supported file type
+2020-01-02 14:48:33.131 +08:00 [DBG] The request path /Abp/ServiceProxyScript does not match a supported file type
+2020-01-02 14:48:33.131 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/Pages/Bookmarks/index.js?_v=636987681996790229  
+2020-01-02 14:48:33.131 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:33.131 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:33.131 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-01-02 14:48:33.131 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-01-02 14:48:33.132 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:33.132 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:33.132 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:33.132 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:33.132 +08:00 [DBG] The request path  does not match the path filter
+2020-01-02 14:48:33.132 +08:00 [DBG] The request path  does not match the path filter
+2020-01-02 14:48:33.133 +08:00 [DBG] Request successfully matched the route with name 'null' and template 'Abp/ApplicationConfigurationScript'
+2020-01-02 14:48:33.133 +08:00 [DBG] Request successfully matched the route with name 'null' and template 'Abp/ServiceProxyScript'
+2020-01-02 14:48:33.134 +08:00 [INF] Route matched with {area = "Abp", action = "Get", controller = "AbpApplicationConfigurationScript", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[System.String] Get() on controller Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController (Volo.Abp.AspNetCore.Mvc).
+2020-01-02 14:48:33.134 +08:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-01-02 14:48:33.134 +08:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-01-02 14:48:33.134 +08:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Volo.Abp.AspNetCore.Mvc.Auditing.AbpAuditActionFilter","Volo.Abp.AspNetCore.Mvc.Features.AbpFeatureActionFilter","Volo.Abp.AspNetCore.Mvc.Validation.AbpValidationActionFilter","Volo.Abp.AspNetCore.Mvc.Uow.AbpUowActionFilter"]
+2020-01-02 14:48:33.134 +08:00 [DBG] Execution plan of exception filters (in the following order): ["Volo.Abp.AspNetCore.Mvc.ExceptionHandling.AbpExceptionFilter"]
+2020-01-02 14:48:33.134 +08:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter","Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-01-02 14:48:33.168 +08:00 [INF] Executing action method Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc) - Validation state: "Valid"
+2020-01-02 14:48:33.168 +08:00 [INF] Route matched with {area = "Abp", action = "GetAll", controller = "AbpServiceProxyScript", page = ""}. Executing controller action with signature System.String GetAll(Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel) on controller Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController (Volo.Abp.AspNetCore.Mvc).
+2020-01-02 14:48:33.168 +08:00 [INF] Sending file. Request path: '/Pages/Bookmarks/index.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\Pages\Bookmarks\index.js'
+2020-01-02 14:48:33.168 +08:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-01-02 14:48:33.168 +08:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-01-02 14:48:33.168 +08:00 [INF] Request finished in 37.2109ms 200 application/javascript
+2020-01-02 14:48:33.168 +08:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Volo.Abp.AspNetCore.Mvc.Auditing.AbpAuditActionFilter","Volo.Abp.AspNetCore.Mvc.Features.AbpFeatureActionFilter","Volo.Abp.AspNetCore.Mvc.Validation.AbpValidationActionFilter","Volo.Abp.AspNetCore.Mvc.Uow.AbpUowActionFilter"]
+2020-01-02 14:48:33.168 +08:00 [DBG] Execution plan of exception filters (in the following order): ["Volo.Abp.AspNetCore.Mvc.ExceptionHandling.AbpExceptionFilter"]
+2020-01-02 14:48:33.169 +08:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter","Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-01-02 14:48:33.171 +08:00 [DBG] Attempting to bind parameter 'model' of type 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel' ...
+2020-01-02 14:48:33.172 +08:00 [DBG] Attempting to bind model of type 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel' using the name '' in request data ...
+2020-01-02 14:48:33.172 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:33.172 +08:00 [DBG] Could not find a value in the request with name 'Type' for binding property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Type' of type 'System.String'.
+2020-01-02 14:48:33.172 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:33.172 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Type' of type 'System.String'.
+2020-01-02 14:48:33.172 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:33.172 +08:00 [DBG] Could not find a value in the request with name 'UseCache' for binding property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.UseCache' of type 'System.Boolean'.
+2020-01-02 14:48:33.172 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:33.173 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.UseCache' of type 'System.Boolean'.
+2020-01-02 14:48:33.173 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:33.173 +08:00 [DBG] Could not find a value in the request with name 'Modules' for binding property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Modules' of type 'System.String'.
+2020-01-02 14:48:33.173 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:33.173 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Modules' of type 'System.String'.
+2020-01-02 14:48:33.173 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:33.173 +08:00 [DBG] Could not find a value in the request with name 'Controllers' for binding property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Controllers' of type 'System.String'.
+2020-01-02 14:48:33.173 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:33.173 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Controllers' of type 'System.String'.
+2020-01-02 14:48:33.173 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:33.173 +08:00 [DBG] Could not find a value in the request with name 'Actions' for binding property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Actions' of type 'System.String'.
+2020-01-02 14:48:33.173 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:33.173 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Actions' of type 'System.String'.
+2020-01-02 14:48:33.173 +08:00 [DBG] Done attempting to bind model of type 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel' using the name ''.
+2020-01-02 14:48:33.173 +08:00 [DBG] Done attempting to bind parameter 'model' of type 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel'.
+2020-01-02 14:48:33.173 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:33.173 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:33.173 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:33.173 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:33.173 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:33.173 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:33.174 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:33.174 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:33.174 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:33.174 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:33.174 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:33.174 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:33.174 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:33.221 +08:00 [INF] Executing action method Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc) - Validation state: "Valid"
+2020-01-02 14:48:33.221 +08:00 [INF] Executed action method Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.12010000000000001ms.
+2020-01-02 14:48:33.221 +08:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"]
+2020-01-02 14:48:33.221 +08:00 [DBG] No information found on request to perform content negotiation.
+2020-01-02 14:48:33.221 +08:00 [DBG] Attempting to select the first output formatter in the output formatters list which supports a content type from the explicitly specified content types '["text/javascript","text/plain"]'.
+2020-01-02 14:48:33.221 +08:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2020-01-02 14:48:33.222 +08:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2020-01-02 14:48:33.222 +08:00 [INF] Executed action Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc) in 53.3708ms
+2020-01-02 14:48:33.223 +08:00 [INF] Request finished in 91.5997ms 200 text/plain; charset=utf-8
+2020-01-02 14:48:33.251 +08:00 [INF] Executed action method Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 82.6306ms.
+2020-01-02 14:48:33.251 +08:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"]
+2020-01-02 14:48:33.251 +08:00 [DBG] No information found on request to perform content negotiation.
+2020-01-02 14:48:33.251 +08:00 [DBG] Attempting to select the first output formatter in the output formatters list which supports a content type from the explicitly specified content types '["text/javascript","text/plain"]'.
+2020-01-02 14:48:33.251 +08:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2020-01-02 14:48:33.251 +08:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2020-01-02 14:48:33.251 +08:00 [INF] Executed action Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc) in 117.26870000000001ms
+2020-01-02 14:48:33.252 +08:00 [INF] Request finished in 120.5384ms 200 text/plain; charset=utf-8
+2020-01-02 14:48:33.279 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/api/app/bookmark?skipCount=0&maxResultCount=10&sorting=title%20asc application/json 
+2020-01-02 14:48:33.279 +08:00 [DBG] The request path /api/app/bookmark does not match a supported file type
+2020-01-02 14:48:33.279 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:33.279 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-01-02 14:48:33.280 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:33.280 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:33.280 +08:00 [DBG] The request path  does not match the path filter
+2020-01-02 14:48:33.280 +08:00 [DBG] Request successfully matched the route with name 'null' and template 'api/app/bookmark'
+2020-01-02 14:48:33.281 +08:00 [DBG] Action 'FC.Notes.BookmarkAppService.CreateAsync (FC.Notes.Application)' with id '63852662-f4a5-4a4f-83f7-eb38e119c260' did not match the constraint 'Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint'
+2020-01-02 14:48:33.350 +08:00 [INF] Route matched with {action = "GetListAsync", controller = "Bookmark", area = "", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Volo.Abp.Application.Dtos.PagedResultDto`1[FC.Notes.Bookmarks.Dtos.BookmarkDto]] GetListAsync(Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto) on controller FC.Notes.BookmarkAppService (FC.Notes.Application).
+2020-01-02 14:48:33.350 +08:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-01-02 14:48:33.350 +08:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-01-02 14:48:33.350 +08:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Volo.Abp.AspNetCore.Mvc.Auditing.AbpAuditActionFilter","Volo.Abp.AspNetCore.Mvc.Features.AbpFeatureActionFilter","Volo.Abp.AspNetCore.Mvc.Validation.AbpValidationActionFilter","Volo.Abp.AspNetCore.Mvc.Uow.AbpUowActionFilter"]
+2020-01-02 14:48:33.350 +08:00 [DBG] Execution plan of exception filters (in the following order): ["Volo.Abp.AspNetCore.Mvc.ExceptionHandling.AbpExceptionFilter"]
+2020-01-02 14:48:33.350 +08:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-01-02 14:48:33.782 +08:00 [DBG] Attempting to bind parameter 'input' of type 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' ...
+2020-01-02 14:48:33.783 +08:00 [DBG] Attempting to bind model of type 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' using the name '' in request data ...
+2020-01-02 14:48:33.783 +08:00 [DBG] Attempting to bind property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.SkipCount' of type 'System.Int32' using the name 'SkipCount' in request data ...
+2020-01-02 14:48:33.784 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.SkipCount' of type 'System.Int32'.
+2020-01-02 14:48:33.784 +08:00 [DBG] Attempting to bind property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.MaxResultCount' of type 'System.Int32' using the name 'MaxResultCount' in request data ...
+2020-01-02 14:48:33.784 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.MaxResultCount' of type 'System.Int32'.
+2020-01-02 14:48:33.784 +08:00 [DBG] Attempting to bind property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.Sorting' of type 'System.String' using the name 'Sorting' in request data ...
+2020-01-02 14:48:33.785 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.Sorting' of type 'System.String'.
+2020-01-02 14:48:33.785 +08:00 [DBG] Done attempting to bind model of type 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' using the name ''.
+2020-01-02 14:48:33.785 +08:00 [DBG] Done attempting to bind parameter 'input' of type 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto'.
+2020-01-02 14:48:33.789 +08:00 [DBG] ResourceManagerStringLocalizer searched for 'DisplayName:SkipCount' in 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' with culture 'zh-Hans'.
+2020-01-02 14:48:33.795 +08:00 [DBG] ResourceManagerStringLocalizer searched for 'SkipCount' in 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' with culture 'zh-Hans'.
+2020-01-02 14:48:33.800 +08:00 [DBG] ResourceManagerStringLocalizer searched for 'DisplayName:MaxResultCount' in 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' with culture 'zh-Hans'.
+2020-01-02 14:48:33.806 +08:00 [DBG] ResourceManagerStringLocalizer searched for 'MaxResultCount' in 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' with culture 'zh-Hans'.
+2020-01-02 14:48:33.837 +08:00 [INF] Executing action method FC.Notes.BookmarkAppService.GetListAsync (FC.Notes.Application) - Validation state: "Valid"
+2020-01-02 14:48:33.838 +08:00 [INF] ==============GetListAsync===============试测试测试测试测试测试测试测试测试测试测试
+2020-01-02 14:48:34.339 +08:00 [INF] Executed action method FC.Notes.BookmarkAppService.GetListAsync (FC.Notes.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 501.7117ms.
+2020-01-02 14:48:34.369 +08:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"]
+2020-01-02 14:48:34.369 +08:00 [DBG] No information found on request to perform content negotiation.
+2020-01-02 14:48:34.369 +08:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2020-01-02 14:48:34.369 +08:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2020-01-02 14:48:34.369 +08:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter' and content type 'application/json' to write the response.
+2020-01-02 14:48:34.369 +08:00 [INF] Executing ObjectResult, writing value of type 'Volo.Abp.Application.Dtos.PagedResultDto`1[[FC.Notes.Bookmarks.Dtos.BookmarkDto, FC.Notes.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-01-02 14:48:34.390 +08:00 [INF] Executed action FC.Notes.BookmarkAppService.GetListAsync (FC.Notes.Application) in 1039.2177000000001ms
+2020-01-02 14:48:34.390 +08:00 [INF] Request finished in 1111.1408ms 200 application/json; charset=utf-8
+2020-01-02 14:48:38.497 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/Categorys  
+2020-01-02 14:48:38.497 +08:00 [DBG] The request path /Categorys does not match a supported file type
+2020-01-02 14:48:38.497 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:38.497 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-01-02 14:48:38.498 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:38.498 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:38.498 +08:00 [DBG] The request path  does not match the path filter
+2020-01-02 14:48:38.499 +08:00 [DBG] Request successfully matched the route with name 'null' and template 'Categorys'
+2020-01-02 14:48:38.505 +08:00 [INF] Route matched with {page = "/Categorys/Index", action = "", controller = "", area = ""}. Executing page /Categorys/Index
+2020-01-02 14:48:38.506 +08:00 [DBG] Execution plan of authorization filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.AutoValidateAntiforgeryTokenAuthorizationFilter"]
+2020-01-02 14:48:38.506 +08:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-01-02 14:48:38.506 +08:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Volo.Abp.AspNetCore.Mvc.Auditing.AbpAuditActionFilter","Volo.Abp.AspNetCore.Mvc.Features.AbpFeatureActionFilter","Volo.Abp.AspNetCore.Mvc.Validation.AbpValidationActionFilter","Volo.Abp.AspNetCore.Mvc.Uow.AbpUowActionFilter"]
+2020-01-02 14:48:38.506 +08:00 [DBG] Execution plan of exception filters (in the following order): ["Volo.Abp.AspNetCore.Mvc.ExceptionHandling.AbpExceptionFilter"]
+2020-01-02 14:48:38.506 +08:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-01-02 14:48:38.506 +08:00 [INF] Executing handler method FC.Notes.Web.Pages.Categorys.IndexModel.OnGet - ModelState is "Valid"
+2020-01-02 14:48:38.506 +08:00 [INF] Executed handler method OnGet, returned result .
+2020-01-02 14:48:38.506 +08:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2020-01-02 14:48:38.506 +08:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2020-01-02 14:48:38.542 +08:00 [DBG] An antiforgery cookie token was reused.
+2020-01-02 14:48:38.543 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent with arguments (["Header.First","Application"]).
+2020-01-02 14:48:38.543 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent in 0.0046ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:38.543 +08:00 [DBG] Added bundle 'Basic.Global' to the page in 0.54 ms.
+2020-01-02 14:48:38.543 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent with arguments (["Header.Last","Application"]).
+2020-01-02 14:48:38.543 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent in 0.0034000000000000002ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:38.544 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent with arguments (["Body.First","Application"]).
+2020-01-02 14:48:38.544 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent in 0.0029000000000000002ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:38.544 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.MainNavbar.MainNavbarViewComponent with arguments ([]).
+2020-01-02 14:48:38.544 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.MainNavbar.MainNavbarViewComponent in 0.0024000000000000002ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:38.544 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Brand.MainNavbarBrandViewComponent with arguments ([]).
+2020-01-02 14:48:38.544 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Brand.MainNavbarBrandViewComponent in 0.0022ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:38.544 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Menu.MainNavbarMenuViewComponent with arguments ([]).
+2020-01-02 14:48:38.545 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:38.545 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:38.545 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:38.551 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Menu.MainNavbarMenuViewComponent in 6.5598ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:38.551 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Toolbar.MainNavbarToolbarViewComponent with arguments ([]).
+2020-01-02 14:48:38.551 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Toolbar.MainNavbarToolbarViewComponent in 0.1279ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:38.551 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Toolbar.LanguageSwitch.LanguageSwitchViewComponent with arguments ([]).
+2020-01-02 14:48:38.551 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Toolbar.LanguageSwitch.LanguageSwitchViewComponent in 0.0111ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:38.551 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.PageAlerts.PageAlertsViewComponent with arguments ([""]).
+2020-01-02 14:48:38.551 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.PageAlerts.PageAlertsViewComponent in 0.003ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:38.554 +08:00 [DBG] Added bundle 'Basic.Global' to the page in 2.23 ms.
+2020-01-02 14:48:38.557 +08:00 [DBG] Added bundle 'Pages.Categorys.index' to the page in 0.14 ms.
+2020-01-02 14:48:38.557 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent with arguments (["Body.Last","Application"]).
+2020-01-02 14:48:38.557 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent in 0.0051ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-01-02 14:48:38.557 +08:00 [INF] Executed page /Categorys/Index in 51.6143ms
+2020-01-02 14:48:38.557 +08:00 [INF] Request finished in 60.454ms 200 text/html; charset=utf-8
+2020-01-02 14:48:38.586 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/Abp/ApplicationConfigurationScript  
+2020-01-02 14:48:38.586 +08:00 [DBG] The request path /Abp/ApplicationConfigurationScript does not match a supported file type
+2020-01-02 14:48:38.586 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:38.586 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/Pages/Categorys/index.js?_v=637098348689840158  
+2020-01-02 14:48:38.587 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-01-02 14:48:38.586 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/Abp/ServiceProxyScript  
+2020-01-02 14:48:38.587 +08:00 [DBG] The request path /Abp/ServiceProxyScript does not match a supported file type
+2020-01-02 14:48:38.587 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:38.587 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-01-02 14:48:38.588 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:38.588 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:38.588 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:38.588 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:38.588 +08:00 [DBG] The request path  does not match the path filter
+2020-01-02 14:48:38.588 +08:00 [DBG] The request path  does not match the path filter
+2020-01-02 14:48:38.588 +08:00 [DBG] Request successfully matched the route with name 'null' and template 'Abp/ServiceProxyScript'
+2020-01-02 14:48:38.588 +08:00 [DBG] Request successfully matched the route with name 'null' and template 'Abp/ApplicationConfigurationScript'
+2020-01-02 14:48:38.589 +08:00 [INF] Route matched with {area = "Abp", action = "GetAll", controller = "AbpServiceProxyScript", page = ""}. Executing controller action with signature System.String GetAll(Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel) on controller Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController (Volo.Abp.AspNetCore.Mvc).
+2020-01-02 14:48:38.589 +08:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-01-02 14:48:38.589 +08:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-01-02 14:48:38.589 +08:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Volo.Abp.AspNetCore.Mvc.Auditing.AbpAuditActionFilter","Volo.Abp.AspNetCore.Mvc.Features.AbpFeatureActionFilter","Volo.Abp.AspNetCore.Mvc.Validation.AbpValidationActionFilter","Volo.Abp.AspNetCore.Mvc.Uow.AbpUowActionFilter"]
+2020-01-02 14:48:38.589 +08:00 [DBG] Execution plan of exception filters (in the following order): ["Volo.Abp.AspNetCore.Mvc.ExceptionHandling.AbpExceptionFilter"]
+2020-01-02 14:48:38.589 +08:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter","Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-01-02 14:48:38.589 +08:00 [INF] Route matched with {area = "Abp", action = "Get", controller = "AbpApplicationConfigurationScript", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[System.String] Get() on controller Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController (Volo.Abp.AspNetCore.Mvc).
+2020-01-02 14:48:38.589 +08:00 [DBG] Attempting to bind parameter 'model' of type 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel' ...
+2020-01-02 14:48:38.589 +08:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-01-02 14:48:38.589 +08:00 [DBG] Attempting to bind model of type 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel' using the name '' in request data ...
+2020-01-02 14:48:38.589 +08:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-01-02 14:48:38.589 +08:00 [DBG] Could not find a value in the request with name 'Type' for binding property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Type' of type 'System.String'.
+2020-01-02 14:48:38.589 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Type' of type 'System.String'.
+2020-01-02 14:48:38.590 +08:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Volo.Abp.AspNetCore.Mvc.Auditing.AbpAuditActionFilter","Volo.Abp.AspNetCore.Mvc.Features.AbpFeatureActionFilter","Volo.Abp.AspNetCore.Mvc.Validation.AbpValidationActionFilter","Volo.Abp.AspNetCore.Mvc.Uow.AbpUowActionFilter"]
+2020-01-02 14:48:38.590 +08:00 [DBG] Could not find a value in the request with name 'UseCache' for binding property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.UseCache' of type 'System.Boolean'.
+2020-01-02 14:48:38.590 +08:00 [DBG] Execution plan of exception filters (in the following order): ["Volo.Abp.AspNetCore.Mvc.ExceptionHandling.AbpExceptionFilter"]
+2020-01-02 14:48:38.590 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.UseCache' of type 'System.Boolean'.
+2020-01-02 14:48:38.590 +08:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter","Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-01-02 14:48:38.590 +08:00 [DBG] Could not find a value in the request with name 'Modules' for binding property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Modules' of type 'System.String'.
+2020-01-02 14:48:38.590 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Modules' of type 'System.String'.
+2020-01-02 14:48:38.590 +08:00 [DBG] Could not find a value in the request with name 'Controllers' for binding property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Controllers' of type 'System.String'.
+2020-01-02 14:48:38.590 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Controllers' of type 'System.String'.
+2020-01-02 14:48:38.590 +08:00 [DBG] Could not find a value in the request with name 'Actions' for binding property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Actions' of type 'System.String'.
+2020-01-02 14:48:38.590 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Actions' of type 'System.String'.
+2020-01-02 14:48:38.590 +08:00 [DBG] Done attempting to bind model of type 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel' using the name ''.
+2020-01-02 14:48:38.590 +08:00 [DBG] Done attempting to bind parameter 'model' of type 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel'.
+2020-01-02 14:48:38.623 +08:00 [INF] Executing action method Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc) - Validation state: "Valid"
+2020-01-02 14:48:38.623 +08:00 [INF] Sending file. Request path: '/Pages/Categorys/index.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\Pages\Categorys\index.js'
+2020-01-02 14:48:38.623 +08:00 [INF] Executed action method Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.0645ms.
+2020-01-02 14:48:38.623 +08:00 [INF] Request finished in 36.4314ms 200 application/javascript
+2020-01-02 14:48:38.623 +08:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"]
+2020-01-02 14:48:38.623 +08:00 [DBG] No information found on request to perform content negotiation.
+2020-01-02 14:48:38.623 +08:00 [DBG] Attempting to select the first output formatter in the output formatters list which supports a content type from the explicitly specified content types '["text/javascript","text/plain"]'.
+2020-01-02 14:48:38.623 +08:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2020-01-02 14:48:38.623 +08:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2020-01-02 14:48:38.623 +08:00 [INF] Executed action Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc) in 34.0643ms
+2020-01-02 14:48:38.650 +08:00 [INF] Request finished in 38.984ms 200 text/plain; charset=utf-8
+2020-01-02 14:48:38.650 +08:00 [INF] Executing action method Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc) - Validation state: "Valid"
+2020-01-02 14:48:38.653 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:38.654 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:38.655 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:38.655 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:38.655 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:38.655 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:38.655 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:38.655 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:38.655 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:38.655 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:38.655 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:38.655 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:38.655 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:38.655 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:38.655 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:38.655 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:38.655 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:38.655 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:38.655 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:38.655 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:38.655 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:38.655 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:38.655 +08:00 [INF] Authorization failed.
+2020-01-02 14:48:38.685 +08:00 [INF] Executed action method Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 34.1066ms.
+2020-01-02 14:48:38.685 +08:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"]
+2020-01-02 14:48:38.685 +08:00 [DBG] No information found on request to perform content negotiation.
+2020-01-02 14:48:38.685 +08:00 [DBG] Attempting to select the first output formatter in the output formatters list which supports a content type from the explicitly specified content types '["text/javascript","text/plain"]'.
+2020-01-02 14:48:38.685 +08:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2020-01-02 14:48:38.685 +08:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2020-01-02 14:48:38.685 +08:00 [INF] Executed action Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc) in 95.5776ms
+2020-01-02 14:48:38.685 +08:00 [INF] Request finished in 99.8701ms 200 text/plain; charset=utf-8
+2020-01-02 14:48:38.703 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/api/app/category?skipCount=0&maxResultCount=10&sorting=name%20asc application/json 
+2020-01-02 14:48:38.703 +08:00 [DBG] The request path /api/app/category does not match a supported file type
+2020-01-02 14:48:38.703 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:38.703 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-01-02 14:48:38.704 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:38.704 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-01-02 14:48:38.704 +08:00 [DBG] The request path  does not match the path filter
+2020-01-02 14:48:38.704 +08:00 [DBG] Request successfully matched the route with name 'null' and template 'api/app/category'
+2020-01-02 14:48:38.704 +08:00 [DBG] Action 'FC.Notes.CategoryAppService.CreateAsync (FC.Notes.Application)' with id '15de27ac-4563-4a05-ac36-5c0f4d41c61c' did not match the constraint 'Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint'
+2020-01-02 14:48:38.710 +08:00 [INF] Route matched with {action = "GetListAsync", controller = "Category", area = "", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Volo.Abp.Application.Dtos.PagedResultDto`1[FC.Notes.Categorys.Dtos.CategoryDto]] GetListAsync(Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto) on controller FC.Notes.CategoryAppService (FC.Notes.Application).
+2020-01-02 14:48:38.710 +08:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-01-02 14:48:38.710 +08:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-01-02 14:48:38.710 +08:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Volo.Abp.AspNetCore.Mvc.Auditing.AbpAuditActionFilter","Volo.Abp.AspNetCore.Mvc.Features.AbpFeatureActionFilter","Volo.Abp.AspNetCore.Mvc.Validation.AbpValidationActionFilter","Volo.Abp.AspNetCore.Mvc.Uow.AbpUowActionFilter"]
+2020-01-02 14:48:38.710 +08:00 [DBG] Execution plan of exception filters (in the following order): ["Volo.Abp.AspNetCore.Mvc.ExceptionHandling.AbpExceptionFilter"]
+2020-01-02 14:48:38.710 +08:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-01-02 14:48:38.731 +08:00 [DBG] Attempting to bind parameter 'input' of type 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' ...
+2020-01-02 14:48:38.731 +08:00 [DBG] Attempting to bind model of type 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' using the name '' in request data ...
+2020-01-02 14:48:38.731 +08:00 [DBG] Attempting to bind property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.SkipCount' of type 'System.Int32' using the name 'SkipCount' in request data ...
+2020-01-02 14:48:38.731 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.SkipCount' of type 'System.Int32'.
+2020-01-02 14:48:38.731 +08:00 [DBG] Attempting to bind property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.MaxResultCount' of type 'System.Int32' using the name 'MaxResultCount' in request data ...
+2020-01-02 14:48:38.731 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.MaxResultCount' of type 'System.Int32'.
+2020-01-02 14:48:38.731 +08:00 [DBG] Attempting to bind property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.Sorting' of type 'System.String' using the name 'Sorting' in request data ...
+2020-01-02 14:48:38.731 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.Sorting' of type 'System.String'.
+2020-01-02 14:48:38.731 +08:00 [DBG] Done attempting to bind model of type 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' using the name ''.
+2020-01-02 14:48:38.731 +08:00 [DBG] Done attempting to bind parameter 'input' of type 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto'.
+2020-01-02 14:48:38.731 +08:00 [DBG] ResourceManagerStringLocalizer searched for 'DisplayName:SkipCount' in 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' with culture 'zh-Hans'.
+2020-01-02 14:48:38.731 +08:00 [DBG] ResourceManagerStringLocalizer searched for 'SkipCount' in 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' with culture 'zh-Hans'.
+2020-01-02 14:48:38.731 +08:00 [DBG] ResourceManagerStringLocalizer searched for 'DisplayName:MaxResultCount' in 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' with culture 'zh-Hans'.
+2020-01-02 14:48:38.731 +08:00 [DBG] ResourceManagerStringLocalizer searched for 'MaxResultCount' in 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' with culture 'zh-Hans'.
+2020-01-02 14:48:38.755 +08:00 [INF] Executing action method FC.Notes.CategoryAppService.GetListAsync (FC.Notes.Application) - Validation state: "Valid"
+2020-01-02 14:48:39.202 +08:00 [INF] Executed action method FC.Notes.CategoryAppService.GetListAsync (FC.Notes.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 447.6236ms.
+2020-01-02 14:48:39.216 +08:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"]
+2020-01-02 14:48:39.216 +08:00 [DBG] No information found on request to perform content negotiation.
+2020-01-02 14:48:39.216 +08:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2020-01-02 14:48:39.216 +08:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2020-01-02 14:48:39.216 +08:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter' and content type 'application/json' to write the response.
+2020-01-02 14:48:39.216 +08:00 [INF] Executing ObjectResult, writing value of type 'Volo.Abp.Application.Dtos.PagedResultDto`1[[FC.Notes.Categorys.Dtos.CategoryDto, FC.Notes.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-01-02 14:48:39.223 +08:00 [INF] Executed action FC.Notes.CategoryAppService.GetListAsync (FC.Notes.Application) in 513.1903ms
+2020-01-02 14:48:39.223 +08:00 [INF] Request finished in 520.5797ms 200 application/json; charset=utf-8

@@ -54,18 +54,17 @@ namespace FC.Notes.EntityFrameworkCore
             {
                 /* The main point to change your DBMS.
                  * See also NotesMigrationsDbContextFactory for EF Core tooling. */
-                  
-
                 options.Configure(context =>
                 {
                     context.DbContextOptions.UseLoggerFactory(MyLoggerFactory);
-                    context.DbContextOptions.EnableDetailedErrors();
-                    context.DbContextOptions.EnableSensitiveDataLogging();
+                    //context.DbContextOptions.EnableDetailedErrors();
+                    //context.DbContextOptions.EnableSensitiveDataLogging();
 
                     //...
                 });
 
-                options.UseMySQL();
+                options.UseMySQL(); 
+
 
             });
         }
