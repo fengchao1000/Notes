@@ -1,23 +1,23 @@
 ﻿using FC.Notes.Bookmarks;
 using FC.Notes.Bookmarks.Dtos;
 using FC.Notes.Categorys;
+using FC.Notes.Permissions;
 using FC.Notes.Tagging;
 using FC.Notes.Tagging.Dtos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+using System.Collections.Generic; 
 using System.Linq;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Caching;
-using Volo.Abp.Domain.Repositories;
-using Volo.Abp.MultiTenancy;
+using Volo.Abp.Domain.Repositories; 
 
 namespace FC.Notes
 {
-    //[Authorize(NotesPermissions.Notes.Default)]
+    [Authorize(NotesPermissions.Notes.Default)]
     public class BookmarkAppService : NotesAppService, IBookmarkAppService
     {
         private readonly IBookmarkRepository _bookmarkRepository;

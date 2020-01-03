@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FC.Notes.Migrations
 {
     [DbContext(typeof(NotesMigrationsDbContext))]
-    [Migration("20200102143703_mysql_init_UpdateBookmarksUrllinklength")]
-    partial class mysql_init_UpdateBookmarksUrllinklength
+    [Migration("20200103150016_mysql_init")]
+    partial class mysql_init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -84,6 +84,8 @@ namespace FC.Notes.Migrations
                         .IsRequired()
                         .HasColumnName("Title")
                         .HasMaxLength(512);
+
+                    b.Property<Guid?>("UserId");
 
                     b.HasKey("Id");
 

@@ -23,4 +23,6 @@
     <Content Remove="Localization\Notes\*.json" />
   </ItemGroup>
 
+  <ProjectExtensions><VisualStudio><UserProperties localization_4notes_4cs_1json__JsonSchema="http://json.schemastore.org/avro-avsc" /></VisualStudio></ProjectExtensions>
+
 </Project>
