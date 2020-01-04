@@ -57,8 +57,8 @@ namespace FC.Notes.EntityFrameworkCore
                 options.Configure(context =>
                 {
                     context.DbContextOptions.UseLoggerFactory(MyLoggerFactory);
-                    //context.DbContextOptions.EnableDetailedErrors();
-                    //context.DbContextOptions.EnableSensitiveDataLogging();
+                    context.DbContextOptions.EnableDetailedErrors();
+                    context.DbContextOptions.EnableSensitiveDataLogging();
 
                     //...
                 });

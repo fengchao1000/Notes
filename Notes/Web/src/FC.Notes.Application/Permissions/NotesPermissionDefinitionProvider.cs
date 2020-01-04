@@ -14,12 +14,10 @@ namespace FC.Notes.Permissions
             //Define your own permissions here. Example:
             //myGroup.AddPermission(NotesPermissions.MyPermission1, L("Permission:MyPermission1"));
              
-            var notesPermission = notesGroup.AddPermission(NotesPermissions.Notes.Default, L("Permission:Notes"), multiTenancySide: MultiTenancySides.Host);
-            notesPermission.AddChild(NotesPermissions.Notes.Create, L("Permission:Create"), multiTenancySide: MultiTenancySides.Host);
-            notesPermission.AddChild(NotesPermissions.Notes.Update, L("Permission:Edit"), multiTenancySide: MultiTenancySides.Host);
-            notesPermission.AddChild(NotesPermissions.Notes.Delete, L("Permission:Delete"), multiTenancySide: MultiTenancySides.Host);
-            notesPermission.AddChild(NotesPermissions.Notes.ManageFeatures, L("Permission:ManageFeatures"), multiTenancySide: MultiTenancySides.Host);
-            notesPermission.AddChild(NotesPermissions.Notes.ManageConnectionStrings, L("Permission:ManageConnectionStrings"), multiTenancySide: MultiTenancySides.Host);
+            var notesPermission = notesGroup.AddPermission(NotesPermissions.Notes.Default, L("Notes:Notes"), multiTenancySide: MultiTenancySides.Both);
+            notesPermission.AddChild(NotesPermissions.Notes.Create, L("Notes:Create"), multiTenancySide: MultiTenancySides.Both);
+            notesPermission.AddChild(NotesPermissions.Notes.Update, L("Notes:Edit"), multiTenancySide: MultiTenancySides.Both);
+            notesPermission.AddChild(NotesPermissions.Notes.Delete, L("Notes:Delete"), multiTenancySide: MultiTenancySides.Both);
 
         }
 
