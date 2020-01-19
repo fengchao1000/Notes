@@ -115,13 +115,36 @@ namespace Idsvr4
                     },
                     AllowedScopes = new List<string>
                     {
-                        "FrameworkAPI",//对应webapi里面的scope配置
-                        "NetCoreAPI",//对应webapi里面的scope配置
+                        "FrameworkAPI",
+                        "NetCoreAPI",
                         StandardScopes.OfflineAccess,
                         StandardScopes.OpenId,
                         StandardScopes.Profile
                     }
                 }
+                ,
+                new Client
+                {
+                    ClientId = "DevelopmentSwagger",
+                    ClientName = "开发环境Swagger",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowAccessTokensViaBrowser = true,
+                    AccessTokenLifetime = 60*60*10,
+                    AccessTokenType = AccessTokenType.Jwt,
+                    RedirectUris =
+                    {
+                        "http://localhost:5001/swagger/oauth2-redirect.html",//本地swagger回调地址
+                    },
+                    PostLogoutRedirectUris = { "http://localhost:5001"},
+                    AllowedCorsOrigins = { "http://localhost:5001"},
+                    RequireConsent = false,
+                    AllowedScopes =
+                    {
+                        StandardScopes.OpenId,
+                        StandardScopes.Profile,
+                        "api"
+                    }
+                },
 
             };
         }  

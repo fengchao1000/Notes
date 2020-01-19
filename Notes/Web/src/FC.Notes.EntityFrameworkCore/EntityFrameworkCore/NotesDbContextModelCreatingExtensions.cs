@@ -1,5 +1,6 @@
 ﻿using FC.Notes.Bookmarks;
 using FC.Notes.Categorys;
+using FC.Notes.Itinerarys;
 using FC.Notes.Posts;
 using FC.Notes.Tagging;
 using Microsoft.EntityFrameworkCore;
@@ -58,9 +59,9 @@ namespace FC.Notes.EntityFrameworkCore
                 b.Property(x => x.IsRead).HasColumnName(nameof(Bookmark.IsRead)).HasDefaultValue(false);
                 b.Property(x => x.IsCrawl).HasColumnName(nameof(Bookmark.IsCrawl)).HasDefaultValue(false);
 
-                b.HasMany(p => p.Tags).WithOne().HasForeignKey(qt => qt.BookmarkId);
+                b.HasMany(p => p.Tags).WithOne().HasForeignKey(qt => qt.BookmarkId);//外键
 
-                b.HasMany(p => p.Categorys).WithOne().HasForeignKey(qt => qt.BookmarkId);
+                b.HasMany(p => p.Categorys).WithOne().HasForeignKey(qt => qt.BookmarkId);//外键
 
             });
 
@@ -74,7 +75,7 @@ namespace FC.Notes.EntityFrameworkCore
                 b.Property(x => x.Description).HasMaxLength(TagConsts.MaxDescriptionLength).HasColumnName(nameof(Tag.Description));
                 b.Property(x => x.UsageCount).HasColumnName(nameof(Tag.UsageCount));
 
-                b.HasMany<BookmarkTag>().WithOne().HasForeignKey(qt => qt.TagId);
+                b.HasMany<BookmarkTag>().WithOne().HasForeignKey(qt => qt.TagId);//外键
             });
 
             builder.Entity<Category>(b =>
@@ -87,6 +88,34 @@ namespace FC.Notes.EntityFrameworkCore
                 b.Property(x => x.Description).HasMaxLength(CategoryConsts.MaxDescriptionLength).HasColumnName(nameof(Category.Description));
                 b.Property(x => x.UsageCount).HasColumnName(nameof(Category.UsageCount));
                 
+            });
+
+            builder.Entity<Itinerary>(b =>
+            {
+                b.ToTable(NotesConsts.DbTableItinerarysPrefix + "Itinerarys", NotesConsts.DbSchema);
+
+                b.ConfigureFullAuditedAggregateRoot();
+
+                b.Property(x => x.Note).IsRequired().HasMaxLength(ItineraryConsts.MaxNoteLength).HasColumnName(nameof(Itinerary.Note));
+                  
+            });
+
+            builder.Entity<AccountBook>(b =>
+            {
+                b.ToTable(NotesConsts.DbTableItinerarysPrefix + "AccountBooks", NotesConsts.DbSchema);
+
+                // Relationships  
+                b.HasMany(p => p.OverheadItems).WithOne().HasForeignKey(qt => qt.AccountBookID);//一对多，一个AccountBook包含多个OverheadItem，AccountBookID表示关联id
+
+                b.HasOne<Itinerary>().WithMany().IsRequired().HasForeignKey(p => p.ItineraryID);//一对一，一个Itinerary对应一个AccountBook，ItineraryID表示关联id
+            });
+
+            builder.Entity<OverheadItem>(b =>
+            {
+                b.ToTable(NotesConsts.DbTableItinerarysPrefix + "OverheadItems", NotesConsts.DbSchema);
+
+                b.Property(x => x.Content).IsRequired().HasMaxLength(ItineraryConsts.MaxNoteLength).HasColumnName(nameof(OverheadItem.Content));
+
             });
         }
 

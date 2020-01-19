@@ -186,6 +186,64 @@ namespace FC.Notes.Migrations
                     b.ToTable("BMCategorys");
                 });
 
+            modelBuilder.Entity("FC.Notes.Itinerarys.AccountBook", b =>
+                {
+                    b.Property<Guid>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<Guid>("ItineraryID");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("ItineraryID");
+
+                    b.ToTable("ITAccountBooks");
+                });
+
+            modelBuilder.Entity("FC.Notes.Itinerarys.Itinerary", b =>
+                {
+                    b.Property<Guid>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<Guid?>("AccountBookID");
+
+                    b.Property<string>("Note")
+                        .IsRequired()
+                        .HasColumnName("Note")
+                        .HasMaxLength(512);
+
+                    b.Property<int>("Status");
+
+                    b.Property<DateTime>("TripTime");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("AccountBookID");
+
+                    b.ToTable("ITItinerarys");
+                });
+
+            modelBuilder.Entity("FC.Notes.Itinerarys.OverheadItem", b =>
+                {
+                    b.Property<Guid>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<Guid>("AccountBookID");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnName("Content")
+                        .HasMaxLength(512);
+
+                    b.Property<decimal>("Money");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("AccountBookID");
+
+                    b.ToTable("ITOverheadItems");
+                });
+
             modelBuilder.Entity("FC.Notes.Tagging.Tag", b =>
                 {
                     b.Property<Guid>("Id")
@@ -1419,6 +1477,29 @@ namespace FC.Notes.Migrations
                     b.HasOne("FC.Notes.Tagging.Tag")
                         .WithMany()
                         .HasForeignKey("TagId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("FC.Notes.Itinerarys.AccountBook", b =>
+                {
+                    b.HasOne("FC.Notes.Itinerarys.Itinerary")
+                        .WithMany()
+                        .HasForeignKey("ItineraryID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("FC.Notes.Itinerarys.Itinerary", b =>
+                {
+                    b.HasOne("FC.Notes.Itinerarys.AccountBook", "AccountBook")
+                        .WithMany()
+                        .HasForeignKey("AccountBookID");
+                });
+
+            modelBuilder.Entity("FC.Notes.Itinerarys.OverheadItem", b =>
+                {
+                    b.HasOne("FC.Notes.Itinerarys.AccountBook")
+                        .WithMany("OverheadItems")
+                        .HasForeignKey("AccountBookID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
