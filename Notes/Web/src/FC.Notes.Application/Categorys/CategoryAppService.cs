@@ -9,7 +9,7 @@ using Volo.Abp.Domain.Repositories;
 
 namespace FC.Notes
 {
-    //[Authorize(NotesPermissions.Notes.Default)]
+    [Authorize(NotesPermissions.Notes.Default)]
     public class CategoryAppService :
     AsyncCrudAppService<Category, CategoryDto, Guid, PagedAndSortedResultRequestDto,
         CreateUpdateCategoryDto, CreateUpdateCategoryDto>,
