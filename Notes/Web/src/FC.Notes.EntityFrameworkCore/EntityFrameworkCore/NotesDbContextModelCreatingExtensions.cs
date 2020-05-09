@@ -3,6 +3,7 @@ using FC.Notes.Categorys;
 using FC.Notes.Itinerarys;
 using FC.Notes.Posts;
 using FC.Notes.Tagging;
+using FC.Notes.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Volo.Abp;
@@ -117,6 +118,17 @@ namespace FC.Notes.EntityFrameworkCore
                 b.Property(x => x.Content).IsRequired().HasMaxLength(ItineraryConsts.MaxNoteLength).HasColumnName(nameof(OverheadItem.Content));
 
             });
+
+
+            builder.Entity<Task>(b =>
+            {
+                b.ToTable(NotesConsts.DbTableTaskPrefix + "Tasks", NotesConsts.DbSchema);
+
+                b.ConfigureFullAuditedAggregateRoot(); 
+
+            });
+
+
         }
 
         public static void ConfigureCustomUserProperties<TUser>(this EntityTypeBuilder<TUser> b)
