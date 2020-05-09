@@ -71,7 +71,7 @@ namespace Notes.Views.Article
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ListViewSwipeEnded(object sender, SwipeEndedEventArgs e)
+        private void ListViewSwipeEnded(object sender, Syncfusion.ListView.XForms.SwipeEndedEventArgs e)
         {
             viewModel.ItemIndex = e.ItemIndex;
         }
@@ -81,7 +81,7 @@ namespace Notes.Views.Article
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ListViewSwipeStarted(object sender, SwipeStartedEventArgs e)
+        private void ListViewSwipeStarted(object sender, Syncfusion.ListView.XForms.SwipeStartedEventArgs e)
         {
             viewModel.ItemIndex = -1;
         }

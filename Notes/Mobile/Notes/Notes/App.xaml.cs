@@ -21,7 +21,7 @@ namespace Notes
 
         public App()
         {
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjUzMzk0QDMxMzgyZTMxMmUzMGxWL3JDK20vbWV5SGszZTZlcWIzcHF1Um9EeWtNLzlzdmx0RjQxN1JxY2c9");
 
             InitializeComponent();
 
