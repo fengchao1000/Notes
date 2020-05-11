@@ -15,6 +15,11 @@
         public const string ClientSercret = "E9xR1T6fMb8WJ8fqr3AXMuSrAHUfD4Tgo6MxlArBF5o_XxVK9IWmC498PyM03aAZILhhYHTwgszFFmAk";
 
         /// <summary>
+        /// AppCenter android Secret
+        /// </summary>
+        public const string AppCenterAndroidSecret = "04968255-5537-46bb-bbe9-fe96712d20db";
+
+        /// <summary>
         /// Syncfusion报表插件的密钥
         /// </summary>
         public const string SyncfusionLicense = "";

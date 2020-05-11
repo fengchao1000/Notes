@@ -1,4 +1,8 @@
-﻿using Prism.Logging;
+﻿using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+using Prism.Logging;
+using Prism.Logging.AppCenter;
 using Prism.Logging.Syslog; 
 using System;
 using System.Collections.Generic;
@@ -23,7 +27,11 @@ namespace Notes.Helpers
             switch (LoggerConfig.loggerType)
             {
                 case LoggerType.AppCenter:
-                    
+
+                    AppCenter.Start(string.Format("android={0};", AppConfig.AppCenterAndroidSecret), typeof(Analytics), typeof(Crashes));
+                      
+                    iLogger = new AppCenterLogger();
+
                     break;
                 case LoggerType.AppInsights:
 
@@ -54,7 +62,7 @@ namespace Notes.Helpers
         /// <summary>
         /// 日志级别,todo:可以从配置获取
         /// </summary>
-        private static Level level = Level.DEBUG;
+        private static Level level = LoggerConfig.level;
         /// <summary>
         /// 线程锁
         /// </summary>

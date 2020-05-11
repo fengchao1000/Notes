@@ -8,6 +8,6 @@ namespace Notes.Helpers
     {
         public static Level level = Level.ERROR;
 
-        public static LoggerType loggerType = LoggerType.Syslog;
+        public static LoggerType loggerType = LoggerType.AppCenter;
     }
 }

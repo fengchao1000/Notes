@@ -16,6 +16,7 @@
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="3.2.1" />
     <PackageReference Include="Naxam.I18n" Version="1.0.2.2" />
     <PackageReference Include="Plugin.SimpleLogger" Version="1.1.0" />
+    <PackageReference Include="Prism.Plugin.Logging.AppCenter" Version="7.2.0.1114" />
     <PackageReference Include="Prism.Plugin.Logging.Syslog" Version="7.2.0.1114" />
     <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
     <PackageReference Include="SQLitePCLRaw.core" Version="1.1.13" />
