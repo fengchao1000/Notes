@@ -165,6 +165,11 @@
                         </Grid>
                     </controls:CustomCornerRadiusCardView>
                 </StackLayout>
+                <StackLayout BackgroundColor="{StaticResource PageDefaultBackgroundColor}" Padding="5,5,5,0" Spacing="0">
+                    <controls:CustomCornerRadiusCardView Padding="0" >
+                        <Label MaxLines="3" LineHeight="1.2" Text="测试测试测试测测试测试测试测试试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试">  </Label>
+                    </controls:CustomCornerRadiusCardView>
+                </StackLayout>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
