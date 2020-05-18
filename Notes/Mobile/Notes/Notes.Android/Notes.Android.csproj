@@ -122,6 +122,10 @@
     <AndroidResource Include="Resources\drawable\icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\JPushAndroidLibrary\JPushAndroidLibrary.csproj">
+      <Project>{cdb825dc-9801-49ea-afb3-cc6637bffe64}</Project>
+      <Name>JPushAndroidLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Notes\Notes.csproj">
       <Project>{35B9FDD0-5874-406B-9294-780F1537CE2B}</Project>
       <Name>Notes</Name>
