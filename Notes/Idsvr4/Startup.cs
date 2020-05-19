@@ -44,17 +44,21 @@ namespace Idsvr4
                   //添加自定义授权模式
                   .AddExtensionGrantValidator<SMSGrantValidator>()
                   //添加操作数据存储
-                  .AddOperationalStore(options =>
-                  {
-                      options.RedisConnectionString = Configuration.GetConnectionString("Redis");
-                      options.Db = 1;
-                  })
+                  //.AddOperationalStore(options =>
+                  //{
+                  //    options.RedisConnectionString = Configuration.GetConnectionString("Redis");
+                  //    options.Db = 1;
+                  //})
                   //IdentityServer配置缓存，缓存Client、CorsPolicy、Resource等信息，CachingClientStore，CachingCorsPolicyService，CachingResourceStore，https://github.com/AliBazzi/IdentityServer4.Contrib.RedisStore
-                  .AddRedisCaching(options =>
-                  {
-                      options.RedisConnectionString = Configuration.GetConnectionString("Redis");
-                      options.Db = 1;
-                  });
+                  //.AddRedisCaching(options =>
+                  //{
+                  //    options.RedisConnectionString = Configuration.GetConnectionString("Redis");
+                  //    options.Db = 1;
+                  //})
+                  ;
+
+            
+
 
             services.AddAuthentication()
             .AddCookie(options =>

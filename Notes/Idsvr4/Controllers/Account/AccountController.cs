@@ -132,16 +132,17 @@ namespace Idsvr4.Controllers.Account
             //设置登录过期时间
             AuthenticationProperties props = new AuthenticationProperties
             {
-                IsPersistent = true,//true表示关闭浏览器再打开系统不需要输入账号密码
+                IsPersistent = false,//true表示关闭浏览器再打开系统不需要输入账号密码
                 ExpiresUtc = DateTimeOffset.UtcNow.Add(AccountOptions.DefaultLoginDuration)
-            };
+            }; 
+             
             //颁发身份认证Cookie
             Claim[] claimArray = new Claim[] {
                                  new Claim("userID","1"),
                                  new Claim("userName", "test")
                                             };
 
-            await HttpContext.SignInAsync("userID", "userName", props, claimArray);
+            await HttpContext.SignInAsync("userID", "userName",  claimArray);
             string currentSessionId = await userSession.GetSessionIdAsync();
             
             if (interaction.IsValidReturnUrl(model.ReturnUrl) || Url.IsLocalUrl(model.ReturnUrl))
@@ -271,7 +272,7 @@ namespace Idsvr4.Controllers.Account
         public static bool AllowLocalLogin = true;
         public static bool AllowRememberLogin = true;
         public static TimeSpan RememberMeLoginDuration = TimeSpan.FromDays(30);
-        public static TimeSpan DefaultLoginDuration = TimeSpan.FromHours(5); //默认登录过期时间
+        public static TimeSpan DefaultLoginDuration = TimeSpan.FromMinutes(5); //默认登录过期时间
 
         public static bool ShowLogoutPrompt = true;
         public static bool AutomaticRedirectAfterSignOut = false;
