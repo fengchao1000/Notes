@@ -35,7 +35,7 @@ namespace Notes
 
             LoggerHelper.Current.Debug("SqliteHelper.Current.CreateOrUpdateAllTablesAsync OK");
              
-            MainPage = new CustomNavigationPage(new Views.Home.HomePage());
+            MainPage = new CustomNavigationPage(new MainPage());
 
             LoggerHelper.Current.Debug("CustomNavigationPage OK");
         }

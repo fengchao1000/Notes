@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Runtime; 
+using Android.Widget;
+using Notes.Controls;
+using Notes.Droid.Renderers;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.Android;
+
+[assembly: ExportRenderer(typeof(CustomEditor), typeof(CustomEditorRenderer))]
+
+namespace Notes.Droid.Renderers
+{
+    public class CustomEditorRenderer : EditorRenderer
+    {
+        public CustomEditorRenderer(Context context) : base(context)
+        {
+
+        }
+        protected override void OnElementChanged(ElementChangedEventArgs<Editor> e)
+        {
+            base.OnElementChanged(e);
+
+            if (e.NewElement != null)
+            {
+                var element = e.NewElement as CustomEditor;
+                this.Control.Hint = element.Placeholder;
+                this.Control.Background = null;
+
+                IntPtr IntPtrtextViewClass = JNIEnv.FindClass(typeof(TextView));
+                IntPtr mCursorDrawableResProperty = JNIEnv.GetFieldID(IntPtrtextViewClass, "mCursorDrawableRes", "I");
+                JNIEnv.SetField(Control.Handle, mCursorDrawableResProperty, Resource.Drawable.color_cursor);
+            }
+        }
+    }
+}

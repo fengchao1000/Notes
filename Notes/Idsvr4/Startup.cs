@@ -57,17 +57,21 @@ namespace Idsvr4
                   //})
                   ;
 
-            
+            //services.AddAuthentication()
+            //.AddCookie(options =>
+            //{
+            //    options.ExpireTimeSpan = System.TimeSpan.FromMinutes(30);
+            //    options.SlidingExpiration = true;
+            //});
 
 
-            services.AddAuthentication()
-            .AddCookie(options =>
-            {
-                options.ExpireTimeSpan = System.TimeSpan.FromMinutes(30);
-                options.SlidingExpiration = true;
-            });
+            //options =>
+            //{
+            //    options.Authentication.CookieSlidingExpiration = true;
+            //    options.Authentication.CookieLifetime = TimeSpan.FromHours(1);
+            //}
 
-            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
