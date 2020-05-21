@@ -8,6 +8,8 @@ using Android.Widget;
 using Android.OS;
 using Notes.Droid.Helpers;
 using Plugin.SimpleLogger.Abstractions;
+using Plugin.CurrentActivity;
+using Plugin.Fingerprint;
 
 namespace Notes.Droid
 {
@@ -20,6 +22,10 @@ namespace Notes.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
+
+            CrossCurrentActivity.Current.Init(this, savedInstanceState);
+
+            CrossFingerprint.SetCurrentActivityResolver(() => CrossCurrentActivity.Current.Activity);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);

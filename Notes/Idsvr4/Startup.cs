@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Idsvr4.IdentityServerExtensions;
 using Microsoft.AspNetCore.Antiforgery;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -27,8 +28,12 @@ namespace Idsvr4
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-
-            services.AddIdentityServer()
+             
+            services.AddIdentityServer(options =>
+            {
+                options.Authentication.CookieSlidingExpiration = true;
+                options.Authentication.CookieLifetime = TimeSpan.FromMinutes(5);
+            })
                    //配置证书
                    .AddDeveloperSigningCredential()
                    //配置API资源
@@ -65,6 +70,14 @@ namespace Idsvr4
             //});
 
 
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+              .AddCookie(options =>
+              {
+                  options.ExpireTimeSpan = System.TimeSpan.FromMinutes(5);
+                  options.SlidingExpiration = true;
+              });
+
+
             //options =>
             //{
             //    options.Authentication.CookieSlidingExpiration = true;
@@ -83,7 +96,7 @@ namespace Idsvr4
             }
 
             app.UseIdentityServer();//IdentityServer4中间件
-              
+
             //app.Run(async (context) =>
             //{
             //    await context.Response.WriteAsync("IdentityServer4");

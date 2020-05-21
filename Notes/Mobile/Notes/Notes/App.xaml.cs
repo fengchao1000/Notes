@@ -34,8 +34,8 @@ namespace Notes
             Task.Run(() => SqliteHelper.Current.CreateOrUpdateAllTablesAsync());
 
             LoggerHelper.Current.Debug("SqliteHelper.Current.CreateOrUpdateAllTablesAsync OK");
-             
-            MainPage = new CustomNavigationPage(new MainPage());
+
+            MainPage = new CustomNavigationPage(new FingerprintPage());// new CustomNavigationPage(new MainPage());
 
             LoggerHelper.Current.Debug("CustomNavigationPage OK");
         }
