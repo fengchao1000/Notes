@@ -1,4 +1,8 @@
-﻿using System;
+﻿using FormsToolkit;
+using Notes.Helpers;
+using Notes.Models;
+using Notes.ViewModels.Tasks;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +16,11 @@ namespace Notes.Views.Tasks
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddTaskPage : ContentPage
     {
-        public AddTaskPage()
-        { 
+        private AddUpdateTaskViewModel viewModel;
 
+        public AddTaskPage()
+        {
+            BindingContext = viewModel = new AddUpdateTaskViewModel(this);
         }
 
         /// <summary>
@@ -25,6 +31,11 @@ namespace Notes.Views.Tasks
             base.OnAppearing();
 
             InitializeComponent();
+        } 
+
+        async void CancelClicked(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync();
         }
     }
 }

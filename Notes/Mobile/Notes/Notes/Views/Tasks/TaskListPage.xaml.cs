@@ -1,4 +1,7 @@
-﻿using Notes.ViewModels.Categorys;
+﻿using Notes.Helpers;
+using Notes.ViewModels;
+using System;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,7 +10,7 @@ namespace Notes.Views.Tasks
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TaskListPage : ContentPage
     {
-        private CategoryViewModel viewModel;
+        private TaskListViewModel viewModel;
 
         private bool hasInitialize = false;
 
@@ -15,7 +18,7 @@ namespace Notes.Views.Tasks
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new CategoryViewModel();
+            BindingContext = viewModel = new TaskListViewModel();
         }
 
         /// <summary>
@@ -31,6 +34,24 @@ namespace Notes.Views.Tasks
 
                 hasInitialize = true;
             }
+        }
+
+        /// <summary>
+        /// 下拉刷新
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void PullToRefreshRefreshing(object sender, EventArgs e)
+        {
+            pullToRefresh.IsRefreshing = true;
+            viewModel.RefreshCommand.Execute(null);
+            await Task.Delay(1000);
+            pullToRefresh.IsRefreshing = false;
+        }
+
+        async void AddTaskClicked(object sender, EventArgs e)
+        {
+            await NavigationHelper.PushAsync(Navigation, new AddTaskPage(), false);
         }
     }
 }

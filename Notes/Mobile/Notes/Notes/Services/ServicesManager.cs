@@ -12,6 +12,7 @@ using Notes.Interfaces.Categorys;
 using Notes.Services.Categorys;
 using Notes.Services.Bookmarks;
 using Notes.Interfaces.Bookmarks;
+using Notes.Interfaces.Tasks;
 
 namespace Notes.Services
 {
@@ -31,7 +32,8 @@ namespace Notes.Services
             {
                 DependencyService.Register<IArticlesService, ArticlesMockService>();
                 DependencyService.Register<ICategoryService, CategoryService>();
-                DependencyService.Register<IBookmarkService, BookmarkService>();
+                DependencyService.Register<IBookmarkService, BookmarkService>(); 
+                DependencyService.Register<ITaskService, TaskService>();
             } 
         }
 
@@ -43,6 +45,9 @@ namespace Notes.Services
 
         static IBookmarkService bookmarkService;
         public static IBookmarkService BookmarkService => bookmarkService ?? (bookmarkService = DependencyService.Get<IBookmarkService>());
+
+        static ITaskService taskService;
+        public static ITaskService TaskService => taskService ?? (taskService = DependencyService.Get<ITaskService>());
 
 
     }

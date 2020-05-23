@@ -87,7 +87,7 @@ namespace Notes.Helpers
         /// <param name="data">请求数据</param>
         /// <param name="header">请求头</param>
         /// <returns></returns>
-        public async Task<ResultData<TResult>> PostAsync<TResult>(string uri, Object data, string header = "", bool needAuthorization = true)
+        public async Task<ResultData<TResult>> PostAsync<TResult>(string uri, Object data, string header = "", bool needAuthorization = false)
         {
             ResultData<TResult> result = new ResultData<TResult>();
             try

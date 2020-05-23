@@ -35,7 +35,7 @@ namespace Notes.Helpers
         { 
             try
             { 
-                await db.CreateTablesAsync<ArticlesDto,KeyValueTable,Category,Bookmark>(); 
+                await db.CreateTablesAsync<ArticlesDto,KeyValueTable,Category,Bookmark, TaskModel>(); 
             }
             catch (Exception ex)
             {

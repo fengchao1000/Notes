@@ -16,6 +16,6 @@ namespace Notes.Interfaces.Categorys
         /// <param name="maxResultCount"></param>
         /// <param name="sorting"></param>
         /// <returns></returns>
-        Task<ResultData<PagedResultDto<Category>>> GetCategory(string skipCount, string maxResultCount, int sorting);
+        Task<ResultData<PagedResultDto<Category>>> GetCategorys(string skipCount, string maxResultCount, int sorting);
     }
 }

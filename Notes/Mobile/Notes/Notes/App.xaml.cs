@@ -5,6 +5,8 @@ using Notes.Services;
 using Notes.Views;
 using Notes.Views.Article;
 using Notes.Views.Categorys;
+using Plugin.Fingerprint;
+using Plugin.Fingerprint.Abstractions;
 using Plugin.SimpleLogger;
 using Plugin.SimpleLogger.Abstractions;
 using System;
@@ -35,7 +37,18 @@ namespace Notes
 
             LoggerHelper.Current.Debug("SqliteHelper.Current.CreateOrUpdateAllTablesAsync OK");
 
-            MainPage = new CustomNavigationPage(new FingerprintPage());// new CustomNavigationPage(new MainPage());
+            var fingerprintAvailability = CrossFingerprint.Current.GetAvailabilityAsync(true).Result;//返回当前手机上面可用的指纹
+
+            var isAvailable = CrossFingerprint.Current.IsAvailableAsync(false).Result;//是否有可用的指纹
+
+            if (fingerprintAvailability == FingerprintAvailability.Available && isAvailable)
+            {
+                MainPage = new CustomNavigationPage(new FingerprintPage());// new CustomNavigationPage(new MainPage());
+            }
+            else
+            {
+                MainPage = new CustomNavigationPage(new MainPage());// new CustomNavigationPage(new MainPage());
+            } 
 
             LoggerHelper.Current.Debug("CustomNavigationPage OK");
         }

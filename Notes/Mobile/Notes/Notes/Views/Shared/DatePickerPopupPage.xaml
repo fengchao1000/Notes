@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:Notes.Controls;assembly=Notes"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:sfPickers="clr-namespace:Syncfusion.XForms.Pickers;assembly=Syncfusion.SfPicker.XForms"
+             mc:Ignorable="d"
+             x:Class="Notes.Views.Shared.DatePickerPopupPage">
+    <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="0, 100, 0, 100">
+        <controls:CustomCornerRadiusCardView BackgroundColor="White" Padding="5" Margin="30,5,30,5" >
+            <StackLayout Orientation="Vertical">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer />
+                </StackLayout.GestureRecognizers>
+                <sfPickers:SfDatePicker x:Name="datepicker"  Format="yyyy_MM_dd"/>
+            </StackLayout>
+        </controls:CustomCornerRadiusCardView>
+    </StackLayout>
+</pages:PopupPage>

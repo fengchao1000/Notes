@@ -1,34 +1,33 @@
-﻿using Notes.Helpers;
+﻿
+using FormsToolkit;
+using Notes.Helpers;
 using Notes.Models;
-using Notes.Models.Categorys;
 using Notes.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace Notes.ViewModels.Categorys
+namespace Notes.ViewModels
 {
-    public class CategoryViewModel : BaseViewModel
+    public class TaskListViewModel : BaseViewModel
     {
         #region 属性
 
         /// <summary>
-        /// Category集合
+        /// Task集合
         /// </summary>
-        private ObservableCollection<Category> categorys = new ObservableCollection<Category>();
-        public ObservableCollection<Category> Categorys
+        private ObservableCollection<TaskModel> collectionTask = new ObservableCollection<TaskModel>();
+        public ObservableCollection<TaskModel> CollectionTask
         {
-            get => categorys;
+            get => collectionTask;
             set
             {
-                categorys = value;
-                RaisePropertyChanged(() => Categorys);
+                collectionTask = value;
+                RaisePropertyChanged(() => CollectionTask);
             }
         }
 
@@ -45,14 +44,20 @@ namespace Notes.ViewModels.Categorys
 
         #region 方法
 
+        public TaskListViewModel()
+        {
+            MessagingService.Current.Subscribe<TaskModel>(MessageKeys.TaskListKey, (m, args) =>
+            { 
+                CollectionTask.Add(args);  
+            });
+        }
+
         /// <summary>
         /// 初始化ViewModel
         /// </summary>
         public async void Initialize()
         {
-            LoggerHelper.Current.Debug(" Initialize CurrentThread:" + Thread.CurrentThread.ManagedThreadId);
-
-            string refreshKey = nameof(CategoryViewModel);
+            string refreshKey = this.GetType().Name;//根据实际需求修改
             if (DateTime.UtcNow >= RefreshTimeHelper.GetRefreshTime(refreshKey))
             {
                 await RefreshDataFromAPIAsync();
@@ -70,25 +75,24 @@ namespace Notes.ViewModels.Categorys
         {
             try
             {
-                IsBusy = true; 
+                IsBusy = true;
                 Stopwatch sw = new Stopwatch();
-                 
-                IList<Category> categoryList = await ServicesManager.CategoryService.GetAllFromSqliteAsync();
 
-                if (categoryList != null)
+                IList<TaskModel> listTask = await ServicesManager.TaskService.GetAllFromSqliteAsync();
+
+                if (listTask != null)
                 {
-                    Categorys.Clear(); 
+                    CollectionTask.Clear();
 
-                    foreach (Category item in categoryList)
+                    foreach (TaskModel item in listTask)
                     {
-                        Categorys.Add(item);
+                        CollectionTask.Add(item);
                     }
 
-                    sw.Start(); 
+                    sw.Start();
                 }
 
                 sw.Stop();
-                LoggerHelper.Current.Debug("EbayMsgMenuViewModel GetDataFromSqliteAsync ElapsedMilliseconds:" + sw.ElapsedMilliseconds);
             }
             catch (Exception ex)
             {
@@ -96,21 +100,18 @@ namespace Notes.ViewModels.Categorys
             }
             finally
             {
-                await Task.Delay(ConstanceHelper.RefreshDelay);
                 IsBusy = false;
             }
         }
 
-        async Task RefreshDataFromAPIAsync()
+        public async Task RefreshDataFromAPIAsync()
         {
-            LoggerHelper.Current.Debug(" RefreshDataFromAPIAsync CurrentThread:" + Thread.CurrentThread.ManagedThreadId);
-
             try
             {
                 IsBusy = true;
 
                 //查询目录对应数量 
-                var result = await ServicesManager.CategoryService.GetCategorys("", "", 1);
+                var result = await ServicesManager.TaskService.GetTasks("", "", 1);
 
                 if (!result.IsSuccess)
                 {
@@ -127,15 +128,14 @@ namespace Notes.ViewModels.Categorys
                     return;
                 }
 
-                Categorys.Clear();
+                CollectionTask.Clear();
 
-                foreach (Category item in result.Data.Items)
+                foreach (TaskModel item in result.Data.Items)
                 {
-                    Categorys.Add(item);
+                    CollectionTask.Add(item);
                 }
 
-                await ServicesManager.CategoryService.BatchUpdateToSqlite(Categorys); //保存在sqlite
-
+                await ServicesManager.TaskService.BatchUpdateToSqlite(CollectionTask); //保存在sqlite
                 LoadStatus = LoadMoreStatus.StausDefault;
                 CanLoadMore = true;
             }
@@ -146,9 +146,8 @@ namespace Notes.ViewModels.Categorys
             }
             finally
             {
-                string refreshKey = nameof(CategoryViewModel);
-                RefreshTimeHelper.SetRefreshTime(refreshKey, DateTime.UtcNow.AddMinutes(ConstanceHelper.NextRefreshInterval));//记录刷新时间 
-                await Task.Delay(ConstanceHelper.RefreshDelay);
+                string refreshKey = this.GetType().Name;//根据是实际需求修改,与Initialize方法中的refreshKey保持一致
+                RefreshTimeHelper.SetRefreshTime(refreshKey, DateTime.UtcNow.AddMinutes(ConstanceHelper.NextRefreshInterval));//记录刷新时间  
                 IsBusy = false;
             }
         }
@@ -159,9 +158,8 @@ namespace Notes.ViewModels.Categorys
 
         /// <summary>
         /// 刷新命令
-        /// </summary>
-        private ICommand refreshCommand;
-        public ICommand RefreshCommand => refreshCommand ?? (refreshCommand = new Command(async () => await RefreshDataFromAPIAsync()));
+        /// </summary>  
+        public ICommand RefreshCommand => new Command(async () => await RefreshDataFromAPIAsync());
 
         #endregion
     }
