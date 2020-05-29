@@ -11,7 +11,7 @@ namespace Notes.Services.Categorys
 {
     public class CategoryService : BaseService<Category>, ICategoryService
     {
-        public async Task<ResultData<PagedResultDto<Category>>> GetCategory(string skipCount, string maxResultCount, int sorting)
+        public async Task<ResultData<PagedResultDto<Category>>> GetCategorys(string skipCount, string maxResultCount, int sorting)
         {
             return await RequestProvider.Current.GetAsync<PagedResultDto<Category>>($"{AppConfig.GetCategoryUrl}");
         }

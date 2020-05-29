@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sfTabView="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms"
+             xmlns:sfListView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:sfButton="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:pull="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms" 
+             mc:Ignorable="d"
+             x:Class="Notes.Views.Tasks.TaskListPage"
+             Title="任务">
+    <ContentPage.ToolbarItems> 
+        <ToolbarItem Text="添加任务" Clicked="AddTaskClicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <pull:SfPullToRefresh 
+            x:Name="pullToRefresh" 
+            Refreshing ="PullToRefreshRefreshing"
+            RefreshContentHeight="50"
+			PullingThreshold="150"
+            RefreshContentWidth="50"
+            TransitionMode="SlideOnTop"
+            ProgressStrokeWidth="5"
+            ProgressStrokeColor = "#c0c0c0" 
+            IsRefreshing="{Binding IsBusy}">
+            <pull:SfPullToRefresh.PullableContent>
+                <sfTabView:SfTabView BackgroundColor="#f6f6f6" VisibleHeaderCount="3" EnableSwiping="True" x:Name="tabView">
+                    <sfTabView:SfTabItem Title="今日任务">
+                        <sfTabView:SfTabItem.Content>
+                            <sfListView:SfListView 
+                                x:Name="listView"
+                                Margin="0"
+                                ItemSize="70"
+                                ItemsSource="{Binding CollectionTask}"
+                                IsBusy="{Binding IsBusy}" 
+                                FooterSize="0"
+                                BackgroundColor="White"
+                                SelectionBackgroundColor="#e7f1fb"
+                                AllowSwiping="True" >
+                                <sfListView:SfListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HeightRequest="70" Spacing="0" BackgroundColor="White">
+                                            <StackLayout HorizontalOptions="Start" Spacing="0" VerticalOptions="CenterAndExpand" HeightRequest="70" WidthRequest="50" Padding="5,0,0,0" >
+                                                <sfButton:SfCheckBox x:Name="checkBox" UncheckedColor="gray" CheckedColor="#35414f" BorderWidth="1" VerticalOptions="CenterAndExpand"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" HeightRequest="70" Spacing="0" VerticalOptions="CenterAndExpand" Padding="0,0,0,0" >
+                                                <StackLayout VerticalOptions="Start" HeightRequest="45">
+                                                    <Label Text="{Binding Title}" VerticalOptions="CenterAndExpand" FontSize="18"></Label>
+                                                </StackLayout>
+                                                <StackLayout VerticalOptions="Start" HeightRequest="24">
+                                                    <Label Text="{Binding EndTimeFormat}" VerticalOptions="Start" TextColor="YellowGreen" FontSize="12"></Label>
+                                                </StackLayout>
+                                                <StackLayout VerticalOptions="End" HeightRequest="1" HorizontalOptions="FillAndExpand" >
+                                                    <BoxView Style="{StaticResource UnderlineBoxViewStyle}" />
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </sfListView:SfListView.ItemTemplate>
+                                <sfListView:SfListView.RightSwipeTemplate>
+                                    <DataTemplate x:Name="RightSwipeTemplate">
+                                        <Grid ColumnSpacing="0">
+                                            <Grid BackgroundColor="#ff3b30" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Column="0">
+                                                <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                                                    <Grid.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding Path=BindingContext.DeleteCommand, Source={x:Reference listView}}" CommandParameter="{Binding .}"/>
+                                                    </Grid.GestureRecognizers>
+                                                    <Image 
+                                                        Grid.Column="0" 
+                                                        Grid.Row="0"
+                                                        BackgroundColor="Transparent"
+                                                        HeightRequest="35"
+                                                        WidthRequest="35" 
+                                                        Source="delete.png" />
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </DataTemplate>
+                                </sfListView:SfListView.RightSwipeTemplate>
+                            </sfListView:SfListView>
+                        </sfTabView:SfTabItem.Content>
+                    </sfTabView:SfTabItem>
+                    <sfTabView:SfTabItem Title="本月任务">
+                        <sfTabView:SfTabItem.Content>
+                            <Grid BackgroundColor="Green" x:Name="FavouritesGrid" />
+                        </sfTabView:SfTabItem.Content>
+                    </sfTabView:SfTabItem>
+                    <sfTabView:SfTabItem Title="本年任务">
+                        <sfTabView:SfTabItem.Content>
+                            <Grid BackgroundColor="Blue" x:Name="ContactsGrid" />
+                        </sfTabView:SfTabItem.Content>
+                    </sfTabView:SfTabItem>
+                </sfTabView:SfTabView>
+            </pull:SfPullToRefresh.PullableContent>
+        </pull:SfPullToRefresh>
+    </ContentPage.Content>
+</ContentPage>

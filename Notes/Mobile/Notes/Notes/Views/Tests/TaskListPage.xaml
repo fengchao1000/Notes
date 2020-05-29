@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sfTabView="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms"
+             mc:Ignorable="d"
+             x:Class="Notes.Views.Tests.TaskListPage">
+    <ContentPage.Content>
+        <sfTabView:SfTabView BackgroundColor="#f6f6f6" x:Name="tabView">
+            <sfTabView:SfTabItem Title="{Binding Title1}">
+                <sfTabView:SfTabItem.Content>
+                    <Grid BackgroundColor="White" x:Name="AllContactsGrid" >
+                         
+                    </Grid>
+                </sfTabView:SfTabItem.Content>
+            </sfTabView:SfTabItem>
+            <sfTabView:SfTabItem Title="Favorites">
+                <sfTabView:SfTabItem.Content>
+                    <Grid BackgroundColor="Green" x:Name="FavouritesGrid" />
+                </sfTabView:SfTabItem.Content>
+            </sfTabView:SfTabItem>
+            <sfTabView:SfTabItem Title="Contacts">
+                <sfTabView:SfTabItem.Content>
+                    <Grid BackgroundColor="Blue" x:Name="ContactsGrid" />
+                </sfTabView:SfTabItem.Content>
+            </sfTabView:SfTabItem>
+        </sfTabView:SfTabView>
+    </ContentPage.Content>
+</ContentPage>

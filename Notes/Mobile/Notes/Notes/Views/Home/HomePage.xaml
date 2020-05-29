@@ -4,6 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:controls="clr-namespace:Notes.Controls;assembly=Notes"
+             xmlns:sfButton="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:sfListView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
              mc:Ignorable="d"
              x:Class="Notes.Views.Home.HomePage"
              Title="首页">
@@ -164,6 +166,38 @@
                            
                         </Grid>
                     </controls:CustomCornerRadiusCardView>
+                </StackLayout>
+                <StackLayout BackgroundColor="{StaticResource PageDefaultBackgroundColor}" Padding="5,5,5,0" Spacing="0">
+                    <sfListView:SfListView 
+                        Margin="0"
+                        ItemSize="70"
+                        ItemsSource="{Binding Categorys}"
+                        IsBusy="{Binding IsBusy}" 
+                        FooterSize="0"
+                        BackgroundColor="White"
+                        SelectionBackgroundColor="#e7f1fb"
+                        AllowSwiping="True" >
+                        <sfListView:SfListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HeightRequest="70" Spacing="0" BackgroundColor="White">
+                                    <StackLayout HorizontalOptions="Start" Spacing="0" VerticalOptions="CenterAndExpand" HeightRequest="70" WidthRequest="50" Padding="5,0,0,0" >
+                                        <sfButton:SfCheckBox x:Name="checkBox" UncheckedColor="gray" CheckedColor="#35414f" BorderWidth="1" VerticalOptions="CenterAndExpand"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" HeightRequest="70" Spacing="0" VerticalOptions="CenterAndExpand" Padding="0,0,0,0" >
+                                        <StackLayout VerticalOptions="Start" HeightRequest="45">
+                                            <Label Text="制定本月工作计划制定本月工作计划" VerticalOptions="CenterAndExpand" FontSize="18"></Label>
+                                        </StackLayout>
+                                        <StackLayout VerticalOptions="Start" HeightRequest="24">
+                                            <Label Text="今天18点截止" VerticalOptions="Start" TextColor="YellowGreen" FontSize="12"></Label>
+                                        </StackLayout>
+                                        <StackLayout VerticalOptions="End" HeightRequest="1" HorizontalOptions="FillAndExpand" >
+                                            <BoxView Style="{StaticResource UnderlineBoxViewStyle}" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </DataTemplate>
+                        </sfListView:SfListView.ItemTemplate>
+                    </sfListView:SfListView> 
                 </StackLayout>
             </StackLayout>
         </ScrollView>

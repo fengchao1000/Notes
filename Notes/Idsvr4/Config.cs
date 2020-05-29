@@ -43,7 +43,7 @@ namespace Idsvr4
                     ClientName = "Test",
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
-                    AccessTokenLifetime = 60*60,
+                    AccessTokenLifetime = 60*2,
                     AccessTokenType = AccessTokenType.Jwt,
                     RedirectUris =
                     {

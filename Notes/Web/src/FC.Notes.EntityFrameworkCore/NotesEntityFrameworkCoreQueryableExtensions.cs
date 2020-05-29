@@ -9,7 +9,7 @@ namespace FC.Notes
 { 
     public static class NotesEntityFrameworkCoreQueryableExtensions
     {
-        public static IQueryable<Bookmark> IncludeDetails(this IQueryable<Bookmark> queryable, bool include = true)
+        public static IQueryable<Bookmark> IncludeBookmarkDetails(this IQueryable<Bookmark> queryable, bool include = true)
         {
             if (!include)
             {

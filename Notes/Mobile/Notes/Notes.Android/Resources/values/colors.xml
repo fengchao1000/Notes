@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="launcher_background">#FFFFFF</color>
-    <color name="colorPrimary">#DEE7E9</color>
-    <color name="colorPrimaryDark">#DEE7E9</color>
-    <color name="colorAccent">#FF4081</color>
+  <color name="launcher_background">#FFFFFF</color>
+  <color name="colorPrimary">#DEE7E9</color>
+  <color name="colorPrimaryDark">#DEE7E9</color>
+  <color name="colorAccent">#FF4081</color>
+
+  <!--#2196F3-->
+  <color name="primary">#FFFFFF</color>
+  <color name="primary_dark">#FFFFFF</color>
+  <color name="accent">#2196F3</color>
+  <color name="window_background">#FFF5F5F5</color>
+
+  <color name="title_text">#FFFFFF</color>
+  <color name="action_text">#FFFFFF</color>
+  <color name="navigation_text">#FFFFFF</color>
+
 </resources>

@@ -5,6 +5,17 @@ using System.Text;
 namespace Notes.Helpers
 {
     /// <summary>
+    /// 任务优先级别
+    /// </summary>
+    public enum TaskPriority
+    {
+        Lower,
+        Ordinary,
+        emergency,
+        VeryUrgent
+    }
+
+    /// <summary>
     /// 连接来源
     /// </summary>
     public enum LinkSourceType

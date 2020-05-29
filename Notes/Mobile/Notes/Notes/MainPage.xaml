@@ -1,14 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:Notes"
-             x:Class="Notes.MainPage">
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="Notes.Views.MainPage"
+            xmlns:home="clr-namespace:Notes.Views.Home" 
+            xmlns:taskList="clr-namespace:Notes.Views.Tasks" BackgroundColor="#ededed">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <home:HomePage 
+        x:Name="HomePage" 
+        Icon="ic_bottomtabbar_home" 
+        Title="首页"/>
+    <taskList:TaskListPage 
+        x:Name="messageListPage" 
+        Icon="ic_bottomtabbar_message"  
+        Title="任务"/> 
 
-</ContentPage>
+</TabbedPage>

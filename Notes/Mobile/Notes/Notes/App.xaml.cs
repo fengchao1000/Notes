@@ -5,6 +5,8 @@ using Notes.Services;
 using Notes.Views;
 using Notes.Views.Article;
 using Notes.Views.Categorys;
+using Plugin.Fingerprint;
+using Plugin.Fingerprint.Abstractions;
 using Plugin.SimpleLogger;
 using Plugin.SimpleLogger.Abstractions;
 using System;
@@ -21,7 +23,7 @@ namespace Notes
 
         public App()
         {
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjUzMzk0QDMxMzgyZTMxMmUzMGxWL3JDK20vbWV5SGszZTZlcWIzcHF1Um9EeWtNLzlzdmx0RjQxN1JxY2c9");
 
             InitializeComponent();
 
@@ -34,8 +36,19 @@ namespace Notes
             Task.Run(() => SqliteHelper.Current.CreateOrUpdateAllTablesAsync());
 
             LoggerHelper.Current.Debug("SqliteHelper.Current.CreateOrUpdateAllTablesAsync OK");
-             
-            MainPage = new CustomNavigationPage(new Views.Home.HomePage());
+
+            var fingerprintAvailability = CrossFingerprint.Current.GetAvailabilityAsync(true).Result;//返回当前手机上面可用的指纹
+
+            var isAvailable = CrossFingerprint.Current.IsAvailableAsync(false).Result;//是否有可用的指纹
+
+            if (fingerprintAvailability == FingerprintAvailability.Available && isAvailable)
+            {
+                MainPage = new CustomNavigationPage(new FingerprintPage());// new CustomNavigationPage(new MainPage());
+            }
+            else
+            {
+                MainPage = new CustomNavigationPage(new MainPage());// new CustomNavigationPage(new MainPage());
+            } 
 
             LoggerHelper.Current.Debug("CustomNavigationPage OK");
         }

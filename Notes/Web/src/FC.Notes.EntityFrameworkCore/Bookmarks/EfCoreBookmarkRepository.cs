@@ -23,12 +23,12 @@ namespace FC.Notes.Bookmarks
 
         public IQueryable<Bookmark> GetAll()
         {
-             return GetQueryable().IncludeDetails(); 
+             return GetQueryable().IncludeBookmarkDetails(); 
         }
 
         public override IQueryable<Bookmark> WithDetails()
         {
-            return GetQueryable().IncludeDetails();
+            return GetQueryable().IncludeBookmarkDetails();
         }
     }
 }

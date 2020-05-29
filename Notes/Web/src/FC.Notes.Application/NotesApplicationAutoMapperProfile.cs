@@ -5,6 +5,8 @@ using FC.Notes.Categorys;
 using FC.Notes.Categorys.Dtos;
 using FC.Notes.Tagging;
 using FC.Notes.Tagging.Dtos;
+using FC.Notes.Tasks;
+using FC.Notes.Tasks.Dtos; 
 using Volo.Abp.AutoMapper;
 
 namespace FC.Notes
@@ -28,6 +30,10 @@ namespace FC.Notes
             CreateMap<Category, CategoryDto>();
             CreateMap<CategoryDto, Category>();
             CreateMap<CreateUpdateCategoryDto, Category>(); 
+
+            CreateMap<Task, TaskDto>();
+            CreateMap<TaskDto, Task>();
+            CreateMap<CreateUpdateTaskDto, Task>();
         }
     }
 }

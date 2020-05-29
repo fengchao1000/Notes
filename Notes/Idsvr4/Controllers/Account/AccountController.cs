@@ -6,6 +6,7 @@ using IdentityServer4.Stores;
 using Idsvr4.Attributes;
 using Idsvr4.ViewModels;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -132,16 +133,23 @@ namespace Idsvr4.Controllers.Account
             //设置登录过期时间
             AuthenticationProperties props = new AuthenticationProperties
             {
-                IsPersistent = true,//true表示关闭浏览器再打开系统不需要输入账号密码
-                ExpiresUtc = DateTimeOffset.UtcNow.Add(AccountOptions.DefaultLoginDuration)
-            };
+                //IsPersistent = false,//true表示关闭浏览器再打开系统不需要输入账号密码
+                //ExpiresUtc = DateTimeOffset.UtcNow.Add(AccountOptions.DefaultLoginDuration)
+
+                ExpiresUtc = DateTimeOffset.UtcNow.Add(TimeSpan.FromMinutes(5)),
+                IsPersistent = true,//在浏览器持久化，false的时候走session持久化
+                AllowRefresh = true//动态刷新令牌
+            }; 
+             
             //颁发身份认证Cookie
             Claim[] claimArray = new Claim[] {
                                  new Claim("userID","1"),
                                  new Claim("userName", "test")
                                             };
+             
 
-            await HttpContext.SignInAsync("userID", "userName", props, claimArray);
+            await HttpContext.SignInAsync("userID", "userName",   claimArray);
+
             string currentSessionId = await userSession.GetSessionIdAsync();
             
             if (interaction.IsValidReturnUrl(model.ReturnUrl) || Url.IsLocalUrl(model.ReturnUrl))
@@ -150,7 +158,7 @@ namespace Idsvr4.Controllers.Account
             }
             else
             {
-                return Redirect("");
+                return Redirect(model.ReturnUrl);
             } 
         }
          
@@ -271,7 +279,7 @@ namespace Idsvr4.Controllers.Account
         public static bool AllowLocalLogin = true;
         public static bool AllowRememberLogin = true;
         public static TimeSpan RememberMeLoginDuration = TimeSpan.FromDays(30);
-        public static TimeSpan DefaultLoginDuration = TimeSpan.FromHours(5); //默认登录过期时间
+        public static TimeSpan DefaultLoginDuration = TimeSpan.FromMinutes(5); //默认登录过期时间
 
         public static bool ShowLogoutPrompt = true;
         public static bool AutomaticRedirectAfterSignOut = false;

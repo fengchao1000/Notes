@@ -6,6 +6,9 @@
 
         public const string DbTableItinerarysPrefix = "IT";
 
+        public const string DbTableTaskPrefix = "TS";
+
         public const string DbSchema = null;
     }
+     
 }

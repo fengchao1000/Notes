@@ -13,7 +13,7 @@
         <!-- 程序主色调 -->
         <Color x:Key="Primary">#35414f</Color>
         <!-- 页面默认背景色 -->
-        <Color x:Key="PageDefaultBackgroundColor">#f0f0f0</Color>
+        <Color x:Key="PageDefaultBackgroundColor">#edf1f4</Color>
         <!-- 滚动超出部分背景色 -->
         <Color x:Key="ScrollViewBackgroundColor">#f0f0f0</Color>
         <!-- 下划线颜色 -->
@@ -39,7 +39,7 @@
         <!-- 下划线颜色 -->
         <Color x:Key="UnderlineColor">#E4E4E4</Color>
         <!-- 底部TabBar背景色 -->
-        <Color x:Key="BottomTabBarBackgroundColor">#35414f</Color>
+        <Color x:Key="BottomTabBarBackgroundColor">#ededed</Color>
         <!-- SegmentedView选择颜色 -->
         <Color x:Key="SegmentedViewSelectedBackgroundColor">#dadada</Color>
         <!-- SegmentedView未选择颜色 -->

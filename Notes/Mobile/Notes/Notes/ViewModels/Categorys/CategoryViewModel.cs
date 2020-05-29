@@ -110,7 +110,7 @@ namespace Notes.ViewModels.Categorys
                 IsBusy = true;
 
                 //查询目录对应数量 
-                var result = await ServicesManager.CategoryService.GetCategory("", "", 1);
+                var result = await ServicesManager.CategoryService.GetCategorys("", "", 1);
 
                 if (!result.IsSuccess)
                 {
