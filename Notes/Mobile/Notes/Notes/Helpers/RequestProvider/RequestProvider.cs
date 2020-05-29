@@ -335,6 +335,29 @@ namespace Notes.Helpers
         }
 
         /// <summary>
+        /// Delete请求
+        /// </summary>
+        /// <typeparam name="TResult">返回实体类型</typeparam>
+        /// <param name="uri">请求地址</param>
+        /// <returns></returns>
+        public async Task<ResultData<TResult>> DeleteAsync<TResult>(string uri, bool needAuthorization = false)
+        {
+            ResultData<TResult> result = new ResultData<TResult>();
+            try
+            {
+                HttpClient httpClient = await CreateHttpClient(needAuthorization);
+                HttpResponseMessage response = await httpClient.DeleteAsync(uri);
+                result = await GetResultData<TResult>(response, uri);
+            }
+            catch (Exception ex)
+            {
+                result = new ResultData<TResult>() { IsSuccess = false, Message = ex.Message };
+                LoggerHelper.Current.Error(ex.ToString());
+            }
+            return result;
+        }
+
+        /// <summary>
         /// 创建HttpClient
         /// </summary>
         /// <returns></returns>

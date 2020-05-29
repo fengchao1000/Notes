@@ -1,6 +1,7 @@
 ﻿using Notes.Helpers; 
 using Notes.Interfaces.Tasks;
-using Notes.Models; 
+using Notes.Models;
+using System;
 using System.Threading.Tasks;
 
 namespace Notes.Services
@@ -15,6 +16,11 @@ namespace Notes.Services
         public async Task<ResultData<PagedResultDto<TaskModel>>> GetTasks(string skipCount, string maxResultCount, int sorting)
         {
             return await RequestProvider.Current.GetAsync<PagedResultDto<TaskModel>>($"{AppConfig.GetTaskUrl}");
+        }
+         
+        public async Task<ResultData<bool>> DeleteTask(Guid id)
+        {
+            return await RequestProvider.Current.DeleteAsync<bool>($"{AppConfig.GetTaskUrl}/{id}", false);
         }
     }
 }

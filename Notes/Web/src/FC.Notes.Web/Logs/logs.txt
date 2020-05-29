@@ -4668,3 +4668,1410 @@ Volo.Abp.Validation.AbpValidationException: ModelState is not valid! See Validat
 2020-05-23 12:16:44.025 +08:00 [DBG] Added 0 entity changes to the current audit log
 2020-05-23 12:16:44.025 +08:00 [DBG] Added 0 entity changes to the current audit log
 2020-05-23 12:16:44.028 +08:00 [INF] Request finished in 7163.0871ms 200 application/json; charset=utf-8
+2020-05-29 18:13:04.188 +08:00 [INF] Starting web host.
+2020-05-29 18:13:14.381 +08:00 [DBG] Hosting starting
+2020-05-29 18:13:14.433 +08:00 [INF] User profile is available. Using 'C:\Users\Andy\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-05-29 18:13:14.442 +08:00 [DBG] Reading data from file 'C:\Users\Andy\AppData\Local\ASP.NET\DataProtection-Keys\key-0f7e385e-64ca-42e5-8c8e-1b5e11b6cd60.xml'.
+2020-05-29 18:13:14.479 +08:00 [DBG] Reading data from file 'C:\Users\Andy\AppData\Local\ASP.NET\DataProtection-Keys\key-79565f58-b19b-405d-ab19-a89074848ba1.xml'.
+2020-05-29 18:13:14.492 +08:00 [DBG] Reading data from file 'C:\Users\Andy\AppData\Local\ASP.NET\DataProtection-Keys\key-d0467cad-0b9a-4d56-b0a9-c5a54a548c43.xml'.
+2020-05-29 18:13:14.504 +08:00 [DBG] Reading data from file 'C:\Users\Andy\AppData\Local\ASP.NET\DataProtection-Keys\key-db6b4169-a718-4a1f-b458-abebba2e8959.xml'.
+2020-05-29 18:13:14.524 +08:00 [DBG] Found key {0f7e385e-64ca-42e5-8c8e-1b5e11b6cd60}.
+2020-05-29 18:13:14.528 +08:00 [DBG] Found key {79565f58-b19b-405d-ab19-a89074848ba1}.
+2020-05-29 18:13:14.528 +08:00 [DBG] Found key {d0467cad-0b9a-4d56-b0a9-c5a54a548c43}.
+2020-05-29 18:13:14.529 +08:00 [DBG] Found key {db6b4169-a718-4a1f-b458-abebba2e8959}.
+2020-05-29 18:13:14.536 +08:00 [DBG] Considering key {d0467cad-0b9a-4d56-b0a9-c5a54a548c43} with expiration date 2020-06-18 08:38:25Z as default key.
+2020-05-29 18:13:14.546 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2020-05-29 18:13:14.569 +08:00 [DBG] Decrypting secret element using Windows DPAPI.
+2020-05-29 18:13:14.570 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2020-05-29 18:13:14.570 +08:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2020-05-29 18:13:14.573 +08:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2020-05-29 18:13:14.575 +08:00 [DBG] Using key {d0467cad-0b9a-4d56-b0a9-c5a54a548c43} as the default key.
+2020-05-29 18:13:14.576 +08:00 [DBG] Key ring with default key {d0467cad-0b9a-4d56-b0a9-c5a54a548c43} was loaded during application startup.
+2020-05-29 18:13:14.590 +08:00 [INF] Loaded ABP modules:
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.Uow.AbpUnitOfWorkModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.Data.AbpDataModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.Security.AbpSecurityModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.BackgroundJobs.BackgroundJobsDomainSharedModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.Settings.AbpSettingsModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.Users.AbpUsersDomainSharedModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.IdentityServer.AbpIdentityServerDomainSharedModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.TenantManagement.AbpTenantManagementDomainSharedModule
+2020-05-29 18:13:14.590 +08:00 [INF] - FC.Notes.NotesDomainSharedModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.Timing.AbpTimingModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.Json.AbpJsonModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.Threading.AbpThreadingModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.Auditing.AbpAuditingModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.EventBus.AbpEventBusModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.Guids.AbpGuidsModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.Domain.AbpDddDomainModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.Validation.AbpValidationModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.Authorization.AbpAuthorizationModule
+2020-05-29 18:13:14.590 +08:00 [INF] - Volo.Abp.Http.AbpHttpAbstractionsModule
+2020-05-29 18:13:14.591 +08:00 [INF] - Volo.Abp.Features.AbpFeaturesModule
+2020-05-29 18:13:14.591 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationModule
+2020-05-29 18:13:14.591 +08:00 [INF] - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationContractsModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.Users.AbpUsersAbstractionModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.TenantManagement.AbpTenantManagementApplicationContractsModule
+2020-05-29 18:13:14.593 +08:00 [INF] - FC.Notes.NotesApplicationContractsModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.Http.AbpHttpModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.UI.AbpUiModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityHttpApiModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.PermissionManagement.HttpApi.AbpPermissionManagementHttpApiModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.TenantManagement.AbpTenantManagementHttpApiModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.FeatureManagement.AbpFeatureManagementHttpApiModule
+2020-05-29 18:13:14.593 +08:00 [INF] - FC.Notes.NotesHttpApiModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.BackgroundJobs.AbpBackgroundJobsModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.BackgroundJobs.BackgroundJobsDomainModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.Serialization.AbpSerializationModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.Caching.AbpCachingModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.Users.AbpUsersDomainModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityDomainModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.PermissionManagement.Identity.AbpPermissionManagementDomainIdentityModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.IdentityServer.AbpIdentityServerDomainModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.PermissionManagement.IdentityServer.AbpPermissionManagementDomainIdentityServerModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.TenantManagement.AbpTenantManagementDomainModule
+2020-05-29 18:13:14.593 +08:00 [INF] - FC.Notes.NotesDomainModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityApplicationModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.TenantManagement.AbpTenantManagementApplicationModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationModule
+2020-05-29 18:13:14.593 +08:00 [INF] - FC.Notes.NotesApplicationModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.IdentityServer.EntityFrameworkCore.AbpIdentityServerEntityFrameworkCoreModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.MySQL.AbpEntityFrameworkCoreMySQLModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.BackgroundJobs.EntityFrameworkCore.BackgroundJobsEntityFrameworkCoreModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.TenantManagement.EntityFrameworkCore.AbpTenantManagementEntityFrameworkCoreModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2020-05-29 18:13:14.593 +08:00 [INF] - FC.Notes.EntityFrameworkCore.NotesEntityFrameworkCoreModule
+2020-05-29 18:13:14.593 +08:00 [INF] - FC.Notes.EntityFrameworkCore.NotesEntityFrameworkCoreDbMigrationsModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.Castle.AbpCastleCoreModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.Autofac.AbpAutofacModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.AbpAspNetCoreMvcUiModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.AbpAspNetCoreMvcUiBootstrapModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.PermissionManagement.Web.AbpPermissionManagementWebModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Packages.AbpAspNetCoreMvcUiPackagesModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.AbpAspNetCoreMvcUiThemeSharedModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.Identity.Web.AbpIdentityWebModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.Identity.AspNetCore.AbpIdentityAspNetCoreModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.Account.Web.AbpAccountWebModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.Account.Web.AbpAccountWebIdentityServerModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy.AbpAspNetCoreMvcUiMultiTenancyModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.AbpAspNetCoreMvcUiBasicThemeModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.AspNetCore.Authentication.JwtBearer.AbpAspNetCoreAuthenticationJwtBearerModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.FeatureManagement.AbpFeatureManagementWebModule
+2020-05-29 18:13:14.593 +08:00 [INF] - Volo.Abp.TenantManagement.Web.AbpTenantManagementWebModule
+2020-05-29 18:13:14.593 +08:00 [INF] - FC.Notes.Web.NotesWebModule
+2020-05-29 18:13:14.669 +08:00 [DBG] No class found with auto mapping attributes.
+2020-05-29 18:13:15.297 +08:00 [DBG] Started background worker: Volo.Abp.BackgroundJobs.BackgroundJobWorker
+2020-05-29 18:13:15.707 +08:00 [DBG] Using Identity.Application as default scheme for authentication
+2020-05-29 18:13:15.707 +08:00 [DBG] Using Identity.External as default scheme for sign-in
+2020-05-29 18:13:15.707 +08:00 [DBG] Using Identity.External as default scheme for sign-out
+2020-05-29 18:13:15.707 +08:00 [DBG] Using Identity.Application as default scheme for challenge
+2020-05-29 18:13:15.708 +08:00 [DBG] Using Identity.Application as default scheme for forbid
+2020-05-29 18:13:21.532 +08:00 [DBG] Compatibility switch AllowInputFormatterExceptionMessages in type MvcJsonOptions is using default value false
+2020-05-29 18:13:21.634 +08:00 [DBG] Compatibility switch AllowDataAnnotationsLocalizationForEnumDisplayAttributes in type MvcDataAnnotationsLocalizationOptions is using default value false
+2020-05-29 18:13:22.828 +08:00 [DBG] Compatibility switch AllowCombiningAuthorizeFilters in type MvcOptions is using default value false
+2020-05-29 18:13:22.828 +08:00 [DBG] Compatibility switch AllowBindingHeaderValuesToNonStringModelTypes in type MvcOptions is using default value false
+2020-05-29 18:13:22.828 +08:00 [DBG] Compatibility switch AllowValidatingTopLevelNodes in type MvcOptions is using default value false
+2020-05-29 18:13:22.828 +08:00 [DBG] Compatibility switch InputFormatterExceptionPolicy in type MvcOptions is using default value "AllExceptions"
+2020-05-29 18:13:22.828 +08:00 [DBG] Compatibility switch SuppressBindingUndefinedValueToEnumType in type MvcOptions is using default value false
+2020-05-29 18:13:22.828 +08:00 [DBG] Compatibility switch EnableEndpointRouting in type MvcOptions is using default value false
+2020-05-29 18:13:22.828 +08:00 [DBG] Compatibility switch MaxValidationDepth in type MvcOptions is using default value null
+2020-05-29 18:13:22.828 +08:00 [DBG] Compatibility switch AllowShortCircuitingValidationWhenNoValidatorsArePresent in type MvcOptions is using default value false
+2020-05-29 18:13:22.894 +08:00 [DBG] Compatibility switch SuppressMapClientErrors in type ApiBehaviorOptions is using compatibility value true for version "Version_2_0"
+2020-05-29 18:13:22.894 +08:00 [DBG] Compatibility switch SuppressUseValidationProblemDetailsForInvalidModelStateResponses in type ApiBehaviorOptions is using compatibility value true for version "Version_2_0"
+2020-05-29 18:13:22.894 +08:00 [DBG] Compatibility switch AllowInferringBindingSourceForCollectionTypesAsFromQuery in type ApiBehaviorOptions is using compatibility value true for version "Version_2_0"
+2020-05-29 18:13:22.926 +08:00 [DBG] Compatibility switch AllowAreas in type RazorPagesOptions is using default value false
+2020-05-29 18:13:22.926 +08:00 [DBG] Compatibility switch AllowMappingHeadRequestsToGetHandler in type RazorPagesOptions is using default value false
+2020-05-29 18:13:22.926 +08:00 [DBG] Compatibility switch AllowDefaultHandlingForOptionsRequests in type RazorPagesOptions is using default value false
+2020-05-29 18:13:22.938 +08:00 [DBG] Compatibility switch AllowRecompilingViewsOnFileChange in type RazorViewEngineOptions is using explicitly configured value true
+2020-05-29 18:13:22.980 +08:00 [DBG] Compatibility switch SuppressTempDataAttributePrefix in type MvcViewOptions is using default value false
+2020-05-29 18:13:22.980 +08:00 [DBG] Compatibility switch AllowRenderingMaxLengthAttribute in type MvcViewOptions is using default value false
+2020-05-29 18:13:23.019 +08:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2020-05-29 18:13:23.069 +08:00 [INF] Initialized all ABP modules.
+2020-05-29 18:13:23.137 +08:00 [DBG] Hosting started
+2020-05-29 18:13:23.137 +08:00 [DBG] Loaded hosting startup assembly FC.Notes.Web
+2020-05-29 18:13:23.137 +08:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Server.IISIntegration
+2020-05-29 18:13:23.163 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/  
+2020-05-29 18:13:23.184 +08:00 [DBG] The request path / does not match a supported file type
+2020-05-29 18:13:27.588 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:13:27.730 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:13:27.751 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:13:27.772 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported cultures '["zh-CN"]'.
+2020-05-29 18:13:27.772 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN"]'.
+2020-05-29 18:13:27.829 +08:00 [DBG] The request path  does not match the path filter
+2020-05-29 18:13:28.968 +08:00 [DBG] Request successfully matched the route with name 'null' and template ''
+2020-05-29 18:13:28.976 +08:00 [DBG] Initializing Razor view compiler with compiled view: '/Pages/Account/Login.cshtml'.
+2020-05-29 18:13:28.976 +08:00 [DBG] Initializing Razor view compiler with compiled view: '/Pages/Bookmarks/CreateModal.cshtml'.
+2020-05-29 18:13:28.976 +08:00 [DBG] Initializing Razor view compiler with compiled view: '/Pages/Bookmarks/EditModal.cshtml'.
+2020-05-29 18:13:28.976 +08:00 [DBG] Initializing Razor view compiler with compiled view: '/Pages/Bookmarks/Index.cshtml'.
+2020-05-29 18:13:28.976 +08:00 [DBG] Initializing Razor view compiler with compiled view: '/Pages/Categorys/CreateModal.cshtml'.
+2020-05-29 18:13:28.976 +08:00 [DBG] Initializing Razor view compiler with compiled view: '/Pages/Categorys/EditModal.cshtml'.
+2020-05-29 18:13:28.976 +08:00 [DBG] Initializing Razor view compiler with compiled view: '/Pages/Categorys/Index.cshtml'.
+2020-05-29 18:13:28.976 +08:00 [DBG] Initializing Razor view compiler with compiled view: '/Pages/Index.cshtml'.
+2020-05-29 18:13:28.976 +08:00 [DBG] Initializing Razor view compiler with compiled view: '/Pages/_ViewImports.cshtml'.
+2020-05-29 18:13:28.976 +08:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/_ViewImports.cshtml'.
+2020-05-29 18:13:33.058 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Pages/_ViewStart.cshtml' started.
+2020-05-29 18:13:33.856 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Pages/_ViewStart.cshtml' completed in 795.5188ms.
+2020-05-29 18:13:33.865 +08:00 [INF] Route matched with {page = "/Index", action = "", controller = "", area = ""}. Executing page /Index
+2020-05-29 18:13:33.866 +08:00 [DBG] Execution plan of authorization filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.AutoValidateAntiforgeryTokenAuthorizationFilter"]
+2020-05-29 18:13:33.866 +08:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-05-29 18:13:33.866 +08:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Volo.Abp.AspNetCore.Mvc.Auditing.AbpAuditActionFilter","Volo.Abp.AspNetCore.Mvc.Features.AbpFeatureActionFilter","Volo.Abp.AspNetCore.Mvc.Validation.AbpValidationActionFilter","Volo.Abp.AspNetCore.Mvc.Uow.AbpUowActionFilter"]
+2020-05-29 18:13:33.866 +08:00 [DBG] Execution plan of exception filters (in the following order): ["Volo.Abp.AspNetCore.Mvc.ExceptionHandling.AbpExceptionFilter"]
+2020-05-29 18:13:33.866 +08:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-05-29 18:13:33.887 +08:00 [INF] Executing handler method FC.Notes.Web.Pages.IndexModel.OnGet - ModelState is "Valid"
+2020-05-29 18:13:33.887 +08:00 [INF] Executed handler method OnGet, returned result .
+2020-05-29 18:13:33.889 +08:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2020-05-29 18:13:33.889 +08:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2020-05-29 18:13:34.833 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Layouts/Application.cshtml' started.
+2020-05-29 18:13:35.547 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Layouts/Application.cshtml' completed in 713.89510000000007ms.
+2020-05-29 18:13:35.548 +08:00 [DBG] Using precompiled view for '~/Themes/Basic/Layouts/Application.cshtml'.
+2020-05-29 18:13:35.566 +08:00 [DBG] A new antiforgery cookie token was created.
+2020-05-29 18:13:35.695 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent with arguments (["Header.First","Application"]).
+2020-05-29 18:13:35.697 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent in 0.5515ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-05-29 18:13:35.811 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Volo/Abp/AspNetCore/Mvc/UI/Components/LayoutHook/Default.cshtml' started.
+2020-05-29 18:13:36.092 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Volo/Abp/AspNetCore/Mvc/UI/Components/LayoutHook/Default.cshtml' completed in 281.2431ms.
+2020-05-29 18:13:36.093 +08:00 [DBG] Using precompiled view for '~/Volo/Abp/AspNetCore/Mvc/UI/Components/LayoutHook/Default.cshtml'.
+2020-05-29 18:13:36.173 +08:00 [DBG] Added bundle 'Basic.Global' to the page in 37.76 ms.
+2020-05-29 18:13:36.189 +08:00 [DBG] Added bundle '91A143E5BBA37D801A02555A7407C133' to the page in 3.14 ms.
+2020-05-29 18:13:36.190 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent with arguments (["Header.Last","Application"]).
+2020-05-29 18:13:36.190 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent in 0.0222ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-05-29 18:13:36.198 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent with arguments (["Body.First","Application"]).
+2020-05-29 18:13:36.199 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent in 0.0069000000000000008ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-05-29 18:13:36.200 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.MainNavbar.MainNavbarViewComponent with arguments ([]).
+2020-05-29 18:13:36.200 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.MainNavbar.MainNavbarViewComponent in 0.248ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-05-29 18:13:36.333 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/MainNavbar/Default.cshtml' started.
+2020-05-29 18:13:36.393 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/MainNavbar/Default.cshtml' completed in 60.130700000000004ms.
+2020-05-29 18:13:36.394 +08:00 [DBG] Using precompiled view for '~/Themes/Basic/Components/MainNavbar/Default.cshtml'.
+2020-05-29 18:13:36.397 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Brand.MainNavbarBrandViewComponent with arguments ([]).
+2020-05-29 18:13:36.398 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Brand.MainNavbarBrandViewComponent in 0.075ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-05-29 18:13:36.522 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/Brand/Default.cshtml' started.
+2020-05-29 18:13:36.605 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/Brand/Default.cshtml' completed in 82.9077ms.
+2020-05-29 18:13:36.606 +08:00 [DBG] Using precompiled view for '~/Themes/Basic/Components/Brand/Default.cshtml'.
+2020-05-29 18:13:36.622 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Menu.MainNavbarMenuViewComponent with arguments ([]).
+2020-05-29 18:13:37.449 +08:00 [INF] Authorization was successful.
+2020-05-29 18:13:38.100 +08:00 [INF] Authorization was successful.
+2020-05-29 18:13:38.724 +08:00 [INF] Authorization was successful.
+2020-05-29 18:13:38.738 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Menu.MainNavbarMenuViewComponent in 2115.5848ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-05-29 18:13:38.977 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/Menu/Default.cshtml' started.
+2020-05-29 18:13:39.133 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/Menu/Default.cshtml' completed in 155.43880000000001ms.
+2020-05-29 18:13:39.133 +08:00 [DBG] Using precompiled view for '~/Themes/Basic/Components/Menu/Default.cshtml'.
+2020-05-29 18:13:39.410 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/Menu/_MenuItem.cshtml' started.
+2020-05-29 18:13:39.550 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/Menu/_MenuItem.cshtml' completed in 140.0676ms.
+2020-05-29 18:13:39.551 +08:00 [DBG] Using precompiled view for '~/Themes/Basic/Components/Menu/_MenuItem.cshtml'.
+2020-05-29 18:13:39.566 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Toolbar.MainNavbarToolbarViewComponent with arguments ([]).
+2020-05-29 18:13:39.575 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Toolbar.MainNavbarToolbarViewComponent in 8.9266ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-05-29 18:13:39.831 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/Toolbar/Default.cshtml' started.
+2020-05-29 18:13:39.954 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/Toolbar/Default.cshtml' completed in 122.5066ms.
+2020-05-29 18:13:39.954 +08:00 [DBG] Using precompiled view for '~/Themes/Basic/Components/Toolbar/Default.cshtml'.
+2020-05-29 18:13:39.960 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Toolbar.LanguageSwitch.LanguageSwitchViewComponent with arguments ([]).
+2020-05-29 18:13:39.966 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Toolbar.LanguageSwitch.LanguageSwitchViewComponent in 5.559ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-05-29 18:13:40.126 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/Toolbar/LanguageSwitch/Default.cshtml' started.
+2020-05-29 18:13:40.229 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/Toolbar/LanguageSwitch/Default.cshtml' completed in 102.86710000000001ms.
+2020-05-29 18:13:40.230 +08:00 [DBG] Using precompiled view for '~/Themes/Basic/Components/Toolbar/LanguageSwitch/Default.cshtml'.
+2020-05-29 18:13:40.237 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Toolbar.UserMenu.UserMenuViewComponent with arguments ([]).
+2020-05-29 18:13:40.240 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.Toolbar.UserMenu.UserMenuViewComponent in 3.4003ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-05-29 18:13:40.421 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/Toolbar/UserMenu/Default.cshtml' started.
+2020-05-29 18:13:40.515 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/Toolbar/UserMenu/Default.cshtml' completed in 93.7711ms.
+2020-05-29 18:13:40.516 +08:00 [DBG] Using precompiled view for '~/Themes/Basic/Components/Toolbar/UserMenu/Default.cshtml'.
+2020-05-29 18:13:40.524 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.PageAlerts.PageAlertsViewComponent with arguments ([""]).
+2020-05-29 18:13:40.526 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.Themes.Basic.Components.PageAlerts.PageAlertsViewComponent in 2.0515ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-05-29 18:13:40.668 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/PageAlerts/Default.cshtml' started.
+2020-05-29 18:13:40.796 +08:00 [DBG] Compilation of the generated code for the Razor file at '/Themes/Basic/Components/PageAlerts/Default.cshtml' completed in 127.298ms.
+2020-05-29 18:13:40.797 +08:00 [DBG] Using precompiled view for '~/Themes/Basic/Components/PageAlerts/Default.cshtml'.
+2020-05-29 18:13:40.810 +08:00 [DBG] Added bundle 'Basic.Global' to the page in 5.56 ms.
+2020-05-29 18:13:40.816 +08:00 [DBG] Added bundle 'A4B2578EBCCAF48D15D84F95F6B828FB' to the page in 0.55 ms.
+2020-05-29 18:13:40.816 +08:00 [DBG] Executing view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent with arguments (["Body.Last","Application"]).
+2020-05-29 18:13:40.817 +08:00 [DBG] Executed view component Volo.Abp.AspNetCore.Mvc.UI.Components.LayoutHook.LayoutHookViewComponent in 0.0056ms and returned Microsoft.AspNetCore.Mvc.ViewComponents.ViewViewComponentResult
+2020-05-29 18:13:41.197 +08:00 [INF] Executed page /Index in 7330.7696000000005ms
+2020-05-29 18:13:41.316 +08:00 [INF] Request finished in 18153.1086ms 200 text/html; charset=utf-8
+2020-05-29 18:13:41.393 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/abp/core/abp.css?_v=636985878835379192  
+2020-05-29 18:13:41.396 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/bootstrap/css/bootstrap.css?_v=636985878835691875  
+2020-05-29 18:13:41.396 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/font-awesome/css/font-awesome.css?_v=636985878836628893  
+2020-05-29 18:13:41.401 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/select2/css/select2.min.css?_v=636985878840534491  
+2020-05-29 18:13:41.401 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/toastr/toastr.min.css?_v=636985878844595760  
+2020-05-29 18:13:41.401 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css?_v=636985878840221782  
+2020-05-29 18:13:41.403 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/datatables.net-bs4/css/dataTables.bootstrap4.css?_v=636985878836160518  
+2020-05-29 18:13:41.403 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/themes/basic/layout.css?_v=636971168100000000  
+2020-05-29 18:13:41.733 +08:00 [INF] Sending file. Request path: '/themes/basic/layout.css'. Physical path: '/wwwroot/themes/basic/layout.css'
+2020-05-29 18:13:41.733 +08:00 [INF] Request finished in 330.1608ms 200 text/css
+2020-05-29 18:13:41.744 +08:00 [INF] Sending file. Request path: '/libs/abp/core/abp.css'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\abp\core\abp.css'
+2020-05-29 18:13:41.744 +08:00 [INF] Sending file. Request path: '/libs/datatables.net-bs4/css/dataTables.bootstrap4.css'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\datatables.net-bs4\css\dataTables.bootstrap4.css'
+2020-05-29 18:13:41.744 +08:00 [INF] Sending file. Request path: '/libs/toastr/toastr.min.css'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\toastr\toastr.min.css'
+2020-05-29 18:13:41.744 +08:00 [INF] Request finished in 350.9615ms 200 text/css
+2020-05-29 18:13:41.744 +08:00 [INF] Request finished in 341.1492ms 200 text/css
+2020-05-29 18:13:41.744 +08:00 [INF] Request finished in 343.2292ms 200 text/css
+2020-05-29 18:13:41.744 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/Pages/Index.css?_v=636985878834910814  
+2020-05-29 18:13:41.744 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/jquery/jquery.js?_v=636985878838972082  
+2020-05-29 18:13:41.744 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/abp/aspnetcore-mvc-ui-theme-shared/datatables/datatables-styles.css?_v=636971167960000000  
+2020-05-29 18:13:41.744 +08:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/datatables/datatables-styles.css'. Physical path: '/wwwroot/libs/abp/aspnetcore_mvc_ui_theme_shared/datatables/datatables-styles.css'
+2020-05-29 18:13:41.744 +08:00 [INF] Request finished in 0.3724ms 200 text/css
+2020-05-29 18:13:41.744 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/abp/jquery/abp.jquery.js?_v=636985878835535393  
+2020-05-29 18:13:41.755 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js?_v=636985878837253752  
+2020-05-29 18:13:41.758 +08:00 [INF] Sending file. Request path: '/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\malihu-custom-scrollbar-plugin\jquery.mCustomScrollbar.css'
+2020-05-29 18:13:41.758 +08:00 [INF] Request finished in 357.8275ms 200 text/css
+2020-05-29 18:13:41.758 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/abp/core/abp.js?_v=636985878835535393  
+2020-05-29 18:13:41.758 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/lodash/lodash.min.js?_v=636985878839440728  
+2020-05-29 18:13:41.762 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/bootstrap/js/bootstrap.bundle.js?_v=636985878835691875  
+2020-05-29 18:13:41.779 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/jquery-validation/jquery.validate.js?_v=636985878837409975  
+2020-05-29 18:13:41.802 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/jquery-form/jquery.form.min.js?_v=636985878837097632  
+2020-05-29 18:13:41.803 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/select2/js/select2.min.js?_v=636985878842408780  
+2020-05-29 18:13:41.804 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/datatables.net/js/jquery.dataTables.js?_v=636985878836316474  
+2020-05-29 18:13:41.813 +08:00 [INF] Sending file. Request path: '/libs/jquery-validation/jquery.validate.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\jquery-validation\jquery.validate.js'
+2020-05-29 18:13:41.814 +08:00 [INF] Request finished in 35.0439ms 200 application/javascript
+2020-05-29 18:13:41.814 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/datatables.net-bs4/js/dataTables.bootstrap4.js?_v=636985878836160518  
+2020-05-29 18:13:41.844 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/toastr/toastr.min.js?_v=636985878844595760  
+2020-05-29 18:13:41.845 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/sweetalert/sweetalert.min.js?_v=636985878842721499  
+2020-05-29 18:13:41.876 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js?_v=636985878839909632  
+2020-05-29 18:13:41.877 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/timeago/jquery.timeago.js?_v=636985878842877720  
+2020-05-29 18:13:41.878 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/abp/aspnetcore-mvc-ui-theme-shared/jquery/jquery-extensions.js?_v=636971167960000000  
+2020-05-29 18:13:41.878 +08:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/jquery/jquery-extensions.js'. Physical path: '/wwwroot/libs/abp/aspnetcore_mvc_ui_theme_shared/jquery/jquery-extensions.js'
+2020-05-29 18:13:41.878 +08:00 [INF] Request finished in 0.4276ms 200 application/javascript
+2020-05-29 18:13:41.878 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/abp/aspnetcore-mvc-ui-theme-shared/jquery-form/jquery-form-extensions.js?_v=636971167960000000  
+2020-05-29 18:13:41.878 +08:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/jquery-form/jquery-form-extensions.js'. Physical path: '/wwwroot/libs/abp/aspnetcore_mvc_ui_theme_shared/jquery_form/jquery-form-extensions.js'
+2020-05-29 18:13:41.878 +08:00 [INF] Request finished in 0.2256ms 200 application/javascript
+2020-05-29 18:13:41.879 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/abp/aspnetcore-mvc-ui-theme-shared/bootstrap/dom-event-handlers.js?_v=636971167960000000  
+2020-05-29 18:13:41.879 +08:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/bootstrap/dom-event-handlers.js'. Physical path: '/wwwroot/libs/abp/aspnetcore_mvc_ui_theme_shared/bootstrap/dom-event-handlers.js'
+2020-05-29 18:13:41.879 +08:00 [INF] Request finished in 0.203ms 200 application/javascript
+2020-05-29 18:13:41.879 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/abp/aspnetcore-mvc-ui-theme-shared/bootstrap/modal-manager.js?_v=636971167960000000  
+2020-05-29 18:13:41.879 +08:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/bootstrap/modal-manager.js'. Physical path: '/wwwroot/libs/abp/aspnetcore_mvc_ui_theme_shared/bootstrap/modal-manager.js'
+2020-05-29 18:13:41.879 +08:00 [INF] Request finished in 0.2106ms 200 application/javascript
+2020-05-29 18:13:41.879 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/abp/aspnetcore-mvc-ui-theme-shared/datatables/datatables-extensions.js?_v=636971167960000000  
+2020-05-29 18:13:41.879 +08:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/datatables/datatables-extensions.js'. Physical path: '/wwwroot/libs/abp/aspnetcore_mvc_ui_theme_shared/datatables/datatables-extensions.js'
+2020-05-29 18:13:41.879 +08:00 [INF] Request finished in 0.2735ms 200 application/javascript
+2020-05-29 18:13:41.879 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/abp/aspnetcore-mvc-ui-theme-shared/sweetalert/abp-sweetalert.js?_v=636971167960000000  
+2020-05-29 18:13:41.880 +08:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/sweetalert/abp-sweetalert.js'. Physical path: '/wwwroot/libs/abp/aspnetcore_mvc_ui_theme_shared/sweetalert/abp-sweetalert.js'
+2020-05-29 18:13:41.880 +08:00 [INF] Request finished in 0.2366ms 200 application/javascript
+2020-05-29 18:13:41.880 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/Pages/Identity/Shared/personal-settings-modal.js?_v=636971172140000000  
+2020-05-29 18:13:41.880 +08:00 [INF] Sending file. Request path: '/Pages/Identity/Shared/personal-settings-modal.js'. Physical path: '/Pages/Identity/Shared/personal-settings-modal.js'
+2020-05-29 18:13:41.880 +08:00 [INF] Request finished in 0.23ms 200 application/javascript
+2020-05-29 18:13:41.880 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/libs/abp/aspnetcore-mvc-ui-theme-shared/toastr/abp-toastr.js?_v=636971167960000000  
+2020-05-29 18:13:41.880 +08:00 [INF] Sending file. Request path: '/libs/abp/aspnetcore-mvc-ui-theme-shared/toastr/abp-toastr.js'. Physical path: '/wwwroot/libs/abp/aspnetcore_mvc_ui_theme_shared/toastr/abp-toastr.js'
+2020-05-29 18:13:41.880 +08:00 [INF] Request finished in 0.2203ms 200 application/javascript
+2020-05-29 18:13:41.880 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/Pages/Identity/Shared/change-password-modal.js?_v=636971172140000000  
+2020-05-29 18:13:41.880 +08:00 [INF] Sending file. Request path: '/Pages/Identity/Shared/change-password-modal.js'. Physical path: '/Pages/Identity/Shared/change-password-modal.js'
+2020-05-29 18:13:41.881 +08:00 [INF] Request finished in 0.319ms 200 application/javascript
+2020-05-29 18:13:41.881 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/Pages/Abp/MultiTenancy/tenant-switch.js?_v=636971167960000000  
+2020-05-29 18:13:41.881 +08:00 [INF] Sending file. Request path: '/Pages/Abp/MultiTenancy/tenant-switch.js'. Physical path: '/Pages/Abp/MultiTenancy/tenant-switch.js'
+2020-05-29 18:13:41.881 +08:00 [INF] Request finished in 0.5238ms 200 application/javascript
+2020-05-29 18:13:41.881 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/themes/basic/layout.js?_v=636971168100000000  
+2020-05-29 18:13:41.882 +08:00 [INF] Sending file. Request path: '/themes/basic/layout.js'. Physical path: '/wwwroot/themes/basic/layout.js'
+2020-05-29 18:13:41.882 +08:00 [INF] Request finished in 0.336ms 200 application/javascript
+2020-05-29 18:13:41.882 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/Pages/Index.js?_v=636985878834910814  
+2020-05-29 18:13:41.885 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/Abp/ApplicationConfigurationScript  
+2020-05-29 18:13:41.885 +08:00 [DBG] The request path /Abp/ApplicationConfigurationScript does not match a supported file type
+2020-05-29 18:13:41.895 +08:00 [INF] Sending file. Request path: '/Pages/Index.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\Pages\Index.js'
+2020-05-29 18:13:41.895 +08:00 [INF] Request finished in 13.1843ms 200 application/javascript
+2020-05-29 18:13:41.895 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/Abp/ServiceProxyScript  
+2020-05-29 18:13:41.895 +08:00 [DBG] The request path /Abp/ServiceProxyScript does not match a supported file type
+2020-05-29 18:13:41.895 +08:00 [INF] Sending file. Request path: '/Pages/Index.css'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\Pages\Index.css'
+2020-05-29 18:13:41.895 +08:00 [INF] Request finished in 151.3715ms 200 text/css
+2020-05-29 18:13:41.895 +08:00 [INF] Sending file. Request path: '/libs/select2/css/select2.min.css'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\select2\css\select2.min.css'
+2020-05-29 18:13:41.895 +08:00 [INF] Request finished in 494.7982ms 200 text/css
+2020-05-29 18:13:41.895 +08:00 [INF] Sending file. Request path: '/libs/font-awesome/css/font-awesome.css'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\font-awesome\css\font-awesome.css'
+2020-05-29 18:13:41.895 +08:00 [INF] Request finished in 498.9749ms 200 text/css
+2020-05-29 18:13:41.895 +08:00 [INF] Sending file. Request path: '/libs/abp/jquery/abp.jquery.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\abp\jquery\abp.jquery.js'
+2020-05-29 18:13:41.895 +08:00 [INF] Request finished in 151.2703ms 200 application/javascript
+2020-05-29 18:13:41.896 +08:00 [INF] Sending file. Request path: '/libs/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js'
+2020-05-29 18:13:41.896 +08:00 [INF] Request finished in 140.9409ms 200 application/javascript
+2020-05-29 18:13:41.904 +08:00 [INF] Sending file. Request path: '/libs/abp/core/abp.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\abp\core\abp.js'
+2020-05-29 18:13:41.904 +08:00 [INF] Request finished in 145.264ms 200 application/javascript
+2020-05-29 18:13:41.904 +08:00 [INF] Sending file. Request path: '/libs/datatables.net-bs4/js/dataTables.bootstrap4.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\datatables.net-bs4\js\dataTables.bootstrap4.js'
+2020-05-29 18:13:41.904 +08:00 [INF] Request finished in 89.9075ms 200 application/javascript
+2020-05-29 18:13:41.904 +08:00 [INF] Sending file. Request path: '/libs/jquery-form/jquery.form.min.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\jquery-form\jquery.form.min.js'
+2020-05-29 18:13:41.904 +08:00 [INF] Request finished in 101.7518ms 200 application/javascript
+2020-05-29 18:13:41.905 +08:00 [INF] Sending file. Request path: '/libs/toastr/toastr.min.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\toastr\toastr.min.js'
+2020-05-29 18:13:41.905 +08:00 [INF] Sending file. Request path: '/libs/sweetalert/sweetalert.min.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\sweetalert\sweetalert.min.js'
+2020-05-29 18:13:41.905 +08:00 [INF] Request finished in 60.4727ms 200 application/javascript
+2020-05-29 18:13:41.905 +08:00 [INF] Request finished in 59.9175ms 200 application/javascript
+2020-05-29 18:13:41.926 +08:00 [INF] Sending file. Request path: '/libs/timeago/jquery.timeago.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\timeago\jquery.timeago.js'
+2020-05-29 18:13:41.926 +08:00 [INF] Request finished in 49.1655ms 200 application/javascript
+2020-05-29 18:13:41.939 +08:00 [INF] Sending file. Request path: '/libs/select2/js/select2.min.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\select2\js\select2.min.js'
+2020-05-29 18:13:41.939 +08:00 [INF] Request finished in 136.3128ms 200 application/javascript
+2020-05-29 18:13:41.940 +08:00 [INF] Sending file. Request path: '/libs/bootstrap/js/bootstrap.bundle.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\bootstrap\js\bootstrap.bundle.js'
+2020-05-29 18:13:41.940 +08:00 [INF] Request finished in 177.5073ms 200 application/javascript
+2020-05-29 18:13:41.940 +08:00 [INF] Sending file. Request path: '/libs/jquery/jquery.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\jquery\jquery.js'
+2020-05-29 18:13:41.939 +08:00 [INF] Sending file. Request path: '/libs/lodash/lodash.min.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\lodash\lodash.min.js'
+2020-05-29 18:13:41.940 +08:00 [INF] Request finished in 195.9773ms 200 application/javascript
+2020-05-29 18:13:41.940 +08:00 [INF] Request finished in 181.3249ms 200 application/javascript
+2020-05-29 18:13:41.944 +08:00 [INF] Sending file. Request path: '/libs/datatables.net/js/jquery.dataTables.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\datatables.net\js\jquery.dataTables.js'
+2020-05-29 18:13:41.944 +08:00 [INF] Request finished in 140.3331ms 200 application/javascript
+2020-05-29 18:13:42.293 +08:00 [INF] Sending file. Request path: '/libs/bootstrap/css/bootstrap.css'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\bootstrap\css\bootstrap.css'
+2020-05-29 18:13:42.293 +08:00 [INF] Request finished in 897.0617ms 200 text/css
+2020-05-29 18:13:42.316 +08:00 [INF] Sending file. Request path: '/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js'. Physical path: 'C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\wwwroot\libs\malihu-custom-scrollbar-plugin\jquery.mCustomScrollbar.concat.min.js'
+2020-05-29 18:13:42.316 +08:00 [INF] Request finished in 439.8971ms 200 application/javascript
+2020-05-29 18:13:43.768 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:13:43.770 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:13:43.770 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:13:43.771 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported cultures '["zh-CN"]'.
+2020-05-29 18:13:43.771 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN"]'.
+2020-05-29 18:13:43.771 +08:00 [DBG] The request path  does not match the path filter
+2020-05-29 18:13:43.776 +08:00 [DBG] Request successfully matched the route with name 'null' and template 'Abp/ApplicationConfigurationScript'
+2020-05-29 18:13:43.782 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:13:43.783 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:13:43.783 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:13:43.783 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported cultures '["zh-CN"]'.
+2020-05-29 18:13:43.783 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN"]'.
+2020-05-29 18:13:43.783 +08:00 [DBG] The request path  does not match the path filter
+2020-05-29 18:13:43.784 +08:00 [DBG] Request successfully matched the route with name 'null' and template 'Abp/ServiceProxyScript'
+2020-05-29 18:13:43.803 +08:00 [INF] Route matched with {area = "Abp", action = "Get", controller = "AbpApplicationConfigurationScript", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[System.String] Get() on controller Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController (Volo.Abp.AspNetCore.Mvc).
+2020-05-29 18:13:43.803 +08:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-05-29 18:13:43.803 +08:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-05-29 18:13:43.803 +08:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Volo.Abp.AspNetCore.Mvc.Auditing.AbpAuditActionFilter","Volo.Abp.AspNetCore.Mvc.Features.AbpFeatureActionFilter","Volo.Abp.AspNetCore.Mvc.Validation.AbpValidationActionFilter","Volo.Abp.AspNetCore.Mvc.Uow.AbpUowActionFilter"]
+2020-05-29 18:13:43.803 +08:00 [DBG] Execution plan of exception filters (in the following order): ["Volo.Abp.AspNetCore.Mvc.ExceptionHandling.AbpExceptionFilter"]
+2020-05-29 18:13:43.803 +08:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter","Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-05-29 18:13:43.808 +08:00 [INF] Route matched with {area = "Abp", action = "GetAll", controller = "AbpServiceProxyScript", page = ""}. Executing controller action with signature System.String GetAll(Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel) on controller Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController (Volo.Abp.AspNetCore.Mvc).
+2020-05-29 18:13:43.808 +08:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-05-29 18:13:43.808 +08:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-05-29 18:13:43.808 +08:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Volo.Abp.AspNetCore.Mvc.Auditing.AbpAuditActionFilter","Volo.Abp.AspNetCore.Mvc.Features.AbpFeatureActionFilter","Volo.Abp.AspNetCore.Mvc.Validation.AbpValidationActionFilter","Volo.Abp.AspNetCore.Mvc.Uow.AbpUowActionFilter"]
+2020-05-29 18:13:43.808 +08:00 [DBG] Execution plan of exception filters (in the following order): ["Volo.Abp.AspNetCore.Mvc.ExceptionHandling.AbpExceptionFilter"]
+2020-05-29 18:13:43.808 +08:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter","Microsoft.AspNetCore.Mvc.ProducesAttribute (Order: 0)"]
+2020-05-29 18:13:43.835 +08:00 [DBG] Attempting to bind parameter 'model' of type 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel' ...
+2020-05-29 18:13:43.836 +08:00 [DBG] Attempting to bind model of type 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel' using the name '' in request data ...
+2020-05-29 18:13:43.840 +08:00 [DBG] Could not find a value in the request with name 'Type' for binding property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Type' of type 'System.String'.
+2020-05-29 18:13:43.841 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Type' of type 'System.String'.
+2020-05-29 18:13:43.841 +08:00 [DBG] Could not find a value in the request with name 'UseCache' for binding property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.UseCache' of type 'System.Boolean'.
+2020-05-29 18:13:43.841 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.UseCache' of type 'System.Boolean'.
+2020-05-29 18:13:43.841 +08:00 [DBG] Could not find a value in the request with name 'Modules' for binding property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Modules' of type 'System.String'.
+2020-05-29 18:13:43.841 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Modules' of type 'System.String'.
+2020-05-29 18:13:43.841 +08:00 [DBG] Could not find a value in the request with name 'Controllers' for binding property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Controllers' of type 'System.String'.
+2020-05-29 18:13:43.841 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Controllers' of type 'System.String'.
+2020-05-29 18:13:43.841 +08:00 [DBG] Could not find a value in the request with name 'Actions' for binding property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Actions' of type 'System.String'.
+2020-05-29 18:13:43.842 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel.Actions' of type 'System.String'.
+2020-05-29 18:13:43.842 +08:00 [DBG] Done attempting to bind model of type 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel' using the name ''.
+2020-05-29 18:13:43.842 +08:00 [DBG] Done attempting to bind parameter 'model' of type 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel'.
+2020-05-29 18:13:43.867 +08:00 [INF] Executing action method Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc) - Validation state: "Valid"
+2020-05-29 18:13:43.867 +08:00 [INF] Executing action method Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc) - Validation state: "Valid"
+2020-05-29 18:13:43.948 +08:00 [DBG] ActionApiDescriptionModel.Create: Test.GetAsync
+2020-05-29 18:13:43.953 +08:00 [DBG] ActionApiDescriptionModel.Create: AbpServiceProxyScript.GetAllByModel
+2020-05-29 18:13:43.955 +08:00 [DBG] ActionApiDescriptionModel.Create: AbpLanguages.SwitchByCultureAndUiCultureAndReturnUrl
+2020-05-29 18:13:43.955 +08:00 [DBG] ActionApiDescriptionModel.Create: AbpApplicationConfigurationScript.Get
+2020-05-29 18:13:43.955 +08:00 [DBG] ActionApiDescriptionModel.Create: Account.LoginByLogin
+2020-05-29 18:13:43.955 +08:00 [DBG] ActionApiDescriptionModel.Create: Account.CheckPasswordByLogin
+2020-05-29 18:13:43.956 +08:00 [DBG] ActionApiDescriptionModel.Create: AbpApplicationConfiguration.GetAsync
+2020-05-29 18:13:43.956 +08:00 [DBG] ActionApiDescriptionModel.Create: AbpApiDefinition.Get
+2020-05-29 18:13:43.956 +08:00 [DBG] ActionApiDescriptionModel.Create: Features.GetAsyncByProviderNameAndProviderKey
+2020-05-29 18:13:43.956 +08:00 [DBG] ActionApiDescriptionModel.Create: Features.UpdateAsyncByProviderNameAndProviderKeyAndInput
+2020-05-29 18:13:43.956 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityRole.GetAsyncById
+2020-05-29 18:13:43.956 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityRole.GetListAsyncByInput
+2020-05-29 18:13:43.956 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityRole.CreateAsyncByInput
+2020-05-29 18:13:43.956 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityRole.UpdateAsyncByIdAndInput
+2020-05-29 18:13:43.956 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityRole.DeleteAsyncById
+2020-05-29 18:13:43.956 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityRole.GetAllListAsync
+2020-05-29 18:13:43.957 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.GetAsyncById
+2020-05-29 18:13:43.957 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.GetListAsyncByInput
+2020-05-29 18:13:43.957 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.CreateAsyncByInput
+2020-05-29 18:13:43.957 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.UpdateAsyncByIdAndInput
+2020-05-29 18:13:43.957 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.DeleteAsyncById
+2020-05-29 18:13:43.957 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.GetRolesAsyncById
+2020-05-29 18:13:43.957 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.UpdateRolesAsyncByIdAndInput
+2020-05-29 18:13:43.957 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.FindByUsernameAsyncByUsername
+2020-05-29 18:13:43.957 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityUser.FindByEmailAsyncByEmail
+2020-05-29 18:13:43.957 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityUserLookup.FindByIdAsyncById
+2020-05-29 18:13:43.957 +08:00 [DBG] ActionApiDescriptionModel.Create: IdentityUserLookup.FindByUserNameAsyncByUserName
+2020-05-29 18:13:43.957 +08:00 [DBG] ActionApiDescriptionModel.Create: Profile.GetAsync
+2020-05-29 18:13:43.957 +08:00 [DBG] ActionApiDescriptionModel.Create: Profile.UpdateAsyncByInput
+2020-05-29 18:13:43.957 +08:00 [DBG] ActionApiDescriptionModel.Create: Profile.ChangePasswordAsyncByCurrentPasswordAndNewPassword
+2020-05-29 18:13:43.958 +08:00 [DBG] ActionApiDescriptionModel.Create: Permissions.GetAsyncByProviderNameAndProviderKey
+2020-05-29 18:13:43.958 +08:00 [DBG] ActionApiDescriptionModel.Create: Permissions.UpdateAsyncByProviderNameAndProviderKeyAndInput
+2020-05-29 18:13:43.958 +08:00 [DBG] ActionApiDescriptionModel.Create: Tenant.GetAsyncById
+2020-05-29 18:13:43.958 +08:00 [DBG] ActionApiDescriptionModel.Create: Tenant.GetListAsyncByInput
+2020-05-29 18:13:43.958 +08:00 [DBG] ActionApiDescriptionModel.Create: Tenant.CreateAsyncByInput
+2020-05-29 18:13:43.958 +08:00 [DBG] ActionApiDescriptionModel.Create: Tenant.UpdateAsyncByIdAndInput
+2020-05-29 18:13:43.958 +08:00 [DBG] ActionApiDescriptionModel.Create: Tenant.DeleteAsyncById
+2020-05-29 18:13:43.958 +08:00 [DBG] ActionApiDescriptionModel.Create: Tenant.GetDefaultConnectionStringAsyncById
+2020-05-29 18:13:43.958 +08:00 [DBG] ActionApiDescriptionModel.Create: Tenant.UpdateDefaultConnectionStringAsyncByIdAndDefaultConnectionString
+2020-05-29 18:13:43.958 +08:00 [DBG] ActionApiDescriptionModel.Create: Tenant.DeleteDefaultConnectionStringAsyncById
+2020-05-29 18:13:43.958 +08:00 [DBG] ActionApiDescriptionModel.Create: Bookmark.GetPagedAsyncByInput
+2020-05-29 18:13:43.958 +08:00 [DBG] ActionApiDescriptionModel.Create: Bookmark.GetListAsyncByInput
+2020-05-29 18:13:43.958 +08:00 [DBG] ActionApiDescriptionModel.Create: Bookmark.CreateAsyncByInput
+2020-05-29 18:13:43.958 +08:00 [DBG] ActionApiDescriptionModel.Create: Bookmark.GetAsyncById
+2020-05-29 18:13:43.958 +08:00 [DBG] ActionApiDescriptionModel.Create: Bookmark.UpdateAsyncByIdAndInput
+2020-05-29 18:13:43.958 +08:00 [DBG] ActionApiDescriptionModel.Create: Bookmark.UpdateReadAsyncByIdAndIsRead
+2020-05-29 18:13:43.959 +08:00 [DBG] ActionApiDescriptionModel.Create: Bookmark.DeleteAsyncById
+2020-05-29 18:13:43.959 +08:00 [DBG] ActionApiDescriptionModel.Create: Category.GetAsyncById
+2020-05-29 18:13:43.959 +08:00 [DBG] ActionApiDescriptionModel.Create: Category.GetListAsyncByInput
+2020-05-29 18:13:43.959 +08:00 [DBG] ActionApiDescriptionModel.Create: Category.CreateAsyncByInput
+2020-05-29 18:13:43.959 +08:00 [DBG] ActionApiDescriptionModel.Create: Category.UpdateAsyncByIdAndInput
+2020-05-29 18:13:43.959 +08:00 [DBG] ActionApiDescriptionModel.Create: Category.DeleteAsyncById
+2020-05-29 18:13:43.959 +08:00 [DBG] ActionApiDescriptionModel.Create: Tag.GetPopularTagsByBlogIdAndInput
+2020-05-29 18:13:43.959 +08:00 [DBG] ActionApiDescriptionModel.Create: Task.CreateAsyncByInput
+2020-05-29 18:13:43.959 +08:00 [DBG] ActionApiDescriptionModel.Create: Task.GetAsyncById
+2020-05-29 18:13:43.959 +08:00 [DBG] ActionApiDescriptionModel.Create: Task.UpdateAsyncByIdAndInput
+2020-05-29 18:13:43.959 +08:00 [DBG] ActionApiDescriptionModel.Create: Task.DeleteAsyncById
+2020-05-29 18:13:43.959 +08:00 [DBG] ActionApiDescriptionModel.Create: Task.GetListAsyncByInput
+2020-05-29 18:13:43.988 +08:00 [INF] Executed action method Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 119.1036ms.
+2020-05-29 18:13:43.991 +08:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"]
+2020-05-29 18:13:43.993 +08:00 [DBG] No information found on request to perform content negotiation.
+2020-05-29 18:13:43.993 +08:00 [DBG] Attempting to select the first output formatter in the output formatters list which supports a content type from the explicitly specified content types '["text/javascript","text/plain"]'.
+2020-05-29 18:13:43.993 +08:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2020-05-29 18:13:43.993 +08:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2020-05-29 18:13:43.993 +08:00 [INF] Executed action Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc) in 185.2945ms
+2020-05-29 18:13:43.993 +08:00 [INF] Request finished in 2098.5314ms 200 text/plain; charset=utf-8
+2020-05-29 18:13:44.076 +08:00 [INF] Authorization was successful.
+2020-05-29 18:13:44.524 +08:00 [INF] Authorization was successful.
+2020-05-29 18:13:44.950 +08:00 [INF] Authorization was successful.
+2020-05-29 18:13:45.376 +08:00 [INF] Authorization was successful.
+2020-05-29 18:13:45.802 +08:00 [INF] Authorization was successful.
+2020-05-29 18:13:45.973 +08:00 [INF] Authorization was successful.
+2020-05-29 18:13:46.399 +08:00 [INF] Authorization was successful.
+2020-05-29 18:13:46.819 +08:00 [INF] Authorization was successful.
+2020-05-29 18:13:47.238 +08:00 [INF] Authorization was successful.
+2020-05-29 18:13:47.661 +08:00 [INF] Authorization was successful.
+2020-05-29 18:13:47.662 +08:00 [INF] Authorization failed.
+2020-05-29 18:13:47.833 +08:00 [INF] Authorization was successful.
+2020-05-29 18:13:48.251 +08:00 [INF] Authorization was successful.
+2020-05-29 18:13:48.670 +08:00 [INF] Authorization was successful.
+2020-05-29 18:13:49.089 +08:00 [INF] Authorization was successful.
+2020-05-29 18:13:49.511 +08:00 [INF] Authorization was successful.
+2020-05-29 18:13:49.930 +08:00 [INF] Authorization was successful.
+2020-05-29 18:13:50.349 +08:00 [INF] Authorization was successful.
+2020-05-29 18:13:50.766 +08:00 [INF] Authorization was successful.
+2020-05-29 18:13:51.186 +08:00 [INF] Authorization was successful.
+2020-05-29 18:13:51.605 +08:00 [INF] Authorization was successful.
+2020-05-29 18:13:52.145 +08:00 [INF] Executed action method Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 8277.1334ms.
+2020-05-29 18:13:52.152 +08:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"]
+2020-05-29 18:13:52.153 +08:00 [DBG] No information found on request to perform content negotiation.
+2020-05-29 18:13:52.153 +08:00 [DBG] Attempting to select the first output formatter in the output formatters list which supports a content type from the explicitly specified content types '["text/javascript","text/plain"]'.
+2020-05-29 18:13:52.153 +08:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2020-05-29 18:13:52.153 +08:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2020-05-29 18:13:52.153 +08:00 [INF] Executed action Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc) in 8349.2557ms
+2020-05-29 18:13:52.153 +08:00 [INF] Request finished in 10268.0749ms 200 text/plain; charset=utf-8
+2020-05-29 18:13:52.173 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/favicon.ico  
+2020-05-29 18:13:52.174 +08:00 [DBG] The request path /favicon.ico does not match an existing file
+2020-05-29 18:13:54.049 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:13:54.049 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:13:54.050 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:13:54.050 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported cultures '["zh-CN"]'.
+2020-05-29 18:13:54.050 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN"]'.
+2020-05-29 18:13:54.050 +08:00 [DBG] The request path  does not match the path filter
+2020-05-29 18:13:54.051 +08:00 [DBG] Request successfully matched the route with name 'defaultWithArea' and template '{area}/{controller=Home}/{action=Index}/{id?}'
+2020-05-29 18:13:54.053 +08:00 [DBG] No actions matched the current request. Route values: ["area=favicon.ico","controller=Home","action=Index"]
+2020-05-29 18:13:54.053 +08:00 [DBG] No actions matched the current request. Route values: ["area=favicon.ico","controller=Home","action=Index"]
+2020-05-29 18:13:54.053 +08:00 [DBG] Request successfully matched the route with name 'default' and template '{controller=Home}/{action=Index}/{id?}'
+2020-05-29 18:13:54.053 +08:00 [DBG] No actions matched the current request. Route values: ["controller=favicon.ico","action=Index"]
+2020-05-29 18:13:54.053 +08:00 [DBG] No actions matched the current request. Route values: ["controller=favicon.ico","action=Index"]
+2020-05-29 18:13:54.053 +08:00 [DBG] Request did not match any routes
+2020-05-29 18:13:54.056 +08:00 [INF] Request finished in 1882.1637ms 404 
+2020-05-29 18:14:09.135 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/swagger  
+2020-05-29 18:14:09.135 +08:00 [DBG] The request path /swagger does not match a supported file type
+2020-05-29 18:14:11.013 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:11.014 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:11.014 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:11.014 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported cultures '["zh-CN"]'.
+2020-05-29 18:14:11.014 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN"]'.
+2020-05-29 18:14:11.014 +08:00 [INF] Request finished in 1879.3474ms 301 
+2020-05-29 18:14:11.016 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/swagger  
+2020-05-29 18:14:11.016 +08:00 [DBG] The request path /swagger does not match a supported file type
+2020-05-29 18:14:11.018 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/swagger/index.html  
+2020-05-29 18:14:11.019 +08:00 [DBG] The request path /swagger/index.html does not match an existing file
+2020-05-29 18:14:12.900 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:12.901 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:12.901 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:12.901 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported cultures '["zh-CN"]'.
+2020-05-29 18:14:12.902 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN"]'.
+2020-05-29 18:14:12.917 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:12.917 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:12.917 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:12.917 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported cultures '["zh-CN"]'.
+2020-05-29 18:14:12.917 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN"]'.
+2020-05-29 18:14:12.918 +08:00 [INF] Request finished in 1902.0258ms 301 
+2020-05-29 18:14:12.937 +08:00 [INF] Request finished in 1918.7009ms 200 text/html
+2020-05-29 18:14:12.940 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/swagger/index.html  
+2020-05-29 18:14:12.940 +08:00 [DBG] The request path /swagger/index.html does not match an existing file
+2020-05-29 18:14:12.970 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/swagger/swagger-ui-bundle.js  
+2020-05-29 18:14:12.970 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/swagger/swagger-ui.css  
+2020-05-29 18:14:12.971 +08:00 [DBG] The request path /swagger/swagger-ui-bundle.js does not match an existing file
+2020-05-29 18:14:12.971 +08:00 [DBG] The request path /swagger/swagger-ui.css does not match an existing file
+2020-05-29 18:14:12.972 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/swagger/swagger-ui-standalone-preset.js  
+2020-05-29 18:14:12.972 +08:00 [DBG] The request path /swagger/swagger-ui-standalone-preset.js does not match an existing file
+2020-05-29 18:14:13.128 +08:00 [DBG] Connection ID "18374686498462105744" disconnecting.
+2020-05-29 18:14:13.129 +08:00 [DBG] Connection ID "18230571310386251484" disconnecting.
+2020-05-29 18:14:13.129 +08:00 [DBG] Connection ID "18086456122310393928" disconnecting.
+2020-05-29 18:14:13.176 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:13.176 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:13.176 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:13.476 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:13.477 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:13.481 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:13.482 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:13.684 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:13.685 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:13.694 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:13.695 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:13.705 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:13.705 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:13.892 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:13.892 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:13.908 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:13.908 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:13.926 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:13.927 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:14.100 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:14.100 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:14.121 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:14.122 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:14.147 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:14.148 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:14.307 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:14.307 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:14.335 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:14.335 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:14.369 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:14.369 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:14.514 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:14.515 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:14.548 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:14.548 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:14.590 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:14.590 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:14.722 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:14.722 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:14.760 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:14.761 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:14.811 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:14.812 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:14.819 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:14.819 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:14.819 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:14.819 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported cultures '["zh-CN"]'.
+2020-05-29 18:14:14.819 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN"]'.
+2020-05-29 18:14:14.820 +08:00 [INF] Request finished in 1880.7563ms 200 text/html
+2020-05-29 18:14:14.844 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/swagger/swagger-ui-bundle.js  
+2020-05-29 18:14:14.844 +08:00 [DBG] The request path /swagger/swagger-ui-bundle.js does not match an existing file
+2020-05-29 18:14:14.845 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/swagger/swagger-ui.css  
+2020-05-29 18:14:14.846 +08:00 [DBG] The request path /swagger/swagger-ui.css does not match an existing file
+2020-05-29 18:14:14.847 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/swagger/swagger-ui-standalone-preset.js  
+2020-05-29 18:14:14.848 +08:00 [DBG] The request path /swagger/swagger-ui-standalone-preset.js does not match an existing file
+2020-05-29 18:14:14.930 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:14.931 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:14.974 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:14.975 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:15.032 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:15.033 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:15.140 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:15.141 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:15.187 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:15.187 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:15.255 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:15.255 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:15.348 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:15.349 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:15.399 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:15.400 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:15.476 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:15.476 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:15.557 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:15.558 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:15.613 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:15.613 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:15.696 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:15.697 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:15.766 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:15.766 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:15.827 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:15.827 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:15.917 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:15.917 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:15.974 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:15.974 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:16.039 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:16.040 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:16.137 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:16.137 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:16.182 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:16.182 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:16.252 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:16.252 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:16.357 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:16.357 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:16.389 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:16.390 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:16.464 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:16.465 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:16.577 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:16.578 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:16.596 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:16.597 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:16.678 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:16.679 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:16.719 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:16.719 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:16.719 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:16.719 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:16.719 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:16.719 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:16.719 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported cultures '["zh-CN"]'.
+2020-05-29 18:14:16.719 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported cultures '["zh-CN"]'.
+2020-05-29 18:14:16.719 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN"]'.
+2020-05-29 18:14:16.719 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN"]'.
+2020-05-29 18:14:16.728 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:16.728 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:16.728 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:16.728 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported cultures '["zh-CN"]'.
+2020-05-29 18:14:16.728 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN"]'.
+2020-05-29 18:14:16.800 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:16.800 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:16.804 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:16.805 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:16.891 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:16.891 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:16.898 +08:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2020-05-29 18:14:16.898 +08:00 [INF] Request finished in 2052.8235ms 200 text/css
+2020-05-29 18:14:17.012 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:17.012 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:17.020 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:17.020 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:17.043 +08:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2020-05-29 18:14:17.043 +08:00 [INF] Request finished in 2196.0296ms 200 application/javascript
+2020-05-29 18:14:17.102 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:17.103 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:17.219 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:17.220 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:17.239 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:17.240 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:17.316 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:17.317 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:17.427 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:17.427 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:17.428 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:17.428 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:17.428 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported cultures '["zh-CN"]'.
+2020-05-29 18:14:17.428 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN"]'.
+2020-05-29 18:14:17.428 +08:00 [DBG] The file transmission was cancelled
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.AspNetCore.Http.Extensions.StreamCopyOperation.CopyToAsync(Stream source, Stream destination, Nullable`1 count, Int32 bufferSize, CancellationToken cancel)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileContext.SendAsync()
+2020-05-29 18:14:17.460 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:17.466 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:17.512 +08:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2020-05-29 18:14:17.512 +08:00 [INF] Request finished in 4541.2271ms 0 application/javascript
+2020-05-29 18:14:17.530 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:17.530 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:17.531 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:17.531 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:17.531 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported cultures '["zh-CN"]'.
+2020-05-29 18:14:17.531 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN"]'.
+2020-05-29 18:14:17.531 +08:00 [DBG] The file transmission was cancelled
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.AspNetCore.Http.Extensions.StreamCopyOperation.CopyToAsync(Stream source, Stream destination, Nullable`1 count, Int32 bufferSize, CancellationToken cancel)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileContext.SendAsync()
+2020-05-29 18:14:17.531 +08:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2020-05-29 18:14:17.531 +08:00 [INF] Request finished in 4559.5296ms 0 application/javascript
+2020-05-29 18:14:17.554 +08:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2020-05-29 18:14:17.555 +08:00 [INF] Request finished in 2710.4684ms 200 application/javascript
+2020-05-29 18:14:17.686 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:17.686 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-05-29 18:14:17.910 +08:00 [WRN] The operation was canceled.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.SetAsync(String key, Byte[] value, DistributedCacheEntryOptions options, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.SetAsync(String key, TCacheItem value, DistributedCacheEntryOptions options, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 273
+2020-05-29 18:14:17.992 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:17.993 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:17.993 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:17.993 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported cultures '["zh-CN"]'.
+2020-05-29 18:14:17.993 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN"]'.
+2020-05-29 18:14:17.993 +08:00 [DBG] The file transmission was cancelled
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Microsoft.AspNetCore.Http.Extensions.StreamCopyOperation.CopyToAsync(Stream source, Stream destination, Nullable`1 count, Int32 bufferSize, CancellationToken cancel)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileContext.SendAsync()
+2020-05-29 18:14:17.993 +08:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2020-05-29 18:14:17.994 +08:00 [INF] Request finished in 5022.9872ms 0 text/css
+2020-05-29 18:14:18.146 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/swagger/v1/swagger.json  
+2020-05-29 18:14:18.146 +08:00 [DBG] The request path /swagger/v1/swagger.json does not match an existing file
+2020-05-29 18:14:20.027 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:20.027 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:20.027 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:14:20.027 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported cultures '["zh-CN"]'.
+2020-05-29 18:14:20.027 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN"]'.
+2020-05-29 18:14:20.506 +08:00 [INF] Request finished in 2360.0631ms 200 application/json;charset=utf-8
+2020-05-29 18:28:22.171 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/api/app/task  
+2020-05-29 18:28:22.171 +08:00 [DBG] The request path /api/app/task does not match a supported file type
+2020-05-29 18:28:24.053 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:28:24.053 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:28:24.053 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:28:24.053 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported cultures '["zh-CN"]'.
+2020-05-29 18:28:24.053 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN"]'.
+2020-05-29 18:28:24.053 +08:00 [DBG] The request path  does not match the path filter
+2020-05-29 18:28:24.054 +08:00 [DBG] Request successfully matched the route with name 'null' and template 'api/app/task'
+2020-05-29 18:28:24.054 +08:00 [DBG] Action 'FC.Notes.Tasks.TaskAppService.CreateAsync (FC.Notes.Application)' with id '9b2304e8-4680-4517-a7dd-26107fecd243' did not match the constraint 'Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint'
+2020-05-29 18:28:24.063 +08:00 [INF] Route matched with {action = "GetListAsync", controller = "Task", area = "", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Volo.Abp.Application.Dtos.PagedResultDto`1[FC.Notes.Tasks.Dtos.TaskDto]] GetListAsync(Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto) on controller FC.Notes.Tasks.TaskAppService (FC.Notes.Application).
+2020-05-29 18:28:24.063 +08:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-05-29 18:28:24.063 +08:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-05-29 18:28:24.063 +08:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Volo.Abp.AspNetCore.Mvc.Auditing.AbpAuditActionFilter","Volo.Abp.AspNetCore.Mvc.Features.AbpFeatureActionFilter","Volo.Abp.AspNetCore.Mvc.Validation.AbpValidationActionFilter","Volo.Abp.AspNetCore.Mvc.Uow.AbpUowActionFilter"]
+2020-05-29 18:28:24.063 +08:00 [DBG] Execution plan of exception filters (in the following order): ["Volo.Abp.AspNetCore.Mvc.ExceptionHandling.AbpExceptionFilter"]
+2020-05-29 18:28:24.063 +08:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-05-29 18:28:24.161 +08:00 [DBG] Attempting to bind parameter 'input' of type 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' ...
+2020-05-29 18:28:24.161 +08:00 [DBG] Attempting to bind model of type 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' using the name '' in request data ...
+2020-05-29 18:28:24.162 +08:00 [DBG] Could not find a value in the request with name 'SkipCount' for binding property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.SkipCount' of type 'System.Int32'.
+2020-05-29 18:28:24.162 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.SkipCount' of type 'System.Int32'.
+2020-05-29 18:28:24.162 +08:00 [DBG] Could not find a value in the request with name 'MaxResultCount' for binding property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.MaxResultCount' of type 'System.Int32'.
+2020-05-29 18:28:24.162 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.MaxResultCount' of type 'System.Int32'.
+2020-05-29 18:28:24.162 +08:00 [DBG] Could not find a value in the request with name 'Sorting' for binding property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.Sorting' of type 'System.String'.
+2020-05-29 18:28:24.162 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.Sorting' of type 'System.String'.
+2020-05-29 18:28:24.162 +08:00 [DBG] Done attempting to bind model of type 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' using the name ''.
+2020-05-29 18:28:24.162 +08:00 [DBG] Done attempting to bind parameter 'input' of type 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto'.
+2020-05-29 18:28:24.164 +08:00 [DBG] ResourceManagerStringLocalizer searched for 'DisplayName:SkipCount' in 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' with culture 'en'.
+2020-05-29 18:28:24.167 +08:00 [DBG] ResourceManagerStringLocalizer searched for 'SkipCount' in 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' with culture 'en'.
+2020-05-29 18:28:24.168 +08:00 [DBG] ResourceManagerStringLocalizer searched for 'DisplayName:MaxResultCount' in 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' with culture 'en'.
+2020-05-29 18:28:24.168 +08:00 [DBG] ResourceManagerStringLocalizer searched for 'MaxResultCount' in 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' with culture 'en'.
+2020-05-29 18:28:24.168 +08:00 [INF] Executing action method FC.Notes.Tasks.TaskAppService.GetListAsync (FC.Notes.Application) - Validation state: "Valid"
+2020-05-29 18:28:24.745 +08:00 [INF] Executed action method FC.Notes.Tasks.TaskAppService.GetListAsync (FC.Notes.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 576.9981ms.
+2020-05-29 18:28:24.761 +08:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"]
+2020-05-29 18:28:24.762 +08:00 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2020-05-29 18:28:24.762 +08:00 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2020-05-29 18:28:24.763 +08:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2020-05-29 18:28:24.763 +08:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2020-05-29 18:28:24.763 +08:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter' and content type 'application/json' to write the response.
+2020-05-29 18:28:24.763 +08:00 [INF] Executing ObjectResult, writing value of type 'Volo.Abp.Application.Dtos.PagedResultDto`1[[FC.Notes.Tasks.Dtos.TaskDto, FC.Notes.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-05-29 18:28:24.772 +08:00 [INF] Executed action FC.Notes.Tasks.TaskAppService.GetListAsync (FC.Notes.Application) in 709.4611ms
+2020-05-29 18:28:24.773 +08:00 [INF] Request finished in 2602.0353ms 200 application/json; charset=utf-8
+2020-05-29 18:28:39.815 +08:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:44329/api/app/task/2aa95b57-84f2-e3cb-ace2-39f552bb3d21  
+2020-05-29 18:28:39.815 +08:00 [DBG] DELETE requests are not supported
+2020-05-29 18:28:39.815 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-05-29 18:28:39.829 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-05-29 18:28:39.836 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-05-29 18:28:39.837 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-05-29 18:28:39.837 +08:00 [DBG] DELETE requests are not supported
+2020-05-29 18:28:39.851 +08:00 [DBG] Request successfully matched the route with name 'null' and template 'api/app/task/{id}'
+2020-05-29 18:28:39.854 +08:00 [DBG] Action 'FC.Notes.Tasks.TaskAppService.GetAsync (FC.Notes.Application)' with id '020e2dcb-1a62-47b5-ae4b-d0cc569af3d9' did not match the constraint 'Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint'
+2020-05-29 18:28:39.854 +08:00 [DBG] Action 'FC.Notes.Tasks.TaskAppService.UpdateAsync (FC.Notes.Application)' with id '5ef74081-2db4-41dc-aa40-511e5f718361' did not match the constraint 'Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint'
+2020-05-29 18:28:39.860 +08:00 [INF] Route matched with {action = "DeleteAsync", controller = "Task", area = "", page = ""}. Executing controller action with signature System.Threading.Tasks.Task DeleteAsync(System.Guid) on controller FC.Notes.Tasks.TaskAppService (FC.Notes.Application).
+2020-05-29 18:28:39.860 +08:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-05-29 18:28:39.860 +08:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-05-29 18:28:39.860 +08:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Volo.Abp.AspNetCore.Mvc.Auditing.AbpAuditActionFilter","Volo.Abp.AspNetCore.Mvc.Features.AbpFeatureActionFilter","Volo.Abp.AspNetCore.Mvc.Validation.AbpValidationActionFilter","Volo.Abp.AspNetCore.Mvc.Uow.AbpUowActionFilter"]
+2020-05-29 18:28:39.860 +08:00 [DBG] Execution plan of exception filters (in the following order): ["Volo.Abp.AspNetCore.Mvc.ExceptionHandling.AbpExceptionFilter"]
+2020-05-29 18:28:39.860 +08:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-05-29 18:28:39.861 +08:00 [DBG] Attempting to bind parameter 'id' of type 'System.Guid' ...
+2020-05-29 18:28:39.861 +08:00 [DBG] Attempting to bind model of type 'System.Guid' using the name 'id' in request data ...
+2020-05-29 18:28:39.862 +08:00 [DBG] Done attempting to bind model of type 'System.Guid' using the name 'id'.
+2020-05-29 18:28:39.862 +08:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Guid'.
+2020-05-29 18:28:39.866 +08:00 [INF] Executing action method FC.Notes.Tasks.TaskAppService.DeleteAsync (FC.Notes.Application) - Validation state: "Valid"
+2020-05-29 18:28:40.072 +08:00 [INF] Executed action method FC.Notes.Tasks.TaskAppService.DeleteAsync (FC.Notes.Application), returned result Microsoft.AspNetCore.Mvc.EmptyResult in 206.1756ms.
+2020-05-29 18:28:40.266 +08:00 [DBG] Added 0 entity changes to the current audit log
+2020-05-29 18:28:40.266 +08:00 [DBG] Added 0 entity changes to the current audit log
+2020-05-29 18:28:40.315 +08:00 [INF] Executed action FC.Notes.Tasks.TaskAppService.DeleteAsync (FC.Notes.Application) in 454.8278ms
+2020-05-29 18:28:40.776 +08:00 [DBG] Added 0 entity changes to the current audit log
+2020-05-29 18:28:40.776 +08:00 [DBG] Added 0 entity changes to the current audit log
+2020-05-29 18:28:40.780 +08:00 [INF] Request finished in 965.0468ms 200 
+2020-05-29 18:28:46.845 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/api/app/task  
+2020-05-29 18:28:46.845 +08:00 [DBG] The request path /api/app/task does not match a supported file type
+2020-05-29 18:28:48.729 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:28:48.730 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:28:48.730 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:28:48.730 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported cultures '["zh-CN"]'.
+2020-05-29 18:28:48.730 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN"]'.
+2020-05-29 18:28:48.730 +08:00 [DBG] The request path  does not match the path filter
+2020-05-29 18:28:48.730 +08:00 [DBG] Request successfully matched the route with name 'null' and template 'api/app/task'
+2020-05-29 18:28:48.730 +08:00 [DBG] Action 'FC.Notes.Tasks.TaskAppService.CreateAsync (FC.Notes.Application)' with id '9b2304e8-4680-4517-a7dd-26107fecd243' did not match the constraint 'Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint'
+2020-05-29 18:28:48.731 +08:00 [INF] Route matched with {action = "GetListAsync", controller = "Task", area = "", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Volo.Abp.Application.Dtos.PagedResultDto`1[FC.Notes.Tasks.Dtos.TaskDto]] GetListAsync(Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto) on controller FC.Notes.Tasks.TaskAppService (FC.Notes.Application).
+2020-05-29 18:28:48.731 +08:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-05-29 18:28:48.731 +08:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-05-29 18:28:48.731 +08:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Volo.Abp.AspNetCore.Mvc.Auditing.AbpAuditActionFilter","Volo.Abp.AspNetCore.Mvc.Features.AbpFeatureActionFilter","Volo.Abp.AspNetCore.Mvc.Validation.AbpValidationActionFilter","Volo.Abp.AspNetCore.Mvc.Uow.AbpUowActionFilter"]
+2020-05-29 18:28:48.731 +08:00 [DBG] Execution plan of exception filters (in the following order): ["Volo.Abp.AspNetCore.Mvc.ExceptionHandling.AbpExceptionFilter"]
+2020-05-29 18:28:48.731 +08:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-05-29 18:28:48.732 +08:00 [DBG] Attempting to bind parameter 'input' of type 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' ...
+2020-05-29 18:28:48.732 +08:00 [DBG] Attempting to bind model of type 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' using the name '' in request data ...
+2020-05-29 18:28:48.732 +08:00 [DBG] Could not find a value in the request with name 'SkipCount' for binding property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.SkipCount' of type 'System.Int32'.
+2020-05-29 18:28:48.732 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.SkipCount' of type 'System.Int32'.
+2020-05-29 18:28:48.732 +08:00 [DBG] Could not find a value in the request with name 'MaxResultCount' for binding property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.MaxResultCount' of type 'System.Int32'.
+2020-05-29 18:28:48.732 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.MaxResultCount' of type 'System.Int32'.
+2020-05-29 18:28:48.732 +08:00 [DBG] Could not find a value in the request with name 'Sorting' for binding property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.Sorting' of type 'System.String'.
+2020-05-29 18:28:48.732 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.Sorting' of type 'System.String'.
+2020-05-29 18:28:48.732 +08:00 [DBG] Done attempting to bind model of type 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' using the name ''.
+2020-05-29 18:28:48.732 +08:00 [DBG] Done attempting to bind parameter 'input' of type 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto'.
+2020-05-29 18:28:48.732 +08:00 [DBG] ResourceManagerStringLocalizer searched for 'DisplayName:SkipCount' in 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' with culture 'en'.
+2020-05-29 18:28:48.732 +08:00 [DBG] ResourceManagerStringLocalizer searched for 'SkipCount' in 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' with culture 'en'.
+2020-05-29 18:28:48.732 +08:00 [DBG] ResourceManagerStringLocalizer searched for 'DisplayName:MaxResultCount' in 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' with culture 'en'.
+2020-05-29 18:28:48.732 +08:00 [DBG] ResourceManagerStringLocalizer searched for 'MaxResultCount' in 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' with culture 'en'.
+2020-05-29 18:28:48.732 +08:00 [INF] Executing action method FC.Notes.Tasks.TaskAppService.GetListAsync (FC.Notes.Application) - Validation state: "Valid"
+2020-05-29 18:28:48.998 +08:00 [INF] Executed action method FC.Notes.Tasks.TaskAppService.GetListAsync (FC.Notes.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 266.031ms.
+2020-05-29 18:28:48.999 +08:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"]
+2020-05-29 18:28:48.999 +08:00 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2020-05-29 18:28:48.999 +08:00 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2020-05-29 18:28:48.999 +08:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2020-05-29 18:28:48.999 +08:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2020-05-29 18:28:48.999 +08:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter' and content type 'application/json' to write the response.
+2020-05-29 18:28:48.999 +08:00 [INF] Executing ObjectResult, writing value of type 'Volo.Abp.Application.Dtos.PagedResultDto`1[[FC.Notes.Tasks.Dtos.TaskDto, FC.Notes.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-05-29 18:28:49.000 +08:00 [INF] Executed action FC.Notes.Tasks.TaskAppService.GetListAsync (FC.Notes.Application) in 268.7776ms
+2020-05-29 18:28:49.000 +08:00 [INF] Request finished in 2155.2351ms 200 application/json; charset=utf-8
+2020-05-29 18:29:14.075 +08:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:44329/api/app/task/2aa95b57-84f2-e3cb-ace2-39f552bb3d21  
+2020-05-29 18:29:14.075 +08:00 [DBG] DELETE requests are not supported
+2020-05-29 18:29:14.075 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-05-29 18:29:14.076 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-05-29 18:29:14.079 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-05-29 18:29:14.079 +08:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2020-05-29 18:29:14.080 +08:00 [DBG] DELETE requests are not supported
+2020-05-29 18:29:14.082 +08:00 [DBG] Request successfully matched the route with name 'null' and template 'api/app/task/{id}'
+2020-05-29 18:29:14.082 +08:00 [DBG] Action 'FC.Notes.Tasks.TaskAppService.GetAsync (FC.Notes.Application)' with id '020e2dcb-1a62-47b5-ae4b-d0cc569af3d9' did not match the constraint 'Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint'
+2020-05-29 18:29:14.082 +08:00 [DBG] Action 'FC.Notes.Tasks.TaskAppService.UpdateAsync (FC.Notes.Application)' with id '5ef74081-2db4-41dc-aa40-511e5f718361' did not match the constraint 'Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint'
+2020-05-29 18:29:14.086 +08:00 [INF] Route matched with {action = "DeleteAsync", controller = "Task", area = "", page = ""}. Executing controller action with signature System.Threading.Tasks.Task DeleteAsync(System.Guid) on controller FC.Notes.Tasks.TaskAppService (FC.Notes.Application).
+2020-05-29 18:29:14.086 +08:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-05-29 18:29:14.086 +08:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-05-29 18:29:14.086 +08:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Volo.Abp.AspNetCore.Mvc.Auditing.AbpAuditActionFilter","Volo.Abp.AspNetCore.Mvc.Features.AbpFeatureActionFilter","Volo.Abp.AspNetCore.Mvc.Validation.AbpValidationActionFilter","Volo.Abp.AspNetCore.Mvc.Uow.AbpUowActionFilter"]
+2020-05-29 18:29:14.086 +08:00 [DBG] Execution plan of exception filters (in the following order): ["Volo.Abp.AspNetCore.Mvc.ExceptionHandling.AbpExceptionFilter"]
+2020-05-29 18:29:14.087 +08:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-05-29 18:29:14.090 +08:00 [DBG] Attempting to bind parameter 'id' of type 'System.Guid' ...
+2020-05-29 18:29:14.090 +08:00 [DBG] Attempting to bind model of type 'System.Guid' using the name 'id' in request data ...
+2020-05-29 18:29:14.090 +08:00 [DBG] Done attempting to bind model of type 'System.Guid' using the name 'id'.
+2020-05-29 18:29:14.090 +08:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Guid'.
+2020-05-29 18:29:14.091 +08:00 [INF] Executing action method FC.Notes.Tasks.TaskAppService.DeleteAsync (FC.Notes.Application) - Validation state: "Valid"
+2020-05-29 18:29:14.270 +08:00 [INF] Executed action method FC.Notes.Tasks.TaskAppService.DeleteAsync (FC.Notes.Application), returned result Microsoft.AspNetCore.Mvc.EmptyResult in 179.2611ms.
+2020-05-29 18:29:14.366 +08:00 [DBG] Added 0 entity changes to the current audit log
+2020-05-29 18:29:14.366 +08:00 [DBG] Added 0 entity changes to the current audit log
+2020-05-29 18:29:14.411 +08:00 [INF] Executed action FC.Notes.Tasks.TaskAppService.DeleteAsync (FC.Notes.Application) in 324.4545ms
+2020-05-29 18:29:14.679 +08:00 [DBG] Added 0 entity changes to the current audit log
+2020-05-29 18:29:14.679 +08:00 [DBG] Added 0 entity changes to the current audit log
+2020-05-29 18:29:14.679 +08:00 [INF] Request finished in 604.4239ms 200 
+2020-05-29 18:29:17.296 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/api/app/task  
+2020-05-29 18:29:17.296 +08:00 [DBG] The request path /api/app/task does not match a supported file type
+2020-05-29 18:29:19.184 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:29:19.185 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:29:19.185 +08:00 [DBG] AuthenticationScheme: Identity.Application was successfully authenticated.
+2020-05-29 18:29:19.185 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported cultures '["zh-CN"]'.
+2020-05-29 18:29:19.185 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN"]'.
+2020-05-29 18:29:19.185 +08:00 [DBG] The request path  does not match the path filter
+2020-05-29 18:29:19.185 +08:00 [DBG] Request successfully matched the route with name 'null' and template 'api/app/task'
+2020-05-29 18:29:19.186 +08:00 [DBG] Action 'FC.Notes.Tasks.TaskAppService.CreateAsync (FC.Notes.Application)' with id '9b2304e8-4680-4517-a7dd-26107fecd243' did not match the constraint 'Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint'
+2020-05-29 18:29:19.186 +08:00 [INF] Route matched with {action = "GetListAsync", controller = "Task", area = "", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Volo.Abp.Application.Dtos.PagedResultDto`1[FC.Notes.Tasks.Dtos.TaskDto]] GetListAsync(Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto) on controller FC.Notes.Tasks.TaskAppService (FC.Notes.Application).
+2020-05-29 18:29:19.186 +08:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-05-29 18:29:19.186 +08:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-05-29 18:29:19.186 +08:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Volo.Abp.AspNetCore.Mvc.Auditing.AbpAuditActionFilter","Volo.Abp.AspNetCore.Mvc.Features.AbpFeatureActionFilter","Volo.Abp.AspNetCore.Mvc.Validation.AbpValidationActionFilter","Volo.Abp.AspNetCore.Mvc.Uow.AbpUowActionFilter"]
+2020-05-29 18:29:19.186 +08:00 [DBG] Execution plan of exception filters (in the following order): ["Volo.Abp.AspNetCore.Mvc.ExceptionHandling.AbpExceptionFilter"]
+2020-05-29 18:29:19.186 +08:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2020-05-29 18:29:19.187 +08:00 [DBG] Attempting to bind parameter 'input' of type 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' ...
+2020-05-29 18:29:19.187 +08:00 [DBG] Attempting to bind model of type 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' using the name '' in request data ...
+2020-05-29 18:29:19.187 +08:00 [DBG] Could not find a value in the request with name 'SkipCount' for binding property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.SkipCount' of type 'System.Int32'.
+2020-05-29 18:29:19.187 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.SkipCount' of type 'System.Int32'.
+2020-05-29 18:29:19.187 +08:00 [DBG] Could not find a value in the request with name 'MaxResultCount' for binding property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.MaxResultCount' of type 'System.Int32'.
+2020-05-29 18:29:19.188 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.MaxResultCount' of type 'System.Int32'.
+2020-05-29 18:29:19.188 +08:00 [DBG] Could not find a value in the request with name 'Sorting' for binding property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.Sorting' of type 'System.String'.
+2020-05-29 18:29:19.188 +08:00 [DBG] Done attempting to bind property 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto.Sorting' of type 'System.String'.
+2020-05-29 18:29:19.188 +08:00 [DBG] Done attempting to bind model of type 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' using the name ''.
+2020-05-29 18:29:19.188 +08:00 [DBG] Done attempting to bind parameter 'input' of type 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto'.
+2020-05-29 18:29:19.188 +08:00 [DBG] ResourceManagerStringLocalizer searched for 'DisplayName:SkipCount' in 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' with culture 'en'.
+2020-05-29 18:29:19.188 +08:00 [DBG] ResourceManagerStringLocalizer searched for 'SkipCount' in 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' with culture 'en'.
+2020-05-29 18:29:19.188 +08:00 [DBG] ResourceManagerStringLocalizer searched for 'DisplayName:MaxResultCount' in 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' with culture 'en'.
+2020-05-29 18:29:19.188 +08:00 [DBG] ResourceManagerStringLocalizer searched for 'MaxResultCount' in 'Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto' with culture 'en'.
+2020-05-29 18:29:19.188 +08:00 [INF] Executing action method FC.Notes.Tasks.TaskAppService.GetListAsync (FC.Notes.Application) - Validation state: "Valid"
+2020-05-29 18:29:19.454 +08:00 [INF] Executed action method FC.Notes.Tasks.TaskAppService.GetListAsync (FC.Notes.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 265.7556ms.
+2020-05-29 18:29:19.454 +08:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"]
+2020-05-29 18:29:19.454 +08:00 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2020-05-29 18:29:19.454 +08:00 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2020-05-29 18:29:19.454 +08:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2020-05-29 18:29:19.455 +08:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2020-05-29 18:29:19.455 +08:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter' and content type 'application/json' to write the response.
+2020-05-29 18:29:19.455 +08:00 [INF] Executing ObjectResult, writing value of type 'Volo.Abp.Application.Dtos.PagedResultDto`1[[FC.Notes.Tasks.Dtos.TaskDto, FC.Notes.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-05-29 18:29:19.455 +08:00 [INF] Executed action FC.Notes.Tasks.TaskAppService.GetListAsync (FC.Notes.Application) in 268.2804ms
+2020-05-29 18:29:19.455 +08:00 [INF] Request finished in 2158.8501ms 200 application/json; charset=utf-8

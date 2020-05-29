@@ -14,7 +14,24 @@
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer />
                 </StackLayout.GestureRecognizers>
-                <sfPickers:SfDatePicker x:Name="datepicker"  Format="yyyy_MM_dd"/>
+                <sfPickers:SfDatePicker 
+                    x:Name="datepicker" 
+                    DateSelected="DatepickerDateSelected"
+                    CancelCommand="{Binding CancelCommand}"
+                    OkCommand="{Binding OkCommand}"
+                    MinimumDate="2020-01-01"
+                    MaximumDate="2030-01-01"
+                    CancelButtonTextColor="Black"
+                    OKButtonTextColor="Black"
+                    HeaderBackgroundColor="SkyBlue"
+                    HeaderTextColor="Red"
+                    EnableLooping="True"
+                    MonthHeaderText="月"
+                    YearHeaderText="年"
+                    DayHeaderText="日"
+                    ShowFooter="True"
+                    HeaderText="日期" 
+                    Format="yyyy_MM_dd"/>
             </StackLayout>
         </controls:CustomCornerRadiusCardView>
     </StackLayout>

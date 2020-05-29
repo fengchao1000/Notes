@@ -54,7 +54,9 @@ namespace Notes.Helpers
     public class MessageKeys
     { 
         public const string BookmarkReadKey = "BookmarkReadKey";
-        public const string TaskListKey = "TaskListKey"; 
+        public const string TaskListKey = "TaskListKey";
+        public const string AddTaskStartDateKey = "AddTaskStartDateKey";
+        public const string AddTaskEndDateKey = "AddTaskEndDateKey";
     }
 
     public class RefreshTimeKeys

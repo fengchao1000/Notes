@@ -38,11 +38,25 @@ namespace Notes.ViewModels.Tasks
             if (taskModel == null)
             {
                 TaskModel = new TaskModel();
+                TaskModel.StartTime = DateTime.Now;
+                TaskModel.EndTime = DateTime.Now.AddHours(8);
             }
             else 
             { 
-                TaskModel = taskModel;
+                TaskModel = taskModel; 
             }
+
+            MessagingService.Current.Subscribe<DateTime>(MessageKeys.AddTaskStartDateKey, (m, date) =>
+            {
+                TaskModel.StartTime = date;
+                TaskModel = TaskModel;
+            });
+
+            MessagingService.Current.Subscribe<DateTime>(MessageKeys.AddTaskEndDateKey, (m, date) =>
+            {
+                TaskModel.EndTime = date;
+                TaskModel = TaskModel;
+            });
 
             CurrentPage = page;
         }

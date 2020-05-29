@@ -23,14 +23,14 @@
                         <Image HeightRequest="24" WidthRequest="24" Source="ic_message_read.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                        <controls:CustomEntry Placeholder="设置开始时间" FontSize="14" VerticalOptions="CenterAndExpand" Text="{Binding TaskModel.StartTime}" >
-                            <controls:CustomEntry.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnCloseClicked"/>
-                            </controls:CustomEntry.GestureRecognizers>
+                        <controls:CustomEntry Placeholder="设置开始时间" FontSize="14" VerticalOptions="CenterAndExpand" Text="{Binding TaskModel.StartTime}" > 
                         </controls:CustomEntry>
                      </StackLayout>
                     <StackLayout HorizontalOptions="End" Padding="0,0,10,0" WidthRequest="30" >
                         <Image HeightRequest="24" WidthRequest="24" Source="ic_message_read.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnOpenStartDatePickerPopupPageTapped"/>
+                        </StackLayout.GestureRecognizers>
                     </StackLayout>
                 </StackLayout>
                 <StackLayout HeightRequest="1">
@@ -45,6 +45,9 @@
                     </StackLayout>
                     <StackLayout HorizontalOptions="End" Padding="0,0,10,0" WidthRequest="30" >
                         <Image HeightRequest="24" WidthRequest="24" Source="ic_message_read.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Image>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnOpenEndDatePickerPopupPageTapped"/>
+                        </StackLayout.GestureRecognizers>
                     </StackLayout>
                 </StackLayout>
             </StackLayout>  

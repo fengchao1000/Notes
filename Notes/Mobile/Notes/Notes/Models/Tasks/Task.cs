@@ -10,6 +10,8 @@ namespace Notes.Models
 { 
     public class TaskModel  
     {
+        [PrimaryKey]
+        public Guid Id { get; set; }
         public string Title { get; set; }
 
         public string Remark { get; set; }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Notes.Interfaces.Tasks
 { 
@@ -14,13 +15,20 @@ namespace Notes.Interfaces.Tasks
         /// <param name="maxResultCount"></param>
         /// <param name="sorting"></param>
         /// <returns></returns>
-        System.Threading.Tasks.Task<ResultData<PagedResultDto<TaskModel>>> GetTasks(string skipCount, string maxResultCount, int sorting);
+        Task<ResultData<PagedResultDto<TaskModel>>> GetTasks(string skipCount, string maxResultCount, int sorting);
 
         /// <summary>
         /// 添加任务
         /// </summary>
         /// <param name="Task"></param> 
         /// <returns></returns>
-        System.Threading.Tasks.Task<ResultData<TaskModel>> AddTask(TaskModel task);
+        Task<ResultData<TaskModel>> AddTask(TaskModel task);
+
+        /// <summary>
+        /// 删除任务
+        /// </summary>
+        /// <param name="Task"></param> 
+        /// <returns></returns>
+        Task<ResultData<bool>> DeleteTask(Guid id);
     }
 }

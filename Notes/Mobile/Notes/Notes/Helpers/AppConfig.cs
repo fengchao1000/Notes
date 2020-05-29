@@ -75,6 +75,7 @@
 
         public static string GetTaskUrl = $"{NotesAPIEndpoint}/api/app/Task";
         public static string AddTaskUrl = $"{NotesAPIEndpoint}/api/app/Task";
+        public static string DeleteTaskUrl = $"{NotesAPIEndpoint}/api/app/Task"; 
 
         public const string Token = "https://oauth.cnblogs.com/connect/token";
         public const string ArticleBody = CnblogsAPIEndpoint + "/api/blogposts/{0}/body";

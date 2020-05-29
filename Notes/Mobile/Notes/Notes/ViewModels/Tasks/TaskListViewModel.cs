@@ -152,6 +152,44 @@ namespace Notes.ViewModels
             }
         }
 
+        ///<summary>
+        /// 删除确认
+        ///</summary>
+        public async void DeleteTask(object obj)
+        {
+            var taskModel = obj as TaskModel;
+
+            if (taskModel == null)
+            {
+                ToastHelper.Current.SendToast("删除失败");
+                return;
+            }
+
+            try
+            { 
+                ResultData<bool> result = await ServicesManager.TaskService.DeleteTask(taskModel.Id);
+                if (result.IsSuccess)
+                { 
+                    //await ServicesManager.TaskService.DeleteFromSqliteAsync(taskModel);
+
+                    CollectionTask.Remove(taskModel);
+
+                    CollectionTask = CollectionTask;
+                      
+                    ToastHelper.Current.SendToast("删除成功");
+                }
+                else
+                {
+                    ToastHelper.Current.SendToast("删除失败");
+                }
+            }
+            catch (Exception ex)
+            {
+                LoggerHelper.Current.Error(ex.ToString());
+                ToastHelper.Current.SendToast("删除失败");
+            }
+        }
+
         #endregion
 
         #region 命令 
@@ -160,6 +198,11 @@ namespace Notes.ViewModels
         /// 刷新命令
         /// </summary>  
         public ICommand RefreshCommand => new Command(async () => await RefreshDataFromAPIAsync());
+
+        /// <summary>
+        /// 删除命令
+        /// </summary>      
+        public Command<object> DeleteCommand => new Command<object>(DeleteTask);
 
         #endregion
     }

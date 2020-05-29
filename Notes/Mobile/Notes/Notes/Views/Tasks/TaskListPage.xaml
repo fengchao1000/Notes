@@ -29,14 +29,15 @@
                     <sfTabView:SfTabItem Title="今日任务">
                         <sfTabView:SfTabItem.Content>
                             <sfListView:SfListView 
-                        Margin="0"
-                        ItemSize="70"
-                        ItemsSource="{Binding CollectionTask}"
-                        IsBusy="{Binding IsBusy}" 
-                        FooterSize="0"
-                        BackgroundColor="White"
-                        SelectionBackgroundColor="#e7f1fb"
-                        AllowSwiping="True" >
+                                x:Name="listView"
+                                Margin="0"
+                                ItemSize="70"
+                                ItemsSource="{Binding CollectionTask}"
+                                IsBusy="{Binding IsBusy}" 
+                                FooterSize="0"
+                                BackgroundColor="White"
+                                SelectionBackgroundColor="#e7f1fb"
+                                AllowSwiping="True" >
                                 <sfListView:SfListView.ItemTemplate>
                                     <DataTemplate>
                                         <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HeightRequest="70" Spacing="0" BackgroundColor="White">
@@ -57,6 +58,26 @@
                                         </StackLayout>
                                     </DataTemplate>
                                 </sfListView:SfListView.ItemTemplate>
+                                <sfListView:SfListView.RightSwipeTemplate>
+                                    <DataTemplate x:Name="RightSwipeTemplate">
+                                        <Grid ColumnSpacing="0">
+                                            <Grid BackgroundColor="#ff3b30" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Column="0">
+                                                <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                                                    <Grid.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding Path=BindingContext.DeleteCommand, Source={x:Reference listView}}" CommandParameter="{Binding .}"/>
+                                                    </Grid.GestureRecognizers>
+                                                    <Image 
+                                                        Grid.Column="0" 
+                                                        Grid.Row="0"
+                                                        BackgroundColor="Transparent"
+                                                        HeightRequest="35"
+                                                        WidthRequest="35" 
+                                                        Source="delete.png" />
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </DataTemplate>
+                                </sfListView:SfListView.RightSwipeTemplate>
                             </sfListView:SfListView>
                         </sfTabView:SfTabItem.Content>
                     </sfTabView:SfTabItem>
