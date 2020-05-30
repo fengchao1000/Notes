@@ -19,6 +19,9 @@ namespace FC.Notes.Tasks.Dtos
         public TaskPriority Priority { get; set; }
 
         [Required]
+        public TaskType TaskType { get; set; }
+
+        [Required]
         public int Status { get; set; } 
 
         public DateTime StartTime { get; set; }

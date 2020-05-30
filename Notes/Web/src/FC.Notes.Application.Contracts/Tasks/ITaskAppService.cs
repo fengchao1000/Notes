@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 
@@ -15,6 +16,6 @@ namespace FC.Notes.Tasks
             CreateUpdateTaskDto, //Used to create a new book
             CreateUpdateTaskDto> //Used to update a book
     {
-
+        Task<PagedResultDto<TaskDto>> GetPagedAsync(GetPagedTasksInputDto input);
     }
 }

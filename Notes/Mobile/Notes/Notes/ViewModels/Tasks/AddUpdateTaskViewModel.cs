@@ -5,6 +5,7 @@ using Notes.Services;
 using Notes.Views.Tasks;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -28,6 +29,36 @@ namespace Notes.ViewModels.Tasks
         }
 
         public Page CurrentPage { get; set; }
+
+
+        /// <summary>
+        /// Task 优先级集合
+        /// </summary>
+        private ObservableCollection<object> collectionTaskPriority = new ObservableCollection<object>();
+        public ObservableCollection<object> CollectionTaskPriority
+        {
+            get => collectionTaskPriority;
+            set
+            {
+                collectionTaskPriority = value;
+                RaisePropertyChanged(() => CollectionTaskPriority);
+            }
+        }
+
+        /// <summary>
+        /// Task Type 集合
+        /// </summary>
+        private ObservableCollection<object> collectionTaskType = new ObservableCollection<object>();
+        public ObservableCollection<object> CollectionTaskType
+        {
+            get => collectionTaskType;
+            set
+            {
+                collectionTaskType = value;
+                RaisePropertyChanged(() => CollectionTaskType);
+            }
+        }
+
 
         #endregion
 
@@ -59,6 +90,17 @@ namespace Notes.ViewModels.Tasks
             });
 
             CurrentPage = page;
+
+            CollectionTaskPriority = new ObservableCollection<object>();
+            CollectionTaskPriority.Add(TaskPriority.Lower.ToString());
+            CollectionTaskPriority.Add(TaskPriority.Ordinary.ToString());
+            CollectionTaskPriority.Add(TaskPriority.emergency.ToString());
+            CollectionTaskPriority.Add(TaskPriority.VeryUrgent.ToString());
+
+            CollectionTaskType = new ObservableCollection<object>();
+            CollectionTaskType.Add(TaskType.Day.ToString());
+            CollectionTaskType.Add(TaskType.Month.ToString());
+            CollectionTaskType.Add(TaskType.Year.ToString()); 
         }
 
         public async Task AddTaskAsync()
@@ -81,7 +123,7 @@ namespace Notes.ViewModels.Tasks
                     return;
                 }
 
-                MessagingService.Current.SendMessage(MessageKeys.TaskListKey, TaskModel);
+                MessagingService.Current.SendMessage(TaskModel.TaskType.ToString(), TaskModel);
 
                 await CurrentPage.Navigation.PopAsync();
             }

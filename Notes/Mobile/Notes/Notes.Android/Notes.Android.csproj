@@ -88,7 +88,7 @@
     <PackageReference Include="Xamarin.Android.Support.Core.Utils" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.CustomTabs" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.1" />
-	 <PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData" Version="2.1.0" />
+    <PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData" Version="2.1.0" />
     <PackageReference Include="Xamarin.AndroidX.Browser" Version="1.0.0" />
     <PackageReference Include="Xamarin.Google.Android.Material" Version="1.0.0" />
     <PackageReference Include="Xamarin.AndroidX.Legacy.Support.V4" Version="1.0.0" />
@@ -293,6 +293,15 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xhdpi\ic_bottomtabbar_home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_global_arrowforward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_global_arrowforward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_global_delete.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

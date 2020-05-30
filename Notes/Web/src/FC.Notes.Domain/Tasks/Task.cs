@@ -16,6 +16,8 @@ namespace FC.Notes.Tasks
 
         public TaskPriority Priority { get; set; }
 
+        public TaskType TaskType { get; set; }
+
         public int Status { get; set; }
 
         public Guid? TenantId { get; set; }

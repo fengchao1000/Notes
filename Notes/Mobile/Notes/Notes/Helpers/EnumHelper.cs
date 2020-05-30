@@ -5,6 +5,16 @@ using System.Text;
 namespace Notes.Helpers
 {
     /// <summary>
+    /// 任务类型，年月日
+    /// </summary>
+    public enum TaskType
+    {
+        Year,
+        Month,
+        Day
+    }
+
+    /// <summary>
     /// 任务优先级别
     /// </summary>
     public enum TaskPriority

@@ -1,4 +1,5 @@
-﻿using Notes.Models; 
+﻿using Notes.Helpers;
+using Notes.Models; 
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,6 +17,15 @@ namespace Notes.Interfaces.Tasks
         /// <param name="sorting"></param>
         /// <returns></returns>
         Task<ResultData<PagedResultDto<TaskModel>>> GetTasks(string skipCount, string maxResultCount, int sorting);
+
+        /// <summary>
+        /// 获取分页Task
+        /// </summary>
+        /// <param name="skipCount"></param>
+        /// <param name="maxResultCount"></param>
+        /// <param name="sorting"></param>
+        /// <returns></returns>
+        Task<ResultData<PagedResultDto<TaskModel>>> GetPagedTasks(DateTime? startTime, DateTime? endTime, TaskType taskType, string skipCount, string maxResultCount, int sorting);
 
         /// <summary>
         /// 添加任务

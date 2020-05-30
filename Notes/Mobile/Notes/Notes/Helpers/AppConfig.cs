@@ -74,6 +74,7 @@
         public static string GetCategoryUrl = $"{NotesAPIEndpoint}/api/app/category";
 
         public static string GetTaskUrl = $"{NotesAPIEndpoint}/api/app/Task";
+        public static string GetPagedTaskUrl = $"{NotesAPIEndpoint}/api/app/Task/paged";
         public static string AddTaskUrl = $"{NotesAPIEndpoint}/api/app/Task";
         public static string DeleteTaskUrl = $"{NotesAPIEndpoint}/api/app/Task"; 
 

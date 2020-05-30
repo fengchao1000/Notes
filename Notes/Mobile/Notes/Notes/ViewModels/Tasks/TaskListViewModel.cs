@@ -18,16 +18,44 @@ namespace Notes.ViewModels
         #region 属性
 
         /// <summary>
-        /// Task集合
+        /// 今日Task集合
         /// </summary>
-        private ObservableCollection<TaskModel> collectionTask = new ObservableCollection<TaskModel>();
-        public ObservableCollection<TaskModel> CollectionTask
+        private ObservableCollection<TaskModel> collectionTaskToday = new ObservableCollection<TaskModel>();
+        public ObservableCollection<TaskModel> CollectionTaskToday
         {
-            get => collectionTask;
+            get => collectionTaskToday;
             set
             {
-                collectionTask = value;
-                RaisePropertyChanged(() => CollectionTask);
+                collectionTaskToday = value;
+                RaisePropertyChanged(() => CollectionTaskToday);
+            }
+        }
+
+        /// <summary>
+        /// 本月Task集合
+        /// </summary>
+        private ObservableCollection<TaskModel> collectionTaskMonth = new ObservableCollection<TaskModel>();
+        public ObservableCollection<TaskModel> CollectionTaskMonth
+        {
+            get => collectionTaskMonth;
+            set
+            {
+                collectionTaskMonth = value;
+                RaisePropertyChanged(() => CollectionTaskMonth);
+            }
+        }
+
+        /// <summary>
+        /// 本年Task集合
+        /// </summary>
+        private ObservableCollection<TaskModel> collectionTaskYear = new ObservableCollection<TaskModel>();
+        public ObservableCollection<TaskModel> CollectionTaskYear
+        {
+            get => collectionTaskYear;
+            set
+            {
+                collectionTaskYear = value;
+                RaisePropertyChanged(() => CollectionTaskYear);
             }
         }
 
@@ -46,9 +74,19 @@ namespace Notes.ViewModels
 
         public TaskListViewModel()
         {
-            MessagingService.Current.Subscribe<TaskModel>(MessageKeys.TaskListKey, (m, args) =>
-            { 
-                CollectionTask.Add(args);  
+            MessagingService.Current.Subscribe<TaskModel>(TaskType.Day.ToString(), (m, args) =>
+            {
+                CollectionTaskToday.Add(args);
+            });
+
+            MessagingService.Current.Subscribe<TaskModel>(TaskType.Month.ToString(), (m, args) =>
+            {
+                CollectionTaskMonth.Add(args);
+            });
+
+            MessagingService.Current.Subscribe<TaskModel>(TaskType.Year.ToString(), (m, args) =>
+            {
+                CollectionTaskYear.Add(args);
             });
         }
 
@@ -82,11 +120,11 @@ namespace Notes.ViewModels
 
                 if (listTask != null)
                 {
-                    CollectionTask.Clear();
+                    CollectionTaskToday.Clear();
 
                     foreach (TaskModel item in listTask)
                     {
-                        CollectionTask.Add(item);
+                        CollectionTaskToday.Add(item);
                     }
 
                     sw.Start();
@@ -103,15 +141,22 @@ namespace Notes.ViewModels
                 IsBusy = false;
             }
         }
-
+          
         public async Task RefreshDataFromAPIAsync()
+        {
+            await RefreshTodayDataFromAPIAsync();
+            await RefreshMonthDataFromAPIAsync();
+            await RefreshYearDataFromAPIAsync();
+        }
+
+        public async Task RefreshTodayDataFromAPIAsync()
         {
             try
             {
                 IsBusy = true;
 
-                //查询目录对应数量 
-                var result = await ServicesManager.TaskService.GetTasks("", "", 1);
+                //本月
+                var result = await ServicesManager.TaskService.GetPagedTasks(DateTime.UtcNow.Date, DateTime.UtcNow, TaskType.Day, "", "", 1);
 
                 if (!result.IsSuccess)
                 {
@@ -123,19 +168,115 @@ namespace Notes.ViewModels
                     return;
                 }
 
+                CollectionTaskToday.Clear(); 
+
                 if (result.Data.Items.Count <= 0)
+                {
+                    return;
+                } 
+
+                foreach (TaskModel item in result.Data.Items)
+                {
+                    CollectionTaskToday.Add(item);
+                }
+
+                await ServicesManager.TaskService.BatchUpdateToSqlite(CollectionTaskToday); //保存在sqlite
+                LoadStatus = LoadMoreStatus.StausDefault;
+                CanLoadMore = true;
+            }
+            catch (Exception ex)
+            {
+                LoggerHelper.Current.Error(ex.ToString());
+                LoadStatus = LoadMoreStatus.StausFail;
+            }
+            finally
+            {
+                string refreshKey = this.GetType().Name;//根据是实际需求修改,与Initialize方法中的refreshKey保持一致
+                RefreshTimeHelper.SetRefreshTime(refreshKey, DateTime.UtcNow.AddMinutes(ConstanceHelper.NextRefreshInterval));//记录刷新时间  
+                IsBusy = false;
+            }
+        }
+
+        public async Task RefreshMonthDataFromAPIAsync()
+        {
+            try
+            {
+                IsBusy = true;
+
+                //本月
+                var result = await ServicesManager.TaskService.GetPagedTasks(DateTime.UtcNow, null, TaskType.Month, "", "", 1);
+
+                if (!result.IsSuccess)
                 {
                     return;
                 }
 
-                CollectionTask.Clear();
+                if (result.Data.Items == null)
+                {
+                    return;
+                }
+
+                CollectionTaskMonth.Clear();
+
+                if (result.Data.Items.Count <= 0)
+                {
+                    return;
+                } 
 
                 foreach (TaskModel item in result.Data.Items)
                 {
-                    CollectionTask.Add(item);
+                    CollectionTaskMonth.Add(item);
                 }
 
-                await ServicesManager.TaskService.BatchUpdateToSqlite(CollectionTask); //保存在sqlite
+                await ServicesManager.TaskService.BatchUpdateToSqlite(CollectionTaskMonth); //保存在sqlite
+                LoadStatus = LoadMoreStatus.StausDefault;
+                CanLoadMore = true;
+            }
+            catch (Exception ex)
+            {
+                LoggerHelper.Current.Error(ex.ToString());
+                LoadStatus = LoadMoreStatus.StausFail;
+            }
+            finally
+            {
+                string refreshKey = this.GetType().Name;//根据是实际需求修改,与Initialize方法中的refreshKey保持一致
+                RefreshTimeHelper.SetRefreshTime(refreshKey, DateTime.UtcNow.AddMinutes(ConstanceHelper.NextRefreshInterval));//记录刷新时间  
+                IsBusy = false;
+            }
+        }
+
+        public async Task RefreshYearDataFromAPIAsync()
+        {
+            try
+            {
+                IsBusy = true;
+
+                //本月
+                var result = await ServicesManager.TaskService.GetPagedTasks(DateTime.UtcNow, null, TaskType.Year, "", "", 1);
+
+                if (!result.IsSuccess)
+                {
+                    return;
+                }
+
+                if (result.Data.Items == null)
+                {
+                    return;
+                }
+
+                CollectionTaskYear.Clear();
+
+                if (result.Data.Items.Count <= 0)
+                {
+                    return;
+                } 
+
+                foreach (TaskModel item in result.Data.Items)
+                {
+                    CollectionTaskYear.Add(item);
+                }
+
+                await ServicesManager.TaskService.BatchUpdateToSqlite(CollectionTaskYear); //保存在sqlite
                 LoadStatus = LoadMoreStatus.StausDefault;
                 CanLoadMore = true;
             }
@@ -166,16 +307,130 @@ namespace Notes.ViewModels
             }
 
             try
-            { 
+            {
                 ResultData<bool> result = await ServicesManager.TaskService.DeleteTask(taskModel.Id);
                 if (result.IsSuccess)
-                { 
+                {
                     //await ServicesManager.TaskService.DeleteFromSqliteAsync(taskModel);
 
-                    CollectionTask.Remove(taskModel);
+                    CollectionTaskToday.Remove(taskModel);
 
-                    CollectionTask = CollectionTask;
-                      
+                    CollectionTaskToday = CollectionTaskToday;
+
+                    ToastHelper.Current.SendToast("删除成功");
+                }
+                else
+                {
+                    ToastHelper.Current.SendToast("删除失败");
+                }
+            }
+            catch (Exception ex)
+            {
+                LoggerHelper.Current.Error(ex.ToString());
+                ToastHelper.Current.SendToast("删除失败");
+            }
+        }
+
+        ///<summary>
+        /// 删除确认
+        ///</summary>
+        public async void DeleteTaskToday(object obj)
+        {
+            var taskModel = obj as TaskModel;
+
+            if (taskModel == null)
+            {
+                ToastHelper.Current.SendToast("删除失败");
+                return;
+            }
+
+            try
+            {
+                ResultData<bool> result = await ServicesManager.TaskService.DeleteTask(taskModel.Id);
+                if (result.IsSuccess)
+                {
+                    //await ServicesManager.TaskService.DeleteFromSqliteAsync(taskModel);
+
+                    CollectionTaskToday.Remove(taskModel);
+
+                    CollectionTaskToday = CollectionTaskToday;
+
+                    ToastHelper.Current.SendToast("删除成功");
+                }
+                else
+                {
+                    ToastHelper.Current.SendToast("删除失败");
+                }
+            }
+            catch (Exception ex)
+            {
+                LoggerHelper.Current.Error(ex.ToString());
+                ToastHelper.Current.SendToast("删除失败");
+            }
+        }
+
+        ///<summary>
+        /// 删除确认
+        ///</summary>
+        public async void DeleteTaskMonth(object obj)
+        {
+            var taskModel = obj as TaskModel;
+
+            if (taskModel == null)
+            {
+                ToastHelper.Current.SendToast("删除失败");
+                return;
+            }
+
+            try
+            {
+                ResultData<bool> result = await ServicesManager.TaskService.DeleteTask(taskModel.Id);
+                if (result.IsSuccess)
+                {
+                    //await ServicesManager.TaskService.DeleteFromSqliteAsync(taskModel);
+
+                    CollectionTaskMonth.Remove(taskModel);
+
+                    CollectionTaskMonth = CollectionTaskMonth;
+
+                    ToastHelper.Current.SendToast("删除成功");
+                }
+                else
+                {
+                    ToastHelper.Current.SendToast("删除失败");
+                }
+            }
+            catch (Exception ex)
+            {
+                LoggerHelper.Current.Error(ex.ToString());
+                ToastHelper.Current.SendToast("删除失败");
+            }
+        }
+
+        ///<summary>
+        /// 删除确认
+        ///</summary>
+        public async void DeleteTaskYear(object obj)
+        {
+            var taskModel = obj as TaskModel;
+
+            if (taskModel == null)
+            {
+                ToastHelper.Current.SendToast("删除失败");
+                return;
+            }
+
+            try
+            {
+                ResultData<bool> result = await ServicesManager.TaskService.DeleteTask(taskModel.Id);
+                if (result.IsSuccess)
+                {
+                    //await ServicesManager.TaskService.DeleteFromSqliteAsync(taskModel);
+
+                    CollectionTaskYear.Remove(taskModel);
+
+                    CollectionTaskYear = CollectionTaskYear;
+
                     ToastHelper.Current.SendToast("删除成功");
                 }
                 else
@@ -202,7 +457,17 @@ namespace Notes.ViewModels
         /// <summary>
         /// 删除命令
         /// </summary>      
-        public Command<object> DeleteCommand => new Command<object>(DeleteTask);
+        public Command<object> DeleteTaskTodayCommand => new Command<object>(DeleteTaskToday);
+
+        /// <summary>
+        /// 删除命令
+        /// </summary>      
+        public Command<object> DeleteTaskMonthCommand => new Command<object>(DeleteTaskMonth);
+
+        /// <summary>
+        /// 删除命令
+        /// </summary>      
+        public Command<object> DeleteTaskYearCommand => new Command<object>(DeleteTaskYear);
 
         #endregion
     }

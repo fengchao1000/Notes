@@ -14,6 +14,7 @@ namespace FC.Notes.Tasks.Dtos
 
         public TaskPriority Priority { get; set; }
 
+        public TaskType TaskType { get; set; }
         public int Status { get; set; }
 
         public Guid? TenantId { get; set; }
