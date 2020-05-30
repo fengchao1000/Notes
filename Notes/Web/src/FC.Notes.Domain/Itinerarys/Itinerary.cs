@@ -16,7 +16,6 @@ namespace FC.Notes.Itinerarys
         public string Note { get; private set; }
 
         public DateTime TripTime { get; private set; }
-
         public int Status { get; private set; }
 
         //将记账薄放置在了旅行中
