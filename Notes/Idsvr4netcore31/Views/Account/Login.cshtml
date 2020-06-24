@@ -1,0 +1,55 @@
+﻿@using Idsvr4.ViewModels
+@model LoginViewModel  
+
+
+<div className="content">
+    @if (Model.EnableLocalLogin)
+    {
+        <div class="graymodel">
+            <div class="hplogin">
+                <div class="hploginleft">
+                    <div class="ssllogin">
+                        <h1><span>登陆</span></h1> 
+                            <form asp-controller="Account" asp-action="Login" method="post">
+                                <input type="hidden" asp-for="ReturnUrl" value="@Model.ReturnUrl" />
+                                @Html.Partial("_ValidationSummary")
+                                <dl id="dllogin">
+                                    <dt>用户名：</dt>
+                                    <dd><input class="logintxt" asp-for="UserID" value="@Model.UserID" autofocus></dd>
+                                    <dt>密码：</dt>
+                                    <dd>
+                                        <input type="password" class="loginpwd" asp-for="Password" value="" autocomplete="off">
+                                        <div>
+                                           
+                                        </div>
+                                    </dd>
+                                    <dt></dt>
+                                    <dd>
+                                        <input type="submit" class="hp_login_signin" onclick="return checkUserInfo()" value="登录">
+                                    </dd>
+                                    <dt></dt>
+                                    <dd>
+                                         
+                                    </dd>
+                                </dl>
+                            </form> 
+                    </div>
+                </div>
+                <div class="hploginright">
+                    <h2></h2>
+                    <p></p>
+                    <div id="Register">
+                         
+                    </div>
+                </div>
+            </div>
+            <div class="hpbrow">
+                
+            </div>
+
+        </div>
+    }
+</div> 
+
+
+

@@ -14,7 +14,7 @@ namespace FrameworkAPI
         { 
             app.UseIdentityServerBearerTokenAuthentication(new IdentityServerBearerTokenAuthenticationOptions
             {
-                Authority = "http://localhost:62527/",
+                Authority = "http://localhost:63238",
                 RequiredScopes = new[] { "FrameworkAPI" },//对应Client中配置的AllowedScopes和ApiResource
 
                 DelayLoadMetadata = true

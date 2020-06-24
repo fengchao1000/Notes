@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Net.Http.Headers;
 
 namespace NetCoreAPI30
 {
@@ -31,11 +32,11 @@ namespace NetCoreAPI30
                 //options.Filters.Add(typeof(AuthorizeAttribute));
                 //options.Filters.Add(new RequireHttpsAttribute());
 
-                var policy = new AuthorizationPolicyBuilder()
-                 .RequireAuthenticatedUser()
-                 .RequireRole("Admin", "SuperUser")
-                 .Build();
-                 options.Filters.Add(new AuthorizeFilter(policy)); 
+                //var policy = new AuthorizationPolicyBuilder()
+                // .RequireAuthenticatedUser()
+                // .RequireRole("Admin", "SuperUser")
+                // .Build();
+                // options.Filters.Add(new AuthorizeFilter(policy)); 
             });
 
             //IdentityServer
@@ -43,8 +44,8 @@ namespace NetCoreAPI30
                .AddIdentityServerAuthentication(options =>
                {
                    options.RequireHttpsMetadata = false;
-                   options.Authority = "http://localhost:62527";
-                   options.ApiName = "NetCoreAPI";
+                   options.Authority = "http://localhost:63238";
+                   options.ApiName = "FrameworkAPI"; 
                });
         }
 
@@ -57,6 +58,17 @@ namespace NetCoreAPI30
             }
 
             app.UseRouting();
+
+            #region 跨域
+            app.UseCors(policy =>
+            {
+                policy.WithOrigins("http://localhost:5003");
+                policy.AllowAnyHeader();
+                policy.AllowCredentials();
+                policy.AllowAnyMethod();
+                policy.WithExposedHeaders(HeaderNames.ContentDisposition, HeaderNames.WWWAuthenticate);
+            });
+            #endregion
 
             app.UseAuthentication();
 

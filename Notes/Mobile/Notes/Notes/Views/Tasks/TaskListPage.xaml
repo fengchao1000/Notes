@@ -191,7 +191,7 @@
                             </sfListView:SfListView>
                         </sfTabView:SfTabItem.Content>
                     </sfTabView:SfTabItem>
-                </sfTabView:SfTabView>
+                </sfTabView:SfTabView> 
             </pull:SfPullToRefresh.PullableContent>
         </pull:SfPullToRefresh>
     </ContentPage.Content>

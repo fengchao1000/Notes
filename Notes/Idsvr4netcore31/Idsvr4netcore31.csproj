@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>53f989b1-cd42-4237-aeda-ea3c5fd505d1</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IdentityServer4" Version="4.0.0" />
+    <PackageReference Include="IdentityServer4.Contrib.RedisStore" Version="3.1.1" />
+    <PackageReference Include="IdentityServer4.EntityFramework" Version="4.0.0" />
+  </ItemGroup>
+
+</Project>
