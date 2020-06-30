@@ -202,5 +202,14 @@
             <Setter Property="TextColor" Value="{StaticResource DescriptionTextColor}" />
             <Setter Property="FontSize" Value="12"/>
         </Style>
+
+        <OnPlatform x:TypeArguments="x:String"
+                        x:Key="FontAwesomeRegular">
+            <On Platform="Android"
+                    Value="FontAwesome470.otf#Regular" />
+            <On Platform="iOS"
+                    Value="FontAwesome470-Regular" /> 
+        </OnPlatform>
+        
     </Application.Resources>
 </Application>

@@ -3,6 +3,7 @@ using Notes.ViewModels.Categorys;
 using Notes.Views.Bookmarks;
 using Notes.Views.Categorys;
 using Notes.Views.Tasks;
+using Notes.Views.Tests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,7 +61,7 @@ namespace Notes.Views.Home
         /// <param name="e"></param>
         async void OnTestClicked(object sender, System.EventArgs e)
         {
-            await NavigationHelper.PushAsync(Navigation, new AddTaskPage(), false);
+            await NavigationHelper.PushAsync(Navigation, new FontIconsInXamarinFormsPage(), false);
         }
     } 
 }

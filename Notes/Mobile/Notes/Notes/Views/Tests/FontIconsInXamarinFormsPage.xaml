@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+        xmlns ="http://xamarin.com/schemas/2014/forms"  
+        xmlns:local="clr-namespace:Notes.Views.Tests;assembly=Notes"  
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+        xmlns:helpers="clr-namespace:Notes.Helpers;assembly=Notes"
+        x:Class="Notes.Views.Tests.FontIconsInXamarinFormsPage">  
+        <StackLayout>
+            <Label Text="{x:Static helpers:FontAwesomeIcons.Reorder}"
+               FontFamily="{StaticResource FontAwesomeRegular}"
+                   TextColor="Red"
+               FontSize="Large"
+               HorizontalTextAlignment="Center"/>
+
+            <Label Text="{x:Static helpers:FontAwesomeIcons.User}"
+               FontFamily="{StaticResource FontAwesomeRegular}"
+               FontSize="Large"
+               HorizontalTextAlignment="Center"/>
+
+            <Label Text="{x:Static helpers:FontAwesomeIcons.Comments_alt}"
+               FontFamily="{StaticResource FontAwesomeRegular}"
+               FontSize="Large"
+               HorizontalTextAlignment="Center"/>
+        </StackLayout> 
+    
+</ContentPage>

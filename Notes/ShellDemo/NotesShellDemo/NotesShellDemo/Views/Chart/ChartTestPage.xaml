@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sfChart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"  
+             xmlns:sfDataGrid="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"       
+             mc:Ignorable="d"
+             x:Class="NotesShellDemo.Views.Chart.ChartTestPage">
+    <ContentPage.Content> 
+          <ScrollView Margin="0" BackgroundColor="{StaticResource ScrollViewBackgroundColor}">
+                    <StackLayout Style="{StaticResource DefaultPageStyle}">
+                        <StackLayout BackgroundColor="{StaticResource PageDefaultBackgroundColor}" Padding="0,12,0,12" >
+                            <sfChart:SfChart HeightRequest="250">
+                                <sfChart:SfChart.ChartPadding>
+                                    <OnPlatform x:TypeArguments="Thickness" Default="10,30,35,5" />
+                                </sfChart:SfChart.ChartPadding>
+                                <sfChart:SfChart.Title>
+                                    <sfChart:ChartTitle Text="测试" />
+                                </sfChart:SfChart.Title>
+                                <sfChart:SfChart.Legend>
+                                    <sfChart:ChartLegend 
+                                        IconHeight="8" 
+                                        OverflowMode="Wrap" 
+                                        IconWidth="8" 
+                                        MaxWidth="300" 
+                                        DockPosition="Bottom" 
+                                        ToggleSeriesVisibility="true" >
+                                        <sfChart:ChartLegend.LabelStyle>
+                                            <sfChart:ChartLegendLabelStyle FontSize="8" TextColor="Black">
+                                            </sfChart:ChartLegendLabelStyle>
+                                        </sfChart:ChartLegend.LabelStyle>
+                                    </sfChart:ChartLegend>
+                                </sfChart:SfChart.Legend>
+                                <sfChart:SfChart.Series>
+                                    <sfChart:PieSeries 
+                                        EnableAnimation="True" 
+                                        ItemsSource="{Binding CountryCountTopTenCollection}" 
+                                        ExplodeOnTouch="True"    
+                                        XBindingPath="Country" 
+                                        YBindingPath="Count"  
+                                        EnableSmartLabels="True"
+					                    ConnectorLineType = "Bezier"  
+					                    DataMarkerPosition = "OutsideExtended">
+                                        <sfChart:PieSeries.ColorModel>
+                                            <sfChart:ChartColorModel Palette="Natural"/>
+                                        </sfChart:PieSeries.ColorModel>
+                                        <sfChart:PieSeries.DataMarker>
+                                            <sfChart:ChartDataMarker>
+                                                <sfChart:ChartDataMarker.LabelStyle >
+                                                    <sfChart:DataMarkerLabelStyle LabelPosition="Outer"/>
+                                                </sfChart:ChartDataMarker.LabelStyle>
+                                                <sfChart:ChartDataMarker.LabelTemplate>
+                                                    <DataTemplate>
+                                                        <StackLayout Orientation="Horizontal">
+                                                            <Label 
+                                                                FontSize="10" 
+                                                                TextColor="Black" 
+                                                                HorizontalOptions="CenterAndExpand" 
+                                                                Text="{Binding Country}"/>
+                                                            <Label 
+                                                                FontSize="8" 
+                                                                TextColor="Black" 
+                                                                HorizontalOptions="CenterAndExpand" 
+                                                                Text="{Binding Percentage}"/>
+                                                        </StackLayout>
+                                                    </DataTemplate>
+                                                </sfChart:ChartDataMarker.LabelTemplate>
+                                            </sfChart:ChartDataMarker>
+                                        </sfChart:PieSeries.DataMarker>
+                                    </sfChart:PieSeries>
+                                </sfChart:SfChart.Series>
+                            </sfChart:SfChart>
+                        </StackLayout>
+                        <StackLayout BackgroundColor="{StaticResource PageDefaultBackgroundColor}" Padding="0,0,0,12" HeightRequest="{Binding VisitCommonTopTenTableCountHeightRequest}">
+                    <sfDataGrid:SfDataGrid  
+                                x:Name="dataGridTopTenTable" 
+                                HeightRequest="{Binding VisitCommonTopTenTableCountHeightRequest}"
+                                AllowLoadMore="False" 
+                                IsBusy="True" 
+                                AutoGenerateColumns="False"
+                                AllowPullToRefresh="False" 
+                                VerticalOverScrollMode="None" 
+                                ItemsSource="{Binding VisitCommonTopTenTableCountEntityCollection}" 
+                                HorizontalOptions="FillAndExpand" 
+                                VerticalOptions="FillAndExpand"  
+                                SelectionMode="Single" 
+                                HeaderRowHeight="{StaticResource ReportDataGridHeaderRowHeight}"
+                                RowHeight="{StaticResource ReportDataGridRowHeight}">
+                        <sfDataGrid:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
+                                    <sfDataGrid:GridTextColumn  
+                                        HeaderText="Countries" 
+                                        MappingName="Name"  
+                                        HeaderCellTextSize="{StaticResource DataGridHeaderCellTextSize}" 
+                                        CellTextSize="{StaticResource DataGridCellTextSize}" 
+                                        HeaderTextAlignment="End"
+                                        TextAlignment="End"
+                                        Padding="0,0,25,0"
+                                        ColumnSizer="LastColumnFill"/>
+                                    <sfDataGrid:GridTextColumn  
+                                        HeaderText="Today"  
+                                        MappingName="TodayCountFormat"  
+                                        HeaderCellTextSize="{StaticResource DataGridHeaderCellTextSize}" 
+                                        CellTextSize="{StaticResource DataGridCellTextSize}"
+                                        Width="60"
+                                        HeaderTextAlignment="Start"
+                                        TextAlignment="Start"
+                                        Padding="10,0,0,0"/>
+                                    <sfDataGrid:GridTextColumn  
+                                        HeaderText="Yesterday"  
+                                        MappingName="YesterdayCountFormat"  
+                                        HeaderCellTextSize="{StaticResource DataGridHeaderCellTextSize}" 
+                                        CellTextSize="{StaticResource DataGridCellTextSize}"
+                                        Width="60"
+                                        HeaderTextAlignment="Start"
+                                        TextAlignment="Start"
+                                        Padding="10,0,0,0"/>
+                                    <sfDataGrid:GridTextColumn  
+                                        HeaderText="Anteayer"  
+                                        MappingName="BeforeYesterdayCountFormat"  
+                                        HeaderCellTextSize="{StaticResource DataGridHeaderCellTextSize}" 
+                                        CellTextSize="{StaticResource DataGridCellTextSize}"
+                                        Width="60"
+                                        HeaderTextAlignment="Start"  
+                                        TextAlignment="Start"
+                                        Padding="10,0,0,0"/>
+                                    <sfDataGrid:GridTextColumn  
+                                        HeaderText="LastWeekToday"  
+                                        MappingName="SameDayLastWeekCountFormat"  
+                                        HeaderCellTextSize="{StaticResource DataGridHeaderCellTextSize}" 
+                                        CellTextSize="{StaticResource DataGridCellTextSize}"
+                                        Width="65"
+                                        HeaderTextAlignment="Start"
+                                        TextAlignment="Start"
+                                        Padding="10,0,20,0"/>
+                                </sfDataGrid:SfDataGrid.Columns>
+                            </sfDataGrid:SfDataGrid>
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView> 
+    </ContentPage.Content>
+</ContentPage>
