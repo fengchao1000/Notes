@@ -92,7 +92,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesShellDemo.Android", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesShellDemo.iOS", "ShellDemo\NotesShellDemo\NotesShellDemo.iOS\NotesShellDemo.iOS.csproj", "{14B3BD68-F94F-4F4D-A0ED-2C0D41690552}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesShellDemo", "ShellDemo\NotesShellDemo\NotesShellDemo\NotesShellDemo.csproj", "{ACE7DC71-D641-496C-A9DC-4B6868A566B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotesShellDemo", "ShellDemo\NotesShellDemo\NotesShellDemo\NotesShellDemo.csproj", "{ACE7DC71-D641-496C-A9DC-4B6868A566B9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpaAuthCodePkceSample", "SpaAuthCodePkceSample\SpaAuthCodePkceSample.csproj", "{0B789D4F-5AA7-4C3E-B719-FF68C2BE49E6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nop", "Nop", "{71372DEB-A1E9-4BAD-9DB2-B7B502D6F4ED}"
+	ProjectSection(SolutionItems) = preProject
+		Nop\Nop.Plugin.Payments.AliPay.zip = Nop\Nop.Plugin.Payments.AliPay.zip
+		Nop\Nop.Plugin.Payments.QianbaoPay.zip = Nop\Nop.Plugin.Payments.QianbaoPay.zip
+		Nop\Nop.Plugin.Payments.WeChatPay.zip = Nop\Nop.Plugin.Payments.WeChatPay.zip
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -970,6 +979,30 @@ Global
 		{ACE7DC71-D641-496C-A9DC-4B6868A566B9}.Release|iPhone.Build.0 = Release|Any CPU
 		{ACE7DC71-D641-496C-A9DC-4B6868A566B9}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{ACE7DC71-D641-496C-A9DC-4B6868A566B9}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{0B789D4F-5AA7-4C3E-B719-FF68C2BE49E6}.Ad-Hoc|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B789D4F-5AA7-4C3E-B719-FF68C2BE49E6}.Ad-Hoc|Any CPU.Build.0 = Debug|Any CPU
+		{0B789D4F-5AA7-4C3E-B719-FF68C2BE49E6}.Ad-Hoc|iPhone.ActiveCfg = Debug|Any CPU
+		{0B789D4F-5AA7-4C3E-B719-FF68C2BE49E6}.Ad-Hoc|iPhone.Build.0 = Debug|Any CPU
+		{0B789D4F-5AA7-4C3E-B719-FF68C2BE49E6}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{0B789D4F-5AA7-4C3E-B719-FF68C2BE49E6}.Ad-Hoc|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{0B789D4F-5AA7-4C3E-B719-FF68C2BE49E6}.AppStore|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B789D4F-5AA7-4C3E-B719-FF68C2BE49E6}.AppStore|Any CPU.Build.0 = Debug|Any CPU
+		{0B789D4F-5AA7-4C3E-B719-FF68C2BE49E6}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
+		{0B789D4F-5AA7-4C3E-B719-FF68C2BE49E6}.AppStore|iPhone.Build.0 = Debug|Any CPU
+		{0B789D4F-5AA7-4C3E-B719-FF68C2BE49E6}.AppStore|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{0B789D4F-5AA7-4C3E-B719-FF68C2BE49E6}.AppStore|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{0B789D4F-5AA7-4C3E-B719-FF68C2BE49E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B789D4F-5AA7-4C3E-B719-FF68C2BE49E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B789D4F-5AA7-4C3E-B719-FF68C2BE49E6}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{0B789D4F-5AA7-4C3E-B719-FF68C2BE49E6}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{0B789D4F-5AA7-4C3E-B719-FF68C2BE49E6}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{0B789D4F-5AA7-4C3E-B719-FF68C2BE49E6}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{0B789D4F-5AA7-4C3E-B719-FF68C2BE49E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B789D4F-5AA7-4C3E-B719-FF68C2BE49E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B789D4F-5AA7-4C3E-B719-FF68C2BE49E6}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{0B789D4F-5AA7-4C3E-B719-FF68C2BE49E6}.Release|iPhone.Build.0 = Release|Any CPU
+		{0B789D4F-5AA7-4C3E-B719-FF68C2BE49E6}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{0B789D4F-5AA7-4C3E-B719-FF68C2BE49E6}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1013,6 +1046,7 @@ Global
 		{A23B8A40-7808-49BC-86D8-9C92CBB7148F} = {51CD02E6-3142-437B-BEE0-1D408B6BB2D8}
 		{14B3BD68-F94F-4F4D-A0ED-2C0D41690552} = {51CD02E6-3142-437B-BEE0-1D408B6BB2D8}
 		{ACE7DC71-D641-496C-A9DC-4B6868A566B9} = {51CD02E6-3142-437B-BEE0-1D408B6BB2D8}
+		{0B789D4F-5AA7-4C3E-B719-FF68C2BE49E6} = {62E3AB04-8156-4CDB-A78C-1025E74BA025}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6BFBE4E-759E-4C2B-8E26-737556DB780F}

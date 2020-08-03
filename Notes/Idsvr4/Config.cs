@@ -34,7 +34,29 @@ namespace Idsvr4
         public static IEnumerable<Client> GetClients()
         {
             return new List<Client>
-            { 
+            {
+                new Client()
+                {
+                    ClientId = "demo-client",
+                    ClientName = "Demo Client",
+                    AllowedGrantTypes = GrantTypes.Code,
+                    RequirePkce = true,
+                    RequireClientSecret = false,
+                    RequireConsent = false,
+                    RedirectUris =
+                    {
+                        "http://localhost:5003/callback.html",
+                        "http://localhost:5003/silent-refresh.html",
+                    },
+                    AllowedCorsOrigins =     { "http://localhost:5003" },
+                    AccessTokenLifetime = 20,
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "FrameworkAPI"
+                    }
+                },
                 
                 //Implicit模式Client配置，适用于SPA
                 new Client
@@ -52,6 +74,31 @@ namespace Idsvr4
                     },
                     PostLogoutRedirectUris = { "http://localhost:5003" },
                     AllowedCorsOrigins = { "http://localhost:5003" },
+                    RequireConsent = false,
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "FrameworkAPI"//对应webapi里面的scope配置
+                    }
+                }, 
+                // Code 模式Client配置，适用于SPA
+                new Client
+                { 
+                    ClientId = "AuthCodePkce",
+                    ClientName = "AuthCodePkce",
+                    AllowedGrantTypes = GrantTypes.Code,
+                    RequirePkce = true,
+                    RequireClientSecret = false,
+                    AccessTokenLifetime = 60*2,
+                    AccessTokenType = AccessTokenType.Jwt,
+                    RedirectUris =
+                    {
+                        "http://localhost:5005/callback.html",
+                        "http://localhost:5005/silent.html"
+                    },
+                    PostLogoutRedirectUris = { "http://localhost:5005" },
+                    AllowedCorsOrigins = { "http://localhost:5005" },
                     RequireConsent = false,
                     AllowedScopes =
                     {

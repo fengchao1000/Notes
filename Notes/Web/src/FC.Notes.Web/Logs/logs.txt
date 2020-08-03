@@ -13930,3 +13930,757 @@ System.OperationCanceledException: The operation was canceled.
 2020-05-30 16:52:38.017 +08:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
 2020-05-30 16:52:38.017 +08:00 [INF] Executed action Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc) in 3951.3053ms
 2020-05-30 16:52:38.017 +08:00 [INF] Request finished in 5760.1058ms 200 text/plain; charset=utf-8
+2020-07-21 17:16:26.588 +08:00 [INF] Starting web host.
+2020-07-21 17:16:30.793 +08:00 [DBG] Hosting starting
+2020-07-21 17:16:30.824 +08:00 [INF] User profile is available. Using 'C:\Users\Andy\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-07-21 17:16:30.831 +08:00 [DBG] Reading data from file 'C:\Users\Andy\AppData\Local\ASP.NET\DataProtection-Keys\key-0f7e385e-64ca-42e5-8c8e-1b5e11b6cd60.xml'.
+2020-07-21 17:16:30.845 +08:00 [DBG] Reading data from file 'C:\Users\Andy\AppData\Local\ASP.NET\DataProtection-Keys\key-79565f58-b19b-405d-ab19-a89074848ba1.xml'.
+2020-07-21 17:16:30.852 +08:00 [DBG] Reading data from file 'C:\Users\Andy\AppData\Local\ASP.NET\DataProtection-Keys\key-b83fab30-536f-47db-b6cd-2dc2352c315e.xml'.
+2020-07-21 17:16:30.860 +08:00 [DBG] Reading data from file 'C:\Users\Andy\AppData\Local\ASP.NET\DataProtection-Keys\key-d0467cad-0b9a-4d56-b0a9-c5a54a548c43.xml'.
+2020-07-21 17:16:30.867 +08:00 [DBG] Reading data from file 'C:\Users\Andy\AppData\Local\ASP.NET\DataProtection-Keys\key-db6b4169-a718-4a1f-b458-abebba2e8959.xml'.
+2020-07-21 17:16:30.877 +08:00 [DBG] Found key {0f7e385e-64ca-42e5-8c8e-1b5e11b6cd60}.
+2020-07-21 17:16:30.878 +08:00 [DBG] Found key {79565f58-b19b-405d-ab19-a89074848ba1}.
+2020-07-21 17:16:30.879 +08:00 [DBG] Found key {b83fab30-536f-47db-b6cd-2dc2352c315e}.
+2020-07-21 17:16:30.879 +08:00 [DBG] Found key {d0467cad-0b9a-4d56-b0a9-c5a54a548c43}.
+2020-07-21 17:16:30.879 +08:00 [DBG] Found key {db6b4169-a718-4a1f-b458-abebba2e8959}.
+2020-07-21 17:16:30.883 +08:00 [DBG] Considering key {b83fab30-536f-47db-b6cd-2dc2352c315e} with expiration date 2020-09-18 04:45:49Z as default key.
+2020-07-21 17:16:30.890 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2020-07-21 17:16:30.891 +08:00 [DBG] Decrypting secret element using Windows DPAPI.
+2020-07-21 17:16:30.892 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2020-07-21 17:16:30.892 +08:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2020-07-21 17:16:30.895 +08:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2020-07-21 17:16:30.897 +08:00 [DBG] Using key {b83fab30-536f-47db-b6cd-2dc2352c315e} as the default key.
+2020-07-21 17:16:30.897 +08:00 [DBG] Key ring with default key {b83fab30-536f-47db-b6cd-2dc2352c315e} was loaded during application startup.
+2020-07-21 17:16:30.909 +08:00 [INF] Loaded ABP modules:
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Uow.AbpUnitOfWorkModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Data.AbpDataModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Security.AbpSecurityModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.BackgroundJobs.BackgroundJobsDomainSharedModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Settings.AbpSettingsModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Users.AbpUsersDomainSharedModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.IdentityServer.AbpIdentityServerDomainSharedModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.TenantManagement.AbpTenantManagementDomainSharedModule
+2020-07-21 17:16:30.909 +08:00 [INF] - FC.Notes.NotesDomainSharedModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Timing.AbpTimingModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Json.AbpJsonModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Threading.AbpThreadingModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Auditing.AbpAuditingModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.EventBus.AbpEventBusModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Guids.AbpGuidsModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Domain.AbpDddDomainModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Validation.AbpValidationModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Authorization.AbpAuthorizationModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Http.AbpHttpAbstractionsModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Features.AbpFeaturesModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationContractsModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Users.AbpUsersAbstractionModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.TenantManagement.AbpTenantManagementApplicationContractsModule
+2020-07-21 17:16:30.909 +08:00 [INF] - FC.Notes.NotesApplicationContractsModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Http.AbpHttpModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.UI.AbpUiModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityHttpApiModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.PermissionManagement.HttpApi.AbpPermissionManagementHttpApiModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.TenantManagement.AbpTenantManagementHttpApiModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.FeatureManagement.AbpFeatureManagementHttpApiModule
+2020-07-21 17:16:30.909 +08:00 [INF] - FC.Notes.NotesHttpApiModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.BackgroundJobs.AbpBackgroundJobsModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.BackgroundJobs.BackgroundJobsDomainModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Serialization.AbpSerializationModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Caching.AbpCachingModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Users.AbpUsersDomainModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityDomainModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.PermissionManagement.Identity.AbpPermissionManagementDomainIdentityModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.IdentityServer.AbpIdentityServerDomainModule
+2020-07-21 17:16:30.909 +08:00 [INF] - Volo.Abp.PermissionManagement.IdentityServer.AbpPermissionManagementDomainIdentityServerModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.TenantManagement.AbpTenantManagementDomainModule
+2020-07-21 17:16:30.910 +08:00 [INF] - FC.Notes.NotesDomainModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityApplicationModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.TenantManagement.AbpTenantManagementApplicationModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationModule
+2020-07-21 17:16:30.910 +08:00 [INF] - FC.Notes.NotesApplicationModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.IdentityServer.EntityFrameworkCore.AbpIdentityServerEntityFrameworkCoreModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.MySQL.AbpEntityFrameworkCoreMySQLModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.BackgroundJobs.EntityFrameworkCore.BackgroundJobsEntityFrameworkCoreModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.TenantManagement.EntityFrameworkCore.AbpTenantManagementEntityFrameworkCoreModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2020-07-21 17:16:30.910 +08:00 [INF] - FC.Notes.EntityFrameworkCore.NotesEntityFrameworkCoreModule
+2020-07-21 17:16:30.910 +08:00 [INF] - FC.Notes.EntityFrameworkCore.NotesEntityFrameworkCoreDbMigrationsModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.Castle.AbpCastleCoreModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.Autofac.AbpAutofacModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.AbpAspNetCoreMvcUiModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.AbpAspNetCoreMvcUiBootstrapModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.PermissionManagement.Web.AbpPermissionManagementWebModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Packages.AbpAspNetCoreMvcUiPackagesModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.AbpAspNetCoreMvcUiThemeSharedModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.Identity.Web.AbpIdentityWebModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.Identity.AspNetCore.AbpIdentityAspNetCoreModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.Account.Web.AbpAccountWebModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.Account.Web.AbpAccountWebIdentityServerModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy.AbpAspNetCoreMvcUiMultiTenancyModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.AbpAspNetCoreMvcUiBasicThemeModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.AspNetCore.Authentication.JwtBearer.AbpAspNetCoreAuthenticationJwtBearerModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.FeatureManagement.AbpFeatureManagementWebModule
+2020-07-21 17:16:30.910 +08:00 [INF] - Volo.Abp.TenantManagement.Web.AbpTenantManagementWebModule
+2020-07-21 17:16:30.910 +08:00 [INF] - FC.Notes.Web.NotesWebModule
+2020-07-21 17:16:30.953 +08:00 [DBG] No class found with auto mapping attributes.
+2020-07-21 17:16:31.370 +08:00 [DBG] Started background worker: Volo.Abp.BackgroundJobs.BackgroundJobWorker
+2020-07-21 17:16:31.613 +08:00 [DBG] Using Identity.Application as default scheme for authentication
+2020-07-21 17:16:31.613 +08:00 [DBG] Using Identity.External as default scheme for sign-in
+2020-07-21 17:16:31.613 +08:00 [DBG] Using Identity.External as default scheme for sign-out
+2020-07-21 17:16:31.613 +08:00 [DBG] Using Identity.Application as default scheme for challenge
+2020-07-21 17:16:31.613 +08:00 [DBG] Using Identity.Application as default scheme for forbid
+2020-07-21 17:16:38.183 +08:00 [ERR] Unable to connect to any of the specified MySQL hosts.
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 326
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 112
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 141
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 507
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 232
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at Volo.Abp.BackgroundJobs.EntityFrameworkCore.EfCoreBackgroundJobRepository.GetWaitingListAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.EntityFrameworkCore\Volo\Abp\BackgroundJobs\EntityFrameworkCore\EfCoreBackgroundJobRepository.cs:line 27
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation) in D:\github\abp\framework\src\Volo.Abp.Uow\Volo\Abp\Uow\UnitOfWorkInterceptor.cs:line 47
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpInterceptorAdapter`1.ExecuteWithReturnValueAsync[T](IInvocation invocation, IInvocationProceedInfo proceedInfo) in D:\github\abp\framework\src\Volo.Abp.Castle.Core\Volo\Abp\Castle\DynamicProxy\CastleAbpInterceptorAdapter.cs:line 86
+   at Volo.Abp.BackgroundJobs.BackgroundJobStore.GetWaitingJobsAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.Domain\Volo\Abp\BackgroundJobs\BackgroundJobStore.cs:line 38
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   at Volo.Abp.BackgroundJobs.BackgroundJobWorker.DoWork() in D:\github\abp\framework\src\Volo.Abp.BackgroundJobs\Volo\Abp\BackgroundJobs\BackgroundJobWorker.cs:line 42
+   at Volo.Abp.BackgroundWorkers.PeriodicBackgroundWorkerBase.Timer_Elapsed(Object sender, EventArgs e) in D:\github\abp\framework\src\Volo.Abp.BackgroundWorkers\Volo\Abp\BackgroundWorkers\PeriodicBackgroundWorkerBase.cs:line 42
+2020-07-21 17:16:38.272 +08:00 [ERR] ---------- Exception Data ----------
+2020-07-21 17:16:38.273 +08:00 [ERR] Server Error Code = 1042
+2020-07-21 17:16:38.273 +08:00 [ERR] SqlState = 
+2020-07-21 17:16:39.207 +08:00 [WRN] It was not possible to connect to the redis server(s). UnableToConnect on 114.67.251.186:6379/Interactive, Initializing, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 1s ago, last-write: 1s ago, unanswered-write: 29858s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 6s ago, v: 2.0.513.63329
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). UnableToConnect on 114.67.251.186:6379/Interactive, Initializing, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 1s ago, last-write: 1s ago, unanswered-write: 29858s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 6s ago, v: 2.0.513.63329
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(Object configuration, TextWriter log) in C:\projects\stackexchange-redis\src\StackExchange.Redis\ConnectionMultiplexer.cs:line 824
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.ConnectAsync(CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at Volo.Abp.Caching.DistributedCache`1.GetAsync(String key, Nullable`1 hideErrors, CancellationToken token) in D:\github\abp\framework\src\Volo.Abp.Caching\Volo\Abp\Caching\DistributedCache.cs:line 119
+2020-07-21 17:16:40.425 +08:00 [FTL] Application startup exception
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 326
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 112
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 141
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 507
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 232
+   at MySql.Data.MySqlClient.MySqlConnection.Open() in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 218
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.BeginTransaction(IsolationLevel isolationLevel)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.BeginTransaction()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.BeginTransaction()
+   at Volo.Abp.Uow.EntityFrameworkCore.UnitOfWorkDbContextProvider`1.CreateDbContextWithTransaction(IUnitOfWork unitOfWork) in D:\github\abp\framework\src\Volo.Abp.EntityFrameworkCore\Volo\Abp\Uow\EntityFrameworkCore\UnitOfWorkDbContextProvider.cs:line 83
+   at Volo.Abp.Uow.EntityFrameworkCore.UnitOfWorkDbContextProvider`1.CreateDbContext(IUnitOfWork unitOfWork, String connectionStringName, String connectionString) in D:\github\abp\framework\src\Volo.Abp.EntityFrameworkCore\Volo\Abp\Uow\EntityFrameworkCore\UnitOfWorkDbContextProvider.cs:line 51
+   at Volo.Abp.Uow.EntityFrameworkCore.UnitOfWorkDbContextProvider`1.<>c__DisplayClass3_0.<GetDbContext>b__0() in D:\github\abp\framework\src\Volo.Abp.EntityFrameworkCore\Volo\Abp\Uow\EntityFrameworkCore\UnitOfWorkDbContextProvider.cs:line 42
+   at System.Collections.Generic.AbpDictionaryExtensions.GetOrAdd[TKey,TValue](IDictionary`2 dictionary, TKey key, Func`2 factory) in D:\github\abp\framework\src\Volo.Abp.Core\System\Collections\Generic\AbpDictionaryExtensions.cs:line 101
+   at Volo.Abp.Uow.EntityFrameworkCore.UnitOfWorkDbContextProvider`1.GetDbContext() in D:\github\abp\framework\src\Volo.Abp.EntityFrameworkCore\Volo\Abp\Uow\EntityFrameworkCore\UnitOfWorkDbContextProvider.cs:line 40
+   at Volo.Abp.Domain.Repositories.EntityFrameworkCore.EfCoreRepository`2.get_DbSet() in D:\github\abp\framework\src\Volo.Abp.EntityFrameworkCore\Volo\Abp\Domain\Repositories\EntityFrameworkCore\EfCoreRepository.cs:line 20
+   at Volo.Abp.SettingManagement.EntityFrameworkCore.EfCoreSettingRepository.FindAsync(String name, String providerName, String providerKey) in D:\github\abp\modules\setting-management\src\Volo.Abp.SettingManagement.EntityFrameworkCore\Volo\Abp\SettingManagement\EntityFrameworkCore\EfCoreSettingRepository.cs:line 20
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation) in D:\github\abp\framework\src\Volo.Abp.Uow\Volo\Abp\Uow\UnitOfWorkInterceptor.cs:line 47
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpInterceptorAdapter`1.ExecuteWithReturnValueAsync[T](IInvocation invocation, IInvocationProceedInfo proceedInfo) in D:\github\abp\framework\src\Volo.Abp.Castle.Core\Volo\Abp\Castle\DynamicProxy\CastleAbpInterceptorAdapter.cs:line 86
+   at Volo.Abp.SettingManagement.SettingManagementStore.GetCacheItemAsync(String name, String providerName, String providerKey) in D:\github\abp\modules\setting-management\src\Volo.Abp.SettingManagement.Domain\Volo\Abp\SettingManagement\SettingManagementStore.cs:line 73
+   at Volo.Abp.SettingManagement.SettingManagementStore.GetOrNullAsync(String name, String providerName, String providerKey) in D:\github\abp\modules\setting-management\src\Volo.Abp.SettingManagement.Domain\Volo\Abp\SettingManagement\SettingManagementStore.cs:line 29
+   at Volo.Abp.Settings.TenantSettingValueProvider.GetOrNullAsync(SettingDefinition setting) in D:\github\abp\framework\src\Volo.Abp.Settings\Volo\Abp\Settings\TenantSettingValueProvider.cs:line 22
+   at Volo.Abp.Settings.SettingProvider.GetOrNullValueFromProvidersAsync(IEnumerable`1 providers, SettingDefinition setting) in D:\github\abp\framework\src\Volo.Abp.Settings\Volo\Abp\Settings\SettingProvider.cs:line 91
+   at Volo.Abp.Settings.SettingProvider.GetOrNullAsync(String name) in D:\github\abp\framework\src\Volo.Abp.Settings\Volo\Abp\Settings\SettingProvider.cs:line 51
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   at Microsoft.AspNetCore.Builder.AbpApplicationBuilderExtensions.UseAbpRequestLocalization(IApplicationBuilder app, Action`1 optionsAction) in D:\github\abp\framework\src\Volo.Abp.AspNetCore\Microsoft\AspNetCore\Builder\AbpApplicationBuilderExtensions.cs:line 56
+   at FC.Notes.Web.NotesWebModule.OnApplicationInitialization(ApplicationInitializationContext context) in C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\NotesWebModule.cs:line 213
+   at Volo.Abp.Modularity.ModuleManager.InitializeModules(ApplicationInitializationContext context) in D:\github\abp\framework\src\Volo.Abp.Core\Volo\Abp\Modularity\ModuleManager.cs:line 39
+   at Volo.Abp.AbpApplicationBase.InitializeModules() in D:\github\abp\framework\src\Volo.Abp.Core\Volo\Abp\AbpApplicationBase.cs:line 72
+   at FC.Notes.Web.Startup.Configure(IApplicationBuilder app, ILoggerFactory loggerFactory) in C:\Andy\Study\net\Xamarin\Notes\Notes\Web\src\FC.Notes.Web\Startup.cs:line 27
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Mvc.Internal.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISServerSetupFilter.<>c__DisplayClass2_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.AutoRequestServicesStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2020-07-21 17:16:40.434 +08:00 [DBG] Hosting started
+2020-07-21 17:16:40.434 +08:00 [DBG] Loaded hosting startup assembly FC.Notes.Web
+2020-07-21 17:16:40.434 +08:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Server.IISIntegration
+2020-07-21 17:16:40.457 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/swagger  
+2020-07-21 17:16:40.516 +08:00 [INF] Request finished in 60.1246ms 500 text/html; charset=utf-8
+2020-07-21 17:16:40.614 +08:00 [INF] Request starting HTTP/2.0 GET https://localhost:44329/favicon.ico  
+2020-07-21 17:16:40.626 +08:00 [INF] Request finished in 11.8328ms 500 text/html; charset=utf-8
+2020-07-21 17:16:44.407 +08:00 [ERR] Unable to connect to any of the specified MySQL hosts.
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 326
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 112
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 141
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 507
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 232
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at Volo.Abp.BackgroundJobs.EntityFrameworkCore.EfCoreBackgroundJobRepository.GetWaitingListAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.EntityFrameworkCore\Volo\Abp\BackgroundJobs\EntityFrameworkCore\EfCoreBackgroundJobRepository.cs:line 27
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation) in D:\github\abp\framework\src\Volo.Abp.Uow\Volo\Abp\Uow\UnitOfWorkInterceptor.cs:line 47
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpInterceptorAdapter`1.ExecuteWithReturnValueAsync[T](IInvocation invocation, IInvocationProceedInfo proceedInfo) in D:\github\abp\framework\src\Volo.Abp.Castle.Core\Volo\Abp\Castle\DynamicProxy\CastleAbpInterceptorAdapter.cs:line 86
+   at Volo.Abp.BackgroundJobs.BackgroundJobStore.GetWaitingJobsAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.Domain\Volo\Abp\BackgroundJobs\BackgroundJobStore.cs:line 38
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   at Volo.Abp.BackgroundJobs.BackgroundJobWorker.DoWork() in D:\github\abp\framework\src\Volo.Abp.BackgroundJobs\Volo\Abp\BackgroundJobs\BackgroundJobWorker.cs:line 42
+   at Volo.Abp.BackgroundWorkers.PeriodicBackgroundWorkerBase.Timer_Elapsed(Object sender, EventArgs e) in D:\github\abp\framework\src\Volo.Abp.BackgroundWorkers\Volo\Abp\BackgroundWorkers\PeriodicBackgroundWorkerBase.cs:line 42
+2020-07-21 17:16:44.410 +08:00 [ERR] ---------- Exception Data ----------
+2020-07-21 17:16:44.410 +08:00 [ERR] Server Error Code = 1042
+2020-07-21 17:16:44.410 +08:00 [ERR] SqlState = 
+2020-07-21 17:16:50.555 +08:00 [ERR] Unable to connect to any of the specified MySQL hosts.
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 326
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 112
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 141
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 507
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 232
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at Volo.Abp.BackgroundJobs.EntityFrameworkCore.EfCoreBackgroundJobRepository.GetWaitingListAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.EntityFrameworkCore\Volo\Abp\BackgroundJobs\EntityFrameworkCore\EfCoreBackgroundJobRepository.cs:line 27
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation) in D:\github\abp\framework\src\Volo.Abp.Uow\Volo\Abp\Uow\UnitOfWorkInterceptor.cs:line 47
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpInterceptorAdapter`1.ExecuteWithReturnValueAsync[T](IInvocation invocation, IInvocationProceedInfo proceedInfo) in D:\github\abp\framework\src\Volo.Abp.Castle.Core\Volo\Abp\Castle\DynamicProxy\CastleAbpInterceptorAdapter.cs:line 86
+   at Volo.Abp.BackgroundJobs.BackgroundJobStore.GetWaitingJobsAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.Domain\Volo\Abp\BackgroundJobs\BackgroundJobStore.cs:line 38
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   at Volo.Abp.BackgroundJobs.BackgroundJobWorker.DoWork() in D:\github\abp\framework\src\Volo.Abp.BackgroundJobs\Volo\Abp\BackgroundJobs\BackgroundJobWorker.cs:line 42
+   at Volo.Abp.BackgroundWorkers.PeriodicBackgroundWorkerBase.Timer_Elapsed(Object sender, EventArgs e) in D:\github\abp\framework\src\Volo.Abp.BackgroundWorkers\Volo\Abp\BackgroundWorkers\PeriodicBackgroundWorkerBase.cs:line 42
+2020-07-21 17:16:50.558 +08:00 [ERR] ---------- Exception Data ----------
+2020-07-21 17:16:50.558 +08:00 [ERR] Server Error Code = 1042
+2020-07-21 17:16:50.558 +08:00 [ERR] SqlState = 
+2020-07-21 17:16:56.689 +08:00 [ERR] Unable to connect to any of the specified MySQL hosts.
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 326
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 112
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 141
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 507
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 232
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at Volo.Abp.BackgroundJobs.EntityFrameworkCore.EfCoreBackgroundJobRepository.GetWaitingListAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.EntityFrameworkCore\Volo\Abp\BackgroundJobs\EntityFrameworkCore\EfCoreBackgroundJobRepository.cs:line 27
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation) in D:\github\abp\framework\src\Volo.Abp.Uow\Volo\Abp\Uow\UnitOfWorkInterceptor.cs:line 47
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpInterceptorAdapter`1.ExecuteWithReturnValueAsync[T](IInvocation invocation, IInvocationProceedInfo proceedInfo) in D:\github\abp\framework\src\Volo.Abp.Castle.Core\Volo\Abp\Castle\DynamicProxy\CastleAbpInterceptorAdapter.cs:line 86
+   at Volo.Abp.BackgroundJobs.BackgroundJobStore.GetWaitingJobsAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.Domain\Volo\Abp\BackgroundJobs\BackgroundJobStore.cs:line 38
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   at Volo.Abp.BackgroundJobs.BackgroundJobWorker.DoWork() in D:\github\abp\framework\src\Volo.Abp.BackgroundJobs\Volo\Abp\BackgroundJobs\BackgroundJobWorker.cs:line 42
+   at Volo.Abp.BackgroundWorkers.PeriodicBackgroundWorkerBase.Timer_Elapsed(Object sender, EventArgs e) in D:\github\abp\framework\src\Volo.Abp.BackgroundWorkers\Volo\Abp\BackgroundWorkers\PeriodicBackgroundWorkerBase.cs:line 42
+2020-07-21 17:16:56.693 +08:00 [ERR] ---------- Exception Data ----------
+2020-07-21 17:16:56.693 +08:00 [ERR] Server Error Code = 1042
+2020-07-21 17:16:56.693 +08:00 [ERR] SqlState = 
+2020-07-21 17:17:02.834 +08:00 [ERR] Unable to connect to any of the specified MySQL hosts.
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 326
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 112
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 141
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 507
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 232
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at Volo.Abp.BackgroundJobs.EntityFrameworkCore.EfCoreBackgroundJobRepository.GetWaitingListAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.EntityFrameworkCore\Volo\Abp\BackgroundJobs\EntityFrameworkCore\EfCoreBackgroundJobRepository.cs:line 27
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation) in D:\github\abp\framework\src\Volo.Abp.Uow\Volo\Abp\Uow\UnitOfWorkInterceptor.cs:line 47
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpInterceptorAdapter`1.ExecuteWithReturnValueAsync[T](IInvocation invocation, IInvocationProceedInfo proceedInfo) in D:\github\abp\framework\src\Volo.Abp.Castle.Core\Volo\Abp\Castle\DynamicProxy\CastleAbpInterceptorAdapter.cs:line 86
+   at Volo.Abp.BackgroundJobs.BackgroundJobStore.GetWaitingJobsAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.Domain\Volo\Abp\BackgroundJobs\BackgroundJobStore.cs:line 38
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   at Volo.Abp.BackgroundJobs.BackgroundJobWorker.DoWork() in D:\github\abp\framework\src\Volo.Abp.BackgroundJobs\Volo\Abp\BackgroundJobs\BackgroundJobWorker.cs:line 42
+   at Volo.Abp.BackgroundWorkers.PeriodicBackgroundWorkerBase.Timer_Elapsed(Object sender, EventArgs e) in D:\github\abp\framework\src\Volo.Abp.BackgroundWorkers\Volo\Abp\BackgroundWorkers\PeriodicBackgroundWorkerBase.cs:line 42
+2020-07-21 17:17:02.837 +08:00 [ERR] ---------- Exception Data ----------
+2020-07-21 17:17:02.837 +08:00 [ERR] Server Error Code = 1042
+2020-07-21 17:17:02.837 +08:00 [ERR] SqlState = 
+2020-07-21 17:17:08.973 +08:00 [ERR] Unable to connect to any of the specified MySQL hosts.
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 326
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 112
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 141
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 507
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 232
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at Volo.Abp.BackgroundJobs.EntityFrameworkCore.EfCoreBackgroundJobRepository.GetWaitingListAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.EntityFrameworkCore\Volo\Abp\BackgroundJobs\EntityFrameworkCore\EfCoreBackgroundJobRepository.cs:line 27
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation) in D:\github\abp\framework\src\Volo.Abp.Uow\Volo\Abp\Uow\UnitOfWorkInterceptor.cs:line 47
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpInterceptorAdapter`1.ExecuteWithReturnValueAsync[T](IInvocation invocation, IInvocationProceedInfo proceedInfo) in D:\github\abp\framework\src\Volo.Abp.Castle.Core\Volo\Abp\Castle\DynamicProxy\CastleAbpInterceptorAdapter.cs:line 86
+   at Volo.Abp.BackgroundJobs.BackgroundJobStore.GetWaitingJobsAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.Domain\Volo\Abp\BackgroundJobs\BackgroundJobStore.cs:line 38
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   at Volo.Abp.BackgroundJobs.BackgroundJobWorker.DoWork() in D:\github\abp\framework\src\Volo.Abp.BackgroundJobs\Volo\Abp\BackgroundJobs\BackgroundJobWorker.cs:line 42
+   at Volo.Abp.BackgroundWorkers.PeriodicBackgroundWorkerBase.Timer_Elapsed(Object sender, EventArgs e) in D:\github\abp\framework\src\Volo.Abp.BackgroundWorkers\Volo\Abp\BackgroundWorkers\PeriodicBackgroundWorkerBase.cs:line 42
+2020-07-21 17:17:08.975 +08:00 [ERR] ---------- Exception Data ----------
+2020-07-21 17:17:08.975 +08:00 [ERR] Server Error Code = 1042
+2020-07-21 17:17:08.975 +08:00 [ERR] SqlState = 
+2020-07-21 17:17:15.296 +08:00 [ERR] Unable to connect to any of the specified MySQL hosts.
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 326
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 112
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 141
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 507
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 232
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at Volo.Abp.BackgroundJobs.EntityFrameworkCore.EfCoreBackgroundJobRepository.GetWaitingListAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.EntityFrameworkCore\Volo\Abp\BackgroundJobs\EntityFrameworkCore\EfCoreBackgroundJobRepository.cs:line 27
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation) in D:\github\abp\framework\src\Volo.Abp.Uow\Volo\Abp\Uow\UnitOfWorkInterceptor.cs:line 47
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpInterceptorAdapter`1.ExecuteWithReturnValueAsync[T](IInvocation invocation, IInvocationProceedInfo proceedInfo) in D:\github\abp\framework\src\Volo.Abp.Castle.Core\Volo\Abp\Castle\DynamicProxy\CastleAbpInterceptorAdapter.cs:line 86
+   at Volo.Abp.BackgroundJobs.BackgroundJobStore.GetWaitingJobsAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.Domain\Volo\Abp\BackgroundJobs\BackgroundJobStore.cs:line 38
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   at Volo.Abp.BackgroundJobs.BackgroundJobWorker.DoWork() in D:\github\abp\framework\src\Volo.Abp.BackgroundJobs\Volo\Abp\BackgroundJobs\BackgroundJobWorker.cs:line 42
+   at Volo.Abp.BackgroundWorkers.PeriodicBackgroundWorkerBase.Timer_Elapsed(Object sender, EventArgs e) in D:\github\abp\framework\src\Volo.Abp.BackgroundWorkers\Volo\Abp\BackgroundWorkers\PeriodicBackgroundWorkerBase.cs:line 42
+2020-07-21 17:17:15.299 +08:00 [ERR] ---------- Exception Data ----------
+2020-07-21 17:17:15.299 +08:00 [ERR] Server Error Code = 1042
+2020-07-21 17:17:15.299 +08:00 [ERR] SqlState = 
+2020-07-21 17:17:21.431 +08:00 [ERR] Unable to connect to any of the specified MySQL hosts.
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 326
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 112
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 141
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 507
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 232
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at Volo.Abp.BackgroundJobs.EntityFrameworkCore.EfCoreBackgroundJobRepository.GetWaitingListAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.EntityFrameworkCore\Volo\Abp\BackgroundJobs\EntityFrameworkCore\EfCoreBackgroundJobRepository.cs:line 27
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation) in D:\github\abp\framework\src\Volo.Abp.Uow\Volo\Abp\Uow\UnitOfWorkInterceptor.cs:line 47
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpInterceptorAdapter`1.ExecuteWithReturnValueAsync[T](IInvocation invocation, IInvocationProceedInfo proceedInfo) in D:\github\abp\framework\src\Volo.Abp.Castle.Core\Volo\Abp\Castle\DynamicProxy\CastleAbpInterceptorAdapter.cs:line 86
+   at Volo.Abp.BackgroundJobs.BackgroundJobStore.GetWaitingJobsAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.Domain\Volo\Abp\BackgroundJobs\BackgroundJobStore.cs:line 38
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   at Volo.Abp.BackgroundJobs.BackgroundJobWorker.DoWork() in D:\github\abp\framework\src\Volo.Abp.BackgroundJobs\Volo\Abp\BackgroundJobs\BackgroundJobWorker.cs:line 42
+   at Volo.Abp.BackgroundWorkers.PeriodicBackgroundWorkerBase.Timer_Elapsed(Object sender, EventArgs e) in D:\github\abp\framework\src\Volo.Abp.BackgroundWorkers\Volo\Abp\BackgroundWorkers\PeriodicBackgroundWorkerBase.cs:line 42
+2020-07-21 17:17:21.434 +08:00 [ERR] ---------- Exception Data ----------
+2020-07-21 17:17:21.434 +08:00 [ERR] Server Error Code = 1042
+2020-07-21 17:17:21.434 +08:00 [ERR] SqlState = 
+2020-07-21 17:17:27.569 +08:00 [ERR] Unable to connect to any of the specified MySQL hosts.
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 326
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 112
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 141
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 507
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 232
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at Volo.Abp.BackgroundJobs.EntityFrameworkCore.EfCoreBackgroundJobRepository.GetWaitingListAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.EntityFrameworkCore\Volo\Abp\BackgroundJobs\EntityFrameworkCore\EfCoreBackgroundJobRepository.cs:line 27
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation) in D:\github\abp\framework\src\Volo.Abp.Uow\Volo\Abp\Uow\UnitOfWorkInterceptor.cs:line 47
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpInterceptorAdapter`1.ExecuteWithReturnValueAsync[T](IInvocation invocation, IInvocationProceedInfo proceedInfo) in D:\github\abp\framework\src\Volo.Abp.Castle.Core\Volo\Abp\Castle\DynamicProxy\CastleAbpInterceptorAdapter.cs:line 86
+   at Volo.Abp.BackgroundJobs.BackgroundJobStore.GetWaitingJobsAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.Domain\Volo\Abp\BackgroundJobs\BackgroundJobStore.cs:line 38
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   at Volo.Abp.BackgroundJobs.BackgroundJobWorker.DoWork() in D:\github\abp\framework\src\Volo.Abp.BackgroundJobs\Volo\Abp\BackgroundJobs\BackgroundJobWorker.cs:line 42
+   at Volo.Abp.BackgroundWorkers.PeriodicBackgroundWorkerBase.Timer_Elapsed(Object sender, EventArgs e) in D:\github\abp\framework\src\Volo.Abp.BackgroundWorkers\Volo\Abp\BackgroundWorkers\PeriodicBackgroundWorkerBase.cs:line 42
+2020-07-21 17:17:27.572 +08:00 [ERR] ---------- Exception Data ----------
+2020-07-21 17:17:27.572 +08:00 [ERR] Server Error Code = 1042
+2020-07-21 17:17:27.572 +08:00 [ERR] SqlState = 
+2020-07-21 17:17:33.703 +08:00 [ERR] Unable to connect to any of the specified MySQL hosts.
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 326
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 112
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 141
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 507
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 232
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at Volo.Abp.BackgroundJobs.EntityFrameworkCore.EfCoreBackgroundJobRepository.GetWaitingListAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.EntityFrameworkCore\Volo\Abp\BackgroundJobs\EntityFrameworkCore\EfCoreBackgroundJobRepository.cs:line 27
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation) in D:\github\abp\framework\src\Volo.Abp.Uow\Volo\Abp\Uow\UnitOfWorkInterceptor.cs:line 47
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpInterceptorAdapter`1.ExecuteWithReturnValueAsync[T](IInvocation invocation, IInvocationProceedInfo proceedInfo) in D:\github\abp\framework\src\Volo.Abp.Castle.Core\Volo\Abp\Castle\DynamicProxy\CastleAbpInterceptorAdapter.cs:line 86
+   at Volo.Abp.BackgroundJobs.BackgroundJobStore.GetWaitingJobsAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.Domain\Volo\Abp\BackgroundJobs\BackgroundJobStore.cs:line 38
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   at Volo.Abp.BackgroundJobs.BackgroundJobWorker.DoWork() in D:\github\abp\framework\src\Volo.Abp.BackgroundJobs\Volo\Abp\BackgroundJobs\BackgroundJobWorker.cs:line 42
+   at Volo.Abp.BackgroundWorkers.PeriodicBackgroundWorkerBase.Timer_Elapsed(Object sender, EventArgs e) in D:\github\abp\framework\src\Volo.Abp.BackgroundWorkers\Volo\Abp\BackgroundWorkers\PeriodicBackgroundWorkerBase.cs:line 42
+2020-07-21 17:17:33.706 +08:00 [ERR] ---------- Exception Data ----------
+2020-07-21 17:17:33.706 +08:00 [ERR] Server Error Code = 1042
+2020-07-21 17:17:33.706 +08:00 [ERR] SqlState = 
+2020-07-21 17:17:39.851 +08:00 [ERR] Unable to connect to any of the specified MySQL hosts.
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 326
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 112
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 141
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 507
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 232
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at Volo.Abp.BackgroundJobs.EntityFrameworkCore.EfCoreBackgroundJobRepository.GetWaitingListAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.EntityFrameworkCore\Volo\Abp\BackgroundJobs\EntityFrameworkCore\EfCoreBackgroundJobRepository.cs:line 27
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation) in D:\github\abp\framework\src\Volo.Abp.Uow\Volo\Abp\Uow\UnitOfWorkInterceptor.cs:line 47
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpInterceptorAdapter`1.ExecuteWithReturnValueAsync[T](IInvocation invocation, IInvocationProceedInfo proceedInfo) in D:\github\abp\framework\src\Volo.Abp.Castle.Core\Volo\Abp\Castle\DynamicProxy\CastleAbpInterceptorAdapter.cs:line 86
+   at Volo.Abp.BackgroundJobs.BackgroundJobStore.GetWaitingJobsAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.Domain\Volo\Abp\BackgroundJobs\BackgroundJobStore.cs:line 38
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   at Volo.Abp.BackgroundJobs.BackgroundJobWorker.DoWork() in D:\github\abp\framework\src\Volo.Abp.BackgroundJobs\Volo\Abp\BackgroundJobs\BackgroundJobWorker.cs:line 42
+   at Volo.Abp.BackgroundWorkers.PeriodicBackgroundWorkerBase.Timer_Elapsed(Object sender, EventArgs e) in D:\github\abp\framework\src\Volo.Abp.BackgroundWorkers\Volo\Abp\BackgroundWorkers\PeriodicBackgroundWorkerBase.cs:line 42
+2020-07-21 17:17:39.855 +08:00 [ERR] ---------- Exception Data ----------
+2020-07-21 17:17:39.855 +08:00 [ERR] Server Error Code = 1042
+2020-07-21 17:17:39.855 +08:00 [ERR] SqlState = 
+2020-07-21 17:17:45.985 +08:00 [ERR] Unable to connect to any of the specified MySQL hosts.
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 326
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 112
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 141
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 507
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 232
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at Volo.Abp.BackgroundJobs.EntityFrameworkCore.EfCoreBackgroundJobRepository.GetWaitingListAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.EntityFrameworkCore\Volo\Abp\BackgroundJobs\EntityFrameworkCore\EfCoreBackgroundJobRepository.cs:line 27
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation) in D:\github\abp\framework\src\Volo.Abp.Uow\Volo\Abp\Uow\UnitOfWorkInterceptor.cs:line 47
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpInterceptorAdapter`1.ExecuteWithReturnValueAsync[T](IInvocation invocation, IInvocationProceedInfo proceedInfo) in D:\github\abp\framework\src\Volo.Abp.Castle.Core\Volo\Abp\Castle\DynamicProxy\CastleAbpInterceptorAdapter.cs:line 86
+   at Volo.Abp.BackgroundJobs.BackgroundJobStore.GetWaitingJobsAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.Domain\Volo\Abp\BackgroundJobs\BackgroundJobStore.cs:line 38
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   at Volo.Abp.BackgroundJobs.BackgroundJobWorker.DoWork() in D:\github\abp\framework\src\Volo.Abp.BackgroundJobs\Volo\Abp\BackgroundJobs\BackgroundJobWorker.cs:line 42
+   at Volo.Abp.BackgroundWorkers.PeriodicBackgroundWorkerBase.Timer_Elapsed(Object sender, EventArgs e) in D:\github\abp\framework\src\Volo.Abp.BackgroundWorkers\Volo\Abp\BackgroundWorkers\PeriodicBackgroundWorkerBase.cs:line 42
+2020-07-21 17:17:45.988 +08:00 [ERR] ---------- Exception Data ----------
+2020-07-21 17:17:45.988 +08:00 [ERR] Server Error Code = 1042
+2020-07-21 17:17:45.988 +08:00 [ERR] SqlState = 
+2020-07-21 17:17:52.127 +08:00 [ERR] Unable to connect to any of the specified MySQL hosts.
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 326
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 112
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 141
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 507
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 232
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at Volo.Abp.BackgroundJobs.EntityFrameworkCore.EfCoreBackgroundJobRepository.GetWaitingListAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.EntityFrameworkCore\Volo\Abp\BackgroundJobs\EntityFrameworkCore\EfCoreBackgroundJobRepository.cs:line 27
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation) in D:\github\abp\framework\src\Volo.Abp.Uow\Volo\Abp\Uow\UnitOfWorkInterceptor.cs:line 47
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpInterceptorAdapter`1.ExecuteWithReturnValueAsync[T](IInvocation invocation, IInvocationProceedInfo proceedInfo) in D:\github\abp\framework\src\Volo.Abp.Castle.Core\Volo\Abp\Castle\DynamicProxy\CastleAbpInterceptorAdapter.cs:line 86
+   at Volo.Abp.BackgroundJobs.BackgroundJobStore.GetWaitingJobsAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.Domain\Volo\Abp\BackgroundJobs\BackgroundJobStore.cs:line 38
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   at Volo.Abp.BackgroundJobs.BackgroundJobWorker.DoWork() in D:\github\abp\framework\src\Volo.Abp.BackgroundJobs\Volo\Abp\BackgroundJobs\BackgroundJobWorker.cs:line 42
+   at Volo.Abp.BackgroundWorkers.PeriodicBackgroundWorkerBase.Timer_Elapsed(Object sender, EventArgs e) in D:\github\abp\framework\src\Volo.Abp.BackgroundWorkers\Volo\Abp\BackgroundWorkers\PeriodicBackgroundWorkerBase.cs:line 42
+2020-07-21 17:17:52.130 +08:00 [ERR] ---------- Exception Data ----------
+2020-07-21 17:17:52.130 +08:00 [ERR] Server Error Code = 1042
+2020-07-21 17:17:52.130 +08:00 [ERR] SqlState = 
+2020-07-21 17:17:58.264 +08:00 [ERR] Unable to connect to any of the specified MySQL hosts.
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 326
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 112
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 141
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 507
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 232
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at Volo.Abp.BackgroundJobs.EntityFrameworkCore.EfCoreBackgroundJobRepository.GetWaitingListAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.EntityFrameworkCore\Volo\Abp\BackgroundJobs\EntityFrameworkCore\EfCoreBackgroundJobRepository.cs:line 27
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation) in D:\github\abp\framework\src\Volo.Abp.Uow\Volo\Abp\Uow\UnitOfWorkInterceptor.cs:line 47
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpInterceptorAdapter`1.ExecuteWithReturnValueAsync[T](IInvocation invocation, IInvocationProceedInfo proceedInfo) in D:\github\abp\framework\src\Volo.Abp.Castle.Core\Volo\Abp\Castle\DynamicProxy\CastleAbpInterceptorAdapter.cs:line 86
+   at Volo.Abp.BackgroundJobs.BackgroundJobStore.GetWaitingJobsAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.Domain\Volo\Abp\BackgroundJobs\BackgroundJobStore.cs:line 38
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   at Volo.Abp.BackgroundJobs.BackgroundJobWorker.DoWork() in D:\github\abp\framework\src\Volo.Abp.BackgroundJobs\Volo\Abp\BackgroundJobs\BackgroundJobWorker.cs:line 42
+   at Volo.Abp.BackgroundWorkers.PeriodicBackgroundWorkerBase.Timer_Elapsed(Object sender, EventArgs e) in D:\github\abp\framework\src\Volo.Abp.BackgroundWorkers\Volo\Abp\BackgroundWorkers\PeriodicBackgroundWorkerBase.cs:line 42
+2020-07-21 17:17:58.267 +08:00 [ERR] ---------- Exception Data ----------
+2020-07-21 17:17:58.267 +08:00 [ERR] Server Error Code = 1042
+2020-07-21 17:17:58.267 +08:00 [ERR] SqlState = 
+2020-07-21 17:18:04.410 +08:00 [ERR] Unable to connect to any of the specified MySQL hosts.
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 326
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 112
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 141
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 507
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 232
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at Volo.Abp.BackgroundJobs.EntityFrameworkCore.EfCoreBackgroundJobRepository.GetWaitingListAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.EntityFrameworkCore\Volo\Abp\BackgroundJobs\EntityFrameworkCore\EfCoreBackgroundJobRepository.cs:line 27
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation) in D:\github\abp\framework\src\Volo.Abp.Uow\Volo\Abp\Uow\UnitOfWorkInterceptor.cs:line 47
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpInterceptorAdapter`1.ExecuteWithReturnValueAsync[T](IInvocation invocation, IInvocationProceedInfo proceedInfo) in D:\github\abp\framework\src\Volo.Abp.Castle.Core\Volo\Abp\Castle\DynamicProxy\CastleAbpInterceptorAdapter.cs:line 86
+   at Volo.Abp.BackgroundJobs.BackgroundJobStore.GetWaitingJobsAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.Domain\Volo\Abp\BackgroundJobs\BackgroundJobStore.cs:line 38
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   at Volo.Abp.BackgroundJobs.BackgroundJobWorker.DoWork() in D:\github\abp\framework\src\Volo.Abp.BackgroundJobs\Volo\Abp\BackgroundJobs\BackgroundJobWorker.cs:line 42
+   at Volo.Abp.BackgroundWorkers.PeriodicBackgroundWorkerBase.Timer_Elapsed(Object sender, EventArgs e) in D:\github\abp\framework\src\Volo.Abp.BackgroundWorkers\Volo\Abp\BackgroundWorkers\PeriodicBackgroundWorkerBase.cs:line 42
+2020-07-21 17:18:04.412 +08:00 [ERR] ---------- Exception Data ----------
+2020-07-21 17:18:04.412 +08:00 [ERR] Server Error Code = 1042
+2020-07-21 17:18:04.412 +08:00 [ERR] SqlState = 
+2020-07-21 17:18:10.557 +08:00 [ERR] Unable to connect to any of the specified MySQL hosts.
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 326
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 112
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 141
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 507
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 232
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at Volo.Abp.BackgroundJobs.EntityFrameworkCore.EfCoreBackgroundJobRepository.GetWaitingListAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.EntityFrameworkCore\Volo\Abp\BackgroundJobs\EntityFrameworkCore\EfCoreBackgroundJobRepository.cs:line 27
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation) in D:\github\abp\framework\src\Volo.Abp.Uow\Volo\Abp\Uow\UnitOfWorkInterceptor.cs:line 47
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpInterceptorAdapter`1.ExecuteWithReturnValueAsync[T](IInvocation invocation, IInvocationProceedInfo proceedInfo) in D:\github\abp\framework\src\Volo.Abp.Castle.Core\Volo\Abp\Castle\DynamicProxy\CastleAbpInterceptorAdapter.cs:line 86
+   at Volo.Abp.BackgroundJobs.BackgroundJobStore.GetWaitingJobsAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.Domain\Volo\Abp\BackgroundJobs\BackgroundJobStore.cs:line 38
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   at Volo.Abp.BackgroundJobs.BackgroundJobWorker.DoWork() in D:\github\abp\framework\src\Volo.Abp.BackgroundJobs\Volo\Abp\BackgroundJobs\BackgroundJobWorker.cs:line 42
+   at Volo.Abp.BackgroundWorkers.PeriodicBackgroundWorkerBase.Timer_Elapsed(Object sender, EventArgs e) in D:\github\abp\framework\src\Volo.Abp.BackgroundWorkers\Volo\Abp\BackgroundWorkers\PeriodicBackgroundWorkerBase.cs:line 42
+2020-07-21 17:18:10.560 +08:00 [ERR] ---------- Exception Data ----------
+2020-07-21 17:18:10.560 +08:00 [ERR] Server Error Code = 1042
+2020-07-21 17:18:10.560 +08:00 [ERR] SqlState = 
+2020-07-21 17:18:16.692 +08:00 [ERR] Unable to connect to any of the specified MySQL hosts.
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ServerSession.cs:line 326
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 112
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\Core\ConnectionPool.cs:line 141
+   at MySql.Data.MySqlClient.MySqlConnection.CreateSessionAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 507
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in C:\projects\mysqlconnector\src\MySqlConnector\MySql.Data.MySqlClient\MySqlConnection.cs:line 232
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Aggregate.cs:line 120
+   at Volo.Abp.BackgroundJobs.EntityFrameworkCore.EfCoreBackgroundJobRepository.GetWaitingListAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.EntityFrameworkCore\Volo\Abp\BackgroundJobs\EntityFrameworkCore\EfCoreBackgroundJobRepository.cs:line 27
+   at Volo.Abp.Uow.UnitOfWorkInterceptor.InterceptAsync(IAbpMethodInvocation invocation) in D:\github\abp\framework\src\Volo.Abp.Uow\Volo\Abp\Uow\UnitOfWorkInterceptor.cs:line 47
+   at Volo.Abp.Castle.DynamicProxy.CastleAbpInterceptorAdapter`1.ExecuteWithReturnValueAsync[T](IInvocation invocation, IInvocationProceedInfo proceedInfo) in D:\github\abp\framework\src\Volo.Abp.Castle.Core\Volo\Abp\Castle\DynamicProxy\CastleAbpInterceptorAdapter.cs:line 86
+   at Volo.Abp.BackgroundJobs.BackgroundJobStore.GetWaitingJobsAsync(Int32 maxResultCount) in D:\github\abp\modules\background-jobs\src\Volo.Abp.BackgroundJobs.Domain\Volo\Abp\BackgroundJobs\BackgroundJobStore.cs:line 38
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task)
+   at Nito.AsyncEx.AsyncContext.Run[TResult](Func`1 action)
+   at Volo.Abp.BackgroundJobs.BackgroundJobWorker.DoWork() in D:\github\abp\framework\src\Volo.Abp.BackgroundJobs\Volo\Abp\BackgroundJobs\BackgroundJobWorker.cs:line 42
+   at Volo.Abp.BackgroundWorkers.PeriodicBackgroundWorkerBase.Timer_Elapsed(Object sender, EventArgs e) in D:\github\abp\framework\src\Volo.Abp.BackgroundWorkers\Volo\Abp\BackgroundWorkers\PeriodicBackgroundWorkerBase.cs:line 42
+2020-07-21 17:18:16.695 +08:00 [ERR] ---------- Exception Data ----------
+2020-07-21 17:18:16.695 +08:00 [ERR] Server Error Code = 1042
+2020-07-21 17:18:16.695 +08:00 [ERR] SqlState = 
