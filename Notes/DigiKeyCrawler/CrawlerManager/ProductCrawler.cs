@@ -88,7 +88,7 @@ namespace DigiKeyCrawler.CrawlerManager
                     {
                         images.Add(imgItem.Attributes.FirstOrDefault(n => n.Name == "src").Value);
                     }
-                    p.Images = JsonConvert.SerializeObject(images);
+                    //p.Images = JsonConvert.SerializeObject(images);
                 }
             }
             //分类取第二级
@@ -139,7 +139,7 @@ namespace DigiKeyCrawler.CrawlerManager
                     }
                     dic.Add(key, value);
                 }
-                p.MediaDownloads = JsonConvert.SerializeObject(dic);
+                //p.MediaDownloads = JsonConvert.SerializeObject(dic);
             }
 
             //感兴趣
@@ -174,14 +174,14 @@ namespace DigiKeyCrawler.CrawlerManager
             //产品属性
             var productAttributes = JsonConvert.DeserializeObject<Dictionary<string, object>>(JsonConvert.SerializeObject(data))["productAttributes"];
             var attributes = JsonConvert.DeserializeObject<Dictionary<string, object>>(JsonConvert.SerializeObject(productAttributes))["attributes"];
-            p.ProductAttributes = JsonConvert.SerializeObject(attributes);
+            //p.ProductAttributes = JsonConvert.SerializeObject(attributes);
 
             //Environmental & Export Classifications
             var environmental = JsonConvert.DeserializeObject<Dictionary<string, object>>(JsonConvert.SerializeObject(data))["environmental"];
             var environmentalObj = JsonConvert.DeserializeObject<Dictionary<string, object>>(JsonConvert.SerializeObject(environmental));
             if (environmentalObj.ContainsKey("dataRows"))
             {
-                p.EnvironmentalExportClassifications = JsonConvert.SerializeObject(environmentalObj["dataRows"]);
+                //p.EnvironmentalExportClassifications = JsonConvert.SerializeObject(environmentalObj["dataRows"]);
             }
 
             //additionalResources
@@ -189,7 +189,7 @@ namespace DigiKeyCrawler.CrawlerManager
             var additionalResourcesObj = JsonConvert.DeserializeObject<Dictionary<string, object>>(JsonConvert.SerializeObject(environmental));
             if (environmentalObj.ContainsKey("dataRows"))
             {
-                p.AdditionalResources = JsonConvert.SerializeObject(environmentalObj["dataRows"]);
+                //p.AdditionalResources = JsonConvert.SerializeObject(environmentalObj["dataRows"]);
             }
 
             //priceQuantity
@@ -198,7 +198,7 @@ namespace DigiKeyCrawler.CrawlerManager
             if (priceQuantityObj.ContainsKey("pricing"))
             {
                 var priceObj = JsonConvert.DeserializeObject<List<Dictionary<string, object>>>(JsonConvert.SerializeObject(priceQuantityObj["pricing"]));
-                p.Prices = JsonConvert.SerializeObject(priceObj[0]["pricingTiers"]);
+                //p.Prices = JsonConvert.SerializeObject(priceObj[0]["pricingTiers"]);
             }
             return p;
         }

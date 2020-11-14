@@ -7,6 +7,8 @@ namespace DigiKeyCrawler
     {
         static void Main(string[] args)
         {
+            //https://github.com/zqlovejyc/EFCoreRepository
+
             Console.WriteLine("==== Start Crawler=== ");
 
             Console.WriteLine("==== Runing === ");

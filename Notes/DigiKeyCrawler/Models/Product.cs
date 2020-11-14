@@ -12,7 +12,7 @@ namespace DigiKeyCrawler.Models
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
         public string ImageTitle { get; set; }
-        public string Images { get; set; }
+        //public string Images { get; set; }
 
         /// <summary>
         /// 默认是产品的第一张图
@@ -54,22 +54,26 @@ namespace DigiKeyCrawler.Models
         /// 制造商标准交货时间
         /// </summary>
         public string ManufacturerStandardLeadTime { get; set; }
+       
         /// <summary>
         /// 媒体下载
         /// </summary>
-        public string MediaDownloads { get; set; }
+        //public string MediaDownloads { get; set; }
+       
         /// <summary>
         /// 产品属性
         /// </summary>
-        public string ProductAttributes { get; set; }
+        //public string ProductAttributes { get; set; }
+        
         /// <summary>
         /// 出口环境分类
         /// </summary>
-        public string EnvironmentalExportClassifications { get; set; }
+        //public string EnvironmentalExportClassifications { get; set; }
+        
         /// <summary>
         /// 额外资源
         /// </summary>
-        public string AdditionalResources { get; set; }
+        //public string AdditionalResources { get; set; }
 
         /// <summary>
         /// 
@@ -79,11 +83,13 @@ namespace DigiKeyCrawler.Models
         /// <summary>
         /// 产品价格
         /// </summary>
-        public string Prices { get; set; }
+        //public string Prices { get; set; }
 
         /// <summary>
         /// HTML源代码
         /// </summary>
         public string Html { get; set; }
+
+        public virtual ProductAdditionalResource ProductAdditionalResource { get; set; }
     }
 }

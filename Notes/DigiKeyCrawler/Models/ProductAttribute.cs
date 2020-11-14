@@ -6,6 +6,7 @@ namespace DigiKeyCrawler.Models
 {
     public class ProductAttribute
     {
+        public Guid ProductAttributeKey { get; set; }
         public string ProductId { get; set; }
 
         public string ProductAttributeJson { get; set; }
