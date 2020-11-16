@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DigiKeyCrawler.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 using System.Linq.Expressions;
@@ -11,7 +12,7 @@ namespace DigiKeyCrawler.DAL
     /// <typeparam name="T"></typeparam>
     public class DBBaseDAL<T> where T : class
     {
-        public DbContext context { get; set; }
+        public DbContext context { get; set; } = new DigiKeyProductContext();
 
         /// <summary>
         /// Add a entity

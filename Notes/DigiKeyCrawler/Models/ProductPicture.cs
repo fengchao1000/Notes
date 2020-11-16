@@ -6,10 +6,10 @@ namespace DigiKeyCrawler.Models
 {
     public class ProductPicture
     {
-        public Guid ProductPictureKey { get; set; }
-        public string ProductId { get; set; }
+        public Guid ProductPictureKey { get; set; } = Guid.NewGuid();
+        public Product Product { get; set; }
 
         public string PictureUrl { get; set; }
-        
+
     }
 }

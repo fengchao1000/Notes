@@ -1,4 +1,7 @@
 ﻿using DigiKeyCrawler.CrawlerManager;
+using DigiKeyCrawler.DAL;
+using DigiKeyCrawler.Helpers;
+using DigiKeyCrawler.Models;
 using System;
 
 namespace DigiKeyCrawler
@@ -13,9 +16,16 @@ namespace DigiKeyCrawler
 
             Console.WriteLine("==== Runing === ");
 
-            var productHTML = ProductCrawler.GetProductHTML(1000173);
+            //产品分类抓取
+            //ProductCategoryCrawler.Crawler();
 
-            var product = ProductCrawler.ParsingHTMLToProductModel(productHTML);
+            //产品抓取
+            ProductCrawler.CrawlerAllProduct();
+
+            //var productHTML = ProductCrawler.GetProductHTML(1000177); 
+            //var product = ProductCrawler.ParsingHTMLToProductModel(productHTML); 
+            //DBBaseDAL<Product> productDAL = new DBBaseDAL<Product>();
+            //productDAL.Add(product);
 
             Console.WriteLine("==== End Crawler=== ");
         }

@@ -6,8 +6,8 @@ namespace DigiKeyCrawler.Models
 {
     public class ProductPrice
     {
-        public Guid ProductPriceKey { get; set; }
-        public string ProductId { get; set; }
+        public Guid ProductPriceKey { get; set; } = Guid.NewGuid();
+        public Product Product { get; set; }
 
         public string ProductPriceJson { get; set; }
     }

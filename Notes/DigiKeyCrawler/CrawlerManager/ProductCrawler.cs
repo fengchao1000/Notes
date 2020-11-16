@@ -5,12 +5,61 @@ using System.Collections.Generic;
 using System.Net;
 using HtmlAgilityPack;  
 using System.Linq; 
-using Newtonsoft.Json;   
+using Newtonsoft.Json;
+using DigiKeyCrawler.Helpers;
+using System.Threading.Tasks;
+using DigiKeyCrawler.DAL;
 
 namespace DigiKeyCrawler.CrawlerManager
 {
     public static class ProductCrawler
     {
+        /// <summary>
+        /// 抓取数据保存到db
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <returns></returns>
+        public static void CrawlerAllProduct()
+        {
+            var startProductId = 1000000;
+            var endProductId = 1000050;
+            //var endProductId = 13600000;
+
+            try
+            {
+                for (int i = startProductId; i < endProductId; i++)
+                {
+                    startProductId++;
+
+                    CrawlerSingleProduct(startProductId);
+                }
+            }
+            catch (Exception ex)
+            {
+                //System.IO.File.AppendAllLines("c://CrawlerLog//"  + DateTime.Now.ToString("yyyyMMddHHmmssms") + "_error.txt", new string[] { ex.ToString() });
+            }
+        }
+
+        /// <summary>
+        /// 抓取数据保存到db
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <returns></returns>
+        public static void CrawlerSingleProduct(int productId)
+        { 
+            try
+            { 
+                var httpResults = GetProductHTML(productId);
+                var product = ParsingHTMLToProductModel(httpResults); 
+                DBBaseDAL<Product> productDAL = new DBBaseDAL<Product>();
+                productDAL.Add(product); 
+            }
+            catch (Exception ex)
+            { 
+               //System.IO.File.AppendAllLines("c://CrawlerLog//" + productId + DateTime.Now.ToString("yyyyMMddHHmmssms") + "_error.txt", new string[] { ex.ToString() });
+            }
+        }
+
         /// <summary>
         /// 获取Product详情页html
         /// </summary>
@@ -25,7 +74,7 @@ namespace DigiKeyCrawler.CrawlerManager
             httpItems.Accept = "*/*";
             httpItems.Header.Add("Accept-Encoding", "gzip, deflate, br");
             httpItems.Header.Add("Connection", "keep-alive");
-            httpItems.Url = "https://www.digikey.com/en/products/detail/treblab/N8/" + productId;
+            httpItems.Url = $"https://www.digikey.com/en/products/detail/{new Random().Next(1, 1000)}/{new Random().Next(1, 1000)}/" + productId;
             Console.WriteLine(httpItems.Url);
             var result = httpHelpers.GetHtml(httpItems);
             if (result.StatusCode != HttpStatusCode.OK)
@@ -52,9 +101,9 @@ namespace DigiKeyCrawler.CrawlerManager
             {
                 return null;
             }
-            Product p = new Product();
-            p.ProductKey = Guid.NewGuid();
+            Product p = new Product(); 
             p.ProductId = httpResults.ID;
+            p.Html = Gziphelper.Compress(httpResults.Html);
             HtmlDocument doc = new HtmlDocument();
             doc.LoadHtml(httpResults.Html);
             var mainImage = doc.DocumentNode.SelectNodes("//div[@class='main-image']");
@@ -74,6 +123,14 @@ namespace DigiKeyCrawler.CrawlerManager
                 }
             }
 
+            //抓取datasheet
+            var datasheetNode = doc.DocumentNode.SelectNodes("//a[@data-testid='datasheet-download']");
+            if (datasheetNode != null)
+            {
+                p.DefPdf = datasheetNode[0].Attributes.FirstOrDefault(n => n.Name == "href").Value;
+            }
+
+            //抓取Pictures
             var imageNode = doc.DocumentNode.SelectNodes("//div[@data-testid='carousel-container']");
             if (imageNode != null)
             {
@@ -84,11 +141,20 @@ namespace DigiKeyCrawler.CrawlerManager
                 List<string> images = new List<string>();
                 if (otherImags != null)
                 {
+                    var listProductPicture = new List<ProductPicture>();
                     foreach (var imgItem in otherImags)
                     {
-                        images.Add(imgItem.Attributes.FirstOrDefault(n => n.Name == "src").Value);
+                        var productPicture = new ProductPicture();
+                        productPicture.PictureUrl = imgItem.Attributes.FirstOrDefault(n => n.Name == "src").Value;
+                        listProductPicture.Add(productPicture);
                     }
-                    //p.Images = JsonConvert.SerializeObject(images);
+                    
+                    p.ProductPictures = listProductPicture;
+                    //设置默认图片
+                    if (p.ProductPictures.Count > 0) 
+                    {
+                        p.DefPic = p.ProductPictures.FirstOrDefault().PictureUrl;
+                    }
                 }
             }
             //分类取第二级
@@ -138,8 +204,8 @@ namespace DigiKeyCrawler.CrawlerManager
                         value += valueItem.Attributes.FirstOrDefault(x => x.Name == "href").Value + ",";
                     }
                     dic.Add(key, value);
-                }
-                //p.MediaDownloads = JsonConvert.SerializeObject(dic);
+                } 
+                p.ProductDocuments = new List<ProductDocument> { new ProductDocument { ProductDocumentJson = JsonConvert.SerializeObject(dic) } };
             }
 
             //感兴趣
@@ -174,14 +240,14 @@ namespace DigiKeyCrawler.CrawlerManager
             //产品属性
             var productAttributes = JsonConvert.DeserializeObject<Dictionary<string, object>>(JsonConvert.SerializeObject(data))["productAttributes"];
             var attributes = JsonConvert.DeserializeObject<Dictionary<string, object>>(JsonConvert.SerializeObject(productAttributes))["attributes"];
-            //p.ProductAttributes = JsonConvert.SerializeObject(attributes);
+            p.ProductAttributes = new List<ProductAttribute> { new ProductAttribute { ProductAttributeJson = JsonConvert.SerializeObject(attributes) } };
 
             //Environmental & Export Classifications
             var environmental = JsonConvert.DeserializeObject<Dictionary<string, object>>(JsonConvert.SerializeObject(data))["environmental"];
             var environmentalObj = JsonConvert.DeserializeObject<Dictionary<string, object>>(JsonConvert.SerializeObject(environmental));
             if (environmentalObj.ContainsKey("dataRows"))
-            {
-                //p.EnvironmentalExportClassifications = JsonConvert.SerializeObject(environmentalObj["dataRows"]);
+            { 
+                p.ProductEnvExportClassifications = new List<ProductEnvExportClassification> { new ProductEnvExportClassification { ProductEnvExportClassificationJson = JsonConvert.SerializeObject(environmentalObj["dataRows"]) } };
             }
 
             //additionalResources
@@ -189,7 +255,7 @@ namespace DigiKeyCrawler.CrawlerManager
             var additionalResourcesObj = JsonConvert.DeserializeObject<Dictionary<string, object>>(JsonConvert.SerializeObject(environmental));
             if (environmentalObj.ContainsKey("dataRows"))
             {
-                //p.AdditionalResources = JsonConvert.SerializeObject(environmentalObj["dataRows"]);
+                p.ProductAdditionalResources = new List<ProductAdditionalResource> { new ProductAdditionalResource { ProductAdditionalResourceJson = JsonConvert.SerializeObject(environmentalObj["dataRows"]) } }; 
             }
 
             //priceQuantity
@@ -198,7 +264,7 @@ namespace DigiKeyCrawler.CrawlerManager
             if (priceQuantityObj.ContainsKey("pricing"))
             {
                 var priceObj = JsonConvert.DeserializeObject<List<Dictionary<string, object>>>(JsonConvert.SerializeObject(priceQuantityObj["pricing"]));
-                //p.Prices = JsonConvert.SerializeObject(priceObj[0]["pricingTiers"]);
+                p.ProductPrices = new List<ProductPrice> { new ProductPrice { ProductPriceJson = JsonConvert.SerializeObject(priceObj[0]["pricingTiers"]) } };
             }
             return p;
         }

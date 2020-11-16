@@ -6,9 +6,9 @@ namespace DigiKeyCrawler.Models
 {
     public class ProductAdditionalResource
     {
-        public Guid ProductAdditionalResourceKey { get; set; }
+        public Guid ProductAdditionalResourceKey { get; set; } = Guid.NewGuid();
 
-        public string ProductId { get; set; }
+        public Product Product { get; set; }
 
         public string ProductAdditionalResourceJson { get; set; }
     }

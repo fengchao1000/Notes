@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DigiKeyCrawler.Migrations
 {
     [DbContext(typeof(DigiKeyProductContext))]
-    [Migration("20201114090326_Init20201114")]
-    partial class Init20201114
+    [Migration("20201116100935_Init20201120")]
+    partial class Init20201120
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,9 +21,8 @@ namespace DigiKeyCrawler.Migrations
 
             modelBuilder.Entity("DigiKeyCrawler.Models.Product", b =>
                 {
-                    b.Property<Guid>("ProductKey")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
+                    b.Property<string>("ProductId")
+                        .HasColumnType("varchar(36)");
 
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
@@ -77,14 +76,10 @@ namespace DigiKeyCrawler.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(200)");
 
-                    b.Property<string>("ProductId")
-                        .IsRequired()
-                        .HasColumnType("varchar(36)");
-
                     b.Property<string>("Supplier")
                         .HasColumnType("varchar(200)");
 
-                    b.HasKey("ProductKey");
+                    b.HasKey("ProductId");
 
                     b.ToTable("Products");
                 });
@@ -100,10 +95,11 @@ namespace DigiKeyCrawler.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("ProductId")
-                        .IsRequired()
                         .HasColumnType("varchar(36)");
 
                     b.HasKey("ProductAdditionalResourceKey");
+
+                    b.HasIndex("ProductId");
 
                     b.ToTable("ProductAdditionalResourcess");
                 });
@@ -119,21 +115,19 @@ namespace DigiKeyCrawler.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("ProductId")
-                        .IsRequired()
                         .HasColumnType("varchar(36)");
 
                     b.HasKey("ProductAttributeKey");
+
+                    b.HasIndex("ProductId");
 
                     b.ToTable("ProductAttributes");
                 });
 
             modelBuilder.Entity("DigiKeyCrawler.Models.ProductCategory", b =>
                 {
-                    b.Property<Guid>("ProductCategoryKey")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
-
                     b.Property<int>("CategoryId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     b.Property<string>("CategoryName")
@@ -147,7 +141,7 @@ namespace DigiKeyCrawler.Migrations
                     b.Property<int>("ParentCategoryId")
                         .HasColumnType("int");
 
-                    b.HasKey("ProductCategoryKey");
+                    b.HasKey("CategoryId");
 
                     b.ToTable("ProductCategorys");
                 });
@@ -163,10 +157,11 @@ namespace DigiKeyCrawler.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("ProductId")
-                        .IsRequired()
                         .HasColumnType("varchar(36)");
 
                     b.HasKey("ProductDocumentKey");
+
+                    b.HasIndex("ProductId");
 
                     b.ToTable("ProductDocuments");
                 });
@@ -182,10 +177,11 @@ namespace DigiKeyCrawler.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("ProductId")
-                        .IsRequired()
                         .HasColumnType("varchar(36)");
 
                     b.HasKey("ProductEnvExportClassificationKey");
+
+                    b.HasIndex("ProductId");
 
                     b.ToTable("ProductEnvExportClassifications");
                 });
@@ -201,10 +197,11 @@ namespace DigiKeyCrawler.Migrations
                         .HasColumnType("varchar(1000)");
 
                     b.Property<string>("ProductId")
-                        .IsRequired()
                         .HasColumnType("varchar(36)");
 
                     b.HasKey("ProductPictureKey");
+
+                    b.HasIndex("ProductId");
 
                     b.ToTable("ProductPictures");
                 });
@@ -216,16 +213,59 @@ namespace DigiKeyCrawler.Migrations
                         .HasColumnType("char(36)");
 
                     b.Property<string>("ProductId")
-                        .IsRequired()
                         .HasColumnType("varchar(36)");
 
                     b.Property<string>("ProductPriceJson")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.HasKey("ProductPriceKey");
 
+                    b.HasIndex("ProductId");
+
                     b.ToTable("ProductPrices");
+                });
+
+            modelBuilder.Entity("DigiKeyCrawler.Models.ProductAdditionalResource", b =>
+                {
+                    b.HasOne("DigiKeyCrawler.Models.Product", "Product")
+                        .WithMany("ProductAdditionalResources")
+                        .HasForeignKey("ProductId");
+                });
+
+            modelBuilder.Entity("DigiKeyCrawler.Models.ProductAttribute", b =>
+                {
+                    b.HasOne("DigiKeyCrawler.Models.Product", "Product")
+                        .WithMany("ProductAttributes")
+                        .HasForeignKey("ProductId");
+                });
+
+            modelBuilder.Entity("DigiKeyCrawler.Models.ProductDocument", b =>
+                {
+                    b.HasOne("DigiKeyCrawler.Models.Product", "Product")
+                        .WithMany("ProductDocuments")
+                        .HasForeignKey("ProductId");
+                });
+
+            modelBuilder.Entity("DigiKeyCrawler.Models.ProductEnvExportClassification", b =>
+                {
+                    b.HasOne("DigiKeyCrawler.Models.Product", "Product")
+                        .WithMany("ProductEnvExportClassifications")
+                        .HasForeignKey("ProductId");
+                });
+
+            modelBuilder.Entity("DigiKeyCrawler.Models.ProductPicture", b =>
+                {
+                    b.HasOne("DigiKeyCrawler.Models.Product", "Product")
+                        .WithMany("ProductPictures")
+                        .HasForeignKey("ProductId");
+                });
+
+            modelBuilder.Entity("DigiKeyCrawler.Models.ProductPrice", b =>
+                {
+                    b.HasOne("DigiKeyCrawler.Models.Product", "Product")
+                        .WithMany("ProductPrices")
+                        .HasForeignKey("ProductId");
                 });
 #pragma warning restore 612, 618
         }

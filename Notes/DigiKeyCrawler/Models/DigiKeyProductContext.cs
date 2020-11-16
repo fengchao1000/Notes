@@ -41,7 +41,7 @@ namespace DigiKeyCrawler.Models
 
             modelBuilder.Entity<Product>(entity =>
             { 
-                entity.HasKey(e => e.ProductKey); 
+                entity.HasKey(e => e.ProductId); 
 
                 entity.Property(e => e.ProductId)
                     .IsRequired()
@@ -85,30 +85,26 @@ namespace DigiKeyCrawler.Models
 
                 entity.Property(e => e.Html)
                     .IsRequired()
-                    .HasColumnType("text"); 
+                    .HasColumnType("longtext"); 
 
             });
 
             modelBuilder.Entity<ProductAdditionalResource>(entity =>
             {
                 entity.HasKey(e => e.ProductAdditionalResourceKey);
-
-                entity.Property(e => e.ProductId)
-                    .IsRequired()
-                    .HasColumnType("varchar(36)"); 
-
+                
                 entity.Property(e => e.ProductAdditionalResourceJson)
                     .IsRequired()
-                    .HasColumnType("text"); 
+                    .HasColumnType("text");
+
+                entity.HasOne(x => x.Product);
             });
 
             modelBuilder.Entity<ProductAttribute>(entity =>
             {
                 entity.HasKey(e => e.ProductAttributeKey);
 
-                entity.Property(e => e.ProductId)
-                    .IsRequired()
-                    .HasColumnType("varchar(36)"); 
+                entity.HasOne(x => x.Product);
 
                 entity.Property(e => e.ProductAttributeJson)
                     .IsRequired()
@@ -119,9 +115,7 @@ namespace DigiKeyCrawler.Models
             {
                 entity.HasKey(e => e.ProductDocumentKey);
 
-                entity.Property(e => e.ProductId)
-                    .IsRequired()
-                    .HasColumnType("varchar(36)");
+                entity.HasOne(x => x.Product);
 
                 entity.Property(e => e.ProductDocumentJson)
                     .IsRequired()
@@ -132,9 +126,7 @@ namespace DigiKeyCrawler.Models
             {
                 entity.HasKey(e => e.ProductEnvExportClassificationKey);
 
-                entity.Property(e => e.ProductId)
-                    .IsRequired()
-                    .HasColumnType("varchar(36)");
+                entity.HasOne(x => x.Product);
 
                 entity.Property(e => e.ProductEnvExportClassificationJson)
                     .IsRequired()
@@ -145,9 +137,7 @@ namespace DigiKeyCrawler.Models
             {
                 entity.HasKey(e => e.ProductPictureKey);
 
-                entity.Property(e => e.ProductId)
-                    .IsRequired()
-                    .HasColumnType("varchar(36)");
+                entity.HasOne(x => x.Product);
 
                 entity.Property(e => e.PictureUrl)
                     .IsRequired()
@@ -158,21 +148,16 @@ namespace DigiKeyCrawler.Models
             {
                 entity.HasKey(e => e.ProductPriceKey);
 
-                entity.Property(e => e.ProductId)
-                    .IsRequired()
-                    .HasColumnType("varchar(36)");
+                entity.HasOne(x => x.Product);
 
                 entity.Property(e => e.ProductPriceJson)
                     .IsRequired()
-                    .HasColumnType("text");
+                    .HasColumnType("longtext");
             });
              
             modelBuilder.Entity<ProductCategory>(entity =>
             {
-                entity.HasKey(e => e.ProductCategoryKey);
-
-                entity.Property(e => e.CategoryId)
-                    .IsRequired();
+                entity.HasKey(e => e.CategoryId); 
 
                 entity.Property(e => e.CategoryName)
                     .IsRequired()
