@@ -3,15 +3,55 @@ using DigiKeyCrawler.Helpers.Http;
 using DigiKeyCrawler.Models;
 using HtmlAgilityPack;
 using Newtonsoft.Json;
+using Serilog;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Text;
 
 namespace DigiKeyCrawler.CrawlerManager
 {
-    public class ProductCategoryCrawler
+    public static class CacheProductCategory
     {
+        private static List<ProductCategory> CacheAllProductCategory = new List<ProductCategory>();
+
+        /// <summary>
+        /// 获取所有ProductCategory
+        /// </summary> 
+        /// <returns></returns>
+        public static List<ProductCategory> GetAllProductCategory()
+        {
+            if (CacheAllProductCategory.Count > 0)
+            {
+                return CacheAllProductCategory;
+            }
+
+            //从数据库获取
+            DBBaseDAL<ProductCategory> productCategoryDAL = new DBBaseDAL<ProductCategory>();
+            return  productCategoryDAL.FindList(q => 1 == 1).ToList();
+        }
+
+        /// <summary>
+        /// 获取ProductCategory
+        /// </summary> 
+        /// <returns></returns>
+        public static int GetProductCategoryIdByName(string categoryName)
+        {
+            List<ProductCategory> list = GetAllProductCategory();
+            ProductCategory productCategory = list.Where(w=>w.CategoryName == categoryName).FirstOrDefault();
+           
+            if (productCategory == null) 
+            {
+                return 0;
+            }
+
+            return productCategory.CategoryId;
+        }
+    }
+
+    public class ProductCategoryCrawler
+    {   
         /// <summary>
         /// 抓取数据保存到db
         /// </summary>
@@ -88,6 +128,7 @@ namespace DigiKeyCrawler.CrawlerManager
             }
             catch (Exception ex)
             {
+                Log.Error(ex.ToString());
                 return null;
             }
         }
@@ -119,7 +160,7 @@ namespace DigiKeyCrawler.CrawlerManager
                 }
                 catch (Exception ex)
                 {
-
+                    Log.Error(ex.ToString());
                 }
             }
         }

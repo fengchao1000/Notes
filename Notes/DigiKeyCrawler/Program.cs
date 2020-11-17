@@ -2,7 +2,9 @@
 using DigiKeyCrawler.DAL;
 using DigiKeyCrawler.Helpers;
 using DigiKeyCrawler.Models;
+using Serilog;
 using System;
+using System.Threading.Tasks;
 
 namespace DigiKeyCrawler
 {
@@ -12,13 +14,15 @@ namespace DigiKeyCrawler
         {
             //https://github.com/zqlovejyc/EFCoreRepository
 
+            Seriloghelper.Config();
+
             Console.WriteLine("==== Start Crawler=== ");
 
             Console.WriteLine("==== Runing === ");
 
             //产品分类抓取
             //ProductCategoryCrawler.Crawler();
-
+             
             //产品抓取
             ProductCrawler.CrawlerAllProduct();
 

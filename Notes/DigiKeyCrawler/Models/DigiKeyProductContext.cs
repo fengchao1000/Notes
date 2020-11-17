@@ -50,10 +50,7 @@ namespace DigiKeyCrawler.Models
                 entity.Property(e => e.CategoryName)
                     .IsRequired()
                     .HasColumnType("varchar(200)");
-
-                entity.Property(e => e.ImageTitle) 
-                    .HasColumnType("varchar(1200)");
-
+                  
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasColumnType("varchar(200)");
@@ -77,15 +74,19 @@ namespace DigiKeyCrawler.Models
 
                 entity.Property(e => e.Description)
                     .IsRequired()
-                    .HasColumnType("text");
+                    .HasColumnType("varchar(2000)");
 
                 entity.Property(e => e.DetailedDescription)
                     .IsRequired()
-                    .HasColumnType("text");
+                    .HasColumnType("varchar(2000)");
 
-                entity.Property(e => e.Html)
+                entity.Property(e => e.ManufacturerStandardLeadTime)
                     .IsRequired()
-                    .HasColumnType("longtext"); 
+                    .HasColumnType("varchar(200)");
+
+                entity.Property(e => e.Manufacturer)
+                    .IsRequired()
+                    .HasColumnType("varchar(200)");
 
             });
 
@@ -152,7 +153,7 @@ namespace DigiKeyCrawler.Models
 
                 entity.Property(e => e.ProductPriceJson)
                     .IsRequired()
-                    .HasColumnType("longtext");
+                    .HasColumnType("text");
             });
              
             modelBuilder.Entity<ProductCategory>(entity =>
@@ -166,6 +167,17 @@ namespace DigiKeyCrawler.Models
                 entity.Property(e => e.DetailUrl)
                    .IsRequired()
                    .HasColumnType("varchar(200)");
+            });
+
+            modelBuilder.Entity<ProductHTML>(entity =>
+            {
+                entity.HasKey(e => e.ProductId);
+
+                entity.HasOne(x => x.Product).WithOne(x => x.ProductHTML).HasForeignKey<ProductHTML>(x => x.ProductId);
+
+                entity.Property(e => e.Html)
+                    .IsRequired()
+                    .HasColumnType("longtext");
             });
         }
     }

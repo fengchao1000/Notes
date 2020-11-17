@@ -10,7 +10,7 @@ namespace DigiKeyCrawler.Models
         public bool IsNew { get; set; }
         public int CategoryId { get; set; }
         public string CategoryName { get; set; } = string.Empty;
-        public string ImageTitle { get; set; } = string.Empty;
+        //public string ImageTitle { get; set; } = string.Empty;
         //public string Images { get; set; }
 
         /// <summary>
@@ -52,23 +52,23 @@ namespace DigiKeyCrawler.Models
         /// <summary>
         /// 制造商标准交货时间
         /// </summary>
-        public string ManufacturerStandardLeadTime { get; set; }
-       
+        public string ManufacturerStandardLeadTime { get; set; } = string.Empty;
+
         /// <summary>
         /// 媒体下载
         /// </summary>
         //public string MediaDownloads { get; set; }
-       
+
         /// <summary>
         /// 产品属性
         /// </summary>
         //public string ProductAttributes { get; set; }
-        
+
         /// <summary>
         /// 出口环境分类
         /// </summary>
         //public string EnvironmentalExportClassifications { get; set; }
-        
+
         /// <summary>
         /// 额外资源
         /// </summary>
@@ -77,17 +77,12 @@ namespace DigiKeyCrawler.Models
         /// <summary>
         /// 
         /// </summary>
-        public string MayAlso { get; set; }
+        public string MayAlso { get; set; } = string.Empty;
 
         /// <summary>
         /// 产品价格
         /// </summary>
         //public string Prices { get; set; }
-
-        /// <summary>
-        /// HTML源代码
-        /// </summary>
-        public string Html { get; set; } = string.Empty;
 
         public virtual ICollection<ProductAdditionalResource> ProductAdditionalResources { get; set; }
 
@@ -100,5 +95,7 @@ namespace DigiKeyCrawler.Models
         public virtual ICollection<ProductPicture> ProductPictures { get; set; }
 
         public virtual ICollection<ProductPrice> ProductPrices { get; set; }
+
+        public virtual ProductHTML ProductHTML { get; set; }
     }
 }

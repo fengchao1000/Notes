@@ -3,14 +3,16 @@ using System;
 using DigiKeyCrawler.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DigiKeyCrawler.Migrations
 {
     [DbContext(typeof(DigiKeyProductContext))]
-    partial class DigiKeyProductContextModelSnapshot : ModelSnapshot
+    [Migration("20201117102525_Init20201118")]
+    partial class Init20201118
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

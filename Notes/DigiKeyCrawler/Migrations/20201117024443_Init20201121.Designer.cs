@@ -3,14 +3,16 @@ using System;
 using DigiKeyCrawler.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DigiKeyCrawler.Migrations
 {
     [DbContext(typeof(DigiKeyProductContext))]
-    partial class DigiKeyProductContextModelSnapshot : ModelSnapshot
+    [Migration("20201117024443_Init20201121")]
+    partial class Init20201121
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -39,28 +41,29 @@ namespace DigiKeyCrawler.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("varchar(2000)");
+                        .HasColumnType("text");
 
                     b.Property<string>("DetailedDescription")
                         .IsRequired()
-                        .HasColumnType("varchar(2000)");
+                        .HasColumnType("text");
 
                     b.Property<string>("DigiKeyPartNumber")
                         .HasColumnType("varchar(200)");
+
+                    b.Property<string>("ImageTitle")
+                        .HasColumnType("varchar(1200)");
 
                     b.Property<bool>("IsNew")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Manufacturer")
-                        .IsRequired()
-                        .HasColumnType("varchar(200)");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("ManufacturerProductNumber")
                         .HasColumnType("varchar(200)");
 
                     b.Property<string>("ManufacturerStandardLeadTime")
-                        .IsRequired()
-                        .HasColumnType("varchar(200)");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("MayAlso")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
@@ -224,7 +227,7 @@ namespace DigiKeyCrawler.Migrations
 
                     b.Property<string>("ProductPriceJson")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.HasKey("ProductPriceKey");
 

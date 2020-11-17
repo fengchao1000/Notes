@@ -9,6 +9,8 @@ using Newtonsoft.Json;
 using DigiKeyCrawler.Helpers;
 using System.Threading.Tasks;
 using DigiKeyCrawler.DAL;
+using System.IO;
+using Serilog;
 
 namespace DigiKeyCrawler.CrawlerManager
 {
@@ -20,23 +22,31 @@ namespace DigiKeyCrawler.CrawlerManager
         /// <param name="productId"></param>
         /// <returns></returns>
         public static void CrawlerAllProduct()
-        {
-            var startProductId = 1000000;
-            var endProductId = 1000050;
+        { 
+            var startProductId = 1005000;
+            var endProductId = 1010000;
             //var endProductId = 13600000;
 
             try
             {
-                for (int i = startProductId; i < endProductId; i++)
+                while (startProductId < endProductId)
                 {
-                    startProductId++;
+                    List<Task> tasks = new List<Task>();
 
-                    CrawlerSingleProduct(startProductId);
+                    for (int i = 0; i < 20; i++)
+                    {
+                        startProductId++;
+                        Task task = new Task(obj => CrawlerSingleProduct(obj.ToString()), startProductId); 
+                        tasks.Add(task);
+                        task.Start(); 
+                    }
+
+                    Task.WaitAll(tasks.ToArray()); 
                 }
             }
             catch (Exception ex)
             {
-                //System.IO.File.AppendAllLines("c://CrawlerLog//"  + DateTime.Now.ToString("yyyyMMddHHmmssms") + "_error.txt", new string[] { ex.ToString() });
+                Log.Error(ex.ToString()); 
             }
         }
 
@@ -45,18 +55,23 @@ namespace DigiKeyCrawler.CrawlerManager
         /// </summary>
         /// <param name="productId"></param>
         /// <returns></returns>
-        public static void CrawlerSingleProduct(int productId)
+        public static void CrawlerSingleProduct(string productId)
         { 
             try
-            { 
-                var httpResults = GetProductHTML(productId);
-                var product = ParsingHTMLToProductModel(httpResults); 
-                DBBaseDAL<Product> productDAL = new DBBaseDAL<Product>();
-                productDAL.Add(product); 
+            {
+                Console.WriteLine(productId);
+                var httpResults = GetProductHTML(productId); 
+                var product = ParsingHTMLToProductModel(httpResults);
+
+                if (product != null) 
+                {
+                    DBBaseDAL<Product> productDAL = new DBBaseDAL<Product>();
+                    productDAL.Add(product);
+                }  
             }
             catch (Exception ex)
-            { 
-               //System.IO.File.AppendAllLines("c://CrawlerLog//" + productId + DateTime.Now.ToString("yyyyMMddHHmmssms") + "_error.txt", new string[] { ex.ToString() });
+            {
+                Log.Error("productId:" + productId +"---"+ ex.ToString()); 
             }
         }
 
@@ -65,7 +80,7 @@ namespace DigiKeyCrawler.CrawlerManager
         /// </summary>
         /// <param name="productId"></param>
         /// <returns></returns>
-        public static HttpResults GetProductHTML(int productId) 
+        public static HttpResults GetProductHTML(string productId) 
         {
             HttpHelpers httpHelpers = new HttpHelpers();
             HttpItems httpItems = new HttpItems();
@@ -79,8 +94,7 @@ namespace DigiKeyCrawler.CrawlerManager
             var result = httpHelpers.GetHtml(httpItems);
             if (result.StatusCode != HttpStatusCode.OK)
             {
-                Console.WriteLine("==== ProductCrawler fail === "+ httpItems.Url);
-                System.IO.File.AppendAllLines("c://CrawlerLog//" + productId + DateTime.Now.ToString("yyyyMMddHHmmssms") + "_error.txt", new string[] { result.Html });
+                Log.Error("productId:" + productId + "---" + result.StatusCode); 
             }
             else 
             {
@@ -103,7 +117,8 @@ namespace DigiKeyCrawler.CrawlerManager
             }
             Product p = new Product(); 
             p.ProductId = httpResults.ID;
-            p.Html = Gziphelper.Compress(httpResults.Html);
+            //p.ProductHTML =  new ProductHTML { Html = Gziphelper.Compress(httpResults.Html) };//源码压缩之后也非常大，900G左右，暂时不保存
+            
             HtmlDocument doc = new HtmlDocument();
             doc.LoadHtml(httpResults.Html);
             var mainImage = doc.DocumentNode.SelectNodes("//div[@class='main-image']");
@@ -129,13 +144,19 @@ namespace DigiKeyCrawler.CrawlerManager
             {
                 p.DefPdf = datasheetNode[0].Attributes.FirstOrDefault(n => n.Name == "href").Value;
             }
+             
+            //var defPicNode = doc.DocumentNode.SelectNodes("//img[@track-data='ref_page_event=Standard Image;asset_type=Photo']");
+            //if (defPicNode != null)
+            //{
+            //    p.DefPic = defPicNode[0].Attributes.FirstOrDefault(n => n.Name == "src").Value;
+            //}
 
             //抓取Pictures
             var imageNode = doc.DocumentNode.SelectNodes("//div[@data-testid='carousel-container']");
             if (imageNode != null)
             {
                 var titelImageNode = imageNode[0].ChildNodes[0].ChildNodes[0].ChildNodes[0].Attributes.FirstOrDefault(n => n.Name == "src").Value;
-                p.ImageTitle = titelImageNode.Replace("\\", "");
+                p.DefPic = titelImageNode.Replace("\\", "");//抓取默认图片
                 var otherImageNode = imageNode[0].ChildNodes[1];
                 var otherImags = otherImageNode.SelectNodes(".//img");
                 List<string> images = new List<string>();
@@ -149,17 +170,13 @@ namespace DigiKeyCrawler.CrawlerManager
                         listProductPicture.Add(productPicture);
                     }
                     
-                    p.ProductPictures = listProductPicture;
-                    //设置默认图片
-                    if (p.ProductPictures.Count > 0) 
-                    {
-                        p.DefPic = p.ProductPictures.FirstOrDefault().PictureUrl;
-                    }
+                    p.ProductPictures = listProductPicture; 
                 }
             }
             //分类取第二级
             var cateName = doc.DocumentNode.SelectNodes("//li[@class='MuiBreadcrumbs-li']")[2].ChildNodes[0].InnerText;
             p.CategoryName = cateName;
+            p.CategoryId = CacheProductCategory.GetProductCategoryIdByName(cateName); 
 
             //基础信息
             var headerNode = doc.DocumentNode.SelectNodes("//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-true']")[0].ChildNodes[0].ChildNodes[0];
