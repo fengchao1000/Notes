@@ -138,7 +138,7 @@ namespace Idsvr4.Controllers.Account
                 //ExpiresUtc = DateTimeOffset.UtcNow.Add(AccountOptions.DefaultLoginDuration)
 
                 ExpiresUtc = DateTimeOffset.UtcNow.Add(TimeSpan.FromMinutes(5)),
-                IsPersistent = true,//在浏览器持久化，false的时候走session持久化
+                IsPersistent = false,//在浏览器持久化，false的时候走session持久化
                 AllowRefresh = true//动态刷新令牌
             }; 
              

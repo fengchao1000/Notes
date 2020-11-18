@@ -62,7 +62,7 @@ namespace NetCoreAPI30
             #region 跨域
             app.UseCors(policy =>
             {
-                policy.WithOrigins("http://localhost:5003");
+                policy.WithOrigins("http://localhost:5001");
                 policy.AllowAnyHeader();
                 policy.AllowCredentials();
                 policy.AllowAnyMethod();

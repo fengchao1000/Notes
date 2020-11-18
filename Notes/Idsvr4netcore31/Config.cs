@@ -49,6 +49,30 @@ namespace Idsvr4
         {
             return new List<Client>
             { 
+                //本机
+                new Client
+                {
+                    ClientId = "Development",
+                    ClientName = "Development",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowAccessTokensViaBrowser = true,
+                    AccessTokenLifetime = 60*2,
+                    AccessTokenType = AccessTokenType.Jwt,
+                    RedirectUris =
+                    {
+                        "http://localhost:5001/callback.html",
+                        "http://localhost:5001/silent.html"
+                    },
+                    PostLogoutRedirectUris = { "http://localhost:5001" },
+                    AllowedCorsOrigins = { "http://localhost:5001" },
+                    RequireConsent = false,
+                    AllowedScopes =
+                    {
+                        StandardScopes.OpenId,
+                        StandardScopes.Profile,
+                        "FrameworkAPI"
+                    },
+                },
                 
                 //Implicit模式Client配置，适用于SPA
                 new Client

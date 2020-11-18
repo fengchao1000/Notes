@@ -65,6 +65,8 @@ namespace Idsvr4netcore31
             {
                 options.Authentication.CookieSlidingExpiration = true;
                 options.Authentication.CookieLifetime = TimeSpan.FromMinutes(5);
+                options.Authentication.CookieSameSiteMode = SameSiteMode.Lax;
+                options.Authentication.CheckSessionCookieSameSiteMode = SameSiteMode.Lax;
             })
                    //配置证书
                    .AddDeveloperSigningCredential()
