@@ -63,6 +63,7 @@ namespace Idsvr4netcore31
 
             services.AddIdentityServer(options =>
             {
+                //
                 options.Authentication.CookieSlidingExpiration = true;
                 options.Authentication.CookieLifetime = TimeSpan.FromMinutes(5);
                 options.Authentication.CookieSameSiteMode = SameSiteMode.Lax;

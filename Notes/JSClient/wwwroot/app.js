@@ -21,7 +21,7 @@ var config = {
     // silent renew will get a new access_token via an iframe 
     // just prior to the old access_token expiring (60 seconds prior)
     silent_redirect_uri: window.location.origin + "/silent.html",
-    automaticSilentRenew: true,
+    automaticSilentRenew: false,
     
     // will revoke (reference) access tokens at logout time
     revokeAccessTokenOnSignout: true,
@@ -36,6 +36,35 @@ var config = {
 Oidc.Log.logger = window.console;
 Oidc.Log.level = Oidc.Log.DEBUG;
 
+
+
+
+var last = new Date().getTime(),
+    curr = new Date().getTime(),
+    out = 2 * 60 * 1000; //设置超时时间： 2分
+
+document.onmouseover = function () {//监听鼠标移动事件
+    last = new Date().getTime(); //更新操作时间
+    localStorage.setItem("templast", last)
+    console.log("鼠标移动时间：" + last);
+};
+
+//var inter = setInterval(function () {/*定时器  间隔1秒检测是否长时间未操作页面 */
+//    curr = new Date().getTime(); //更新当前时间
+
+//    var templast = localStorage.getItem("templast");
+//    console.log("定时检查是否未操作页面：" + templast);
+//    //判断templast是否为空
+
+//    if (curr - templast > out) { //判断是否超时
+//        clearInterval(inter);//清空定时器
+//        console.log("那么长时间没未操作了！");//超时操作
+//        alert("会话过期");
+//    }
+//}, 1000);
+
+
+
 var mgr = new Oidc.UserManager(config);
 
 mgr.events.addUserLoaded(function (user) {
@@ -46,8 +75,28 @@ mgr.events.addUserUnloaded(function () {
     log("User logged out locally");
     showTokens();
 });
+
+
+//您可以在访问令牌到期事件中手动执行此操作-仅在用户存在的情况下显式执行静默续订。
 mgr.events.addAccessTokenExpiring(function () {
-    log("Access token expiring...");
+    log("==========================Access token expiring...======================");
+
+    var currTime = new Date().getTime(); //更新当前时间
+    var templast = localStorage.getItem("templast"); 
+    //判断templast是否为空
+
+    if (currTime - templast > out) { //判断是否超时
+        console.log("addAccessTokenExpiring会话过期：" + templast);
+        alert("会话过期");
+        //logout();
+    }
+    else
+    { 
+        //alert("会话未过期，刷新token");
+        console.log("addAccessTokenExpiring会话未过期，刷新token：" + templast); 
+        mgr.signinSilent()
+    }
+
 });
 mgr.events.addSilentRenewError(function (err) {
     log("Silent renew error: " + err.message);
@@ -110,6 +159,11 @@ function callApi() {
         xhr.send();
     });
 }
+
+
+
+
+
 
 function DisplayAPIResult(data) {
     var dataStr = data;
