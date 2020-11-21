@@ -37,7 +37,7 @@ function uiSessionMonitor(sessionLifetime, sessionExpiringNotificationTime, inte
 
         if ((currentTime - userLastActiveTime) > (sessionLifetime - sessionExpiringNotificationTime)) {
             console.log("uiSessionMonitor.checkSession: expired timer in:" + expiring);
-            localStorage.setItem(IsRefreshSessionKey, false); 
+            localStorage.setItem(IsRefreshSessionKey, false);
             this.sessionCountdownStart();
             this.stop();
         }
@@ -56,11 +56,10 @@ function uiSessionMonitor(sessionLifetime, sessionExpiringNotificationTime, inte
             //如果刷新Session
             var isRefreshSession = localStorage.getItem(IsRefreshSessionKey);
 
-            if (isRefreshSession = "true")
+            if (isRefreshSession == "true")
             {
                 console.log("uiSessionMonitor.sessionCountdown:isRefreshSession=true");
-                clearInterval(this.sessionCountdownTimer);
-                this.sessionCountdownTimer = null;
+                this.refreshSession();
                 return;
             }
 
@@ -76,7 +75,7 @@ function uiSessionMonitor(sessionLifetime, sessionExpiringNotificationTime, inte
                 alert("会话过期");
                 logout();
             }
-        }, 1000);
+        }.bind(this), 1000);
     };
 
     this.sessionCountdownStop = function () {
