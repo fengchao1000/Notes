@@ -56,7 +56,7 @@ function uiSessionMonitor(sessionLifetime, sessionExpiringNotificationTime, inte
             //如果刷新Session
             var isRefreshSession = localStorage.getItem(IsRefreshSessionKey);
 
-            if (isRefreshSession === true)
+            if (isRefreshSession = "true")
             {
                 console.log("uiSessionMonitor.sessionCountdown:isRefreshSession=true");
                 clearInterval(this.sessionCountdownTimer);
