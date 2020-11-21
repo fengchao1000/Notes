@@ -20,6 +20,9 @@
                 <li><button class="btn btn-info revoke">撤销Access Token</button></li>
                 <li><button class="btn btn-info logout">登出</button></li>
                 <li><button class="btn btn-info checkUserExpired">检查用户过期</button></li>
+                <li><button class="btn btn-info uiSessionMonitorStart">开始监控UI Session</button></li>
+                <li><button class="btn btn-info uiSessionMonitorStop">停止监控UI Session</button></li>
+                <li><button class="btn btn-info uiSessionMonitorRefreshSession">刷新UI Session</button></li>
             </ul>
         </div>
         <div class="row">
@@ -35,13 +38,13 @@
                 </div>
             </div>
             <!--<div class="col-sm-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">Access Token</div>
-                <div class="panel-body">
-                    <pre id="access-token"></pre>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Access Token</div>
+                    <div class="panel-body">
+                        <pre id="access-token"></pre>
+                    </div>
                 </div>
-            </div>
-        </div>-->
+            </div>-->
             <div class="col-sm-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">Ajax Result</div>
@@ -62,6 +65,7 @@
     </div>
 
     <script src="libs/oidc-client.js"></script>
+    <script src="uiSessionMonitor.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
