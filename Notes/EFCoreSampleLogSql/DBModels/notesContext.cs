@@ -29,8 +29,8 @@ namespace EFCoreSampleLogSql.DBModels
         {
             if (!optionsBuilder.IsConfigured)
             { 
-                optionsBuilder.UseMySql("Server=117.48.227.241;User Id=root;Password=fengchao!@#123;Database=Notes;");
-                  
+                optionsBuilder.UseMySql("Server=114.67.251.186;User Id=root;Password=fengchao!@#123;Database=Notes;");
+                 
                 optionsBuilder.UseLoggerFactory(MyLoggerFactory);
                 base.OnConfiguring(optionsBuilder);
             } 

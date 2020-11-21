@@ -137,8 +137,8 @@ namespace Idsvr4.Controllers.Account
                 //IsPersistent = false,//true表示关闭浏览器再打开系统不需要输入账号密码
                 //ExpiresUtc = DateTimeOffset.UtcNow.Add(AccountOptions.DefaultLoginDuration)
 
-                ExpiresUtc = DateTimeOffset.UtcNow.Add(TimeSpan.FromMinutes(5)),
-                IsPersistent = true,//在浏览器持久化，false的时候走session持久化
+                ExpiresUtc = DateTimeOffset.UtcNow.Add(TimeSpan.FromMinutes(15)),
+                IsPersistent = false,//在浏览器持久化，false的时候走session持久化
                 AllowRefresh = true//动态刷新令牌
             }; 
              
@@ -155,7 +155,7 @@ namespace Idsvr4.Controllers.Account
                 AdditionalClaims = claimArray
             };
 
-            await HttpContext.SignInAsync(identityServerUser, props);
+            await HttpContext.SignInAsync(identityServerUser);
 
             string currentSessionId = await userSession.GetSessionIdAsync();
             

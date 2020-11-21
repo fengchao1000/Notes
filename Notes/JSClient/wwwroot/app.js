@@ -1,7 +1,8 @@
-﻿/// <reference path="libs/oidc-client.js" />
+﻿///<reference path="libs/oidc-client.js" />
+///<reference path="uiSessionMonitor.js" />
 
 var config = {
-    authority: "http://localhost:54100",  
+    authority: "http://localhost:63238",  
     client_id: "Development",
     redirect_uri: window.location.origin + "/callback.html",
     post_logout_redirect_uri: window.location.origin + "/index.html",
@@ -13,7 +14,7 @@ var config = {
     // these two will be done dynamically from the buttons clicked, but are
     // needed if you want to use the silent_renew
     response_type: "id_token token",
-    scope: "openid profile paapi",//"openid profile email api1 api2.read_only",
+    scope: "openid profile FrameworkAPI",//"openid profile email api1 api2.read_only",
 
     // this will toggle if profile endpoint is used
     loadUserInfo: true,
@@ -33,9 +34,17 @@ var config = {
     filterProtocolClaims: false 
   
 };
-Oidc.Log.logger = window.console;
-Oidc.Log.level = Oidc.Log.DEBUG;
+//Oidc.Log.logger = window.console;
+//Oidc.Log.level = Oidc.Log.DEBUG;
 
+var timer;
+var isOpenTimer = false;
+
+
+var last = new Date().getTime(),
+    curr = new Date().getTime(), 
+    out = 2 * 60 * 1000; //设置超时时间： 2分
+ 
 var mgr = new Oidc.UserManager(config);
 
 mgr.events.addUserLoaded(function (user) {
@@ -46,8 +55,105 @@ mgr.events.addUserUnloaded(function () {
     log("User logged out locally");
     showTokens();
 });
+
+
+
+var uiSessionMonitor = new uiSessionMonitor(5 * 60 * 1000, 2 * 60 * 1000,2000);
+
+uiSessionMonitor.start();
+
+
+function uiSessionMonitorStart() {
+    uiSessionMonitor.start();
+}
+
+function uiSessionMonitorStop() {
+    uiSessionMonitor.stop();
+}
+
+function uiSessionMonitorRefreshSession() { 
+    uiSessionMonitor.refreshSession();
+}  
+
+function countDown(maxtime) {
+
+    if (isOpenTimer)
+    {
+        return;
+    }
+
+    isOpenTimer = true; 
+    console.log("打开计时器"); 
+      timer = setInterval(function () {
+        if (!!maxtime) {
+            var hour = Math.floor(((maxtime/1000) % 86400) / 3600 ),
+                minutes = Math.floor(((maxtime / 1000) % 3600) / 60 ),
+                seconds = Math.floor((maxtime / 1000) % 60 );
+                display("#ajax-result","您的会话将在" +  hour + "时" + minutes + "分" + seconds + "秒后过期"); 
+            maxtime = maxtime - 1000;
+        } else {
+            clearInterval(timer);
+            alert("会话过期");
+            logout();
+        }
+    }, 1000);
+}
+
+
+//您可以在访问令牌到期事件中手动执行此操作-仅在用户存在的情况下显式执行静默续订。
 mgr.events.addAccessTokenExpiring(function () {
-    log("Access token expiring...");
+    //log("==========================Access token expiring...======================");
+
+    //var currTime = new Date().getTime(); //更新当前时间
+    //var templast = localStorage.getItem("UserLastActiveTime"); 
+    ////判断templast是否为空
+
+    //if (currTime - templast > out) { //判断是否超时
+    //    console.log("addAccessTokenExpiring会话过期：" + templast);
+    //    //alert("会话过期");
+    //    //logout();
+    //    //用户一段时间不操作，就开始会话过期倒计时
+
+    //    //var nowTime = new Date().getTime(); //更新当前时间
+
+    //    //设置倒计时过期时间
+    //    //localStorage.setItem("SessionExpiresTime", (nowTime + out)) 
+         
+    //    //countDown(out);
+
+    //    //alert("会话过期倒计时开始");
+
+    //    //var inter = setInterval(function () {/*定时器  间隔1秒检测是否长时间未操作页面 */
+    //    //    curr = new Date().getTime(); //更新当前时间
+
+    //    //    var sessionExpiresTime = localStorage.getItem("SessionExpiresTime");
+
+    //    //    localStorage.setItem("SessionExpiresTime", (sessionExpiresTime - 1000))
+
+    //    //    console.log("定时检查是否未操作页面：" + sessionExpiresTime);
+
+    //    //    display("#ajax-result", "您的会话将在" + (curr - sessionExpiresTime) + "毫秒后过期");
+    //    //    //判断templast是否为空 
+    //    //    if (curr - sessionExpiresTime > 0) { //判断是否超时
+    //    //        clearInterval(inter);//清空定时器
+    //    //        console.log("那么长时间没未操作了！");//超时操作
+    //    //        alert("会话过期");
+    //    //        logout();
+    //    //    }
+    //    //}, 1000);
+
+    //}
+    //else
+    //{  
+    //    clearInterval(timer);
+    //    isOpenTimer = false;
+    //    console.log("关闭计时器");
+    //    display("#ajax-result", "用户进行操作，会话延期"); 
+    //    //alert("会话未过期，刷新token");
+    //    console.log("addAccessTokenExpiring会话未过期，刷新token：" + templast); 
+    //    mgr.signinSilent()
+    //}
+
 });
 mgr.events.addSilentRenewError(function (err) {
     log("Silent renew error: " + err.message);
@@ -93,16 +199,16 @@ function callApi() {
         xhr.onload = function (e) {
             if (xhr.status >= 400)
             {
-                display("#ajax-result", {
-                    status: xhr.status,
-                    statusText: xhr.statusText,
-                    wwwAuthenticate: xhr.getResponseHeader("WWW-Authenticate")
-                });
+                //display("#ajax-result", {
+                //    status: xhr.status,
+                //    statusText: xhr.statusText,
+                //    wwwAuthenticate: xhr.getResponseHeader("WWW-Authenticate")
+                //});
             }
             else
             {
                 DisplayAPIResult(xhr.response);
-                display("#ajax-result", xhr.response);
+                //display("#ajax-result", xhr.response);
             }
         };
         xhr.open("GET", "http://localhost:51179/weatherforecast", true);
@@ -110,6 +216,11 @@ function callApi() {
         xhr.send();
     });
 }
+
+
+
+
+
 
 function DisplayAPIResult(data) {
     var dataStr = data;
@@ -150,6 +261,11 @@ document.querySelector(".call").addEventListener("click", callApi, false);
 document.querySelector(".revoke").addEventListener("click", revoke, false);
 document.querySelector(".logout").addEventListener("click", logout, false);
 document.querySelector(".checkUserExpired").addEventListener("click", checkUserExpired, false);
+document.querySelector(".uiSessionMonitorStart").addEventListener("click", uiSessionMonitorStart, false);
+document.querySelector(".uiSessionMonitorStop").addEventListener("click", uiSessionMonitorStop, false);
+document.querySelector(".uiSessionMonitorRefreshSession").addEventListener("click", uiSessionMonitorRefreshSession, false);
+
+
 
 function log(data) {
     document.getElementById('response').innerText = '';
