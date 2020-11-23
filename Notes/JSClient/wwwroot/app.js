@@ -1,5 +1,6 @@
-﻿///<reference path="libs/oidc-client.js" />
-///<reference path="uiSessionMonitor.js" />
+﻿///<reference path="libs/oidc-client.js" /> 
+///<reference path="uiSessionMonitor.js" /> 
+
 
 var config = {
     authority: "http://localhost:63238",  
@@ -62,6 +63,25 @@ var uiSessionMonitor = new uiSessionMonitor(5 * 60 * 1000, 2 * 60 * 1000,2000);
 
 uiSessionMonitor.start();
 
+uiSessionMonitor.events.addUISessionExpiring(function () {
+    console.log("会话快过期");
+});
+
+uiSessionMonitor.events.addUISessionCountdown(function (timeRemaining) { 
+    var hour = Math.floor(((timeRemaining / 1000) % 86400) / 3600),
+        minutes = Math.floor(((timeRemaining / 1000) % 3600) / 60),
+        seconds = Math.floor((timeRemaining / 1000) % 60);
+    display("#ajax-result", "您的会话将在" + hour + "时" + minutes + "分" + seconds + "秒后过期");
+});
+
+uiSessionMonitor.events.addUISessionExpired(function () {
+    console.log("会话已过期");
+});
+
+uiSessionMonitor.events.addRefreshUISession(function () {
+    console.log("刷新会话");
+});
+
 
 function uiSessionMonitorStart() {
     uiSessionMonitor.start();
@@ -72,7 +92,7 @@ function uiSessionMonitorStop() {
 }
 
 function uiSessionMonitorRefreshSession() { 
-    uiSessionMonitor.refreshSession();
+    uiSessionMonitor.refreshUISession();
 }  
 
 function countDown(maxtime) {
