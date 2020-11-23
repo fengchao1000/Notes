@@ -15,6 +15,7 @@ function uiSessionMonitor(uiSessionLifetime, uiSessionExpiringNotificationTime, 
             localStorage.setItem(UserLastActiveTimeKey, new Date().getTime());
             console.log("UserLastActiveTime:" + new Date().getTime()); 
         };
+        localStorage.setItem(IsRefreshSessionKey, true); 
         localStorage.setItem(UserLastActiveTimeKey, new Date().getTime()); 
         this.stop();
         console.log("uiSessionMonitor.start");
@@ -83,15 +84,14 @@ function uiSessionMonitor(uiSessionLifetime, uiSessionExpiringNotificationTime, 
         if (this.uiSessionCountdownTimer) {
             console.log("uiSessionMonitor.uiSessionCountdownStop");
 
-            clearInterval(this.sessionCountdownTimer);
+            clearInterval(this.uiSessionCountdownTimer);
             this.uiSessionCountdownTimer = null;
         }
     };
 
     this.refreshUISession = function () {
         console.log("uiSessionMonitor.refreshUISession");
-        this.uiSessionCountdownStop();
-        localStorage.setItem(IsRefreshSessionKey, true); 
+        this.uiSessionCountdownStop(); 
         this.events.raiseRefreshUISession(); 
         this.start();
     }; 
