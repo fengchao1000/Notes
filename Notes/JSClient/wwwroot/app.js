@@ -1,6 +1,9 @@
 ﻿///<reference path="libs/oidc-client.js" /> 
 ///<reference path="uiSessionMonitor.js" /> 
+ 
 
+console.log(a1)
+fn()
 
 var config = {
     authority: "http://localhost:63238",  
@@ -57,7 +60,7 @@ mgr.events.addUserUnloaded(function () {
     showTokens();
 });
 
-
+ 
 
 var uiSessionMonitor = new uiSessionMonitor(5 * 60 * 1000, 2 * 60 * 1000,2000);
 
@@ -71,6 +74,7 @@ uiSessionMonitor.events.addUISessionCountdown(function (timeRemaining) {
     var hour = Math.floor(((timeRemaining / 1000) % 86400) / 3600),
         minutes = Math.floor(((timeRemaining / 1000) % 3600) / 60),
         seconds = Math.floor((timeRemaining / 1000) % 60);
+    console.log("您的会话将在" + hour + "时" + minutes + "分" + seconds + "秒后过期");
     display("#ajax-result", "您的会话将在" + hour + "时" + minutes + "分" + seconds + "秒后过期");
 });
 
