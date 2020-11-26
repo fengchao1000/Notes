@@ -2,8 +2,7 @@
 ///<reference path="uiSessionMonitor.js" /> 
  
 
-console.log(a1)
-fn()
+
 
 var config = {
     authority: "http://localhost:63238",  
@@ -235,7 +234,8 @@ function callApi() {
                 //display("#ajax-result", xhr.response);
             }
         };
-        xhr.open("GET", "http://localhost:51179/weatherforecast", true);
+        //xhr.open("GET", "http://localhost:51179/weatherforecast", true);
+        xhr.open("GET", "http://localhost:44387/test", true);
         xhr.setRequestHeader("Authorization", "Bearer " + user.access_token);
         xhr.send();
     });

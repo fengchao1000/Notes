@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["lot-web-boot-script4"],{"0afd":function(n,t,e){"use strict";e.r(t);var o=function(){var n=this,t=n.$createElement,e=n._self._c||t;return e("div")},a=[],r={name:"Home",data:function(){return{}}},u=r,c=e("2877"),l=Object(c["a"])(u,o,a,!1,null,null,null);t["default"]=l.exports}}]);

@@ -1,0 +1,130 @@
+.cct-container {
+    background: #344a5f;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    color: #ffffff;
+
+    .left {
+        flex: .15;
+        background: #1d2935;
+    }
+
+    .center {
+        flex: .35;
+        background: #2c3e50;
+    }
+
+    .left,
+    .center {
+        height: 100vh;
+        overflow: hidden;
+        overflow-y: auto;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 100%;
+
+            li {
+                padding: 10px;
+                cursor: pointer;
+                display: flex;
+
+                .col-1 {
+                    flex: 1;
+                }
+
+                .col-2 {
+                    flex: 1;
+                    text-align: left;
+                }
+
+                .col-3 {
+                    flex: 1;
+                    text-align: left;
+                }
+            }
+
+            li:hover {
+                background: #4e6e8e;
+            }
+        }
+    }
+
+    .right {
+        flex: .5;
+
+        .top {
+            background: #344a5f;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                display: flex;
+
+                li {
+                    padding: 10px;
+                    flex: 1;
+                    text-align: center;
+                    cursor: pointer;
+                }
+
+                li:hover {
+                    background: #4e6e8e;
+                }
+            }
+        }
+
+        .content {
+
+            textarea {
+                min-height: calc(100vh - 2.55rem) !important;
+                background: #1d2935;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+                border: 0;
+                // color: #ffffff;
+                color: #F56C6C;
+                font-weight: 500;
+                border-radius: 0;
+            }
+        }
+
+        .bottom {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                display: flex;
+
+                li {
+                    padding: 10px;
+                    flex: 1;
+                    text-align: center;
+                    cursor: pointer;
+                    // background-color: rgba(29, 41, 53, 0.5);
+                    background-color: rgba(103, 194, 58, .5);
+                }
+
+                li:hover {
+                    background: #4e6e8e;
+                }
+            }
+        }
+    }
+
+    .active {
+        background: #4e6e8e;
+    }
+}
