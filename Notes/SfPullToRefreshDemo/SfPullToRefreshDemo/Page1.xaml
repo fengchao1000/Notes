@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sfProgressBar="clr-namespace:Syncfusion.XForms.ProgressBar;assembly=Syncfusion.SfProgressBar.XForms"
              xmlns:pull="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms" 
              x:Class="SfPullToRefreshDemo.Page1">
     <ContentPage.Content>
@@ -14,11 +15,26 @@
             ProgressStrokeWidth="5"
             ProgressStrokeColor = "#c0c0c0">
             <pull:SfPullToRefresh.PullableContent>
-                <StackLayout>
-                    <Label Text="Welcome to Xamarin.Forms!"
-                    VerticalOptions="CenterAndExpand" 
-                    HorizontalOptions="CenterAndExpand" />
-                </StackLayout>
+                <sfProgressBar:SfCircularProgressBar  
+                    Grid.Column="2"
+                    Grid.Row="0"
+                    Margin="0,10,0,0"
+                    Progress="100"
+                    SegmentCount="20">
+                    <sfProgressBar:SfCircularProgressBar.Content>
+                        <StackLayout>
+                            <Label  
+                                TextColor="#007cee"
+                                HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                                HeightRequest="45" WidthRequest="60"
+                                HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                                <Label.FontSize>
+                                    <OnPlatform x:TypeArguments="x:Double" WinPhone="20" iOS="11" Android="20" />
+                                </Label.FontSize>
+                            </Label>
+                        </StackLayout>
+                    </sfProgressBar:SfCircularProgressBar.Content>
+                </sfProgressBar:SfCircularProgressBar>  
             </pull:SfPullToRefresh.PullableContent>
         </pull:SfPullToRefresh>
     </ContentPage.Content>

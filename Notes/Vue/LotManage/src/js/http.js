@@ -3,8 +3,8 @@ import qs from 'qs';
 import tools from './tools';
 //
 axios.defaults.timeout = 100 * 1000;
-axios.defaults.baseURL = 'http://47.99.152.236:8083/';
-//axios.defaults.baseURL = 'http://localhost:52473/';
+//axios.defaults.baseURL = 'http://47.99.152.236:8083/';
+axios.defaults.baseURL = 'http://localhost:52473/';
 let isloading = true;
 //http request 拦截器
 axios.interceptors.request.use(config => {
